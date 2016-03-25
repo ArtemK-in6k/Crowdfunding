@@ -17,4 +17,8 @@ public class ProjectService {
         return projectDAO.selectAll();
     }
 
+    public Project findById(int id){
+       return projectDAO.findById(id);
+    }
+
 }

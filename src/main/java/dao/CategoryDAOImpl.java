@@ -21,7 +21,7 @@ public class CategoryDAOImpl implements  CategoyDAO {
     }
 
     public List<Category> selectAll() {
-        Query query = sessionFactory.getCurrentSession().createQuery("from categories ");
+        Query query = sessionFactory.getCurrentSession().createQuery("from categories");
         return query.list();
     }
 
@@ -37,4 +37,5 @@ public class CategoryDAOImpl implements  CategoyDAO {
     public void update(Category category) {
         sessionFactory.getCurrentSession().update(category);
     }
+
 }

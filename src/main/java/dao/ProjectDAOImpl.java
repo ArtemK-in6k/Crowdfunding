@@ -1,6 +1,7 @@
 package dao;
 
 import crowdfunding.Project;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,18 +22,21 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     public List<Project> selectAll() {
-        return null;
+
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects ");
+        return query.list();
     }
 
     public Project findById(int id) {
-        return null;
+        Project project = sessionFactory.getCurrentSession().get(Project.class,id);
+        return project;
     }
 
     public void delete(Project project) {
-
+        sessionFactory.getCurrentSession().delete(project);
     }
 
     public void update(Project project) {
-
+        sessionFactory.getCurrentSession().update(project);
     }
 }

@@ -2,7 +2,7 @@ package crowdfunding;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
+
 
 @Entity(name = "projects")
 public class Project {
@@ -10,6 +10,7 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
 
     @ManyToOne
     private User user;
@@ -25,12 +26,14 @@ public class Project {
     private Timestamp date;
     @Column
     private String status;
-
+    @Column
+    private String nameProject;
     @ManyToOne
     private Category category;
 
     public Project() {
     }
+
 
     public int getId() {
         return id;
@@ -110,5 +113,13 @@ public class Project {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getNameProject() {
+        return nameProject;
+    }
+
+    public void setNameProject(String nameProject) {
+        this.nameProject = nameProject;
     }
 }
