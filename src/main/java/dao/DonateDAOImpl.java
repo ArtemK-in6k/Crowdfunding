@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class DobateDAOImpl implements DonateDAO {
+public class DonateDAOImpl implements DonateDAO {
 
     @Autowired
     SessionFactory sessionFactory;
