@@ -18,7 +18,14 @@ public class MainController {
     @RequestMapping("/")
     public String hello(Model model, HttpSession session) {
 
-        List<User> categories = userService.selectAll();
+        List<User> users = userService.selectAll();
+        User user = new User();
+        user.setId(1);
+        user.setEmail("gdfgdfgd");
+        user.setFirstName("fgsdfsdf");
+        user.setLastName("fgdfgdfg");
+        users.add(user);
+        model.addAttribute(users);
 
         return "main";
     }

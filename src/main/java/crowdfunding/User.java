@@ -3,7 +3,7 @@ package crowdfunding;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "user")
+@Entity(name = "users")
 public class User {
 
     @Id
@@ -21,6 +21,10 @@ public class User {
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "user")
     private List<Project> projects;
+
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "user")
+    private List<Donate> donates;
+
 
     public User() {
     }

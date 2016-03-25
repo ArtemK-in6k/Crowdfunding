@@ -32,7 +32,7 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-                <prop key="current_session_context_class">thread</prop>
+                <!--<prop key="current_session_context_class">thread</prop>-->
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
@@ -46,7 +46,7 @@
 
     <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://sql7.freemysqlhosting.net/sql7112197"/>
+        <property name="url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7112197"/>
         <property name="username" value="sql7112197"/>
         <property name="password" value="TmEFpwxpfe"/>
     </bean>

@@ -1,6 +1,7 @@
 package dao;
 
 import crowdfunding.User;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,18 +21,21 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public List<User> selectAll() {
-        return null;
+        Query query = sessionFactory.getCurrentSession().createQuery("from users ");
+        return query.list();
+
     }
 
     public User findById(int id) {
-        return null;
+        User user = sessionFactory.getCurrentSession().get(User.class,id);
+        return user;
     }
 
     public void delete(User user) {
-
+        sessionFactory.getCurrentSession().delete(user);
     }
 
     public void update(User user) {
-
+        sessionFactory.getCurrentSession().update(user);
     }
 }

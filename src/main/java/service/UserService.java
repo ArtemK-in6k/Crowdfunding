@@ -15,4 +15,5 @@ public class UserService {
     public List<User> selectAll() {
         return userDAO.selectAll();
     }
+
 }

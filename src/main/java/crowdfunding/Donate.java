@@ -1,12 +1,25 @@
 package crowdfunding;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Entity(name = "donates")
 public class Donate {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int userId;
+
+    @ManyToOne
+    private User user;
+
+    @Column
     private double amount;
-    private int projectId;
+
+    @ManyToOne
+    private Project project;
+
+    @Column
     private Timestamp date;
 
 
@@ -21,12 +34,12 @@ public class Donate {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public double getAmount() {
@@ -37,12 +50,12 @@ public class Donate {
         this.amount = amount;
     }
 
-    public int getProjectId() {
-        return projectId;
+    public Project getProjectId() {
+        return project;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setProjectId(Project project) {
+        this.project = project;
     }
 
     public Timestamp getDate() {
