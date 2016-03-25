@@ -42,7 +42,7 @@
                 <div class="caption">
                     <p class="lead">${project.donate_amount}</p>
                     <p class="lead">${project.needAmount}</p>
-                    <form action="/categories/${project.category.id}/project/${project.id}" method="GET">
+                    <form action="/categories/${project.category.id}/project/${project.id}/donate" method="POST">
                         <input hidden name="projectId" value="${project.id}">
                         <input class="btn btn-success" type="submit" value="Donate"/>
                     </form>

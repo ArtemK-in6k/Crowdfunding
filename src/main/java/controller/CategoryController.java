@@ -13,15 +13,15 @@ import service.ProjectService;
 import java.util.List;
 
 @Controller
+@RequestMapping("/categories")
 public class CategoryController {
 
     @Autowired
     CategoryService categoryService;
 
-    @Autowired
-    ProjectService projectService;
 
-    @RequestMapping("/categories/{id}")
+
+    @RequestMapping("/{id}")
     public String hello(Model model,@PathVariable int id) {
 
 
@@ -33,15 +33,5 @@ public class CategoryController {
         return "category";
     }
 
-    @RequestMapping("/categories/{categoryId}/projects/{projectId}")
-    public String hello(Model model,@PathVariable int categoryId,@PathVariable int projectId) {
 
-
-
-        Project project = projectService.findById(projectId);
-
-        model.addAttribute("project",project);
-
-        return "category";
-    }
 }
