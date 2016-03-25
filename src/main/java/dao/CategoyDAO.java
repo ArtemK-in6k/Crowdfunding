@@ -1,7 +1,17 @@
 package dao;
 
-/**
- * Created by employee on 25.03.16.
- */
+import crowdfunding.Category;
+
+import java.util.List;
+
 public interface CategoyDAO {
+    void insert(Category category);
+
+    List<Category> selectAll();
+
+    Category findById(int id);
+
+    void delete(Category category);
+
+    void update(Category category);
 }

@@ -2,6 +2,7 @@ package crowdfunding;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity(name = "projects")
 public class Project {
@@ -12,7 +13,6 @@ public class Project {
 
     @ManyToOne
     private User user;
-
     @Column
     private double needAmount;
     @Column
@@ -25,6 +25,9 @@ public class Project {
     private Timestamp date;
     @Column
     private String status;
+
+    @ManyToOne
+    private Category category;
 
     public Project() {
     }
@@ -91,5 +94,21 @@ public class Project {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

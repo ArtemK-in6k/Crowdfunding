@@ -26,14 +26,15 @@ public class DonateDAOImpl implements DonateDAO {
     }
 
     public Donate findById(int id) {
-        return null;
+        Donate donate = sessionFactory.getCurrentSession().get(Donate.class,id);
+        return donate;
     }
 
     public void delete(Donate donate) {
-
+        sessionFactory.getCurrentSession().delete(donate);
     }
 
     public void update(Donate donate) {
-
+        sessionFactory.getCurrentSession().update(donate);
     }
 }
