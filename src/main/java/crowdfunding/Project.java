@@ -13,6 +13,7 @@ public class Project {
     private int id;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
     @Column
     private double needAmount;
@@ -29,7 +30,8 @@ public class Project {
     @Column
     private String nameProject;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "project")
@@ -132,4 +134,5 @@ public class Project {
     public void setDonateList(List<Donate> donateList) {
         this.donateList = donateList;
     }
+
 }

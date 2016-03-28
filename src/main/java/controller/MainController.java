@@ -22,7 +22,7 @@ public class MainController {
     ProjectService projectService;
 
     @RequestMapping(value = "/")
-    public String hello(Model model, HttpSession session) {
+    public String main(Model model, HttpSession session) {
 
         List<Category> categories = categoryService.selectAll();
         List<Project> projects = projectService.selectAll();

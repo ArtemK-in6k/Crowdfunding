@@ -60,4 +60,20 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+
+    public List<Donate> getDonates() {
+        return donates;
+    }
+
+    public void setDonates(List<Donate> donates) {
+        this.donates = donates;
+    }
 }

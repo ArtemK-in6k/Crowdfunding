@@ -3,6 +3,7 @@ package crowdfunding;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "categories")
 public class Category {
@@ -15,7 +16,7 @@ public class Category {
     private String title;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
-    private List<Project> projects;
+    private Set<Project> projects;
 
     public Category() {
     }
@@ -41,13 +42,14 @@ public class Category {
         this.title = title;
     }
 
-    public List<Project> getProjects() {
+    public Set<Project> getProjects() {
         return projects;
     }
 
-    public void setProjects(List<Project> projects) {
+    public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
+
 
     @Override
     public String toString() {

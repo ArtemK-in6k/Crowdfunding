@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="/">Crowdfunding</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" style="background-color: palegoldenrod" id="bs-example-navbar-collapse-1">
         <div class="container">
             <div class="navbar-header navbar-right navbar">
 

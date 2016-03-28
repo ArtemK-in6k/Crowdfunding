@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import service.CategoryService;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/categories")
@@ -19,14 +21,11 @@ public class CategoryController {
     CategoryService categoryService;
 
     @RequestMapping("/{id}")
-    public String hello(Model model,@PathVariable int id) {
+    public String category(Model model,@PathVariable int id) {
         List<Category> categories = categoryService.selectAll();
 
         Category category = categoryService.findById(id);
-        System.out.println(category);
-        List<Project> projects = category.getProjects();
-
-        System.out.println(projects);
+        Set<Project> projects = category.getProjects();
 
         model.addAttribute("projects",projects);
         model.addAttribute("categories",categories);

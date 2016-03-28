@@ -11,12 +11,14 @@ public class Donate {
     private int id;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column
     private double amount;
 
     @ManyToOne
+    @JoinColumn(name = "project_id")
     private Project project;
 
     @Column
@@ -24,6 +26,14 @@ public class Donate {
 
 
     public Donate() {
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public int getId() {
@@ -65,4 +75,5 @@ public class Donate {
     public void setDate(Timestamp date) {
         this.date = date;
     }
+
 }

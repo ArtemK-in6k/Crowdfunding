@@ -41,7 +41,7 @@
                         <img class="img-thumbnail" src="http://dummyimage.com/250x250/000/00ffea.jpg"
                              alt="placeholder image"/>
                     </a>
-                    <div class="caption">
+                    <div class="caption text-center">
                         <a href="/categories/${project.category.id}/projects/${project.id}">
                             <p class="lead">${project.nameProject}</p></a>
                         <p class="lead">${project.donate_amount}</p>

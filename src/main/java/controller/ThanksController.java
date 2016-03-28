@@ -28,7 +28,7 @@ public class ThanksController {
 
 
     @RequestMapping(value = "/thanks", method = RequestMethod.POST)
-    public String hello(Model model, HttpServletRequest httpServletRequest) {
+    public String thanks(Model model, HttpServletRequest httpServletRequest) {
 
         int projectId = Integer.parseInt(httpServletRequest.getParameter("projectId"));
         String firstName = httpServletRequest.getParameter("firstname");

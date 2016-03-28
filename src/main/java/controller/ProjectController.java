@@ -19,13 +19,14 @@ public class ProjectController {
     ProjectService projectService;
 
     @RequestMapping("/{projectId}")
-    public String hello(Model model, @PathVariable int projectId) {
+    public String project(Model model, @PathVariable int projectId) {
 
         Project project = projectService.findById(projectId);
 
         List<Donate> donates = project.getDonateList();
 
         model.addAttribute("project", project);
+        model.addAttribute("donates", donates);
 
         return "project";
     }
