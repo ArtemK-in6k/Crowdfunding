@@ -21,17 +21,14 @@ public class MainController {
     @Autowired
     ProjectService projectService;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/")
     public String hello(Model model, HttpSession session) {
 
         List<Category> categories = categoryService.selectAll();
         List<Project> projects = projectService.selectAll();
 
         model.addAttribute("projects",projects);
-        model.addAttribute("categories",categories);
-
-
-        System.out.println(projects.toArray().toString());
+        session.setAttribute("categories",categories);
 
         return "main";
     }

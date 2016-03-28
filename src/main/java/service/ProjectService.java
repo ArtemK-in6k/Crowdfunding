@@ -21,4 +21,8 @@ public class ProjectService {
        return projectDAO.findById(id);
     }
 
+    public void update(Project project){
+        projectDAO.update(project);
+    }
+
 }

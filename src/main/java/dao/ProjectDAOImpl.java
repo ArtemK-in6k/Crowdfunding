@@ -23,7 +23,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
     public List<Project> selectAll() {
 
-        Query query = sessionFactory.getCurrentSession().createQuery("from projects ");
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects");
         return query.list();
     }
 

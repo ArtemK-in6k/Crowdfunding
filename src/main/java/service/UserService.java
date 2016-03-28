@@ -16,4 +16,12 @@ public class UserService {
         return userDAO.selectAll();
     }
 
+    public void insert(User user){
+        userDAO.insert(user);
+    }
+
+    public User findByEmail(String email){
+        return userDAO.findByEmail(email);
+    }
+
 }

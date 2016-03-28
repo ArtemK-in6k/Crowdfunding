@@ -26,7 +26,7 @@
                     <ul class="nav navmenu-nav" style="width: 200px">
                         <c:forEach items="${categories}" var="category">
                             <li>
-                                <a style="background-color: khaki" href="/categories/${category.id}"
+                                <a style="background-color: lightsteelblue" href="/categories/${category.id}"
                                    class="list-group-item">${category.title}</a>
                             </li>
                         </c:forEach>
@@ -39,14 +39,15 @@
             <c:forEach items="${projects}" var="project">
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <a href="/categories/${project.category.id}/project/${project.id}">
-                            <img class="img-circle" src="http://dummy-images.com/objects/dummy-200x200-Cup.jpg" alt="placeholder image"/></a>
+                        <a href="/categories/${project.category.id}/projects/${project.id}">
+                            <img class="img-thumbnail" src="http://dummy-images.com/objects/dummy-200x200-Cup.jpg" alt="placeholder image"/></a>
                         <div class="caption text-center">
-                            <a href="/category/${project.id}">
-                                <p class="lead">${project.needAmount}</p>
+                            <a href="/categories/${project.category.id}/projects/${project.id}">
+                                <p class="lead">${project.nameProject}</p>
                             </a>
-                            <p>${project.nameProject}</p>
-                            <p>${project.date}</p>
+                            <p>Donate amount : ${project.donate_amount}</p>
+                            <p>Need amount : ${project.needAmount} </p>
+                            <p>${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
                         </div>
                     </div>
                 </div>

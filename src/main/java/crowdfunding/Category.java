@@ -51,7 +51,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "CategoryServlet{" +
+        return "Category{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 '}';

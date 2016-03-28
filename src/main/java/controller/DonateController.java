@@ -15,7 +15,7 @@ public class DonateController {
     ProjectService projectService;
 
     @RequestMapping("/donate")
-    public String hello(Model model,@PathVariable int projectId) {
+    public String hello(Model model,@PathVariable int categoryId,@PathVariable int projectId) {
 
         Project project = projectService.findById(projectId);
 

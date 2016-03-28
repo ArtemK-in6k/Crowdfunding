@@ -17,4 +17,8 @@ public class DonateService {
         return donateDAO.selectAll();
     }
 
+    public void insert(Donate donate){
+        donateDAO.insert(donate);
+    }
+
 }

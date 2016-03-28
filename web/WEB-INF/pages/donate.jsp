@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Category</title>
+    <title>Crowdfunding</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -18,6 +18,7 @@
 
 <div class="text-center">
     <form class="form-horizontal " action='/thanks' method="POST">
+        <input hidden name="projectId" value="${project.id}">
         <fieldset>
             <div id="legend">
                 <legend class="">Donation</legend>
@@ -61,7 +62,7 @@
             <div class="control-group">
                 <!-- Button -->
                 <div class="controls">
-                    <button class="btn btn-success">Register</button>
+                    <button class="btn btn-success">Continue</button>
                 </div>
             </div>
         </fieldset>

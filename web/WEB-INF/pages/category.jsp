@@ -19,14 +19,14 @@
 <jsp:include page="head.jsp"/>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" style="height: 600px">
             <nav class="navmenu navmenu-default" role="navigation">
                 <div>
                     <h4 class="text-success">Categories</h4>
                     <ul class="nav navmenu-nav" style="width: 200px">
                         <c:forEach items="${categories}" var="category">
                             <li>
-                                <a style="background-color: khaki" href="/categories/${category.id}"
+                                <a style="background-color: lightsteelblue" href="/categories/${category.id}"
                                    class="list-group-item">${category.title}</a>
                             </li>
                         </c:forEach>
@@ -34,24 +34,28 @@
                 </div>
             </nav>
         </div>
-    <c:forEach items="${projects}" var="project">
+        <c:forEach items="${projects}" var="project">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="/categories/${project.category.id}/projects/${project.id}">
+                        <img class="img-thumbnail" src="http://dummyimage.com/250x250/000/00ffea.jpg"
+                             alt="placeholder image"/>
+                    </a>
+                    <div class="caption">
+                        <a href="/categories/${project.category.id}/projects/${project.id}">
+                            <p class="lead">${project.nameProject}</p></a>
+                        <p class="lead">${project.donate_amount}</p>
+                        <p class="lead">${project.needAmount}</p>
+                        <form action="/categories/${project.category.id}/projects/${project.id}/donate" method="POST">
+                            <input hidden name="projectId" value="${project.id}">
+                            <input class="btn btn-success" type="submit" value="Donate"/>
+                        </form>
+                    </div>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img class="img-circle" src="http://dummyimage.com/250x250/000/00ffea.jpg" alt="placeholder image"/>
-                <div class="caption">
-                    <p class="lead">${project.donate_amount}</p>
-                    <p class="lead">${project.needAmount}</p>
-                    <form action="/categories/${project.category.id}/project/${project.id}/donate" method="POST">
-                        <input hidden name="projectId" value="${project.id}">
-                        <input class="btn btn-success" type="submit" value="Donate"/>
-                    </form>
                 </div>
-
             </div>
-        </div>
-
-    </c:forEach>
+        </c:forEach>
+    </div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"

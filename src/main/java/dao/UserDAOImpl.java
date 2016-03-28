@@ -23,12 +23,17 @@ public class UserDAOImpl implements UserDAO {
     public List<User> selectAll() {
         Query query = sessionFactory.getCurrentSession().createQuery("from users ");
         return query.list();
-
     }
 
     public User findById(int id) {
         User user = sessionFactory.getCurrentSession().get(User.class,id);
         return user;
+    }
+
+    public User findByEmail(String email) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from users where email = :email");
+        query.setString("email",email);
+        return (User)query.uniqueResult();
     }
 
     public void delete(User user) {
