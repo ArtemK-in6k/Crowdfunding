@@ -1,7 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="112a72d2-96fb-4680-ae7a-27d12e09eaaa" name="Default" comment="" />
+    <list default="true" id="112a72d2-96fb-4680-ae7a-27d12e09eaaa" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/CategoryController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/DonateController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/MainController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/ProjectController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/ThanksController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/crowdfunding/Category.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/crowdfunding/Donate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/crowdfunding/Project.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/crowdfunding/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/CategoryDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/CategoyDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/DonateDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/DonateDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/ProjectDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/ProjectDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/UserDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/dao/UserDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/main/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/service/CategoryService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/service/DonateService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/service/ProjectService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/service/UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/dispatcher-servlet.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/aspectjrt-1.8.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/commons-dbcp-1.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/commons-logging-1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/commons-pool-1.5.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/hamcrest-all-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/hibernate-core-5.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/hibernate-entitymanager-5.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/log4j-1.2.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.38.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/slf4j-api-1.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-aop-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-aspects-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-beans-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-context-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-context-support-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-core-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-expression-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-instrument-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-instrument-tomcat-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-jdbc-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-jms-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-messaging-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-orm-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-oxm-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-test-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-tx-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-web-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-webmvc-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-webmvc-portlet-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/spring-websocket-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/tomcat-jdbc-8.0.32.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/tomcat-juli-8.0.32.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/lib/xml-apis-1.0.b2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/category.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/donate.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/head.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/main.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/project.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/pages/thanks.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/resources/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Crowdfunding_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Crowdfunding_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Crowdfunding.iml" afterPath="$PROJECT_DIR$/Crowdfunding.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+    </list>
     <ignored path="Crowdfunding.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -86,7 +189,7 @@
       <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-11.333333">
               <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
@@ -103,11 +206,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7173913">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -133,31 +236,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crowdfunding.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Crowdfunding.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Procfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Procfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+              <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -257,6 +340,11 @@
       <MavenGeneralSettings>
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -570,6 +658,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -579,7 +709,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="RemoteServers" />
@@ -1176,7 +1306,7 @@
       <workItem from="1458890763121" duration="15662000" />
       <workItem from="1459144201469" duration="24309000" />
       <workItem from="1459173908264" duration="1255000" />
-      <workItem from="1459231263300" duration="8582000" />
+      <workItem from="1459231263300" duration="10300000" />
     </task>
     <task id="LOCAL-00001" summary="first deploy">
       <created>1459234774018</created>
@@ -1218,7 +1348,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52044000" />
+    <option name="totallyTimeSpent" value="53762000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1231,7 +1361,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1402" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1240,16 +1370,16 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.50294983" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.49705014" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.49705014" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278328" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19955817" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19955817" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1681,7 +1811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-11.333333">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
@@ -1695,10 +1825,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Crowdfunding.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3626943">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1711,34 +1865,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crowdfunding.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7173913">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1762,7 +1892,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Hibernate</last-edited>
+          <last-edited>Web (Crowdfunding)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1797,12 +1927,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Crowdfunding</last-edited>
+          <last-edited>Web|Crowdfunding</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
