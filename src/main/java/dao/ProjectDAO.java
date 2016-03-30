@@ -14,5 +14,6 @@ public interface ProjectDAO {
     void delete(Project project);
 
     void update(Project project);
+    public Project findByProjectName(String nameProject);
 
 }

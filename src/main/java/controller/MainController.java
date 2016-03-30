@@ -23,7 +23,8 @@ public class MainController {
     @Autowired
     ProjectService projectService;
 
-    @RequestMapping(method = RequestMethod.GET)
+
+    @RequestMapping
     public String main(Model model, HttpSession session) {
 
         List<Category> categories = categoryService.selectAll();
@@ -34,4 +35,5 @@ public class MainController {
 
         return "main";
     }
+
 }

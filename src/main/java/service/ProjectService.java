@@ -17,12 +17,21 @@ public class ProjectService {
         return projectDAO.selectAll();
     }
 
-    public Project findById(int id){
-       return projectDAO.findById(id);
+    public Project findById(int id) {
+        return projectDAO.findById(id);
     }
 
-    public void update(Project project){
+    public Project findByProjectName(String projectName) {
+        return projectDAO.findByProjectName(projectName);
+    }
+
+    public void update(Project project) {
         projectDAO.update(project);
     }
+
+    public void insert(Project project) {
+        projectDAO.insert(project);
+    }
+
 
 }

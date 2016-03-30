@@ -31,6 +31,11 @@ public class ProjectDAOImpl implements ProjectDAO {
         Project project = sessionFactory.getCurrentSession().get(Project.class,id);
         return project;
     }
+    public Project findByProjectName(String nameProject) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects where nameProject = :nameProject");
+        query.setString("nameProject",nameProject);
+        return (Project) query.uniqueResult();
+    }
 
     public void delete(Project project) {
         sessionFactory.getCurrentSession().delete(project);

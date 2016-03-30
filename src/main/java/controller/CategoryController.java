@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import service.CategoryService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,11 +28,21 @@ public class CategoryController {
         Category category = categoryService.findById(id);
         Set<Project> projects = category.getProjects();
 
+        model.addAttribute("idcategory",id);
         model.addAttribute("projects",projects);
         model.addAttribute("categories",categories);
 
         return "category";
     }
 
+    @RequestMapping("/{id}/newproject")
+    public String newProject(Model model, @PathVariable int id) {
+
+        Category category = categoryService.findById(id);
+
+        model.addAttribute("category",category);
+
+        return "newproject";
+    }
 
 }
