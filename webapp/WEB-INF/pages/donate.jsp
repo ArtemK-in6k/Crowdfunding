@@ -61,7 +61,7 @@
 
             <div class="control-group">
                 <!-- Button -->
-                <div class="controls">
+                <div class="controls" style="margin-top: 1cm">
                     <button class="btn btn-success">Continue</button>
                 </div>
             </div>

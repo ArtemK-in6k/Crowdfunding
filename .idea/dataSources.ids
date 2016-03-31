@@ -27,7 +27,7 @@
         <data-type>double</data-type>
       </column>
       <column id="11" parent="2" name="image">
-        <data-type>blob</data-type>
+        <data-type>text</data-type>
       </column>
       <column id="12" parent="2" name="needAmount">
         <data-type>double</data-type>

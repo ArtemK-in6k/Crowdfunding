@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+
 <nav class="navbar-inverse navbar-custom" role="navigation">
 
     <div class="navbar-header">

@@ -15,10 +15,14 @@
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 <body>
-    <p>Thank you for your donation to the ${project.nameProject}</p>
-    <form action="/" method="POST">
+<div class="text-center" style="margin-top: 5cm">
+    <h2>Thank you for your donation to the ${project.nameProject}</h2>
+    <img src="http://www.onetip.net/wp-content/uploads/2014/07/thanks-sms-for-friends.jpg" alt="sorry">
+    <form action="/" method="POST" style="margin-top: 2cm">
         <input class="btn btn-success" type="submit" value="Go to the main page"/>
     </form>
+</div>
+
 
 </body>
 </html>

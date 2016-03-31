@@ -39,6 +39,7 @@
                 <!--<prop key="current_session_context_class">thread</prop>-->
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
             </props>
         </property>
     </bean>
@@ -64,12 +65,5 @@
             <value>.jsp</value>
         </property>
     </bean>
-    <beans:bean id="multipartResolver"
-                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-
-        <!-- setting maximum upload size -->
-        <beans:property name="maxUploadSize" value="100" />
-
-    </beans:bean>
 
 </beans>

@@ -19,14 +19,12 @@
 <jsp:include page="head.jsp"/>
 <div class="container" >
     <div class="row">
-        <div class="col-sm-8 col-md-8">
+        <div class="col-sm-8 col-md-8" >
             <div class="thumbnail">
-                <img class="img-thumbnail text-center" src="http://dummyimage.com/600x300/000000/fff"
-                     alt="placeholder image"/>
+                <img class="img-thumbnail text-center" src="${project.image}" alt="placeholder image" style="width: 600px; height: 300px;"/>
                 <div class="caption">
                     <h3 class="text-success text-center">${project.nameProject}</h3>
-                    <p class="lead text-center">Donate amount: ${project.donate_amount}</p>
-                    <p class="lead text-center">Need amount: ${project.needAmount}</p>
+                    <p class="text-center">${project.donate_amount} pledged of ${project.needAmount} goal</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                              aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
@@ -46,7 +44,7 @@
         </div>
     </div>
     <c:forEach items="${donates}" var="donate">
-    <div class="col-sm-4 col-md-4">
+    <div class="col-sm-4 col-md-4" style="float: right; clear: right">
         <div class="thumbnail">
             <p>Donate : ${donate.amount}</p>
             <p>First Name : ${donate.user.firstName} </p>

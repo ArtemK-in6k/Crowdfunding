@@ -13,11 +13,21 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <style>
+        input.text {
+            width: 600px;
+            height: 300px;
+            padding: 5px 10px 5px 10px;
+            border: 1px solid #999;
+            font-size: 16px;
+            font-family: Tahoma;
+        }
+    </style>
 </head>
 <body>
 
 <div class="text-center">
-    <form class="form-horizontal " action='/create' method="POST">
+    <form id="forma" class="form-horizontal " action='/create' method="POST">
         <input hidden name="categoryId" value="${category.id}">
         <fieldset>
             <div id="legend">
@@ -28,7 +38,7 @@
                 <label class="control-label" for="firstname">Firstname</label>
                 <div class="controls">
                     <input type="text" id="firstname" name="firstname" placeholder="" class="input-xlarge">
-                    <p class="help-block">Please provide your firstname</p>
+
                 </div>
             </div>
             <div class="control-group">
@@ -36,7 +46,7 @@
                 <label class="control-label" for="lastname">Lastname</label>
                 <div class="controls">
                     <input type="text" id="lastname" name="lastname" placeholder="" class="input-xlarge">
-                    <p class="help-block">Please provide your lastname</p>
+
                 </div>
             </div>
 
@@ -45,7 +55,7 @@
                 <label class="control-label" for="email">Email</label>
                 <div class="controls">
                     <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-                    <p class="help-block">Please provide your email</p>
+
                 </div>
             </div>
 
@@ -69,19 +79,20 @@
                 <!-- ProjectName-->
                 <label class="control-label" for="aboutProject">Title </label>
                 <div class="controls">
-                    <input type="text" id="aboutProject" name="aboutProject" placeholder="" class="input-xlarge">
+                    <textarea id="aboutProject" name="aboutProject" rows="10" cols="100"  form="forma">Enter here about your project...</textarea>
+                    <%--<input type="textarea">--%>
                 </div>
             </div>
 
             <div class="control-group">
+                <!-- image-->
+                <label class="control-label" for="image">Url image </label>
                 <div class="controls">
-                    <label class="text-center" for="image">Image input</label>
-                    <input class="text-center" type="file" id="image">
-                    <p class="text-center">Example block-level help text here.</p>
+                    <input type="text" id="image" name="image" placeholder="" class="input-xlarge">
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group" style="margin-top: 1cm">
                 <!-- Button -->
                 <div class="controls">
                     <button class="btn btn-success">Create</button>

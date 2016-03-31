@@ -13,6 +13,12 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <style type="text/css">
+    .but {
+        margin-top: 2cm;
+
+    }
+    </style>
 </head>
 <body>
 
@@ -35,24 +41,31 @@
             </nav>
             <span/>
             <span/>
-            <div>
+            <div class="but">
                 <form action="/categories/${idcategory}/newproject" method="POST">
                     <input class="btn btn-success" type="submit" value="Create project"/>
                 </form>
             </div>
         </div>
+        <h3 class="text-success text-center">Category of ${category.title}</h3>
         <c:forEach items="${projects}" var="project">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a href="/categories/${project.category.id}/projects/${project.id}">
-                        <img class="img-thumbnail" src="http://dummyimage.com/250x250/000/00ffea.jpg"
-                             alt="placeholder image"/>
+                        <img class="img-thumbnail" src="${project.image}"
+                             alt="placeholder image" style="width: 300px; height: 300px;"/>
                     </a>
                     <div class="caption text-center">
                         <a href="/categories/${project.category.id}/projects/${project.id}">
                             <p class="lead">${project.nameProject}</p></a>
-                        <p class="lead">${project.donate_amount}</p>
-                        <p class="lead">${project.needAmount}</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                 aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width:${project.donate_amount/project.needAmount*100}%">
+                            </div>
+                        </div>
+                        <p>${project.donate_amount} pledged of ${project.needAmount} goal</p>
                         <form action="/categories/${project.category.id}/projects/${project.id}/donate" method="POST">
                             <input hidden name="projectId" value="${project.id}">
                             <input class="btn btn-success" type="submit" value="Donate"/>

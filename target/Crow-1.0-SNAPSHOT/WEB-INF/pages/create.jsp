@@ -13,13 +13,22 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <style>
+        .fig {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<p>Thank you for creation ${project.nameProject}</p>
-<form action="/" method="POST">
-    <input class="btn btn-success" type="submit" value="Go to the main page"/>
-</form>
+<div class="text-center fig">
 
+
+    <img src="${project.image}" alt="sorry" style="width: 400px; height: 400px;">
+    <h2>Thank you for creation ${project.nameProject}</h2>
+    <form action="/" method="POST">
+        <input class="btn btn-success" type="submit" value="Go to the main page"/>
+    </form>
+</div>
 
 </body>
 </html>

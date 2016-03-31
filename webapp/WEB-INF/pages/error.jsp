@@ -13,13 +13,21 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <style>
+        .fig {
+            text-align: center; /* ???????????? ?? ?????? */
+        }
+    </style>
 </head>
 <body>
-<p>Sorry but project with same name exist</p>
-<form action="/" method="POST">
-    <input class="btn btn-success" type="submit" value="Go to the main page"/>
-</form>
+<div class="text-center fig">
 
+    <img src="http://img2.wikia.nocookie.net/__cb20100427134246/half-life/en/images/b/b8/Error.jpg" alt="" style="margin-top: 5cm">
+    <h2 style="margin-top: 2cm">Sorry but project with same name exist</h2>
+    <form action="/" method="POST" style="margin-top: 2cm">
+        <input class="btn btn-success" type="submit" value="Go to the main page"/>
+    </form>
+</div>
 
 </body>
 </html>

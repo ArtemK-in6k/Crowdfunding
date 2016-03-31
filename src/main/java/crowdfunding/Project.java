@@ -20,7 +20,7 @@ public class Project {
     @Column
     private String aboutProject;
     @Column
-    private byte[] image;
+    private String image;
     @Column
     private double donate_amount;
     @Column
@@ -71,11 +71,11 @@ public class Project {
         this.aboutProject = aboutProject;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

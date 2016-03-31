@@ -1,16 +1,13 @@
 package controller;
 
 import crowdfunding.Category;
-import crowdfunding.Donate;
 import crowdfunding.Project;
 import crowdfunding.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestMethod;
 import service.CategoryService;
 import service.DonateService;
 import service.ProjectService;
@@ -33,9 +30,8 @@ public class CreateController {
     @Autowired
     CategoryService categoryService;
 
-    @RequestMapping("/create")
-    public String category(Model model, HttpServletRequest httpServletRequest,
-                           @RequestParam("image") MultipartFile file) throws IOException {
+    @RequestMapping(value = "/create",method = RequestMethod.POST)
+    public String category(Model model, HttpServletRequest httpServletRequest) throws IOException {
 
 
         int categoryId = Integer.parseInt(httpServletRequest.getParameter("categoryId"));
@@ -45,9 +41,10 @@ public class CreateController {
         double needAmount =Double.parseDouble(httpServletRequest.getParameter("needAmount"));
         String projectName = httpServletRequest.getParameter("projectName");
         String aboutProject = httpServletRequest.getParameter("aboutProject");
+        System.out.println(aboutProject);
+        String image = httpServletRequest.getParameter("image");
         double donateAmount = 0;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        byte [] image = file.getBytes();
         Category category = categoryService.findById(categoryId);
 
         User user;

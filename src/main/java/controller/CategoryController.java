@@ -31,6 +31,7 @@ public class CategoryController {
         model.addAttribute("idcategory",id);
         model.addAttribute("projects",projects);
         model.addAttribute("categories",categories);
+        model.addAttribute("category",category);
 
         return "category";
     }
