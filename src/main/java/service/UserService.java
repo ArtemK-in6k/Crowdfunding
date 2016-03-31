@@ -23,5 +23,22 @@ public class UserService {
     public User findByEmail(String email){
         return userDAO.findByEmail(email);
     }
+    public User findByPartOfUserName(String userName) {
+        String[] usersName = userName.split(" ");
+        User user;
+
+        if (usersName.length == 1){
+            user = userDAO.findByPartOfUserName(userName);
+        }else if (usersName.length == 2){
+            user = userDAO.findByPartOfUserName(usersName[0]+usersName[1]);
+            if (user == null){
+                user = userDAO.findByPartOfUserName(usersName[1]+usersName[2]);
+            }
+        }else {
+            user = null;
+        }
+
+        return user;
+    }
 
 }

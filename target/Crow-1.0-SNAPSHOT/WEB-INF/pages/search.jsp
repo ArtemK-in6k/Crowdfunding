@@ -38,9 +38,9 @@
                 </div>
             </nav>
         </div>
-        <h3 class="text-success text-center">Projects now</h3>
+        <h3 class="text-success text-center">Search result</h3>
         <div class="col-md-8">
-            <c:forEach items="${projects}" var="project">
+            <c:forEach items="${projectlist}" var="project">
                 <div class="col-sm-6 col-md-6">
                     <div class="thumbnail">
                         <a href="/categories/${project.category.id}/projects/${project.id}">

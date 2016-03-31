@@ -44,4 +44,10 @@ public class ProjectDAOImpl implements ProjectDAO {
     public void update(Project project) {
         sessionFactory.getCurrentSession().update(project);
     }
+
+    public List<Project> findByPartOfProjectName(String projectName) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects where lower(nameProject) like :projectName");
+        query.setString("projectName","%"+projectName+"%");
+        return query.list();
+    }
 }

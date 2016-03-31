@@ -24,7 +24,7 @@
                 <img class="img-thumbnail text-center" src="${project.image}" alt="placeholder image" style="width: 600px; height: 300px;"/>
                 <div class="caption">
                     <h3 class="text-success text-center">${project.nameProject}</h3>
-                    <p class="text-center">${project.donate_amount} pledged of ${project.needAmount} goal</p>
+                    <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                              aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
@@ -46,7 +46,7 @@
     <c:forEach items="${donates}" var="donate">
     <div class="col-sm-4 col-md-4" style="float: right; clear: right">
         <div class="thumbnail">
-            <p>Donate : ${donate.amount}</p>
+            <p>Donate : $${donate.amount}</p>
             <p>First Name : ${donate.user.firstName} </p>
             <p>Last Name : ${donate.user.lastName} </p>
             <p>email : ${donate.user.email} </p>

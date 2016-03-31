@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="112a72d2-96fb-4680-ae7a-27d12e09eaaa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/leftmenu.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/notfound.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/search.jsp" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/META-INF/MANIFEST.MF" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/applicationContext.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Crowdfunding_war_exploded/WEB-INF/classes/controller/CategoryController.class" afterPath="" />
@@ -234,42 +238,42 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/WEB_002dINF/pages/head_jsp.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/WEB_002dINF/pages/main_jsp.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/WEB_002dINF/pages/main_jsp.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/controller/CreateController.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/controller/CreateController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/crowdfunding/Project.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/crowdfunding/Project.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/CreateController.class" afterPath="$PROJECT_DIR$/target/classes/controller/CreateController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/crowdfunding/Project.class" afterPath="$PROJECT_DIR$/target/classes/crowdfunding/Project.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/ProjectDAO.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/ProjectDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/ProjectDAOImpl.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/ProjectDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDAO.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDAOImpl.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/service/ProjectService.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/service/ProjectService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/service/UserService.class" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/classes/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/ProjectDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProjectDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/ProjectDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProjectDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/UserDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/dao/UserDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/service/ProjectService.class" afterPath="$PROJECT_DIR$/target/classes/service/ProjectService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CreateController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/crowdfunding/Project.java" afterPath="$PROJECT_DIR$/src/main/java/crowdfunding/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ProjectService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/category.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/category.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/create.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/create.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/donate.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/donate.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/error.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/error.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/head.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/head.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/main.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/newproject.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/newproject.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/project.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/project.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/thanks.jsp" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/pages/thanks.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/Crow-1.0-SNAPSHOT/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/category.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/category.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/create.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/create.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/donate.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/donate.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/newproject.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/newproject.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/project.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/project.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/thanks.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/thanks.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="Crowdfunding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -302,6 +306,10 @@
         <option name="myItemId" value="MySQL - sql7112197@sql7.freemysqlhosting.net" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="users" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -310,10 +318,6 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="MySQL - sql7112197@sql7.freemysqlhosting.net" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="user" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -331,20 +335,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - sql7112197@sql7.freemysqlhosting.net" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="donates" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -352,11 +342,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp">
+      <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2733813">
-              <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7125645">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding>
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/SearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/search.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.444445">
+              <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.0">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -385,20 +420,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ConnectionMySQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/connection/ConnectionMySQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DonateDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/DobateDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CategoyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/DonateDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/categories.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/donate.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/thanks.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/DonateService.java" />
         <option value="$PROJECT_DIR$/src/main/java/crowdfunding/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/DonateController.java" />
@@ -415,27 +441,36 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/system.properties" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/ProjectService.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/thankforcreate.jsp" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/crowdfunding/Project.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/thanks.jsp" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp" />
         <option value="dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.users" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/create.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CreateController.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/newproject.jsp" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/donate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/category.jsp" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/project.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/newproject.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/donate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/SeachController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/leftmenu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dafac13b-4c03-4d0d-be4c-986a1702f5d4/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/service/ProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/notfound.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/search.jsp" />
       </list>
     </option>
   </component>
@@ -768,6 +803,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -893,14 +930,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -917,6 +946,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -939,6 +976,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Crowdfunding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crowdfunding" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -971,8 +1060,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1579,7 +1666,11 @@
       <workItem from="1459231263300" duration="20640000" />
       <workItem from="1459316281684" duration="6638000" />
       <workItem from="1459323118805" duration="16300000" />
-      <workItem from="1459403473025" duration="611000" />
+      <workItem from="1459403473025" duration="4110000" />
+      <workItem from="1459409604349" duration="53000" />
+      <workItem from="1459409698221" duration="23000" />
+      <workItem from="1459409736660" duration="8297000" />
+      <workItem from="1459422314969" duration="10670000" />
     </task>
     <task id="LOCAL-00001" summary="first deploy">
       <created>1459234774018</created>
@@ -1621,7 +1712,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87651000" />
+    <option name="totallyTimeSpent" value="110221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1637,34 +1728,69 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32668883" sideWeight="0.49554896" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.50294983" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32447398" sideWeight="0.5059347" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779622" sideWeight="0.49406528" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668883" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23961425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21810089" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933994" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32447398" sideWeight="0.5059347" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328635" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.014094955" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668883" sideWeight="0.49554896" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.49705014" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32447398" sideWeight="0.49406528" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668883" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23961425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1693,85 +1819,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/FetchType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19600727">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/crowdfunding/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.categories">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CategoyDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_74/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5243902">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/crowdfunding/Donate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#413#414#0" expanded="false" />
-            <element signature="e#459#460#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/crowdfunding/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.dtd">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3490909">
+        <state vertical-scroll-proportion="0.0">
           <caret line="424" column="10" selection-start-line="424" selection-start-column="10" selection-end-line="424" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1806,7 +1864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Crowdfunding.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3626943">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
         </state>
       </provider>
@@ -1827,131 +1885,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/DonateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40068492">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="e#411#412#0" expanded="false" />
-            <element signature="e#451#452#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43598616">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="e#472#473#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/jdk1.8.0_74/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33217993">
+        <state vertical-scroll-proportion="0.0">
           <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16304348">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1865285">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5595855">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#587#588#0" expanded="false" />
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#757#758#0" expanded="false" />
-          </folding>
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.444445">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar!/org/apache/commons/fileupload/FileUploadBase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5858951">
+        <state vertical-scroll-proportion="0.0">
           <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/multipart/commons/CommonsFileUploadSupport.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38155514">
+        <state vertical-scroll-proportion="0.0">
           <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/ThanksController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59067357">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="87" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="87" />
           <folding />
         </state>
@@ -1961,22 +1945,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72282606">
+        <state vertical-scroll-proportion="0.0">
           <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5471697">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2003,28 +1978,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/thanks.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.185185">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.users">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/create.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59386283">
-          <caret line="25" column="80" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
           <folding />
         </state>
       </provider>
@@ -2039,18 +1994,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.donates">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/create.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="80" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/category.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="65" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/project.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/newproject.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.666667">
-          <caret line="81" column="101" selection-start-line="81" selection-start-column="101" selection-end-line="81" selection-end-column="101" />
+        <state vertical-scroll-proportion="-32.666668">
+          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/donate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.518518">
-          <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="23" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -2058,31 +2073,63 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/category.jsp">
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/leftmenu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032490976">
-          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/crowdfunding/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6263538">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/project.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.666666">
-          <caret line="46" column="61" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48294434">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46678635">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dafac13b-4c03-4d0d-be4c-986a1702f5d4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52667814">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -2100,7 +2147,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.donates">
+    <entry file="dbDummy://dbtable:/d1d65c94/dafac13b-4c03-4d0d-be4c-986a1702f5d4/sql7112197.users">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2113,19 +2160,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/head.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProjectDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/main.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2733813">
-          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="55" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56137186">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="32" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62068963">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.0">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/notfound.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.444445">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7125645">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,32 +2,34 @@
          pageEncoding="ISO-8859-1" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Error page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://kidmondo.com/wp-content/themes/kidmondo2/images/favicon.ico" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Nothing found for  404</title>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <style>
-        .fig {
-            text-align: center; /* ???????????? ?? ?????? */
-        }
+        body {background: #f9fee8;margin: 0; padding: 20px; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#666666;}
+        .error_page {width: 600px; padding: 50px; margin: auto;}
+        .error_page h1 {margin: 20px 0 0;}
+        .error_page p {margin: 10px 0; padding: 0;}
+        a {color: #9caa6d; text-decoration:none;}
+        a:hover {color: #9caa6d; text-decoration:underline;}
     </style>
+
 </head>
-<body>
-<div class="text-center fig">
 
-    <img src="http://img2.wikia.nocookie.net/__cb20100427134246/half-life/en/images/b/b8/Error.jpg" alt="" style="margin-top: 5cm">
-    <h2 style="margin-top: 2cm">Sorry but project with same name exist</h2>
-    <form action="/" method="POST" style="margin-top: 2cm">
-        <input class="btn btn-success" type="submit" value="Go to the main page"/>
-    </form>
+<body class="login">
+<div class="error_page">
+    <img alt="Kidmondo_face_sad" src="http://kidmondo.com/wp-content/themes/kidmondo2/images/kidmondo_face_sad.gif" />
+    <h1>We're sorry...</h1>
+    <p>The page or project you are looking for cannot be found.</p>
+    <p><a href="/">Return to the homepage</a></p>
+
 </div>
-
 </body>
-</html>
+</html><!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->
+

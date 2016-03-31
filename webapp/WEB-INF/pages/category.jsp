@@ -65,7 +65,7 @@
                                  style="width:${project.donate_amount/project.needAmount*100}%">
                             </div>
                         </div>
-                        <p>${project.donate_amount} pledged of ${project.needAmount} goal</p>
+                        <p>$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                         <form action="/categories/${project.category.id}/projects/${project.id}/donate" method="POST">
                             <input hidden name="projectId" value="${project.id}">
                             <input class="btn btn-success" type="submit" value="Donate"/>
