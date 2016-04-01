@@ -51,11 +51,10 @@
 
     <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7112197"/>
-        <property name="username" value="sql7112197"/>
-        <property name="password" value="TmEFpwxpfe"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/Crowdfunding"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
     </bean>
-
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">

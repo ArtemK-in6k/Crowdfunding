@@ -44,9 +44,9 @@ public class UserDAOImpl implements UserDAO {
         sessionFactory.getCurrentSession().update(user);
     }
 
-    public User findByPartOfUserName(String userName) {
+    public List<User> findByPartOfUserName(String userName) {
         Query query = sessionFactory.getCurrentSession().createQuery("from users where CONCAT (firstName, lastName) like :userName");
         query.setString("userName","%"+userName+"%");
-        return (User)query.uniqueResult();
+        return query.list();
     }
 }

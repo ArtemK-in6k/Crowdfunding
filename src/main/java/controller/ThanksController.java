@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import service.CategoryService;
 import service.DonateService;
 import service.ProjectService;
 import service.UserService;
@@ -25,11 +26,14 @@ public class ThanksController {
     UserService userService;
     @Autowired
     DonateService donateService;
-
+    @Autowired
+    CategoryService categoryService;
 
     @RequestMapping(value = "/thanks", method = RequestMethod.POST)
     public String thanks(Model model, HttpServletRequest httpServletRequest) {
 
+
+        System.out.println(httpServletRequest.getAttribute("projectId"));
         int projectId = Integer.parseInt(httpServletRequest.getParameter("projectId"));
         String firstName = httpServletRequest.getParameter("firstname");
         String lastName = httpServletRequest.getParameter("lastname");
@@ -39,8 +43,7 @@ public class ThanksController {
         User user;
         Project project = projectService.findById(projectId);
 
-        if (userService.findByEmail(email) ==null){
-
+        if (userService.findByEmail(email) == null){
             user = new User();
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -65,6 +68,7 @@ public class ThanksController {
         donateService.insert(donate);
 
         model.addAttribute("project",project);
+        model.addAttribute("categories",categoryService.selectAll());
 
         return "thanks";
     }

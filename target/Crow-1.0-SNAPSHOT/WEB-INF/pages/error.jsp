@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="http://kidmondo.com/wp-content/themes/kidmondo2/images/favicon.ico" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Nothing found for  404</title>
+    <title>Nothing found for 404</title>
 
     <style>
         body {background: #f9fee8;margin: 0; padding: 20px; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#666666;}

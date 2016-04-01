@@ -5,6 +5,7 @@ import dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,22 +24,19 @@ public class UserService {
     public User findByEmail(String email){
         return userDAO.findByEmail(email);
     }
-    public User findByPartOfUserName(String userName) {
+
+    public List<User> findByPartOfUserName(String userName) {
         String[] usersName = userName.split(" ");
-        User user;
+        List<User> users = new ArrayList<User>();
 
         if (usersName.length == 1){
-            user = userDAO.findByPartOfUserName(userName);
+            users = userDAO.findByPartOfUserName(userName);
         }else if (usersName.length == 2){
-            user = userDAO.findByPartOfUserName(usersName[0]+usersName[1]);
-            if (user == null){
-                user = userDAO.findByPartOfUserName(usersName[1]+usersName[2]);
-            }
-        }else {
-            user = null;
+            users = userDAO.findByPartOfUserName(usersName[0]+usersName[1]);
+            users.addAll(userDAO.findByPartOfUserName(usersName[1]+usersName[2]));
         }
 
-        return user;
+        return users;
     }
 
 }

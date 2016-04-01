@@ -41,7 +41,6 @@ public class CreateController {
         double needAmount =Double.parseDouble(httpServletRequest.getParameter("needAmount"));
         String projectName = httpServletRequest.getParameter("projectName");
         String aboutProject = httpServletRequest.getParameter("aboutProject");
-        System.out.println(aboutProject);
         String image = httpServletRequest.getParameter("image");
         double donateAmount = 0;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -75,6 +74,7 @@ public class CreateController {
             return "error";
         }
 
+        model.addAttribute("categories",categoryService.selectAll());
         model.addAttribute("project",project);
         return "create";
     }

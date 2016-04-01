@@ -2,12 +2,10 @@ package controller;
 
 import crowdfunding.Category;
 import crowdfunding.Project;
-import crowdfunding.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import service.CategoryService;
 import service.ProjectService;
 
@@ -22,7 +20,6 @@ public class MainController {
 
     @Autowired
     ProjectService projectService;
-
 
     @RequestMapping
     public String main(Model model, HttpSession session) {

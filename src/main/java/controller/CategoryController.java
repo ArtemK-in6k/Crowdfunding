@@ -30,8 +30,8 @@ public class CategoryController {
 
         model.addAttribute("idcategory",id);
         model.addAttribute("projects",projects);
-        model.addAttribute("categories",categories);
         model.addAttribute("category",category);
+        model.addAttribute("categories",categoryService.selectAll());
 
         return "category";
     }
@@ -42,6 +42,7 @@ public class CategoryController {
         Category category = categoryService.findById(id);
 
         model.addAttribute("category",category);
+        model.addAttribute("categories",categoryService.selectAll());
 
         return "newproject";
     }
