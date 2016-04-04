@@ -19,10 +19,19 @@ public class User {
     @Column(length = 80)
     private String email;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "user")
+    @Column
+    private String login;
+
+    @Column
+    private String password;
+
+    @Column
+    private String role;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Project> projects;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Donate> donates;
 
 
@@ -75,5 +84,33 @@ public class User {
 
     public void setDonates(List<Donate> donates) {
         this.donates = donates;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String fullName() {
+        return firstName + lastName;
     }
 }

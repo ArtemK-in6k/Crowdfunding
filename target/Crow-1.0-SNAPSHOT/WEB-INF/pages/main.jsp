@@ -53,15 +53,15 @@
                             </a>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                     aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
+                                     aria-valuenow="${project.percendDonate()}" aria-valuemin="0"
                                      aria-valuemax="100"
-                                     style="width:${project.donate_amount/project.needAmount*100}%">
+                                     style="width:${project.percendDonate()}%">
                                 </div>
                             </div>
                         </div>
                         <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                         <p class="text-center">This project was created : ${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
-                        <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
+                        <p class="text-center">by ${project.user.fullName()}</p>
                     </div>
                 </div>
             </c:forEach>

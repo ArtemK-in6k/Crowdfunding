@@ -33,7 +33,7 @@ public class UserService {
             users = userDAO.findByPartOfUserName(userName);
         }else if (usersName.length == 2){
             users = userDAO.findByPartOfUserName(usersName[0]+usersName[1]);
-            users.addAll(userDAO.findByPartOfUserName(usersName[1]+usersName[2]));
+            users.addAll(userDAO.findByPartOfUserName(usersName[1]+usersName[0]));
         }
 
         return users;

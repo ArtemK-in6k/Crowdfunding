@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = {"/main","/"})
 public class MainController {
     @Autowired
     CategoryService categoryService;

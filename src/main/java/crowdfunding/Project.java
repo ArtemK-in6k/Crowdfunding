@@ -34,11 +34,12 @@ public class Project {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "project")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "project")
     private List<Donate> donateList;
 
     public Project() {
     }
+
     public int getId() {
         return id;
     }
@@ -133,6 +134,14 @@ public class Project {
 
     public void setDonateList(List<Donate> donateList) {
         this.donateList = donateList;
+    }
+
+    public double percendDonate() {
+        return donate_amount / needAmount * 100;
+    }
+
+    public String dateFormat() {
+        return ""+date.getDate() +"-"+ (date.getMonth() + 1) +"-"+ (date.getYear() + 1900);
     }
 
 }
