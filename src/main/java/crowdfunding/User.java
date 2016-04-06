@@ -1,10 +1,11 @@
 package crowdfunding;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity(name = "users")
-public class User {
+public class User implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +21,16 @@ public class User {
     private String email;
 
     @Column
-    private String login;
+    private String username;
 
     @Column
     private String password;
 
     @Column
     private String role;
+
+    @Column
+    private boolean enabled;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Project> projects;
@@ -36,6 +40,16 @@ public class User {
 
 
     public User() {
+    }
+
+    public User(String firstName, String lastName, String email, String username, String password, String role,boolean enabled) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.enabled = enabled;
     }
 
     public int getId() {
@@ -86,12 +100,20 @@ public class User {
         this.donates = donates;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String getPassword() {
@@ -111,6 +133,6 @@ public class User {
     }
 
     public String fullName() {
-        return firstName + lastName;
+        return firstName +" "+ lastName;
     }
 }

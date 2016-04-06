@@ -47,39 +47,39 @@
             <div class="but">
                 <form action="/categories/${idcategory}/newproject" method="POST">
                     <input class="btn btn-success" type="submit" value="Create project"/>
+                    <input type="hidden" name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
                 </form>
             </div>
         </div>
         <h3 class="text-success text-center">Category of ${category.title}</h3>
-        <c:forEach items="${projects}" var="project">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a href="/categories/${project.category.id}/projects/${project.id}">
-                        <img class="img-thumbnail" src="${project.image}"
-                             alt="placeholder image" style="width: 300px; height: 300px;"/>
-                    </a>
-                    <div class="caption text-center">
+        <div class="col-md-8">
+            <c:forEach items="${projects}" var="project">
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
                         <a href="/categories/${project.category.id}/projects/${project.id}">
-                            <p class="lead">${project.nameProject}</p></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                 aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="width:${project.donate_amount/project.needAmount*100}%">
+                            <img class="img-responsive" src="${project.image}" alt="placeholder image"
+                                 style="width: 200px; height: 200px;"/>
+                        </a>
+                        <div class="caption text-center">
+                            <a href="/categories/${project.category.id}/projects/${project.id}">
+                                <p class="lead">${project.nameProject}</p>
+                            </a>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                     aria-valuenow="${project.percendDonate()}" aria-valuemin="0"
+                                     aria-valuemax="100"
+                                     style="width:${project.percendDonate()}%">
+                                </div>
                             </div>
                         </div>
                         <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
-                        <p class="text-center">This project was created : ${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
-                        <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
-                        <form action="/categories/${project.category.id}/projects/${project.id}/donate" method="POST">
-                            <input hidden name="projectId" value="${project.id}">
-                            <input class="btn btn-success" type="submit" value="Donate"/>
-                        </form>
+                        <p class="text-center">This project was created : ${project.dateFormat()}</p>
+                        <p class="text-center">by ${project.user.fullName()}</p>
                     </div>
-
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </div>
     </div>
 </div>
 

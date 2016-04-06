@@ -40,7 +40,7 @@
         </div>
         <h3 class="text-success text-center">Search result</h3>
 
-        <h2 class="text-center text-warning">Sorry, but no results have been found</h2>
+        <h2 class="text-center text-warning">Sorry, but no results were found</h2>
     </div>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"

@@ -1,10 +1,11 @@
 package crowdfunding;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity(name = "donates")
-public class Donate {
+public class Donate implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

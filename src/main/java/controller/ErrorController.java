@@ -12,10 +12,6 @@ public class ErrorController {
 
     @RequestMapping("/error")
     public String main(Model model, HttpSession session) {
-
-
-
-
         return "error";
     }
 }

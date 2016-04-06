@@ -33,7 +33,6 @@ public class ThanksController {
     public String thanks(Model model, HttpServletRequest httpServletRequest) {
 
 
-        System.out.println(httpServletRequest.getAttribute("projectId"));
         int projectId = Integer.parseInt(httpServletRequest.getParameter("projectId"));
         String firstName = httpServletRequest.getParameter("firstname");
         String lastName = httpServletRequest.getParameter("lastname");

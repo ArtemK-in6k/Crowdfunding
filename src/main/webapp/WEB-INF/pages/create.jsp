@@ -49,6 +49,8 @@
                 <h2>Thank you for creation ${project.nameProject}</h2>
                 <form action="/" method="POST">
                     <input class="btn btn-success" type="submit" value="Go to the main page"/>
+                    <input type="hidden" name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
                 </form>
             </div>
         </div>

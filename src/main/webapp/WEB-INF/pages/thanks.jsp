@@ -43,6 +43,8 @@
             <img src="http://www.onetip.net/wp-content/uploads/2014/07/thanks-sms-for-friends.jpg" alt="sorry">
             <form action="/" method="POST" style="margin-top: 2cm">
                 <input class="btn btn-success" type="submit" value="Go to the main page"/>
+                <input type="hidden" name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
             </form>
         </div>
     </div>

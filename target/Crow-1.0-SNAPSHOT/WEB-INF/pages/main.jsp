@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
-                        <p class="text-center">This project was created : ${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
+                        <p class="text-center">This project was created : ${project.dateFormat()}</p>
                         <p class="text-center">by ${project.user.fullName()}</p>
                     </div>
                 </div>

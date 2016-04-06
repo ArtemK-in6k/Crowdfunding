@@ -39,12 +39,13 @@
         </div>
         <div class="col-sm-8 col-md-6">
             <div class="thumbnail">
-                <img class="img-thumbnail text-center" src="${project.image}" alt="placeholder image"
+
+                <img class="img-responsive" src="${project.image}" alt="placeholder image"
                      style="width: 500px; height: 500px;"/>
                 <div class="caption">
                     <h3 class="text-success text-center">${project.nameProject}</h3>
                     <p class="text-center">This project was created
-                        : ${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
+                        : ${project.dateFormat()}</p>
                     <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
                     <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                     <div class="progress">
@@ -52,12 +53,13 @@
                              aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
                              aria-valuemax="100" style="width:${project.donate_amount/project.needAmount*100}%"/>
                     </div>
-                    <span/>
                 </div>
                 <form class="text-center" action="/categories/${project.category.id}/projects/${project.id}/donate"
                       method="POST">
                     <input hidden name="projectId" value="${projectId}">
                     <input class="btn btn-success" type="submit" value="Donate"/>
+                    <input type="hidden" name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
                 </form>
             </div>
             <div class="text-center">

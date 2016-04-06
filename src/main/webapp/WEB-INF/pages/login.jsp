@@ -2,12 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <%--<spring:url value="/resources/css/form.css" var="form"/>--%>
-    <%--<link href="${form}" type="text/css" rel="stylesheet"/>--%>
-    <link th:href="@{/resources/css/form.css}" type="text/css" rel="stylesheet" href="/resources/css/form.css"/>
-
-
+    <spring:url value="/resources/css/form.css" var="form"/>
+    <link href="${form}" type="text/css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
             <input type="text" placeholder="Username" name="user"/>
             <input type="password" placeholder="Password" name="password"/>
             <button> Sign in</button>
-            <a href="#"><p> Don't have an account? Register </p></a>
+            <a href="/register"><p> Don't have an account? Register </p></a>
         </div>
         <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}"/>

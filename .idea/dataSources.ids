@@ -131,7 +131,20 @@
       <column id="37" parent="5" name="lastName">
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="38" parent="5" name="PRIMARY">
+      <column id="38" parent="5" name="password">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="39" parent="5" name="role">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="40" parent="5" name="username">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="41" parent="5" name="enabled">
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <key id="42" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

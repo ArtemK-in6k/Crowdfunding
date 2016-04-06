@@ -49,4 +49,10 @@ public class UserDAOImpl implements UserDAO {
         query.setString("userName","%"+userName+"%");
         return query.list();
     }
+
+    public User findByDisplayName(String displayName) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from users where username = :displayName");
+        query.setString("displayName",displayName);
+        return (User)query.uniqueResult();
+    }
 }

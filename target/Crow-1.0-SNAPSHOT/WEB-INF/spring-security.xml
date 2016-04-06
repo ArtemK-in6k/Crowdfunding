@@ -6,8 +6,16 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
+    <beans:bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/Crowdfunding"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="root"/>
+    </beans:bean>
+
     <http auto-config='true'>
-        <intercept-url pattern="/resources/**" access="permitAll" />
+        <intercept-url pattern="/resources/**" access="permitAll"/>
+        <intercept-url pattern="/register" access="permitAll"/>
         <intercept-url pattern="/sign-in" access="permitAll"/>
         <intercept-url pattern="/**" access="hasRole('USER')"/>
         <form-login
@@ -16,16 +24,17 @@
                 authentication-failure-url="/error"
                 username-parameter="user"
                 password-parameter="password"/>
-
-        <!--<logout logout-success-url="/login?logout" />-->
         <csrf/>
     </http>
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="mkyong" password="123456" authorities="ROLE_USER"/>
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query=
+                                       "select username,password,enabled from users where username=?"
+                               authorities-by-username-query=
+                                       "select username, role from users where username =?  "
+            />
         </authentication-provider>
     </authentication-manager>
 
