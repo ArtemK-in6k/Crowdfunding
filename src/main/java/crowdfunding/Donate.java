@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity(name = "donates")
-public class Donate implements Serializable {
+public class Donate{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

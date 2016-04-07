@@ -2,8 +2,6 @@ package bean;
 
 import crowdfunding.Project;
 
-import java.sql.Timestamp;
-
 public class ProjectResponse {
 
     private int id;
@@ -18,13 +16,17 @@ public class ProjectResponse {
 
     private double donate_amount;
 
-    private Timestamp date;
+    private String date;
 
     private String status;
 
     private String nameProject;
 
     private int categoryId;
+
+    private double percendDonate;
+
+    private String fullNameUser;
 
     public ProjectResponse() {
     }
@@ -36,9 +38,12 @@ public class ProjectResponse {
         aboutProject = project.getAboutProject();
         image = project.getImage();
         donate_amount = project.getDonate_amount();
-        date = project.getDate();
+        date = project.dateFormat();
         status = project.getStatus();
         nameProject = project.getNameProject();
+        percendDonate = project.percendDonate();
+        fullNameUser = project.getUser().fullName();
+
     }
 
 
@@ -98,12 +103,28 @@ public class ProjectResponse {
         this.donate_amount = donate_amount;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public double getPercendDonate() {
+        return percendDonate;
+    }
+
+    public void setPercendDonate(double percendDonate) {
+        this.percendDonate = percendDonate;
+    }
+
+    public String getFullNameUser() {
+        return fullNameUser;
+    }
+
+    public void setFullNameUser(String fullNameUser) {
+        this.fullNameUser = fullNameUser;
     }
 
     public String getStatus() {

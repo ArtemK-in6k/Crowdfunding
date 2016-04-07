@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity(name = "categories")
-public class Category implements Serializable{
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

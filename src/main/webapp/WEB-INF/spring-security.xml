@@ -17,7 +17,8 @@
         <intercept-url pattern="/resources/**" access="permitAll"/>
         <intercept-url pattern="/register" access="permitAll"/>
         <intercept-url pattern="/sign-in" access="permitAll"/>
-        <intercept-url pattern="/**" access="hasRole('USER')"/>
+        <intercept-url pattern="/**" access="permitAll"/>
+        <!--<intercept-url pattern="/**" access="hasRole('USER')"/>-->
         <form-login
                 login-page="/sign-in"
                 default-target-url="/"

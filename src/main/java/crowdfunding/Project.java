@@ -1,19 +1,18 @@
 package crowdfunding;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
 
 @Entity(name = "projects")
-public class Project implements Serializable {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
     @Column
@@ -30,6 +29,7 @@ public class Project implements Serializable {
     private String status;
     @Column
     private String nameProject;
+
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
@@ -142,7 +142,23 @@ public class Project implements Serializable {
     }
 
     public String dateFormat() {
-        return ""+date.getDate() +"-"+ (date.getMonth() + 1) +"-"+ (date.getYear() + 1900);
+        return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
     }
 
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id=" + id +
+                ", user=" + user +
+                ", needAmount=" + needAmount +
+                ", aboutProject='" + aboutProject + '\'' +
+                ", image='" + image + '\'' +
+                ", donate_amount=" + donate_amount +
+                ", date=" + date +
+                ", status='" + status + '\'' +
+                ", nameProject='" + nameProject + '\'' +
+                ", category=" + category +
+                ", donateList=" + donateList +
+                '}';
+    }
 }
