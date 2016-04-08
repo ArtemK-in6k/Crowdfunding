@@ -47,39 +47,40 @@
                         </c:forEach>
                     </ul>
                 </div>
-                <select class="selectpicker">
-                    <option>Mustard</option>
-                    <option>Ketchup</option>
-                    <option>Relish</option>
+                <select ng-model="orderProp" class="selectpicker">
+                    <option value="1">All</option>
+                    <option value="Actual">Actual</option>
+                    <option value="Archive">Archive</option>
+                    <option value="Whip-round">Whip-round</option>
                 </select>
             </nav>
         </div>
 
         <h3 class="text-success text-center">Projects now</h3>
         <div class="col-md-8">
-                <div class="col-sm-6 col-md-6" ng-repeat="projectt in projects">
-                    <div class="thumbnail">
+            <div class="col-sm-6 col-md-6" ng-repeat="projectt in projects | filter:orderProp">
+                <div class="thumbnail">
+                    <a href="/categories/{{projectt.categoryId}}/projects/{{projectt.id}}">
+                        <img ng-src={{projectt.image}} class="img-responsive" alt="placeholder image"
+                             style="width: 200px; height: 200px;"/>
+                    </a>
+                    <div class="caption text-center">
                         <a href="/categories/{{projectt.categoryId}}/projects/{{projectt.id}}">
-                            <img ng-src={{projectt.image}} class="img-responsive" alt="placeholder image"
-                                 style="width: 200px; height: 200px;"/>
+                            <p class="lead">{{projectt.nameProject}}</p>
                         </a>
-                        <div class="caption text-center">
-                            <a href="/categories/{{projectt.categoryId}}/projects/{{projectt.id}}">
-                                <p class="lead">{{projectt.nameProject}}</p>
-                            </a>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                     aria-valuenow="{{projectt.percendDonate}}" aria-valuemin="0"
-                                     aria-valuemax="100"
-                                     style="width:{{projectt.percendDonate}}%">
-                                </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                 aria-valuenow="{{projectt.percendDonate}}" aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width:{{projectt.percendDonate}}%">
                             </div>
                         </div>
-                        <p class="text-center">$ {{projectt.donate_amount}} pledged of $ {{projectt.needAmount}} goal</p>
-                        <p class="text-center">This project was created : {{projectt.date}}</p>
-                        <p class="text-center">by {{projectt.fullNameUser}}</p>
                     </div>
+                    <p class="text-center">$ {{projectt.donate_amount}} pledged of $ {{projectt.needAmount}} goal</p>
+                    <p class="text-center">This project was created : {{projectt.date}}</p>
+                    <p class="text-center">by {{projectt.fullNameUser}}</p>
                 </div>
+            </div>
         </div>
     </div>
 </div>

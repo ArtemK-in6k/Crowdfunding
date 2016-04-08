@@ -9,5 +9,5 @@ crowdfundingApp.controller('ProjectList', ['$scope', '$http', function($scope, $
         console.log(datat);
     })
     ;
-
+    $scope.orderProp = '1';
 }]);
