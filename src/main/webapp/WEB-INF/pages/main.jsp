@@ -26,8 +26,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <spring:url value="/resources/angular/controllers.js" var="contrJS"/>
     <script src="${contrJS}"></script>
-
 </head>
+
 <body ng-controller="ProjectList">
 
 <jsp:include page="head.jsp"/>
