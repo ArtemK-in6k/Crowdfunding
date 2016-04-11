@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity(name = "donates")
-public class Donate implements Serializable {
+public class Donate{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -75,6 +75,10 @@ public class Donate implements Serializable {
 
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    public String dateFormat() {
+        return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
     }
 
 }

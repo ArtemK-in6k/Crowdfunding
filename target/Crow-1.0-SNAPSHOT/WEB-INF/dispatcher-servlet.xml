@@ -24,12 +24,12 @@
     <context:component-scan base-package="dao"/>
 
     <mvc:annotation-driven/>
+
     <mvc:resources mapping="/resources/**" location="/resources/" />
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-
-    <!--<context:annotation-config/>-->
+    <context:annotation-config/>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -49,6 +49,7 @@
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
 
     <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
