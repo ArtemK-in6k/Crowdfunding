@@ -43,7 +43,6 @@ public class ProjectResponse {
         nameProject = project.getNameProject();
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
-
     }
 
 

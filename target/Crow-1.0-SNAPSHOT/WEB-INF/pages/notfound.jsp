@@ -26,11 +26,11 @@
         <div class="col-md-3">
             <nav class="navmenu navmenu-default" role="navigation">
                 <div>
-                    <h4 class="text-success">Categories</h4>
+                    <h4 class="text-success" style="text-indent: 60px">Categories</h4>
                     <ul class="nav navmenu-nav" style="width: 200px">
                         <c:forEach items="${categories}" var="category">
                             <li>
-                                <a style="background-color: lightsteelblue" href="/categories/${category.id}"
+                                <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
                                    class="list-group-item">${category.title}</a>
                             </li>
                         </c:forEach>

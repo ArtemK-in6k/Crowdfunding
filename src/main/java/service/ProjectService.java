@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ProjectService {
@@ -43,6 +44,14 @@ public class ProjectService {
     public List<ProjectResponse> getAllProjects() {
         List<Project> projects = projectDAO.selectAll();
         List<ProjectResponse> projectResponses = new ArrayList<ProjectResponse>();
+        for (Project project : projects) {
+            projectResponses.add(new ProjectResponse(project));
+        }
+        return projectResponses;
+    }
+
+    public List<ProjectResponse> getWrapperProjectsInResponse(Set<Project> projects) {
+        List projectResponses = new ArrayList<ProjectResponse>();
         for (Project project : projects) {
             projectResponses.add(new ProjectResponse(project));
         }

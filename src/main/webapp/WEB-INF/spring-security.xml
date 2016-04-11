@@ -11,14 +11,16 @@
         <beans:property name="url" value="jdbc:mysql://localhost:3306/Crowdfunding"/>
         <beans:property name="username" value="root"/>
         <beans:property name="password" value="root"/>
+
     </beans:bean>
+
 
     <http auto-config='true'>
         <intercept-url pattern="/resources/**" access="permitAll"/>
         <intercept-url pattern="/register" access="permitAll"/>
         <intercept-url pattern="/sign-in" access="permitAll"/>
         <intercept-url pattern="/**" access="permitAll"/>
-        <!--<intercept-url pattern="/**" access="hasRole('USER')"/>-->
+        <intercept-url pattern="/**" access="hasRole('USER')"/>
         <form-login
                 login-page="/sign-in"
                 default-target-url="/"

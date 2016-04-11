@@ -25,11 +25,11 @@
         <div class="col-md-3">
             <nav class="navmenu navmenu-default" role="navigation">
                 <div>
-                    <h4 class="text-success">Categories</h4>
+                    <h4 class="text-success" style="text-indent: 60px">Categories</h4>
                     <ul class="nav navmenu-nav" style="width: 200px">
                         <c:forEach items="${categories}" var="category">
                             <li>
-                                <a style="background-color: lightsteelblue" href="/categories/${category.id}"
+                                <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
                                    class="list-group-item">${category.title}</a>
                             </li>
                         </c:forEach>
@@ -38,7 +38,7 @@
             </nav>
         </div>
         <div class="col-sm-8 col-md-6">
-            <div class="thumbnail">
+            <div class="thumbnail" style="margin-top: 15px">
 
                 <img class="img-responsive" src="${project.image}" alt="placeholder image"
                      style="width: 500px; height: 500px;"/>
@@ -50,8 +50,8 @@
                     <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             aria-valuenow="${project.donate_amount/project.needAmount*100}" aria-valuemin="0"
-                             aria-valuemax="100" style="width:${project.donate_amount/project.needAmount*100}%"/>
+                             aria-valuenow="${project.percendDonate()}" aria-valuemin="0"
+                             aria-valuemax="100" style="width:${project.percendDonate()}%"/>
                     </div>
                 </div>
                 <form class="text-center" action="/categories/${project.category.id}/projects/${project.id}/donate"
@@ -68,13 +68,12 @@
         </div>
     </div>
     <c:forEach items="${donates}" var="donate">
-        <div class="col-sm-4 col-md-3" style="float: right; clear: right">
+        <div class="col-sm-4 col-md-3" style="float: right; clear: right; margin-top: 15px">
             <div class="thumbnail">
                 <p>Donate : $${donate.amount}</p>
-                <p>First Name : ${donate.user.firstName} </p>
-                <p>Last Name : ${donate.user.lastName} </p>
-                <p>email : ${donate.user.email} </p>
-                <p>Date : ${donate.date.date}-${donate.date.month + 1}-${donate.date.year + 1900} </p>
+                <p>Full Name : ${donate.user.fullName()} </p>
+                <p>Email : ${donate.user.email} </p>
+                <p>Date : ${donate.dateFormat()}</p>
             </div>
         </div>
     </c:forEach>

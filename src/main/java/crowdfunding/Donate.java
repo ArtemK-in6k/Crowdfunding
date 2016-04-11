@@ -77,4 +77,8 @@ public class Donate{
         this.date = date;
     }
 
+    public String dateFormat() {
+        return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
+    }
+
 }
