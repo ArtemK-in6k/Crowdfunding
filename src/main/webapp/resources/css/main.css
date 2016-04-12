@@ -36,3 +36,12 @@ h4.title{
 .projects-block{
     padding-top: 15px;
 }
+
+.search-box-form{
+    line-height: 50px;
+}
+
+h4[class='empty-list']{
+    margin-top: 15px;
+    color: red;
+}
