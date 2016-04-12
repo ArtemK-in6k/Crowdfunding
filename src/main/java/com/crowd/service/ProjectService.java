@@ -5,11 +5,14 @@ import com.crowd.bean.ProjectResponse;
 import com.crowd.dao.ProjectDAO;
 import com.crowd.entity.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ProjectService {
@@ -56,5 +59,10 @@ public class ProjectService {
             projectResponses.add(new ProjectResponse(project));
         }
         return projectResponses;
+    }
+
+    public ResponseEntity<List<ProjectResponse>> getProjectsAllByCategory(int category){
+        return new ResponseEntity<List<ProjectResponse>>(projectDAO.findAllByCategory(category)
+                .stream().map(ProjectResponse::new).collect(Collectors.toList()), HttpStatus.OK);
     }
 }
