@@ -10,43 +10,32 @@
 
     }
 </style>
-<div class="row" ng-controller="CategoryProjectList">
-    <div class="col-md-3" style="height: 600px">
-        <nav class="navmenu navmenu-default" role="navigation">
-            <div>
-                <h4 class="text-success" style="text-indent: 60px">Categories</h4>
-                <ul class="nav navmenu-nav" style="width: 200px">
-                    <c:forEach items="${categories}" var="category">
-                        <li>
-                            <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
-                               class="list-group-item">${category.title}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </nav>
+<div class="row" ng-controller="ProjectList">
 
-        <div class="but">
-            <form action="/categories/${idcategory}/newproject" method="POST">
-                <input class="btn btn-success" type="submit" value="Create project"/>
-                <input type="hidden" name="${_csrf.parameterName}"
-                       value="${_csrf.token}"/>
-            </form>
+    <h4 class="text-success title" align="center">Category of ${category.title}</h4>
+
+    <div class="row">
+        <div class="pull-right">
+            <div class="form-inline">
+                <div class="form-group">
+                    <select ng-model="filterOrd" class="selectpicker ">
+                        <option value="">All</option>
+                        <option value="Actual">Actual</option>
+                        <option value="Archive">Archive</option>
+                        <option value="Whip-round">Whip-round</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <a href="/categories/${idcategory}/newproject" class="btn btn-success">Create project</a>
+
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <h3 class="text-success text-center">Category of ${category.title}</h3>
 
-    <div style="float:right;top:10px;right:30px;">
-        <select ng-model="filterOrd" class="selectpicker" style="max-width:90%;">
-            <option value="">All</option>
-            <option value="Actual">Actual</option>
-            <option value="Archive">Archive</option>
-            <option value="Whip-round">Whip-round</option>
-        </select>
-    </div>
-
-    <div class="col-md-8">
+    <div class="col-md-8 projects-block">
         <div class="col-sm-6 col-md-6" ng-repeat="project in projects | filter : filterOrd">
             <div class="thumbnail">
                 <a href="/categories/{{project.categoryId}}/projects/{{project.id}}">
@@ -66,7 +55,7 @@
                     </div>
                 </div>
                 <p class="text-center">$ {{project.donate_amount}} pledged of $ {{project.needAmount}} goal</p>
-                <p class="text-center">This project was created : {{project.date}}</p>
+                <p class="text-center">Created : {{project.date}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
             </div>

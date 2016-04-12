@@ -4,22 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
     <div class="row">
-        <div class="col-md-3">
-            <nav class="navmenu navmenu-default" role="navigation">
-                <div>
-                    <h4 class="text-success" style="text-indent: 60px">Categories</h4>
-                    <ul class="nav navmenu-nav" style="width: 200px">
-                        <c:forEach items="${categories}" var="category">
-                            <li>
-                                <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
-                                   class="list-group-item">${category.title}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="col-sm-8 col-md-6">
+
+        <div class="col-sm-8 col-md-8">
             <div class="thumbnail" style="margin-top: 15px">
 
                 <img class="img-responsive" src="${project.image}" alt="placeholder image"
@@ -57,4 +43,3 @@
             </div>
         </div>
     </c:forEach>
-</div>
