@@ -1,8 +1,9 @@
 'use strict';
 
-var crowdfunding = angular.module('crowdfunding', []);
+var crowdfundingApp = angular.module('crowdfundingApp.categories', []);
 
-crowdfunding.controller('CategoryProjectList', ['$scope', '$http', function ($scope, $http) {
+crowdfundingApp.controller('CategoryProjectList', ['$scope', '$http', function ($scope, $http) {
+
     $http.get('categoryProjects').success(function (data) {
         $scope.projects = data;
     }).error(function (data) {
@@ -10,4 +11,5 @@ crowdfunding.controller('CategoryProjectList', ['$scope', '$http', function ($sc
     })
     ;
     $scope.filterOrd = '';
+    $scope.orderProp = '';
 }]);

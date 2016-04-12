@@ -1,0 +1,52 @@
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="layoutMain" template="/WEB-INF/pages/layout/layout-main.jsp">
+        <put-attribute name="title" value="Cherkasy national university"/>
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+    </definition>
+
+    <definition name="login" template="/WEB-INF/pages/login.jsp"></definition>
+
+    <definition name="category" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/category.jsp"></put-attribute>
+    </definition>
+
+
+    <definition name="create" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/create.jsp"></put-attribute>
+    </definition>
+
+    <definition name="donate" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/donate.jsp"></put-attribute>
+    </definition>
+
+    <definition name="error" template="pages/error.jsp"></definition>
+
+    <definition name="main" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/main.jsp"></put-attribute>
+    </definition>
+    <definition name="project" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/project.jsp"></put-attribute>
+    </definition>
+
+    <definition name="newproject" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/newproject.jsp"></put-attribute>
+    </definition>
+    <definition name="notfound" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/notfound.jsp"></put-attribute>
+    </definition>
+    <definition name="search" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/search.jsp"></put-attribute>
+    </definition>
+
+    <definition name="signin" template="/WEB-INF/pages/signin.jsp"></definition>
+
+    <definition name="thanks" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/pages/thanks.jsp"></put-attribute>
+    </definition>
+
+</tiles-definitions>

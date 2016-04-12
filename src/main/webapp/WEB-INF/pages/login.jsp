@@ -12,11 +12,11 @@
 <body>
 <div class="login-wrap">
     <h2>Login</h2>
-    <form name="loginForm" action='/login' method='post'>
+    <form name="loginForm" action='/j_spring_security_check' method='post'>
 
         <div class="form">
-            <input type="text" placeholder="Username" name="user"/>
-            <input type="password" placeholder="Password" name="password"/>
+            <input type="text" placeholder="Username" name="j_username"/>
+            <input type="password" placeholder="Password" name="j_password"/>
             <button> Sign in</button>
             <a href="/register"><p> Don't have an account? Register </p></a>
         </div>
