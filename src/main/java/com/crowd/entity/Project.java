@@ -35,7 +35,7 @@ public class Project {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "project")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "project")
     private List<Donate> donateList;
 
     public Project() {
