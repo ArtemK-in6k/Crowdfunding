@@ -19,7 +19,7 @@
             <form class="form-inline pull-right search-box-form" role="search" action="/search"
                   method="post">
                 <div class="form-group">
-                    <input id="search" name="search" type="text" class="form-control" placeholder="Search">
+                    <input id="search" name="search" type="text" class="form-control" placeholder="Search" required>
                     <select class="selectpicker" name="select">
                         <option value="project">by project name</option>
                         <option value="user">by full name</option>
