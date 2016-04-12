@@ -10,7 +10,7 @@
 
     }
 </style>
-<div class="row" ng-controller="ProjectList">
+<div class="row" ng-init="projectList.loadProjects(${category.id})" ng-controller="ProjectList as projectList">
 
     <h4 class="text-success title" align="center">Category of ${category.title}</h4>
 
@@ -34,13 +34,14 @@
         </div>
     </div>
 
+    <h4 ng-show="!projectList.projects.length" ng-class="{'empty-list': !projectList.projects.length }" align="center">This category yet not have projects</h4>
 
-    <div class="col-md-8 projects-block">
-        <div class="col-sm-6 col-md-6" ng-repeat="project in projects | filter : filterOrd">
+    <div class="col-lg-7 projects-block">
+        <div class="col-lg-6" ng-repeat="project in projectList.projects | filter : filterOrd">
             <div class="thumbnail">
                 <a href="/categories/{{project.categoryId}}/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
-                         style="width: 200px; height: 200px;"/>
+                         style="width: 150px; height: 150px;"/>
                 </a>
                 <div class="caption text-center">
                     <a href="/categories/{{project.categoryId}}/projects/{{project.id}}">
