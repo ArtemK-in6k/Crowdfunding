@@ -10,7 +10,7 @@
 
     }
 </style>
-<div class="row" ng-controller="CategoryProjectList">
+<div class="row" ng-controller="ProjectList">
     <div class="col-md-3" style="height: 600px">
         <nav class="navmenu navmenu-default" role="navigation">
             <div>
