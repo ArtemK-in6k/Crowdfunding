@@ -32,7 +32,7 @@ public class MainController {
 
         model.addAttribute("projects",projects);
         session.setAttribute("categories",categories);
-        return "blank";
+        return "main";
     }
 
 }
