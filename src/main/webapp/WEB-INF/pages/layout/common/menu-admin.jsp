@@ -18,7 +18,7 @@
         <div class="">
             <ul class="nav nav-tabs pull-right">
                 <li role="presentation" class="active"><a href="/admin">Projects</a></li>
-                <li role="presentation"><a href="/logout">Logout</a></li>
+                <li role="presentation" class=""><a href="/logout">Logout</a></li>
             </ul>
         </div>
 
