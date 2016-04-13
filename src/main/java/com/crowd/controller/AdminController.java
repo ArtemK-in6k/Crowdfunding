@@ -37,6 +37,7 @@ public class AdminController {
     public String adminProjects(){
         return "admin/projects";
     }
+
     @RequestMapping(value = "/savestatus",method = RequestMethod.POST)
     public ResponseEntity<List<ProjectResponse>> saveStatus(@RequestBody ChangeStatusProject changeStatusProject, HttpServletRequest httpServletRequest){
 
@@ -46,6 +47,19 @@ public class AdminController {
         Project project = projectService.findById(id);
         project.setStatus(status);
         projectService.update(project);
+
+        Set<Project> projects = new HashSet(projectService.selectAll());
+        List<ProjectResponse> responseProject = projectService.getWrapperProjectsInResponse(projects);
+
+        return new ResponseEntity<List<ProjectResponse>>(responseProject, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/deleteProject",method = RequestMethod.POST)
+    public ResponseEntity<List<ProjectResponse>> deleteProject(@RequestBody ChangeStatusProject changeStatusProject, HttpServletRequest httpServletRequest){
+
+        int id = changeStatusProject.getId();
+        Project project = projectService.findById(id);
+        projectService.delete(project);
 
         Set<Project> projects = new HashSet(projectService.selectAll());
         List<ProjectResponse> responseProject = projectService.getWrapperProjectsInResponse(projects);
