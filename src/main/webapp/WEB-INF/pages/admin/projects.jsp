@@ -3,6 +3,7 @@
 <div ng-controller="ProjectListForAdmin">
     <div class="col-sm-12 col-md-12">
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
+        <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -36,18 +37,13 @@
                     </select>
                 </td>
                 <td>
-                    <%--<div class="md-padding" id="popupContainer" ng-cloak>--%>
-                        <%--<div class="dialog-demo-content" layout="row" layout-wrap layout-margin layout-align="center">--%>
-                        <%--<md-button class="md-primary md-raised"--%>
-                                   <%--ng-click="updateStatus($event,project.status, project.id)showConfirm(,phone.name)">--%>
-                            <%--Update--%>
-                        <%--</md-button>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
                     <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
+                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Delete</button>
                 </td>
             </tr>
             </tbody>
         </table>
+
+        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we have any projects</h3></div>
     </div>
 </div>
