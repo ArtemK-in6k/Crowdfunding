@@ -3,6 +3,7 @@ package com.crowd.dao;
 import com.crowd.entity.Donate;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,5 +37,13 @@ public class DonateDAOImpl implements DonateDAO {
 
     public void update(Donate donate) {
         sessionFactory.getCurrentSession().update(donate);
+    }
+
+    @Override
+    public List<Donate> findAllForProject(int projectId) {
+        return sessionFactory.getCurrentSession().createCriteria(Donate.class, "donate")
+                .createAlias("donate.project", "project")
+                .add(Restrictions.eq("project.id", projectId))
+                .list();
     }
 }

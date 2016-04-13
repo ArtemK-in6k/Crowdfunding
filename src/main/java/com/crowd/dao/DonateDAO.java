@@ -16,4 +16,6 @@ public interface DonateDAO {
     void delete(Donate donate);
 
     void update(Donate donate);
+
+    List<Donate> findAllForProject(int projectId);
 }
