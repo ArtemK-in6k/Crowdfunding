@@ -7,6 +7,7 @@
         <put-attribute name="title" value="Cherkasy national university"/>
         <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+        <put-attribute name="categories" value="/WEB-INF/pages/layout/common/categories.jsp"/>
     </definition>
 
     <definition name="login" template="/WEB-INF/pages/login.jsp"></definition>
@@ -54,4 +55,9 @@
         <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu-admin.jsp"></put-attribute>
     </definition>
 
+
+
+    <definition name="admin/project/donates" extends="adminlayout">
+        <put-attribute name="body" value="/WEB-INF/pages/admin/project/donates.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>
