@@ -15,3 +15,4 @@ crowdfundingApp.controller('ProjectList', ['$http', function ($http) {
 
     vm.orderProp = '';
 }]);
+
