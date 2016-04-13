@@ -5,19 +5,18 @@
         .module('crowdfundingApp')
         .controller('AdminProjectDonatesController', AdminProjectDonatesController);
 
-    AdminProjectDonatesController.$inject = ['ProjectsService'];
+    AdminProjectDonatesController.$inject = ['ProjectDonatesService'];
 
-    function AdminProjectDonatesController(ProjectsService) {
+    function AdminProjectDonatesController(ProjectDonatesService) {
 
         var vm = this;
 
         vm.loadDonates = function (projectId) {
-            ProjectsService.getAllProjectDonates(projectId)
+            ProjectDonatesService.getAllProjectDonates(projectId)
                 .then(function (result) {
                     console.log(result);
-                    vm.projectName = result.name;
-                    vm.projectDonates = result.donates;
-                }, function (err) {
+                    vm.projectName = result.data.name;
+                    vm.projectDonates = result.data.donates;
                 });
         }
     }
