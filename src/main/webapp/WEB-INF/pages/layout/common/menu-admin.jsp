@@ -12,7 +12,14 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="/">Crowdfunding</a>
+            <a class="navbar-brand" href="/admin">Crowdfunding</a>
+        </div>
+
+        <div class="">
+            <ul class="nav nav-tabs pull-right">
+                <li role="presentation" class="active"><a href="/admin">Projects</a></li>
+                <li role="presentation" class=""><a href="/logout">Logout</a></li>
+            </ul>
         </div>
 
     </div>

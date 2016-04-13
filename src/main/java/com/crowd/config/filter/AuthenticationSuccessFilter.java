@@ -33,6 +33,13 @@ public class AuthenticationSuccessFilter extends SavedRequestAwareAuthentication
 
         request.getSession().setMaxInactiveInterval((int) TimeUnit.HOURS.toSeconds(48));
 
+        String defaultTargetUrl = "/";
+        if (userBean.getRole().equals("ROLE_ADMIN")) {
+            defaultTargetUrl = "/admin";
+        }
+
+        setDefaultTargetUrl(defaultTargetUrl);
+        setAlwaysUseDefaultTargetUrl(true);
         super.onAuthenticationSuccess(request, response, authentication);
     }
 }

@@ -50,8 +50,12 @@
     </definition>
 
     <definition name="adminlayout" template="/WEB-INF/pages/layout/layout-admin.jsp">
-        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"></put-attribute>
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header-admin.jsp"></put-attribute>
         <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu-admin.jsp"></put-attribute>
+    </definition>
+
+    <definition name="admin/projects" extends="adminlayout">
+        <put-attribute name="body" value="/WEB-INF/pages/admin/projects.jsp"></put-attribute>
     </definition>
 
 
