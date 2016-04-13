@@ -92,7 +92,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public SavedRequestAwareAuthenticationSuccessHandler getAuthenticationSuccess() {
         AuthenticationSuccessFilter authenticationSuccess = new AuthenticationSuccessFilter();
-        //authenticationSuccess.setDefaultTargetUrl("/");
         return authenticationSuccess;
     }
 }
