@@ -19,24 +19,20 @@ import java.util.Objects;
 @Controller
 @RequestMapping({"","/"})
 public class MainController {
-    @Autowired
-    CategoryService categoryService;
 
-    @Autowired
-    ProjectService projectService;
+    @Autowired CategoryService categoryService;
+
+    @Autowired ProjectService projectService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String redirect(Model model, HttpSession session, Principal principal){
-        if (Objects.isNull(principal)){
-            return "redirect:/login";
-        }
+    public String main(Model model, HttpSession session){
 
         List<Category> categories = categoryService.selectAll();
         List<Project> projects = projectService.selectAll();
 
         model.addAttribute("projects",projects);
         session.setAttribute("categories",categories);
-        return "main";
+        return "blank";
     }
 
 }
