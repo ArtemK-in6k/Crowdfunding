@@ -36,6 +36,8 @@ public class ProjectService {
         projectDAO.insert(project);
     }
 
+    public void delete(Project project) {projectDAO.delete(project);}
+
     public List<Project> findByPartOfProjectName(String projectName) {
         projectName = projectName.replaceAll(" ", "");
         return projectDAO.findByPartOfProjectName(projectName);
