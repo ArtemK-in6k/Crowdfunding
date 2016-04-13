@@ -1,27 +1,16 @@
 (function () {
     'use strict';
 
-    angular.module('crowdfundingApp').factory('CategoryUtils', CategoryUtils);
+    angular.module('crowdfundingApp').factory('CategoryListService', CategoryListService);
 
-    CategoryUtils.$inject = ['$q', '$http'];
+    CategoryListService.$inject = ['$q', '$http'];
 
-    function CategoryUtils($q, $http) {
-
+    function CategoryListService($q, $http) {
 
         function getAllCategories() {
-            var defer = $q.defer();
-            $http.get('/api/categories')
-                .success(function (ok, status, headers, config) {
-                    defer.resolve(ok);
-                })
-                .error(function (err, status, headers, config) {
-                    defer.reject(err);
-                });
-
-            return defer.promise;
+            return $http.get('/api/categories');
         }
 
-       
         return {
             getAllCategories: getAllCategories,
         };
