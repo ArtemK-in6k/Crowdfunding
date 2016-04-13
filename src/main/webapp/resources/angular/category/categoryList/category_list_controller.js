@@ -5,20 +5,15 @@
         .module('crowdfundingApp')
         .controller('CategoryListController', CategoryListController);
 
-    CategoryListController.$inject = ['CategoryUtils'];
+    CategoryListController.$inject = ['CategoryListService'];
 
-    function CategoryListController(CategoryUtils) {
+    function CategoryListController(CategoryListService) {
 
-        var vm = this;
+        var self = this;
 
-        loadingCategories();
+        CategoryListService.getAllCategories().then(function (result) {
+            self.categories = result.data;
+        });
 
-        function loadingCategories() {
-            CategoryUtils.getAllCategories()
-                .then(function (result) {
-                    vm.categories = result;
-                }, function (err) {
-                });
-        }
     }
 })();
