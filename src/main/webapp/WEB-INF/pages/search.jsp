@@ -4,23 +4,9 @@
          pageEncoding="ISO-8859-1" %>
 
 <div class="row">
-    <div class="col-md-3">
-        <nav class="navmenu navmenu-default" role="navigation">
-            <div>
-                <h4 class="text-success" style="text-indent: 60px">Categories</h4>
-                <ul class="nav navmenu-nav" style="width: 200px">
-                    <c:forEach items="${categories}" var="category">
-                        <li>
-                            <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
-                               class="list-group-item">${category.title}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <h3 class="text-success text-center">Search result for : ${search}</h3>
-    <div class="col-md-8">
+
+    <h4 class="text-success text-center">Search result for : ${search}</h4>
+    <div class="col-md-12">
         <c:forEach items="${projectlist}" var="project">
             <div class="col-sm-6 col-md-6">
                 <div class="thumbnail">

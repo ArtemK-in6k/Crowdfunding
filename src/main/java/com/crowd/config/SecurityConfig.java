@@ -52,9 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/**").authenticated()
                 .anyRequest().authenticated()
-                .and();
-        http.logout()
-                .logoutSuccessUrl("/")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/login")
                 .logoutUrl("/logout")
                 .permitAll();
 

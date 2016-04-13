@@ -22,5 +22,9 @@
 <link href="<c:url value="/resources/css/admin.css" />" rel="stylesheet" type="text/css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+<script src="<c:url value="/resources/js/app.js" />"></script>
+
 <script src="<c:url value="/resources/angular/controllers.js" />"></script>
 <script src="<c:url value="/resources/angular/modulForCategory.js" />"></script>

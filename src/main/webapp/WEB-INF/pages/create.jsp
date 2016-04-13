@@ -10,22 +10,6 @@
 </style>
 
 <div class="row">
-    <div class="col-md-4">
-        <nav class="navmenu navmenu-default" role="navigation">
-            <div>
-                <h4 class="text-success" style="text-indent: 60px">Categories</h4>
-                <ul class="nav navmenu-nav" style="width: 200px">
-                    <c:forEach items="${categories}" var="category">
-                        <li>
-                            <a style="background-color: lightsteelblue" href="/categories/${category.id}/"
-                               class="list-group-item">${category.title}</a>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="col-md-4">
         <div class="text-center fig">
 
             <img src="${project.image}" alt="" style="width: 400px; height: 400px;">
@@ -36,5 +20,4 @@
 
             </form>
         </div>
-    </div>
 </div>

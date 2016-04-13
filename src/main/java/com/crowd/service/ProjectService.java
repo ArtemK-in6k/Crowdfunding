@@ -2,20 +2,25 @@ package com.crowd.service;
 
 
 import com.crowd.bean.ProjectResponse;
+import com.crowd.dao.CategoryDAOImpl;
+import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
+import com.crowd.entity.Category;
 import com.crowd.entity.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 @Service
 public class ProjectService {
-    @Autowired
-    private ProjectDAO projectDAO;
+
+    @Autowired private ProjectDAO projectDAO;
+    @Autowired private CategoyDAO categoryDao;
 
     public List<Project> selectAll() {
         return projectDAO.selectAll();
@@ -61,5 +66,12 @@ public class ProjectService {
 
     public boolean isProjectExists(int projectId){
         return !Objects.isNull(projectDAO.findById(projectId));
+    }
+
+    public ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(int categoryId){
+        Category category = categoryDao.findById(categoryId);
+        Set<Project> projects = (Objects.isNull(category)) ? new HashSet<>() : category.getProjects();
+        return new ResponseEntity<Set<ProjectResponse>>(projects
+                .stream().map(ProjectResponse::new).collect(Collectors.toSet()), HttpStatus.OK);
     }
 }

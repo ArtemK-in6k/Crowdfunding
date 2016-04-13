@@ -14,7 +14,7 @@ public class Category {
     @Column
     private String title;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "category")
     private Set<Project> projects;
 
     public Category() {

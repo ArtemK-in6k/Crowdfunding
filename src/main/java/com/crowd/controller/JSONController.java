@@ -35,6 +35,12 @@ public class JSONController {
         return new ResponseEntity<List<ProjectResponse>>(projects, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/projects/categories/{categoryId}", method = RequestMethod.GET)
+    @ResponseBody
+    ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(@PathVariable Integer categoryId) {
+        return projectService.getProjectsByCategory(categoryId);
+    }
+
     @RequestMapping(value = "categories/{categoryId}/categoryProjects", method = RequestMethod.GET)
     @ResponseBody
     ResponseEntity<List<ProjectResponse>> getCategoryProjectsInJSON(@PathVariable int categoryId) {
