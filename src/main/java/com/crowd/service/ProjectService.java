@@ -18,8 +18,10 @@ import java.util.stream.Collectors;
 @Service
 public class ProjectService {
 
-    @Autowired private ProjectDAO projectDAO;
-    @Autowired private CategoyDAO categoryDao;
+    @Autowired
+    private ProjectDAO projectDAO;
+    @Autowired
+    private CategoyDAO categoryDao;
 
     public List<Project> selectAll() {
         return projectDAO.selectAll();
@@ -41,7 +43,9 @@ public class ProjectService {
         projectDAO.insert(project);
     }
 
-    public void delete(Project project) {projectDAO.delete(project);}
+    public void delete(Project project) {
+        projectDAO.delete(project);
+    }
 
     public List<Project> findByPartOfProjectName(String projectName) {
         projectName = projectName.replaceAll(" ", "");
@@ -65,7 +69,11 @@ public class ProjectService {
         return projectResponses;
     }
 
-    public ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(int categoryId){
+    public boolean isProjectExists(int projectId) {
+        return !Objects.isNull(projectDAO.findById(projectId));
+    }
+
+    public ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(int categoryId) {
         Category category = categoryDao.findById(categoryId);
         Set<Project> projects = (Objects.isNull(category)) ? new HashSet<>() : category.getProjects();
         return new ResponseEntity<Set<ProjectResponse>>(projects

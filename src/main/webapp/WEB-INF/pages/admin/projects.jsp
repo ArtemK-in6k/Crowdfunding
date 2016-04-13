@@ -22,7 +22,7 @@
                     <img src="{{project.image}}" height="50px" width="50px">
                 </td>
                 <td>
-                    {{project.nameProject}}
+                    <a href="/admin/project/{{project.id}}/donates"> {{project.nameProject}} </a>
                 </td>
                 <td>
                     {{project.fullNameUser}}
@@ -44,6 +44,6 @@
             </tbody>
         </table>
 
-        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we have any projects</h3></div>
+        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we don't have any projects</h3></div>
     </div>
 </div>

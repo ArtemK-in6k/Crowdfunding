@@ -58,4 +58,9 @@
         <put-attribute name="body" value="/WEB-INF/pages/admin/projects.jsp"></put-attribute>
     </definition>
 
+
+
+    <definition name="admin/project/donates" extends="adminlayout">
+        <put-attribute name="body" value="/WEB-INF/pages/admin/project/donates.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>
