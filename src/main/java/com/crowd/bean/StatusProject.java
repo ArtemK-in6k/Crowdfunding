@@ -1,14 +1,14 @@
 package com.crowd.bean;
 
-public class ChangeStatusProject {
+public class StatusProject {
 
     private int id;
     private String status;
 
-    public ChangeStatusProject() {
+    public StatusProject() {
     }
 
-    public ChangeStatusProject(int id, String status) {
+    public StatusProject(int id, String status) {
         this.id = id;
         this.status = status;
     }

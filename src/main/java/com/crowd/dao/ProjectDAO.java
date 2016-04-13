@@ -20,4 +20,6 @@ public interface ProjectDAO {
 
     List<Project> findByPartOfProjectName(String projectName);
 
+    List<Project> findAllByCategory(int category);
+
 }

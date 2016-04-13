@@ -2,13 +2,17 @@
 
 var crowdfundingApp = angular.module('crowdfundingApp', []);
 
-crowdfundingApp.controller('ProjectList', ['$scope', '$http', function ($scope, $http) {
-    $http.get('/projects').success(function (data) {
-        $scope.projects = data;
-    }).error(function (datat) {
-        console.log(datat);
-    })
-    ;
-    $scope.orderProp = '';
+crowdfundingApp.controller('ProjectList', ['$http', function ($http) {
+    var vm = this;
+    
+    vm.loadProjects = function (category) {
+        var url = (category) ? '/projects/categories/' + category : '/projects';
+        $http.get(url).success(function (data) {
+            vm.projects = data;
+        }).error(function (datat) {
+        });
+    }
+
+    vm.orderProp = '';
 }]);
 
