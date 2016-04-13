@@ -12,7 +12,10 @@
     <div class="table-container" >
         <h4 align="center"> Project donates</h4>
 
+        <div ng-if="donates.projectDonates.length == 0" class="text-center text-danger"><h3>Project haven't donates</h3></div>
+
         <div class="col-lg-12 donate-block">
+
             <div class="col-lg-4 donate-box" ng-repeat="donate in donates.projectDonates" style="">
                 <div class="media">
                     <a href="#" class="pull-left">

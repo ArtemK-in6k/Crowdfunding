@@ -106,3 +106,31 @@
 		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
 2016-04-13 15:44:02,336:: WARN: qtp802573073-16 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
 		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:27,847:: WARN: qtp802573073-22 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:27,847:: WARN: qtp802573073-22 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:27,918:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:27,918:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:33,683:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:33,683:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:36,297:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:44:36,297:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:18,959:: WARN: qtp802573073-21 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:18,959:: WARN: qtp802573073-21 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:19,025:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:19,025:: WARN: qtp802573073-19 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:22,419:: WARN: qtp802573073-21 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-13 15:46:22,419:: WARN: qtp802573073-21 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'

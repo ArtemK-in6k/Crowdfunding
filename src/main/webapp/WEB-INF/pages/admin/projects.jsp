@@ -44,6 +44,6 @@
             </tbody>
         </table>
 
-        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we have any projects</h3></div>
+        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we don't have any projects</h3></div>
     </div>
 </div>
