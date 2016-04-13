@@ -11,19 +11,22 @@
 <html ng-app="crowdfundingApp">
 <head>
     <tiles:insertAttribute name="header"/>
+    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
 
     <div id="body">
-        <div class="row ">
-
-
+        <div class="row">
             <tiles:insertAttribute name="menu"/>
 
-            <!-- Blog Entries Column -->
-            <div class="col-lg-12">
-                <tiles:insertAttribute name="body"/>
+            <div class="col-lg-12 body-wrapper ">
+                <div class="col-xs-3">
+                    <tiles:insertAttribute name="categories"/>
+                </div>
+                <div class="col-xs-9">
+                    <tiles:insertAttribute name="body"/>
+                </div>
             </div>
 
         </div>

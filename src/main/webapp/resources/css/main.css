@@ -1,0 +1,47 @@
+body{
+    margin-top: 20px;
+}
+
+.body-wrapper{
+    border: 1px solid #dee5e7!important;
+    -webkit-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
+    -moz-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
+    box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
+    min-height: 800px;
+    padding: 25px;
+}
+
+.logo-img{
+    margin-left: 5px!important;
+    width: 50px;
+    height: 50px;
+    background: url('/resources/img/cf-logo.png') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.navbar-brand.title-text{
+    font-weight: bold!important;
+    color: #444;
+}
+.navbar.navbar-default{
+    margin: 0!important;
+}
+
+h4.title{
+    color: #444;
+}
+
+.projects-block{
+    padding-top: 15px;
+}
+
+.search-box-form{
+    line-height: 50px;
+}
+
+h4[class='empty-list']{
+    margin-top: 35px;
+    color: red;
+}

@@ -3,6 +3,7 @@ package com.crowd.dao;
 import com.crowd.entity.Project;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,5 +50,13 @@ public class ProjectDAOImpl implements ProjectDAO {
         Query query = sessionFactory.getCurrentSession().createQuery("from projects where lower(nameProject) like :projectName");
         query.setString("projectName","%"+projectName+"%");
         return query.list();
+    }
+
+    @Override
+    public List<Project> findAllByCategory(int category) {
+      return   sessionFactory.getCurrentSession().createCriteria(Project.class, "project")
+                .createAlias("project.category", "category")
+                .add(Restrictions.eq("category.id",category))
+                .list();
     }
 }
