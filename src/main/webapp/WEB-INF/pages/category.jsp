@@ -27,9 +27,7 @@
                 </div>
                 <div class="form-group">
                     <a href="/categories/${idcategory}/newproject" class="btn btn-success">Create project</a>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -39,12 +37,12 @@
     <div class="col-lg-7 projects-block">
         <div class="col-lg-6" ng-repeat="project in projectList.projects | filter : filterOrd">
             <div class="thumbnail">
-                <a href="/categories/{{project.categoryId}}/projects/{{project.id}}">
+                <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
                          style="width: 150px; height: 150px;"/>
                 </a>
                 <div class="caption text-center">
-                    <a href="/categories/{{project.categoryId}}/projects/{{project.id}}">
+                    <a href="/projects/{{project.id}}">
                         <p class="lead">{{project.nameProject}}</p>
                     </a>
                     <div class="progress">
@@ -55,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center">$ {{project.donate_amount}} pledged of $ {{project.needAmount}} goal</p>
+                <p class="text-center">{{project.donate_amount | currency}} pledged of {{project.needAmount | currency}} goal</p>
                 <p class="text-center">Created : {{project.date}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
