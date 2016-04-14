@@ -8,6 +8,7 @@
 
 <div ng-controller="OwnProjects">
     <div class="col-sm-12 col-md-12">
+        <h3 class="text-center">My Projects</h3>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
         <table class="table table-hover">
@@ -49,6 +50,6 @@
             </tr>
             </tbody>
         </table>
-        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, we don't have any projects</h3></div>
+        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3></div>
     </div>
 </div>

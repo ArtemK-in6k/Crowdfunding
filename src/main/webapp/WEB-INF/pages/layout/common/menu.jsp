@@ -29,8 +29,8 @@
                         <button class="btn btn-default dropdown-toggle form-group" type="button" data-toggle="dropdown">Control
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                            <li><a href="/control/projects">Own projects</a></li>
-                            <li><a href="/control/donates">Own donates</a></li>
+                            <li><a href="/control/projects">My projects</a></li>
+                            <li><a href="/control/donates">My donates</a></li>
                         </ul>
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}"
