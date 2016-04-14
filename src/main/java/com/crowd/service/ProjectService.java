@@ -5,8 +5,10 @@ import com.crowd.bean.ProjectResponse;
 import com.crowd.dao.CategoryDAOImpl;
 import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
+import com.crowd.dao.UserDAO;
 import com.crowd.entity.Category;
 import com.crowd.entity.Project;
+import com.crowd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ import java.util.stream.Collectors;
 @Service
 public class ProjectService {
 
+    @Autowired
+    private UserDAO userDAO;
     @Autowired
     private ProjectDAO projectDAO;
     @Autowired
@@ -78,5 +82,11 @@ public class ProjectService {
         Set<Project> projects = (Objects.isNull(category)) ? new HashSet<>() : category.getProjects();
         return new ResponseEntity<Set<ProjectResponse>>(projects
                 .stream().map(ProjectResponse::new).collect(Collectors.toSet()), HttpStatus.OK);
+    }
+
+    public List<ProjectResponse> getUserProjects(String email){
+        User user = userDAO.findByEmail(email);
+        List<Project> projects = user.getProjects();
+        return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 }

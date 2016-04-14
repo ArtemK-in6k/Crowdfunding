@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center">$ {{project.donate_amount}} pledged of $ {{project.needAmount}} goal</p>
+                <p class="text-center"> {{project.donate_amount | currency}} pledged of {{project.needAmount | currency}} goal</p>
                 <p class="text-center">Created : {{project.date}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
