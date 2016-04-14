@@ -24,6 +24,7 @@
         crossorigin="anonymous"></script>
 
 <link href="<c:url value="/resources/css/admin.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet" type="text/css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 

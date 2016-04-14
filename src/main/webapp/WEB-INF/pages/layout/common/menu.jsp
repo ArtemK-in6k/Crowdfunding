@@ -15,7 +15,7 @@
             </a>
             <a class="navbar-brand title-text" href="/">Crowdfunding</a>
         </div>
-        <div class="">
+        <div class="nav navbar-header navbar-right nav-pills">
             <form class="form-inline pull-right search-box-form" role="search" action="/search"
                   method="post">
                 <div class="form-group">
@@ -25,6 +25,14 @@
                         <option value="user">by full name</option>
                     </select>
                     <button type="submit" class="btn btn-default">Search</button>
+                    <div id="dropdown-button" class="dropdown form-group">
+                        <button class="btn btn-default dropdown-toggle form-group" type="button" data-toggle="dropdown">Control
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/control/projects">Own projects</a></li>
+                            <li><a href="/control/donates">Own donates</a></li>
+                        </ul>
+                    </div>
                     <input type="hidden" name="${_csrf.parameterName}"
                            value="${_csrf.token}"/>
                     <a class="btn btn-default" href="/logout">Logout</a>
