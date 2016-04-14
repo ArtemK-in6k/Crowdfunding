@@ -13,7 +13,6 @@
 <div class="row" ng-init="projectList.loadProjects(${category.id})" ng-controller="ProjectList as projectList">
 
     <h4 class="text-success title" align="center">Category of ${category.title}</h4>
-
     <div class="row">
         <div class="pull-right">
             <div class="form-inline">
