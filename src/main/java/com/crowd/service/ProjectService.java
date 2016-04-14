@@ -84,9 +84,9 @@ public class ProjectService {
                 .stream().map(ProjectResponse::new).collect(Collectors.toSet()), HttpStatus.OK);
     }
 
-    public List<Project> getUserProjects(String email){
+    public List<ProjectResponse> getUserProjects(String email){
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
-        return projects;
+        return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 }
