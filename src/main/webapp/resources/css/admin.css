@@ -1,44 +1,50 @@
-.donate-box{
-    border: 1px solid #dee5e7!important;
-    -webkit-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
-    -moz-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
-    box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
+.donate-box {
+    border: 1px solid #dee5e7 !important;
+    -webkit-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
     padding: 5px;
     border-radius: 5px;
     width: 350px;
     margin: 14px;
 }
-.donate-block{
-    border: 1px solid #dee5e7!important;
-    -webkit-box-shadow: -1px -1px 17px -6px rgba(0,0,0,0.49);
-    -moz-box-shadow: -1px -1px 17px -6px rgba(0,0,0,0.49);
-    box-shadow: -1px -1px 17px -6px rgba(0,0,0,0.49);
+
+.donate-block {
+    border: 1px solid #dee5e7 !important;
+    -webkit-box-shadow: -1px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: -1px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    box-shadow: -1px -1px 17px -6px rgba(0, 0, 0, 0.49);
 }
-.donate-box span.money{
+
+.donate-box span.money {
     font-weight: bold;
     color: #3c763d;
 }
 
-.donate-box h5.title{
+.donate-box h5.title {
     font-weight: bold;
+}
+
 .ng-hide-add {
-    -webkit-transition:0.5s linear all;
-    -moz-transition:0.5s linear all;
-    -o-transition:0.5s linear all;
-    transition:0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
     opacity: 1;
 }
+
 .ng-hide-add.ng-hide-add-active {
     opacity: 0;
 }
 
 .ng-hide-remove {
-    -webkit-transition:0.5s linear all;
-    -moz-transition:0.5s linear all;
-    -o-transition:0.5s linear all;
-    transition:0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
     opacity: 0;
 }
+
 .ng-hide-remove.ng-hide-remove-active {
     opacity: 1;
 }
