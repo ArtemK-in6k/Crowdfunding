@@ -1,5 +1,8 @@
 package com.crowd.entity;
 
+import org.hibernate.annotations.Type;
+
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -17,7 +20,7 @@ public class Project {
     private User user;
     @Column
     private double needAmount;
-    @Column
+    @Column @Type(type="text")
     private String aboutProject;
     @Column
     private String image;
@@ -82,7 +85,7 @@ public class Project {
     }
 
     public double getDonate_amount() {
-        return donate_amount;
+        return donateList.stream().mapToDouble(Donate::getAmount).sum();
     }
 
     public void setDonate_amount(double donate_amount) {
@@ -138,7 +141,7 @@ public class Project {
     }
 
     public double percendDonate() {
-        return donate_amount / needAmount * 100;
+        return getDonate_amount() / needAmount * 100;
     }
 
     public String dateFormat() {
