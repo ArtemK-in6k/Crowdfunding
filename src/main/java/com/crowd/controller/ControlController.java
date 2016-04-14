@@ -40,15 +40,13 @@ public class ControlController {
     @RequestMapping(value = "/projects/ownprojects", method = RequestMethod.GET)
     public ResponseEntity<List<ProjectResponse>> getOwnProjects(@ModelAttribute("userBean") UserBean user) {
 
-        List<Project> projects = userService.findByEmail(user.getEmail()).getProjects();
-
-        List<ProjectResponse> responseProjects = projectService.getWrapperProjectsInResponse(new HashSet<Project>(projects));
+        List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
 
         return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/projects/savestatus/", method = RequestMethod.POST)
-    public ResponseEntity<List<ProjectResponse>> saveStatus(@RequestBody ProjectStatus changeStatusProject) {
+    public ResponseEntity<List<ProjectResponse>> saveStatus(@ModelAttribute("userBean") UserBean user,@RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
         String status = changeStatusProject.getStatus();
@@ -57,22 +55,20 @@ public class ControlController {
         project.setStatus(status);
         projectService.update(project);
 
-        Set<Project> projects = new HashSet(projectService.selectAll());
-        List<ProjectResponse> responseProject = projectService.getWrapperProjectsInResponse(projects);
+        List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
 
-        return new ResponseEntity<List<ProjectResponse>>(responseProject, HttpStatus.OK);
+        return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/projects/deleteProject/", method = RequestMethod.POST)
-    public ResponseEntity<List<ProjectResponse>> deleteProject(@RequestBody ProjectStatus changeStatusProject) {
+    public ResponseEntity<List<ProjectResponse>> deleteProject(@ModelAttribute("userBean") UserBean user,@RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
         Project project = projectService.findById(id);
         projectService.delete(project);
 
-        Set<Project> projects = new HashSet(projectService.selectAll());
-        List<ProjectResponse> responseProject = projectService.getWrapperProjectsInResponse(projects);
+        List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
 
-        return new ResponseEntity<List<ProjectResponse>>(responseProject, HttpStatus.OK);
+        return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
     }
 }
