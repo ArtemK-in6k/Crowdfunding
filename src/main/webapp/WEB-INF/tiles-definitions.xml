@@ -29,9 +29,6 @@
     <definition name="main" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/main.jsp"></put-attribute>
     </definition>
-    <definition name="project" extends="layoutMain">
-        <put-attribute name="body" value="/WEB-INF/pages/project.jsp"></put-attribute>
-    </definition>
 
     <definition name="newproject" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/newproject.jsp"></put-attribute>
@@ -63,4 +60,11 @@
     <definition name="admin/project/donates" extends="adminlayout">
         <put-attribute name="body" value="/WEB-INF/pages/admin/project/donates.jsp"></put-attribute>
     </definition>
+
+    <definition name="project" template="/WEB-INF/pages/layout/layout-project.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/pages/project.jsp"/>
+    </definition>
+
 </tiles-definitions>
