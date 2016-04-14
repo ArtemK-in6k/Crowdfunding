@@ -67,4 +67,14 @@
         <put-attribute name="body" value="/WEB-INF/pages/project.jsp"/>
     </definition>
 
+
+    <definition name="layoutControl" template="/WEB-INF/pages/layout/layout-control.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+    </definition>
+
+    <definition name="control/projects" extends="layoutControl">
+        <put-attribute name="body" value="/WEB-INF/pages/control/projects.jsp"></put-attribute>
+    </definition>
+
 </tiles-definitions>
