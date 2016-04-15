@@ -55,7 +55,7 @@
 
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="password"
+                    <input type="password" class="form-control" name="password"
                            placeholder="Enter password" required>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span>
                     </span>
