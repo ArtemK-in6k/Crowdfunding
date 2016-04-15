@@ -16,7 +16,7 @@
                     <input name="firstName"
                            type="text" class="form-control"
                            placeholder="Enter first name" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                 <div class="input-group">
                     <input  type="text" class="form-control" name="lastName"
                            placeholder="Enter last name" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                 </div>
             </div>
 
