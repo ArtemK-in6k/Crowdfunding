@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -44,5 +45,13 @@ public class ProjectController {
                          @ModelAttribute("userBean")UserBean owner) {
         boolean isSuccess = donateService.addDonateForProject(amount, projectId, owner.getId());
         return (isSuccess) ? "redirect:/projects/" + projectId : "redirect:/";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String createProject(@ModelAttribute("userBean") UserBean user,@RequestParam String projectName, @RequestParam double needAmount,
+                                @RequestParam String image, @RequestParam int category, @RequestParam String aboutProject) throws IOException {
+
+       int projectId = projectService.createProject(user,projectName,needAmount,image,category,aboutProject);
+        return "redirect:/projects/"+projectId;
     }
 }
