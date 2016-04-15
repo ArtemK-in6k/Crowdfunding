@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -48,8 +47,23 @@ public class DonateService {
         Project project = projectDAO.findById(projectId);
         User donator = userDAO.findById(donatorId);
 
+
+
         if (Objects.isNull(project) || Objects.isNull(donator)){
             throw new IllegalArgumentException("Input parameters can't be null");
+        }
+
+        Donate donate = donateDAO.findByDonatorAndProject(donatorId, projectId);
+
+        if (Objects.isNull(donate)) {
+            donate = new Donate();
+            donate.setDate(new Timestamp(System.currentTimeMillis()));
+            donate.setAmount(amount);
+            donate.setProject(project);
+            donate.setUser(donator);
+        }else {
+            donate.setAmount(donate.getAmount() + amount);
+            donate.setDate(new Timestamp(System.currentTimeMillis()));
         }
 
         Donate donate = new Donate();

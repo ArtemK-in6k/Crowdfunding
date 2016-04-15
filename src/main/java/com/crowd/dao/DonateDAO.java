@@ -9,6 +9,8 @@ public interface DonateDAO {
 
     void insert(Donate donate);
 
+    void saveUpdate(Donate donate);
+
     List<Donate> selectAll();
 
     Donate findById(int id);
@@ -20,4 +22,6 @@ public interface DonateDAO {
     List<Donate> findAllForProject(int projectId);
 
     void deleteById(int id);
+
+    Donate findByDonatorAndProject(int donatorId, int projectId);
 }

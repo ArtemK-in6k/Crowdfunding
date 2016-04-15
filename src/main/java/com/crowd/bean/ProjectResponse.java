@@ -3,6 +3,8 @@ package com.crowd.bean;
 
 import com.crowd.entity.Project;
 
+import java.sql.Timestamp;
+
 public class ProjectResponse {
 
     private int id;
@@ -18,6 +20,8 @@ public class ProjectResponse {
     private double donate_amount;
 
     private String date;
+
+    private Timestamp created;
 
     private String status;
 
@@ -44,6 +48,7 @@ public class ProjectResponse {
         nameProject = project.getNameProject();
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
+        created = project.getDate();
     }
 
 
@@ -141,5 +146,13 @@ public class ProjectResponse {
 
     public void setNameProject(String nameProject) {
         this.nameProject = nameProject;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
     }
 }

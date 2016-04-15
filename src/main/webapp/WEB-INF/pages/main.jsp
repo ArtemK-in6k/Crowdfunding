@@ -5,25 +5,24 @@
 
 <div class="row" ng-init="projectList.loadProjects()" ng-controller="ProjectList as projectList">
 
-    <div class="row form-inline">
-        <h4 class="text-success text-center title">Projects now</h4>
 
-        <select ng-model="orderProp" class="selectpicker pull-right">
+    <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
+        <h4 class="main-title title col-lg-8 col-md-8 col-sm-8">Projects</h4>
+        <select ng-model="orderProp" class="selectpicker col-lg-4 col-md-4 col-sm-4 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>
             <option value="Whip-round">Whip-round</option>
         </select>
     </div>
-
-    <div class="col-lg-7 projects-block">
-        <div class="col-lg-6"  ng-repeat="project in projectList.projects | filter:orderProp">
+    <div class="col-lg-12  ">
+        <div class="col-lg-4 col-md-4" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
                          style="width: 150px; height: 150px;"/>
                 </a>
-               <div class="caption text-center">
+                <div class="caption text-center">
                     <a href="/projects/{{project.id}}">
                         <p class="lead">{{project.nameProject}}</p>
                     </a>
@@ -32,16 +31,18 @@
                              aria-valuenow="{{project.percendDonate}}" aria-valuemin="0"
                              aria-valuemax="100"
                              ng-style="{'width':project.percendDonate +'%'}"
-                           >
+                        >
                         </div>
                     </div>
                 </div>
-                <p class="text-center"> {{project.donate_amount | currency}} pledged of {{project.needAmount | currency}} goal</p>
-                <p class="text-center">Created : {{project.date}}</p>
+                <p class="text-center"> {{project.donate_amount | currency}} pledged of {{project.needAmount |
+                    currency}} goal</p>
+                <p class="text-center">Created : {{ project.created | date:'MM.dd.yy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
             </div>
         </div>
     </div>
+
 </div>
 
