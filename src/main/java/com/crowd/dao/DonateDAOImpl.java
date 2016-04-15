@@ -21,13 +21,18 @@ public class DonateDAOImpl implements DonateDAO {
         sessionFactory.getCurrentSession().save(donate);
     }
 
+    @Override
+    public void saveUpdate(Donate donate) {
+        sessionFactory.getCurrentSession().saveOrUpdate(donate);
+    }
+
     public List<Donate> selectAll() {
         Query query = sessionFactory.getCurrentSession().createQuery("from donates");
         return query.list();
     }
 
     public Donate findById(int id) {
-        Donate donate = (Donate) sessionFactory.getCurrentSession().get(Donate.class,id);
+        Donate donate = (Donate) sessionFactory.getCurrentSession().get(Donate.class, id);
         return donate;
     }
 
@@ -39,11 +44,24 @@ public class DonateDAOImpl implements DonateDAO {
         sessionFactory.getCurrentSession().update(donate);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Donate> findAllForProject(int projectId) {
         return sessionFactory.getCurrentSession().createCriteria(Donate.class, "donate")
                 .createAlias("donate.project", "project")
                 .add(Restrictions.eq("project.id", projectId))
                 .list();
+    }
+
+    @Override
+    public Donate findByDonatorAndProject(int donatorId, int projectId) {
+        return (Donate) sessionFactory.getCurrentSession().createCriteria(Donate.class, "donate")
+                .createAlias("donate.project", "project")
+                .createAlias("donate.user", "user")
+                .add(Restrictions.and(
+                        Restrictions.eq("project.id", projectId),
+                        Restrictions.eq("user.id", donatorId)
+                ))
+                .uniqueResult();
     }
 }
