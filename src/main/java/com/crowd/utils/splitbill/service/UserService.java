@@ -1,7 +1,7 @@
 package com.crowd.utils.splitbill.service;
 
 
-import com.crowd.utils.splitbill.LoginRequest;
+import com.crowd.utils.splitbill.model.LoginRequest;
 import com.crowd.utils.splitbill.model.response.LoginResponse;
 import com.crowd.utils.splitbill.model.response.UserResponse;
 import retrofit.Call;
