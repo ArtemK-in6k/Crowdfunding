@@ -46,4 +46,10 @@ public class DonateDAOImpl implements DonateDAO {
                 .add(Restrictions.eq("project.id", projectId))
                 .list();
     }
+
+    public void deleteById(int id) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from  donates where id = :id");
+        query.setInteger("id",id);
+        query.executeUpdate();
+    }
 }
