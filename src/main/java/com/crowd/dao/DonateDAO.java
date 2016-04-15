@@ -21,5 +21,7 @@ public interface DonateDAO {
 
     List<Donate> findAllForProject(int projectId);
 
+    void deleteById(int id);
+
     Donate findByDonatorAndProject(int donatorId, int projectId);
 }

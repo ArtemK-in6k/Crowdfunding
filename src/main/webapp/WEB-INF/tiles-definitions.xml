@@ -84,4 +84,8 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
+    <definition name="control/donates" extends="layoutControl">
+        <put-attribute name="body" value="/WEB-INF/pages/control/donates.jsp"></put-attribute>
+    </definition>
+
 </tiles-definitions>

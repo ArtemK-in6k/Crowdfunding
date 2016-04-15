@@ -53,6 +53,12 @@ public class DonateDAOImpl implements DonateDAO {
                 .list();
     }
 
+    public void deleteById(int id) {
+        Query query = sessionFactory.getCurrentSession().createQuery("delete from donates where id = :id");
+        query.setInteger("id",id);
+        query.executeUpdate();
+    }
+
     @Override
     public Donate findByDonatorAndProject(int donatorId, int projectId) {
         return (Donate) sessionFactory.getCurrentSession().createCriteria(Donate.class, "donate")
