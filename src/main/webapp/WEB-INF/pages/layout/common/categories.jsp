@@ -8,8 +8,6 @@
         <div class="list-group" ng-repeat="category in categoryList.categories">
             <a class="list-group-item" href="/categories/{{ category.id }}/">{{category.title}}</a>
         </div>
-    <a href="/categories/${idcategory}/newproject" class="btn btn-success btn-block">Create new project</a>
-
 </div>
 <script src="<c:url value="/resources/angular/category/categoryList/category_list_controller.js" />"></script>
 <script src="<c:url value="/resources/angular/category/categoryList/category_list_service.js" />"></script>
