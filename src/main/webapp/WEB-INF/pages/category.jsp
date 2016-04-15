@@ -4,37 +4,24 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<style type="text/css">
-    .but {
-        margin-top: 2cm;
-
-    }
-</style>
 <div class="row" ng-init="projectList.loadProjects(${category.id})" ng-controller="ProjectList as projectList">
+    <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
+        <h4 class="main-title title col-lg-6 col-md-6 col-sm-6">Category of ${category.title}</h4>
+        <a href="/categories/${idcategory}/newproject" class="btn btn-success col-lg-3">Create new project</a>
 
-    <h4 class="text-success title" align="center">Category of ${category.title}</h4>
-    <div class="row">
-        <div class="pull-right">
-            <div class="form-inline">
-                <div class="form-group">
-                    <select ng-model="filterOrd" class="selectpicker ">
-                        <option value="">All</option>
-                        <option value="Actual">Actual</option>
-                        <option value="Archive">Archive</option>
-                        <option value="Whip-round">Whip-round</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <a href="/categories/${idcategory}/newproject" class="btn btn-success">Create project</a>
-                </div>
-            </div>
-        </div>
+        <select ng-model="filterOrd" class="selectpicker col-lg-3 col-md-3 col-sm-3 pull-right">
+            <option value="">All</option>
+            <option value="Actual">Actual</option>
+            <option value="Archive">Archive</option>
+            <option value="Whip-round">Whip-round</option>
+        </select>
     </div>
 
-    <h4 ng-show="!projectList.projects.length" ng-class="{'empty-list': !projectList.projects.length }" align="center">This category yet not have projects</h4>
 
-    <div class="col-lg-7 projects-block">
-        <div class="col-lg-6" ng-repeat="project in projectList.projects | filter : filterOrd">
+    <h4 ng-show="projectList.projects.length == 0" ng-class="{'empty-list': !projectList.projects.length }" ng-cloak
+        align="center">This category yet not have projects</h4>
+    <div class="col-lg-12 ">
+        <div class="col-lg-4 col-md-4" ng-repeat="project in projectList.projects | filter : filterOrd">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
@@ -52,8 +39,9 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center">{{project.donate_amount | currency}} pledged of {{project.needAmount | currency}} goal</p>
-                <p class="text-center">Created : {{project.date}}</p>
+                <p class="text-center">{{project.donate_amount | currency}} pledged of {{project.needAmount | currency}}
+                    goal</p>
+                <p class="text-center">Created : {{ project.created | date:'MM.dd.yy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
             </div>

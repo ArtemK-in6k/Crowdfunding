@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity(name = "donates")
-public class Donate{
+@Table(name = "donates", uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "project_id"}))
+public class Donate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

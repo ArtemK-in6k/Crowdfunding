@@ -1,10 +1,12 @@
 package com.crowd.entity;
 
+import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.util.List;
 
 
@@ -141,7 +143,8 @@ public class Project {
     }
 
     public double percendDonate() {
-        return getDonate_amount() / needAmount * 100;
+        double percent =  getDonate_amount() / needAmount * 100;
+        return NumberFormatter.format(percent);
     }
 
     public String dateFormat() {
