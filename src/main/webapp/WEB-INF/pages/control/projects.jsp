@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 
-<script src="<c:url value="/resources/angular/control/controlCtrl.js" />"></script>
+<script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
 <script src="<c:url value="/resources/angular/control/clickDirective.js" />"></script>
 
 <div ng-controller="OwnProjects">
