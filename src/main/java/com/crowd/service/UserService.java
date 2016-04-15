@@ -1,14 +1,18 @@
 package com.crowd.service;
 
+import com.crowd.bean.RegistrationFields;
 import com.crowd.bean.user.UserBean;
 import com.crowd.dao.UserDAO;
 import com.crowd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -45,4 +49,27 @@ public class UserService {
     public UserBean getUserByLogin(String login){
         return new UserBean(userDAO.findByLogin(login));
     }
+
+    public ResponseEntity<Boolean> isLoginUnique(String login){
+        login = login.trim();
+        return new ResponseEntity<Boolean>(Objects.isNull(userDAO.findByLogin(login)), HttpStatus.OK);
+    }
+
+    public ResponseEntity<Boolean> isEmailUnique(String email) {
+        email = email.trim();
+        return new ResponseEntity<Boolean>(Objects.isNull(userDAO.findByEmail(email)), HttpStatus.OK);
+    }
+
+    public boolean createAccount(RegistrationFields registrationFields) {
+        boolean isAuthorize = false;
+        User newUser = registrationFields.toUserEntity();
+
+        if (!Objects.isNull(newUser)){
+            userDAO.insert(newUser);
+            isAuthorize = true;
+        }
+
+        return isAuthorize;
+    }
+
 }
