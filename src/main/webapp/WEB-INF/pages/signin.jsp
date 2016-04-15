@@ -22,7 +22,7 @@
 
             <div class="form-group">
                 <div class="input-group">
-                    <input  type="text" class="form-control" name="lastName"
+                    <input type="text" class="form-control" name="lastName"
                            placeholder="Enter last name" required>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                 </div>
@@ -31,7 +31,8 @@
             <div class="form-group">
                 <div class="input-group">
                     <input ng-model="regController.form.email"
-                           ng-change="regController.checkEmailUnique(regController.form.email)" type="email" name="email"
+                           ng-change="regController.checkEmailUnique(regController.form.email)" type="email"
+                           name="email"
                            class="form-control"
                            placeholder="Enter Email" required>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span>
