@@ -115,7 +115,7 @@
                         </a>
                     </div>
                     <h5 align="center" class="error-text" ng-if="projectDonates.donateList.length == 0"> The Project still hasn't donations.</h5>
-                    <div class="text-center donate-pagination-box" ng-if="projectDonates.donateList.length != 0">
+                    <div class="text-center donate-pagination-box" ng-if="projectDonates.donateList.length != 0 && projectDonates.pagination.numPages > 1 ">
                         <ul class="pagination">
                             <li><a href="" ng-click="projectDonates.pagination.prevPage()">&laquo;</a></li>
                             <li ng-repeat="n in [] | range: projectDonates.pagination.numPages"
