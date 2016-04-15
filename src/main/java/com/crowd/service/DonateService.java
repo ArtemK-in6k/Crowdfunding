@@ -1,7 +1,7 @@
 package com.crowd.service;
 
-import com.crowd.bean.donate.DonateBean;
 import com.crowd.bean.donate.ProjectDonatesResponse;
+import com.crowd.bean.donate.UserDonatesBean;
 import com.crowd.dao.DonateDAO;
 import com.crowd.dao.ProjectDAO;
 import com.crowd.dao.UserDAO;
@@ -13,12 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Service
 public class DonateService {
@@ -49,11 +47,11 @@ public class DonateService {
     public boolean addDonateForProject(float amount, int projectId, int donatorId){
         Project project = projectDAO.findById(projectId);
         User donator = userDAO.findById(donatorId);
-        
+
         if (Objects.isNull(project) || Objects.isNull(donator)){
             throw new IllegalArgumentException("Input parameters can't be null");
         }
-        
+
         Donate donate = new Donate();
         donate.setDate(new Timestamp(System.currentTimeMillis()));
         donate.setAmount(amount);
@@ -65,4 +63,15 @@ public class DonateService {
         return true;
     }
 
+    public List<UserDonatesBean> getWrapperDonates(List<Donate> donates){
+        List<UserDonatesBean> userDonatesBeen = new ArrayList<>();
+        for (Donate donate : donates){
+            userDonatesBeen.add(new UserDonatesBean(donate));
+        }
+        return userDonatesBeen;
+    }
+
+    public void deleteDonateById(int id){
+        donateDAO.deleteById(id);
+    }
 }

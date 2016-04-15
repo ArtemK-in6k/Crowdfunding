@@ -48,7 +48,7 @@ public class DonateDAOImpl implements DonateDAO {
     }
 
     public void deleteById(int id) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from  donates where id = :id");
+        Query query = sessionFactory.getCurrentSession().createQuery("delete from donates where id = :id");
         query.setInteger("id",id);
         query.executeUpdate();
     }
