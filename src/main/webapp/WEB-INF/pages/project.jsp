@@ -57,7 +57,7 @@
 
                                     <div class="col-lg-6  no-padding">
                                         <input class="form-control text-center" value="15" min="1" name="amount"
-                                               placeholder="Amount" type="text">
+                                               placeholder="Amount" type="number">
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 pull-right-lg no-padding ">
