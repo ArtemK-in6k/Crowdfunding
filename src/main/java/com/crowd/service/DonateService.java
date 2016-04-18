@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -66,13 +67,7 @@ public class DonateService {
             donate.setDate(new Timestamp(System.currentTimeMillis()));
         }
 
-        Donate donate = new Donate();
-        donate.setDate(new Timestamp(System.currentTimeMillis()));
-        donate.setAmount(amount);
-        donate.setProject(project);
-        donate.setUser(donator);
-
-        donateDAO.insert(donate);
+        donateDAO.saveUpdate(donate);
 
         return true;
     }
