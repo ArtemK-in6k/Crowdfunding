@@ -16,14 +16,14 @@
         </select>
     </div>
     <div class="col-lg-12  ">
-        <div class="col-lg-4 col-md-4" ng-repeat="project in projectList.projects | filter:orderProp">
+        <div class="col-lg-4 col-md-4 " ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
                          style="width: 100%; height: 150px;"/>
                 </a>
                 <div class="caption text-center ">
-                    <a href="/projects/{{project.id}}" class="resize-text col-lg-12" title="{{project.nameProject}}">
+                    <a href="/projects/{{project.id}}" class="resize-text " title="{{project.nameProject}}">
                         <p class="lead ">{{project.nameProject}}</p>
                     </a>
                     <div class="progress">
