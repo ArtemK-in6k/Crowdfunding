@@ -2,6 +2,7 @@ package com.crowd.service;
 
 
 import com.crowd.bean.ProjectResponse;
+import com.crowd.bean.user.UserBean;
 import com.crowd.dao.CategoryDAOImpl;
 import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -88,5 +90,20 @@ public class ProjectService {
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
+    }
+
+    public int createProject(UserBean user,String projectName, double needAmount, String image, int categoryId, String aboutProject){
+        Project project = new Project();
+        project.setNameProject(projectName);
+        project.setNeedAmount(needAmount);
+        project.setImage(image);
+        project.setCategory(categoryDao.findById(categoryId));
+        project.setAboutProject(aboutProject);
+        project.setUser(userDAO.findByEmail(user.getEmail()));
+        project.setStatus("Actual");
+        project.setDate(new Timestamp(System.currentTimeMillis()));
+        projectDAO.insert(project);
+
+        return project.getId();
     }
 }
