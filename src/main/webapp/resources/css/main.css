@@ -1,18 +1,18 @@
-body{
-    margin-top: 20px!important;
+body {
+    margin-top: 20px !important;
 }
 
-.body-wrapper{
-    border: 1px solid #dee5e7!important;
-    -webkit-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
-    -moz-box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
-    box-shadow: -2px -1px 17px -6px rgba(0,0,0,0.49);
+.body-wrapper {
+    border: 1px solid #dee5e7 !important;
+    -webkit-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
+    box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
     min-height: 800px;
     padding: 25px;
 }
 
-.logo-img{
-    margin-left: 5px!important;
+.logo-img {
+    margin-left: 5px !important;
     width: 50px;
     height: 50px;
     background: url('/resources/img/cf-logo.png') no-repeat center center scroll;
@@ -21,38 +21,40 @@ body{
     background-size: cover;
     -o-background-size: cover;
 }
-.navbar-brand.title-text{
-    font-weight: bold!important;
+
+.navbar-brand.title-text {
+    font-weight: bold !important;
     color: #444;
 }
-.navbar.navbar-default{
-    margin: 0!important;
+
+.navbar.navbar-default {
+    margin: 0 !important;
 }
 
-.donate-owner-title{
+.donate-owner-title {
     color: #444;
     font-weight: bold;
 }
 
-.projects-block{
+.projects-block {
     margin-top: 15px !important;
 }
 
-.search-box-form{
+.search-box-form {
     line-height: 50px;
 }
 
-h4[class='empty-list']{
+h4[class='empty-list'] {
     margin-top: 100px;
     color: red;
 }
 
-span.category-link a{
+span.category-link a {
     color: grey;
     font-weight: bold;
 }
 
-.donate-pledged{
+.donate-pledged {
     font-size: 45px;
     font-weight: bold;
 }
@@ -63,49 +65,50 @@ span.category-link a{
     color: #444;
 }
 
-.progress{
+.progress {
     margin-top: 10px;
-    height: 8px!important;
+    height: 8px !important;
 }
 
-.support-block{
+.support-block {
     margin-top: 10px;
 }
 
-.support-block input{
+.support-block input {
     height: 46px;
     font-size: 24px;
     color: #337ab7;
 }
 
-.no-padding{
-    padding: 0!important;
+.no-padding {
+    padding: 0 !important;
 }
 
-.support-input-block{
+.support-input-block {
     margin-top: 10px;
 }
 
-span.sub{
+span.sub {
     display: block;
 }
 
-.project-owner-info{
-    margin-left: 10px!important;
+.project-owner-info {
+    margin-left: 10px !important;
 }
-.text-bold{
+
+.text-bold {
     font-weight: 700;
 }
 
-.pagination{
-    margin: 0!important;
+.pagination {
+    margin: 0 !important;
 }
 
-.project-details-img{
+.project-details-img {
     width: 100%;
     height: 100%;
-    max-height: 390px!important;
-    min-height: 390px!important;
+    max-height: 390px !important;
+    min-height: 390px !important;
 
 }
 
@@ -115,10 +118,18 @@ span.sub{
     }
 }
 
-.main-title{
+.main-title {
     color: #444;
 }
 
-.error-text{
+.error-text {
     color: red;
+}
+
+.resize-text {
+    width: 100%;
+    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -20,11 +20,11 @@
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
-                         style="width: 150px; height: 150px;"/>
+                         style="width: 100%; height: 150px;"/>
                 </a>
-                <div class="caption text-center">
-                    <a href="/projects/{{project.id}}">
-                        <p class="lead">{{project.nameProject}}</p>
+                <div class="caption text-center ">
+                    <a href="/projects/{{project.id}}" class="resize-text col-lg-12" title="{{project.nameProject}}">
+                        <p class="lead ">{{project.nameProject}}</p>
                     </a>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
