@@ -40,8 +40,6 @@
         <put-attribute name="body" value="/WEB-INF/pages/search.jsp"></put-attribute>
     </definition>
 
-    <definition name="signin" template="/WEB-INF/pages/signin.jsp"></definition>
-
     <definition name="thanks" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/thanks.jsp"></put-attribute>
     </definition>
@@ -75,6 +73,15 @@
 
     <definition name="control/projects" extends="layoutControl">
         <put-attribute name="body" value="/WEB-INF/pages/control/projects.jsp"></put-attribute>
+    </definition>
+
+
+    <definition name="layoutWelcome" template="/WEB-INF/pages/layout/layout-welcome.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
+    </definition>
+
+    <definition name="signin" extends="layoutWelcome">
+        <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
     <definition name="control/donates" extends="layoutControl">

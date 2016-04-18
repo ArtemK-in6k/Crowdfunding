@@ -48,17 +48,26 @@ public class DonateService {
         Project project = projectDAO.findById(projectId);
         User donator = userDAO.findById(donatorId);
 
+
+
         if (Objects.isNull(project) || Objects.isNull(donator)){
             throw new IllegalArgumentException("Input parameters can't be null");
         }
 
-        Donate donate = new Donate();
-        donate.setDate(new Timestamp(System.currentTimeMillis()));
-        donate.setAmount(amount);
-        donate.setProject(project);
-        donate.setUser(donator);
+        Donate donate = donateDAO.findByDonatorAndProject(donatorId, projectId);
 
-        donateDAO.insert(donate);
+        if (Objects.isNull(donate)) {
+            donate = new Donate();
+            donate.setDate(new Timestamp(System.currentTimeMillis()));
+            donate.setAmount(amount);
+            donate.setProject(project);
+            donate.setUser(donator);
+        }else {
+            donate.setAmount(donate.getAmount() + amount);
+            donate.setDate(new Timestamp(System.currentTimeMillis()));
+        }
+
+        donateDAO.saveUpdate(donate);
 
         return true;
     }
