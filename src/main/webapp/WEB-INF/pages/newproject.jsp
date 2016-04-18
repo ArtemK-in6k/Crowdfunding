@@ -12,7 +12,7 @@
                     <h3 style="margin-bottom: 25px; text-align: center;">Create Project Form</h3>
                     <div class="form-group">
                         <input type="text" class="form-control" id="projectName" name="projectName"
-                               placeholder="Name of your project" class="form-control" required>
+                               placeholder="Project name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <input type="number" min="0.01" step="0.01" class="form-control" id="needAmount" name="needAmount"
@@ -28,7 +28,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                            <textarea id="message" type="textarea" name="aboutProject" class="form-control" rows="10"
+                            <textarea ng-model = "newproject.aboutProject" id="message" type="textarea" name="aboutProject" class="form-control" rows="10"
                                       cols="100" placeholder="Enter here project description..."
                                       style="resize: none" required>
                             </textarea>

@@ -2,6 +2,7 @@ package com.crowd.controller;
 
 
 import com.crowd.bean.user.UserBean;
+import com.crowd.entity.Category;
 import com.crowd.entity.Donate;
 import com.crowd.entity.Project;
 import com.crowd.service.CategoryService;
@@ -53,5 +54,10 @@ public class ProjectController {
 
        int projectId = projectService.createProject(user,projectName,needAmount,image,category,aboutProject);
         return "redirect:/projects/"+projectId;
+    }
+
+    @RequestMapping(value = "/new",method = RequestMethod.GET)
+    public String createProjectPage() {
+        return "newproject";
     }
 }

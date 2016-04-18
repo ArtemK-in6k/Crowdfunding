@@ -33,16 +33,4 @@ public class CategoryController {
 
         return "category";
     }
-
-    @RequestMapping("/{id}/newproject")
-    public String newProject(Model model, @PathVariable int id) {
-
-        Category category = categoryService.findById(id);
-
-        model.addAttribute("category",category);
-        model.addAttribute("categories",categoryService.selectAll());
-
-        return "newproject";
-    }
-
 }
