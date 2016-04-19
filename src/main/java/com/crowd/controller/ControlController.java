@@ -2,6 +2,7 @@ package com.crowd.controller;
 
 import com.crowd.bean.ProjectResponse;
 import com.crowd.bean.ProjectStatus;
+import com.crowd.bean.donate.DonationContributionBean;
 import com.crowd.bean.donate.UserDonatesBean;
 import com.crowd.bean.user.UserBean;
 import com.crowd.entity.Project;
@@ -96,6 +97,14 @@ public class ControlController {
         User fullUser = userService.findByEmail(user.getEmail());
         List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
+    }
 
+    @RequestMapping(value = "/donates/save", method = RequestMethod.POST)
+    public ResponseEntity<List<UserDonatesBean>> saveOwnDonation(@ModelAttribute("userBean") UserBean user,@RequestBody DonationContributionBean donationContributionBean) {
+        donateService.saveChangeDonation(donationContributionBean);
+        User fullUser = userService.findByEmail(user.getEmail());
+        List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
+
+        return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }
 }

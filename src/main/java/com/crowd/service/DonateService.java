@@ -1,5 +1,6 @@
 package com.crowd.service;
 
+import com.crowd.bean.donate.DonationContributionBean;
 import com.crowd.bean.donate.ProjectDonatesResponse;
 import com.crowd.bean.donate.UserDonatesBean;
 import com.crowd.dao.DonateDAO;
@@ -82,5 +83,11 @@ public class DonateService {
 
     public void deleteDonateById(int id){
         donateDAO.deleteById(id);
+    }
+
+    public void saveChangeDonation(DonationContributionBean donationContributionBean){
+        Donate donate = donateDAO.findById(donationContributionBean.getId());
+        donate.setAmount(donationContributionBean.getDonate());
+        donateDAO.saveUpdate(donate);
     }
 }

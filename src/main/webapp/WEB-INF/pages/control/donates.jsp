@@ -7,11 +7,15 @@
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
 <script src="<c:url value="/resources/angular/lib/xeditable.min.js" />"></script>
 <link href="<c:url value="/resources/css/xeditable.min.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/input.css" />" rel="stylesheet" type="text/css">
 
 <div ng-controller="OwnDonates">
     <div class="col-sm-12 col-md-12">
         <h3 class="text-center">My Donations</h3>
-        <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete successful</div>
+        <div ng-show="donationUpdateSuccess" class="alert-success alert text-center">Donation updated successful</div>
+        <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete
+            successful
+        </div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -23,7 +27,7 @@
                 <th class="text-center">Action</th>
             </tr>
             </thead>
-            <tbody class="text-center" ng-repeat="donate in donates">
+            <tbody class="text-center" ng-repeat="donate in donates | orderBy:'id'">
             <tr>
                 <td>
                     <img src="{{donate.image}}" height="50px" width="50px">
@@ -31,11 +35,17 @@
                 <td>
                     <a href="/projects/{{donate.projectId}}"> {{donate.projectName}} </a>
                 </td>
-                <td>{{donate.donateAmount}}</td>
-                <td>{{donate.needAmount}}</td>
-                <td><input>{{donate.donate}}</td>
+                <td>{{donate.donateAmount}} &#8372;</td>
+                <td>{{donate.needAmount}} &#8372;</td>
                 <td>
-                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)" ng-confirm-click={{donate.projectName}}>Delete</button>
+                    <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation" e-form="rowform" onbeforesave="saveDonate($data, donate.id)" e-required>
+                            {{donate.donate}} &#8372;</span>
+                </td>
+                <td>
+                    <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
+                            ng-confirm-click={{donate.projectName}}>Delete
+                    </button>
                 </td>
             </tr>
             </tbody>
