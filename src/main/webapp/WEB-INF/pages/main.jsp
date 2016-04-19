@@ -23,9 +23,9 @@
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
                          style="width: 100%; height: 150px;"/>
                 </a>
-                <div class="caption text-center ">
-                    <a href="/projects/{{project.id}}" class="resize-text " title="{{project.nameProject}}">
-                        <p class="lead ">{{project.nameProject}}</p>
+                <div id="long-text" class="caption text-center ">
+                    <a href="/projects/{{project.id}}" class="resize-text" title="{{project.nameProject}}">
+                        <p class="lead">{{project.nameProject}}</p>
                     </a>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
@@ -36,9 +36,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center"> {{project.donate_amount | currency}} pledged of {{project.needAmount |
-                    currency}} goal</p>
-                <p class="text-center">Created : {{ project.created | date:'MM.dd.yy'}}</p>
+                <p class="text-center"> {{project.donate_amount}} &#8372; pledged of {{project.needAmount}} &#8372; goal</p>
+                <p class="text-center">Created : {{ project.created | date:'dd MMM yyyy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <p class="text-center">Status : {{project.status}}</p>
             </div>
