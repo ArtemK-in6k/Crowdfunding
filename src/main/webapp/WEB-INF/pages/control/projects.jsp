@@ -17,8 +17,8 @@
                 <th></th>
                 <th class="text-center">Project name</th>
                 <th class="text-center">Author</th>
-                <th class="text-center">Actual amount</th>
-                <th class="text-center">Need amount</th>
+                <th class="text-center">Raised</th>
+                <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
                 <th class="text-center">Action</th>
             </tr>

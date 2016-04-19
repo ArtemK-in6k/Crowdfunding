@@ -15,10 +15,9 @@
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
-                <th class="text-center">Author</th>
-                <th class="text-center">Actual amount</th>
-                <th class="text-center">Need amount</th>
-                <th class="text-center">Your donate</th>
+                <th class="text-center">Raised</th>
+                <th class="text-center">Goal</th>
+                <th class="text-center">Your contribution</th>
                 <th class="text-center">Action</th>
             </tr>
             </thead>
@@ -30,7 +29,6 @@
                 <td>
                     <a href="/projects/{{donate.projectId}}"> {{donate.projectName}} </a>
                 </td>
-                <td>{{donate.author}}</td>
                 <td>{{donate.donateAmount}}</td>
                 <td>{{donate.needAmount}}</td>
                 <td>{{donate.donate}}</td>
