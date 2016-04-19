@@ -13,7 +13,7 @@
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>
-            <option value="Whip-round">Whip-round</option>
+            <option value="Whip-round">On going</option>
         </select>
     </div>
 

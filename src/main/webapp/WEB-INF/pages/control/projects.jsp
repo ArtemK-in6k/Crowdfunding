@@ -40,7 +40,7 @@
                     <select class="form-control" ng-model="project.status">
                         <option value="Archive">Archive</option>
                         <option value="Actual">Actual</option>
-                        <option value="Whip-round">Whip-round</option>
+                        <option value="Whip-round">On going</option>
                     </select>
                 </td>
                 <td>
