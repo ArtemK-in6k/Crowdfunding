@@ -14,7 +14,7 @@
         <div class="text-muted m-t-xs ng-binding"><i class="fa fa-tag"></i>
             <span class="category-link"><a
                     href="/categories/${project.category.id}/">${project.category.title}</a></span>
-            <i class="fa fa-calendar"></i> <fmt:formatDate pattern="yyyy-MM-dd"
+            <i class="fa fa-calendar"></i> <fmt:formatDate pattern="dd MMM yyyy"
                                                            value="${project.date}"/>
         </div>
     </div>
@@ -40,8 +40,8 @@
             <div class="panel panel-default">
 
                 <div class="panel-body">
-                    <span class="donate-pledged">${project.donate_amount}</span>
-                    <span class="donate-pledged-sub">pledged of ${project.needAmount}</span>
+                    <span class="donate-pledged">${project.donate_amount} &#8372;</span>
+                    <span class="donate-pledged-sub">pledged of ${project.needAmount} &#8372; goal</span>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="${project.percendDonate()}"
                              aria-valuemin="0" aria-valuemax="100" style="width:${project.percendDonate()}%">
@@ -90,7 +90,7 @@
                 <!-- /.panel-body -->
             </div>
             <div class="panel panel-default">
-                <div class="text-center"><h4 class="title">Project Donates</h4></div>
+                <div class="text-center"><h4 class="title">Donations</h4></div>
 
                 <!-- /.panel-heading -->
                 <div id="project-donates-box" class="panel-body" ng-init="projectDonates.loadDonates(${projectId})"
@@ -106,9 +106,9 @@
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
-                                <span class="badge">{{ donate.amount | currency :''}}  &#8372</span>
+                                <span class="badge">{{ donate.amount}}  &#8372;</span>
                                     <span class="pull-right ">
-                                        {{ donate.date | date:'MM.dd.yy HH:mm'}}
+                                        {{ donate.date | date:'dd MMM yyyy HH:mm'}}
                                     </span>
                             </div>
                         </div>
