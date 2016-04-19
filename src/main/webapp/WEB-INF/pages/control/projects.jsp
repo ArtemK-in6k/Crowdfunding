@@ -34,8 +34,8 @@
                 <td>
                     {{project.fullNameUser}}
                 </td>
-                <td>{{project.donate_amount}}</td>
-                <td>{{project.needAmount}}</td>
+                <td>{{project.donate_amount}} &#8372;</td>
+                <td>{{project.needAmount}} &#8372;</td>
                 <td>
                     <select class="form-control" ng-model="project.status">
                         <option value="Archive">Archive</option>
