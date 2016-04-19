@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="text" name="image" ng-model="newproject.image" placeholder="Image URL"
-                               ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i" required/>
+                               ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i" />
                     </div>
                     <div class="form-group">
                         <select class="form-control input-md" name="category" required>
