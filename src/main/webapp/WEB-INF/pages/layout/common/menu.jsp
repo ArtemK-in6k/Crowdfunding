@@ -20,10 +20,7 @@
                   method="post">
                 <div class="form-group">
                     <input id="search" name="search" type="text" class="form-control" placeholder="Search project" required>
-                    <select class="selectpicker" name="select">
-                        <option value="project">by project name</option>
-                        <option value="user">by full name</option>
-                    </select>
+                    <input hidden name="select" value="project">
                     <button type="submit" class="btn btn-default">Search</button>
                     <div id="dropdown-button" class="dropdown form-group">
                         <button class="btn btn-default dropdown-toggle form-group" type="button" data-toggle="dropdown">${userBean.firstName } ${userBean.lastName}
