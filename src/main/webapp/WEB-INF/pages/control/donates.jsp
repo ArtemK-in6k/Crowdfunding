@@ -5,6 +5,8 @@
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
+<script src="<c:url value="/resources/angular/lib/xeditable.min.js" />"></script>
+<link href="<c:url value="/resources/css/xeditable.min.css" />" rel="stylesheet" type="text/css">
 
 <div ng-controller="OwnDonates">
     <div class="col-sm-12 col-md-12">
@@ -31,7 +33,7 @@
                 </td>
                 <td>{{donate.donateAmount}}</td>
                 <td>{{donate.needAmount}}</td>
-                <td>{{donate.donate}}</td>
+                <td><input>{{donate.donate}}</td>
                 <td>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)" ng-confirm-click={{donate.projectName}}>Delete</button>
                 </td>
