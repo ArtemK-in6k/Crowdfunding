@@ -6,10 +6,10 @@
 
 <div class="row" ng-init="projectList.loadProjects(${category.id})" ng-controller="ProjectList as projectList">
     <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
-        <h4 class="main-title title col-lg-6 col-md-6 col-sm-6">Category of ${category.title}</h4>
-        <a href="/projects/new" class="btn btn-success col-lg-3">Create new project</a>
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+        <h4 class="main-title title col-lg-4 col-md-4 col-sm-4 text-center">Category of ${category.title}</h4>
 
-        <select ng-model="filterOrd" class="selectpicker col-lg-3 col-md-3 col-sm-3 pull-right">
+        <select ng-model="filterOrd" class="selectpicker col-lg-4 col-md-4 col-sm-4 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>

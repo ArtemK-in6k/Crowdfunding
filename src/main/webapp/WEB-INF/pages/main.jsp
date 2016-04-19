@@ -7,7 +7,8 @@
 
 
     <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
-        <h4 class="main-title title col-lg-8 col-md-8 col-sm-8">Projects</h4>
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+        <h4 class="main-title title col-lg-4 col-md-4 col-sm-4 text-center">Projects</h4>
         <select ng-model="orderProp" class="selectpicker col-lg-4 col-md-4 col-sm-4 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
