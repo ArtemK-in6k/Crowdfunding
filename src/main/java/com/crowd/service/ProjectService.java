@@ -93,6 +93,9 @@ public class ProjectService {
     }
 
     public int createProject(UserBean user,String projectName, double needAmount, String image, int categoryId, String aboutProject){
+        if (image.equals("")){
+            image="http://www.edisonawards.com/news/wp-content/uploads/2016/01/chi-carol-sente-crowdfunding-1871-20150302.jpg";
+        }
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
