@@ -8,8 +8,8 @@
 
 <div ng-controller="OwnDonates">
     <div class="col-sm-12 col-md-12">
-        <h3 class="text-center">My Donates</h3>
-        <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donate {{donateDelete}} delete successful</div>
+        <h3 class="text-center">My Donations</h3>
+        <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete successful</div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -40,6 +40,6 @@
             </tr>
             </tbody>
         </table>
-        <div ng-if="donates.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any donates</h3></div>
+        <div ng-if="donates.length == 0" class="text-center text-danger"><h3>Sorry, you haven't any donations</h3></div>
     </div>
 </div>
