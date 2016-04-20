@@ -92,7 +92,7 @@ public class ProjectService {
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 
-    public int createProject(UserBean user,String projectName, double needAmount, String image, int categoryId, String aboutProject){
+    public int createProject(UserBean user,String projectName, double needAmount, String image, String aboutProject){
         if (image.equals("")){
             image="http://www.edisonawards.com/news/wp-content/uploads/2016/01/chi-carol-sente-crowdfunding-1871-20150302.jpg";
         }
@@ -100,7 +100,6 @@ public class ProjectService {
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
         project.setImage(image);
-        project.setCategory(categoryDao.findById(categoryId));
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus("Actual");
