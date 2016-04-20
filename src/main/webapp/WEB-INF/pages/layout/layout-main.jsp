@@ -19,16 +19,11 @@
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>
-
             <div class="col-lg-12 body-wrapper ">
-                <div class="col-lg-3">
-                    <tiles:insertAttribute name="categories"/>
-                </div>
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <tiles:insertAttribute name="body"/>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
