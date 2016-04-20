@@ -126,6 +126,6 @@ span.sub {
     color: red;
 }
 #long-text {
-    overflow:hidden;
-    text-overflow:ellipsis;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
 }
