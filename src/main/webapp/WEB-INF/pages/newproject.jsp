@@ -9,14 +9,13 @@
 <script src="<c:url value="/resources/angular/lib/textAngular/textAngular.min.js" />"></script>
 <script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
 
-
-<div class="row col-lg-8 col-lg-offset-2">
+<div class="row col-lg-9">
     <div class="container">
-        <div class="col-md-5">
+        <div class="col-md-10">
             <div class="form-area">
                 <form name="createProjectForm" role="form" action='/projects' method="POST">
                     <br style="clear:both">
-                    <h3 style="margin-bottom: 25px; text-align: center;">Create Project Form</h3>
+                    <h3 style="margin-bottom: 25px; text-align: left;">Create Project Form</h3>
                     <div class="form-group">
                         <input type="text" class="form-control" id="projectName" name="projectName"
                                placeholder="Project name" class="form-control" required>
@@ -31,9 +30,12 @@
                                placeholder="Image URL"
                                ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i"/>
                     </div>
-                    <div ng-controller="AppCtrl">
-                        <div text-angular ng-model="htmlcontent"></div>
+                    <div class="form-group" ng-controller="AppCtrl">
+                        <div text-angular ng-model="htmlcontent" name="aboutProject">
+
+                        </div>
                     </div>
+                    <br/>
                     <div class="col-md-12 text-center">
                         <button ng-disabled="createProjectForm.$invalid" type="submit" id="submit" name="submit"
                                 class="btn btn-primary center-pill">
