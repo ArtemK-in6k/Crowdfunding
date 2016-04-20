@@ -106,10 +106,10 @@
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
-                                <span class="badge">{{ donate.amount}}  &#8372;</span>
-                                    <span class="pull-right ">
+                                <span class="pull-right ">
                                         {{ donate.date | date:'dd MMM yyyy HH:mm'}}
-                                    </span>
+                                </span>
+                                <span id="amount" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                             </div>
                         </div>
                     </div>
