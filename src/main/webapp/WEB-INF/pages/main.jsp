@@ -8,8 +8,8 @@
 
     <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
         <div class="col-lg-4 col-md-4 col-sm-4"></div>
-        <h4 class="main-title title col-lg-4 col-md-4 col-sm-4 text-center">Projects</h4>
-        <select ng-model="orderProp" class="selectpicker col-lg-4 col-md-4 col-sm-4 pull-right">
+        <h4 class="main-title title col-lg-5 col-md-5 col-sm-5 text-center">Projects</h4>
+        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-3 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>
@@ -17,7 +17,7 @@
         </select>
     </div>
     <div class="col-lg-12  ">
-        <div class="col-lg-4 col-md-4 " ng-repeat="project in projectList.projects | filter:orderProp">
+        <div class="col-lg-3 col-md-3 " ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
