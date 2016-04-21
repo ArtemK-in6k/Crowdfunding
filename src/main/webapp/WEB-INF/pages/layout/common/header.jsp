@@ -22,12 +22,45 @@
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
 
+<link href="<c:url value="/resources/css/textAngular/textAngular.css" />" rel="stylesheet" type="text/css">
+<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-rangy.min.js" />"></script>
+<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-sanitize.min.js" />"></script>
+<script src="<c:url value="/resources/angular/lib/textAngular/textAngular.min.js" />"></script>
+
+<script src="<c:url value="/resources/angular/lib/xeditable.min.js" />"></script>
+<link href="<c:url value="/resources/css/xeditable.min.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/input.css" />" rel="stylesheet" type="text/css">
+
 
 <link href="<c:url value="/resources/css/admin.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-<script src="<c:url value="/resources/js/app.js" />"></script>
+
+<script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
+
 <script src="<c:url value="/resources/angular/controllers.js" />"></script>
-<script src="<c:url value="/resources/angular/modulForCategory.js" />"></script>
+
+<script src="<c:url value="/resources/angular/simplePagination.js" />"></script>
+<script src="<c:url value="/resources/angular/project/donatelist/project_donate_list_controller.js" />"></script>
+<script src="<c:url value="/resources/angular/project/donatelist/project_donates_service.js" />"></script>
+<script src="<c:url value="/resources/angular/project/project_details_controller.js" />"></script>
+
+<script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
+
+
+<script src="<c:url value="/resources/angular/registration/registration.module.js" />"></script>
+
+<script src="<c:url value="/resources/angular/registration/registration_controller.js" />"></script>
+
+<script src="<c:url value="/resources/angular/registration/registration_service.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/control.module.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
+
+
+<script src="<c:url value="/resources/js/app.js" />"></script>
