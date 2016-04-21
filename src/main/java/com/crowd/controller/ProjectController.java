@@ -31,16 +31,7 @@ public class ProjectController {
 
     @RequestMapping("/{projectId}")
     public String project(Model model, @PathVariable int projectId) {
-
-        Project project = projectService.findById(projectId);
-
-        List<Donate> donates = project.getDonateList();
-
-        model.addAttribute("project", project);
-        model.addAttribute("donates", donates);
-        model.addAttribute("categories",categoryService.selectAll());
         model.addAttribute("projectId",projectId);
-
         return "project";
     }
 
