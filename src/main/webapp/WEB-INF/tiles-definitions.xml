@@ -43,34 +43,11 @@
         <put-attribute name="body" value="/WEB-INF/pages/thanks.jsp"></put-attribute>
     </definition>
 
-    <definition name="adminlayout" template="/WEB-INF/pages/layout/layout-admin.jsp">
-        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header-admin.jsp"></put-attribute>
-        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu-admin.jsp"></put-attribute>
-    </definition>
-
-    <definition name="admin/projects" extends="adminlayout">
-        <put-attribute name="body" value="/WEB-INF/pages/admin/projects.jsp"></put-attribute>
-    </definition>
-
-
-
-    <definition name="admin/project/donates" extends="adminlayout">
-        <put-attribute name="body" value="/WEB-INF/pages/admin/project/donates.jsp"></put-attribute>
-    </definition>
-
-    <definition name="project" template="/WEB-INF/pages/layout/layout-project.jsp">
-        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
-        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+    <definition name="project" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/project.jsp"/>
     </definition>
 
-
-    <definition name="layoutControl" template="/WEB-INF/pages/layout/layout-control.jsp">
-        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
-        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
-    </definition>
-
-    <definition name="control/projects" extends="layoutControl">
+    <definition name="control/projects" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/control/projects.jsp"></put-attribute>
     </definition>
 
@@ -83,7 +60,7 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
-    <definition name="control/donates" extends="layoutControl">
+    <definition name="control/donates" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/control/donates.jsp"></put-attribute>
     </definition>
 
