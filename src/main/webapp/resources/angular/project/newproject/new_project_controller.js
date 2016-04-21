@@ -1,5 +1,16 @@
-var crowdfundingApp = angular.module('crowdfundingApp',['textAngular']);
+(function () {
+    'use strict';
 
-crowdfundingApp.controller('AppCtrl', function($scope) {
-    $scope.htmlcontent = "Default message";
-});
+    angular
+        .module('crowdfundingApp.projects')
+        .controller('AppCtrl', AppCtrl);
+
+    AppCtrl.$inject = ['$http'];
+
+    function AppCtrl($http) {
+
+        var self = this;
+
+        self.htmlcontent = "Default message";
+    }
+})();
