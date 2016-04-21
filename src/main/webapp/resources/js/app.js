@@ -1,6 +1,11 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('crowdfundingApp', []);
+  angular
+      .module('crowdfundingApp', [
+        'crowdfundingApp.registration',
+        'crowdfundingApp.projects',
+        'crowdfundingApp.control',
+      ]);
+
 })();
