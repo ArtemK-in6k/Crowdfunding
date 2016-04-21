@@ -1,18 +1,24 @@
-'use strict';
+(function () {
+  'use strict';
 
-var crowdfundingApp = angular.module('crowdfundingApp', []);
+  angular
+      .module('crowdfundingApp.projects')
+      .controller('ProjectList', ProjectList);
 
-crowdfundingApp.controller('ProjectList', ['$http', function ($http) {
-    var vm = this;
-    
-    vm.loadProjects = function (category) {
-        var url = (category) ? '/projects/categories/' + category : '/projects';
-        $http.get(url).success(function (data) {
-            vm.projects = data;
-        }).error(function (datat) {
-        });
+  ProjectList.$inject = ['$http'];
+
+  function ProjectList($http) {
+
+    var self = this;
+
+    self.loadProjects = function (category) {
+      var url = (category) ? '/projects/categories/' + category : '/projects';
+      $http.get(url).success(function (data) {
+        self.projects = data;
+      }).error(function (datat) {
+      });
     }
 
-    vm.orderProp = '';
-}]);
-
+    self.orderProp = '';
+  }
+})();
