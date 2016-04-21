@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('crowdfundingApp', ['simplePagination'])
+        .module('crowdfundingApp.projects')
         .controller('ProjectDonateListController', ProjectDonateListController);
 
     ProjectDonateListController.$inject = ['ProjectDonatesService', 'Pagination'];
