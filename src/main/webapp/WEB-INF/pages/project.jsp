@@ -3,36 +3,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<link href="<c:url value="/resources/css/textAngular/textAngular.css" />" rel="stylesheet" type="text/css">
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-rangy.min.js" />"></script>
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-sanitize.min.js" />"></script>
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular.min.js" />"></script>
-<script src="<c:url value="/resources/angular/simplePagination.js" />"></script>
-<script src="<c:url value="/resources/angular/project/donatelist/project_donate_list_controller.js" />"></script>
-<script src="<c:url value="/resources/angular/project/donatelist/project_donates_service.js" />"></script>
-<script src="<c:url value="/resources/angular/project/projectCtrl.js" />"></script>
 
-
-<div class="row " ng-controller="ProjectCtrl" ng-init="getProjectData(${project.id})">
+<div class="row " ng-controller="ProjectDetailsController as projectDetails"
+     ng-init="projectDetails.getProjectData(${projectId})">
     <div class="col-lg-12" style="padding: 15px">
-        <span class="text-black h3 m-r ng-binding">{{project.nameProject}}</span>
+        <span class="text-black h3 m-r ng-binding">{{projectDetails.project.nameProject}}</span>
         <div class="text-muted m-t-xs ng-binding"><i class="fa fa-tag"></i>
-            <i class="fa fa-calendar"></i> <fmt:formatDate pattern="dd MMM yyyy"
-                                                           value="${project.date}"/>
+            <i class="fa fa-calendar"></i>{{ projectDetails.project.created | date:'dd MMM yyyy'}}
         </div>
     </div>
     <div class="row">
         <div class="col-lg-7">
             <div class="panel panel-default">
                 <div class="">
-                    <img class="img-responsive project-details-img" src="{{project.image}}" alt="placeholder image"/>
+                    <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image}}"
+                         alt="placeholder image"/>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="text-center">
-                        <div ta-bind ng-model="project.aboutProject">
-                        </div>
+                        <div ta-bind ng-model="projectDetails.project.aboutProject"></div>
                     </div>
                 </div>
             </div>
@@ -40,33 +31,32 @@
         <div class="col-lg-5">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <span class="donate-pledged">{{project.donate_amount}} &#8372;</span>
-                    <span class="donate-pledged-sub">pledged of {{project.needAmount}} &#8372; goal</span>
+                    <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
+                    <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal</span>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="{{project.percendDonate}}"
-                             aria-valuemin="0" aria-valuemax="100" style="width:{{project.percendDonate}}%">
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{projectDetails.project.percendDonate}}%">
                         </div>
                     </div>
-                    <span class="donate-pledged-sub"> {{project.percendDonate}}%</span>
+                    <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
 
-                    <c:if test="${project.status == 'Actual'}">
-                        <div class="support-block">
-                            <span class="text-muted text-md ">Support the project directly:</span>
-                            <div class=" text-center support-input-block">
-                                <form action="/projects/${project.id}/donate" method="POST">
-                                    <div class="col-lg-6  no-padding">
-                                        <input class="form-control text-center" value="15" min="1" name="amount"
-                                               placeholder="Amount" type="number">
-                                    </div>
-                                    <div class="col-lg-5 col-md-6 pull-right-lg no-padding ">
-                                        <button type="submit" data-toggle="modal" style="width: 100%!important;"
-                                                class="btn btn-primary btn-lg">Donate
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                    <div class="support-block" ng-if="projectDetails.project.status == 'Actual'">
+                        <span class="text-muted text-md ">Support the project directly:</span>
+                        <div class=" text-center support-input-block">
+                            <form action="/projects/${project.id}/donate" method="POST">
+                                <div class="col-lg-6  no-padding">
+                                    <input class="form-control text-center" value="15" min="1" name="amount"
+                                           placeholder="Amount" type="number">
+                                </div>
+                                <div class="col-lg-5 col-md-6 pull-right-lg no-padding ">
+                                    <button type="submit" data-toggle="modal" style="width: 100%!important;"
+                                            class="btn btn-primary btn-lg">Donate
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </c:if>
+                    </div>
                 </div>
             </div>
             <!-- /.panel -->
@@ -78,7 +68,7 @@
                     </a>
                     <div class="media-body ">
                         <div class="project-owner-info">
-                            <h4 class="media-heading text-bold">{{project.fullNameUser}}</h4>
+                            <h4 class="media-heading text-bold">{{projectDetails.project.fullNameUser}}</h4>
                             <p class="label label-info">Project owner</p>
                         </div>
                     </div>
