@@ -44,7 +44,7 @@
                     <div class="support-block" ng-if="projectDetails.project.status == 'Actual'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
-                            <form action="/projects/${project.id}/donate" method="POST">
+                            <form action="/projects/${projectId}/donate" method="POST">
                                 <div class="col-lg-6  no-padding">
                                     <input class="form-control text-center" value="15" min="1" name="amount"
                                            placeholder="Amount" type="number">
@@ -93,7 +93,7 @@
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
                                 <span class="pull-right ">
-                                        {{ donate.date | date:'dd MMM yyyy HH:mm'}}
+                                        {{ donate.date | date:'dd MMM HH:mm'}}
                                 </span>
                                 <span id="amount" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                             </div>
