@@ -3,11 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 
-<script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
-<script src="<c:url value="/resources/angular/lib/xeditable.min.js" />"></script>
-<link href="<c:url value="/resources/css/xeditable.min.css" />" rel="stylesheet" type="text/css">
-<link href="<c:url value="/resources/css/input.css" />" rel="stylesheet" type="text/css">
 
 <div ng-controller="OwnDonates">
     <div class="col-sm-12 col-md-12">
@@ -30,7 +26,7 @@
             <tbody class="text-center" ng-repeat="donate in donates | orderBy:'id'">
             <tr>
                 <td>
-                    <img src="{{donate.image}}" height="50px" width="50px">
+                    <img ng-src="{{donate.image}}" height="50px" width="50px">
                 </td>
                 <td>
                     <a href="/projects/{{donate.projectId}}"> {{donate.projectName}} </a>

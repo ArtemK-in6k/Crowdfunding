@@ -2,8 +2,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
-
-<script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
 <script src="<c:url value="/resources/angular/control/clickDirective.js" />"></script>
 
 <div ng-controller="OwnProjects">
@@ -26,7 +24,7 @@
             <tbody class="text-center" ng-repeat="project in projects | orderBy : 'id' ">
             <tr>
                 <td>
-                    <img src="{{project.image}}" height="50px" width="50px">
+                    <img ng-src="{{project.image}}" height="50px" width="50px">
                 </td>
                 <td>
                     <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
