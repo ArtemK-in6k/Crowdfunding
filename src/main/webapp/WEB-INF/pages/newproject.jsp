@@ -3,12 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<link href="<c:url value="/resources/css/textAngular/textAngular.css" />" rel="stylesheet" type="text/css">
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-rangy.min.js" />"></script>
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular-sanitize.min.js" />"></script>
-<script src="<c:url value="/resources/angular/lib/textAngular/textAngular.min.js" />"></script>
-<script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
-
 <div class="row col-lg-9">
     <div class="container">
         <div class="col-md-10">
@@ -30,8 +24,8 @@
                                placeholder="Image URL"
                                ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i"/>
                     </div>
-                    <div class="form-group" ng-controller="AppCtrl">
-                        <div text-angular ng-model="htmlcontent" name="aboutProject">
+                    <div class="form-group" ng-controller="AppCtrl as app">
+                        <div text-angular ng-model="app.htmlcontent" name="aboutProject">
 
                         </div>
                     </div>
