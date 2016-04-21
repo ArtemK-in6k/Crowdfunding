@@ -21,8 +21,8 @@
                 <th class="text-center">Action</th>
             </tr>
             </thead>
-            <tbody class="text-center" ng-repeat="project in projects | orderBy : 'id' ">
-            <tr>
+            <tbody>
+            <tr class="text-center" ng-repeat="project in projects | orderBy : 'id' ">
                 <td>
                     <img ng-src="{{project.image}}" height="50px" width="50px">
                 </td>
@@ -44,6 +44,17 @@
                 <td>
                     <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
+                </td>
+            </tr>
+            <tr class="text-center" >
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="/projects/new" class="btn btn-success">Create new project</a>
                 </td>
             </tr>
             </tbody>
