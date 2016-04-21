@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('crowdfundingApp')
+        .module('crowdfundingApp.registration')
         .controller('RegistrationController', RegistrationController);
 
     RegistrationController.$inject = ['RegistrationService'];

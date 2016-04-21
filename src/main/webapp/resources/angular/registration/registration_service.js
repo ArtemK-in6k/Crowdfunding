@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('crowdfundingApp').factory('RegistrationService', RegistrationService);
+    angular.module('crowdfundingApp.registration').factory('RegistrationService', RegistrationService);
 
     RegistrationService.$inject = ['$q', '$http'];
 
