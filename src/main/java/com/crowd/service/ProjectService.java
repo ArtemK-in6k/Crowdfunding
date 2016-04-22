@@ -94,4 +94,27 @@ public class ProjectService {
 
         return project.getId();
     }
+
+
+    public void checkProjectStatus(Project project){
+        switch (project.getStatus()) {
+            case NOT_STARTED:  {
+                if (project.getDonate_amount()>0){
+                    project.setStatus(Status.IN_PROGRESS);
+                    update(project);
+                }
+            }
+            break;
+
+            case IN_PROGRESS:{
+                if (project.getDonate_amount()>=project.getNeedAmount()){
+                    project.setStatus(Status.FOUNDED);
+                    update(project);
+                }
+            }
+                break;
+
+            default: break;
+        }
+    }
 }
