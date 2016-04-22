@@ -10,7 +10,7 @@
         function getAllProjectDonates(project) {
             return $http.get('/api/projects/' + project + '/donates');
         }
-       
+
         return {
             getAllProjectDonates: getAllProjectDonates,
         };
