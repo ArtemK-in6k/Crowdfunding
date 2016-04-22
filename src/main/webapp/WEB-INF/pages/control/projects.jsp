@@ -36,9 +36,10 @@
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
                     <select class="form-control" ng-model="project.status">
-                        <option value="Archive">Archive</option>
-                        <option value="Actual">Actual</option>
-                        <option value="Whip-round">On going</option>
+                        <option value="NOT_STARTED">Not started</option>
+                        <option value="IN_PROGRESS">In progress</option>
+                        <option value="FOUNDED">Founded</option>
+                        <option value="COMPLETED">Completed</option>
                     </select>
                 </td>
                 <td>
