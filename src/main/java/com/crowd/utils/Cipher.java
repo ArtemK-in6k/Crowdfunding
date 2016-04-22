@@ -5,7 +5,6 @@ import com.sun.org.apache.xerces.internal.impl.dv.util.HexBin;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 
 public class Cipher {
 

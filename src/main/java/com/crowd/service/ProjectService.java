@@ -3,7 +3,6 @@ package com.crowd.service;
 
 import com.crowd.bean.ProjectResponse;
 import com.crowd.bean.user.UserBean;
-import com.crowd.dao.CategoryDAOImpl;
 import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
 import com.crowd.dao.UserDAO;
