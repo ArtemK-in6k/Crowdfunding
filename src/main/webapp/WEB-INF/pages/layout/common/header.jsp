@@ -49,7 +49,6 @@
 
 <script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
 
-
 <script src="<c:url value="/resources/angular/registration/registration.module.js" />"></script>
 
 <script src="<c:url value="/resources/angular/registration/registration_controller.js" />"></script>
@@ -61,6 +60,5 @@
 <script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
-
 
 <script src="<c:url value="/resources/js/app.js" />"></script>

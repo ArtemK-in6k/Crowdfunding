@@ -38,7 +38,7 @@
                             {{donate.donate}} &#8372;</span>
                 </td>
                 <td>
-                    <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+                    <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
                             ng-confirm-click={{donate.projectName}}>Remove
                     </button>

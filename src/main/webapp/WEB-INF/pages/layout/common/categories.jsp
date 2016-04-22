@@ -3,7 +3,6 @@
 
 
 <div class="row" ng-controller="CategoryListController as categoryList">
-
     <h4 class="main-title text-center title" >Categories</h4>
         <div class="list-group" ng-repeat="category in categoryList.categories">
             <a class="list-group-item" href="/categories/{{ category.id }}/">{{category.title}}</a>

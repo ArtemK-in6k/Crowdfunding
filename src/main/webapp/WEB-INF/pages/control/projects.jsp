@@ -5,7 +5,7 @@
 <script src="<c:url value="/resources/angular/control/clickDirective.js" />"></script>
 
 <div ng-controller="OwnProjects">
-    <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-12 col-lg-12">
         <h3 class="text-center">My Projects</h3>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>

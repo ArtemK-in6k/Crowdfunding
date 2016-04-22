@@ -6,14 +6,14 @@
 
 <div class="row " ng-controller="ProjectDetailsController as projectDetails"
      ng-init="projectDetails.getProjectData(${projectId})">
-    <div class="col-lg-12" style="padding: 15px">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 15px">
         <span class="text-black h3 m-r ng-binding">{{projectDetails.project.nameProject}}</span>
-        <div class="text-muted m-t-xs ng-binding"><i class="fa fa-tag"></i>
+        <div class="text-muted m-t-xs ng-binding">
             <i class="fa fa-calendar"></i>{{ projectDetails.project.created | date:'dd MMM yyyy'}}
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="panel panel-default">
                 <div class="">
                     <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image}}"
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
@@ -49,7 +49,7 @@
                                     <input class="form-control text-center" value="15" min="1" name="amount"
                                            placeholder="Amount" type="number">
                                 </div>
-                                <div class="col-lg-5 col-md-6 pull-right-lg no-padding ">
+                                <div class="col-lg-5 col-md-5 pull-right-lg no-padding ">
                                     <button type="submit" data-toggle="modal" style="width: 100%!important;"
                                             class="btn btn-primary btn-lg">Donate
                                     </button>
@@ -77,7 +77,6 @@
             </div>
             <div class="panel panel-default">
                 <div class="text-center"><h4 class="title">Donations</h4></div>
-
                 <!-- /.panel-heading -->
                 <div id="project-donates-box" class="panel-body" ng-init="projectDonates.loadDonates(${projectId})"
                      ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"

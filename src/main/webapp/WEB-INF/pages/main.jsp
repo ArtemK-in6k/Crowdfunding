@@ -1,23 +1,16 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
-
 <div class="row" ng-init="projectList.loadProjects()" ng-controller="ProjectList as projectList">
-
-
     <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
-        <div class="col-lg-4 col-md-4 col-sm-4"></div>
-        <h4 class="main-title title col-lg-5 col-md-5 col-sm-5 text-center">Projects</h4>
-        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-3 pull-right">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 class="main-title title text-center">Projects</h4></div>
+        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>
             <option value="Whip-round">On going</option>
         </select>
     </div>
-    <div class="col-lg-12  ">
-        <div class="col-lg-3 col-md-3 " ng-repeat="project in projectList.projects | filter:orderProp">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
@@ -31,8 +24,7 @@
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                              aria-valuenow="{{project.percendDonate}}" aria-valuemin="0"
                              aria-valuemax="100"
-                             ng-style="{'width':project.percendDonate +'%'}"
-                        >
+                             ng-style="{'width':project.percendDonate +'%'}">
                         </div>
                     </div>
                 </div>
@@ -43,6 +35,5 @@
             </div>
         </div>
     </div>
-
 </div>
 

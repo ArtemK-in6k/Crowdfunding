@@ -15,7 +15,6 @@
 </head>
 <body>
 <div class="container">
-
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>

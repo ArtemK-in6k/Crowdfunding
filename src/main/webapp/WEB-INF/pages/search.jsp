@@ -4,11 +4,10 @@
          pageEncoding="ISO-8859-1" %>
 
 <div class="row">
-
     <h4 class="text-success text-center">Search result for : ${search}</h4>
-    <div class="col-md-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <c:forEach items="${projectlist}" var="project">
-            <div class="col-sm-6 col-md-6">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <div class="thumbnail">
                     <a href="/projects/${project.id}">
                         <img class="img-responsive" src="${project.image}" alt="placeholder image"
