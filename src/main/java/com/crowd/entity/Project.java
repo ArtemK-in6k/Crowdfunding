@@ -35,11 +35,6 @@ public class Project {
     @Column
     private String nameProject;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
     private List<Donate> donateList;
 
@@ -118,14 +113,6 @@ public class Project {
         this.user = user;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public String getNameProject() {
         return nameProject;
     }
@@ -163,7 +150,6 @@ public class Project {
                 ", date=" + date +
                 ", status='" + status + '\'' +
                 ", nameProject='" + nameProject + '\'' +
-                ", category=" + category +
                 ", donateList=" + donateList +
                 '}';
     }
