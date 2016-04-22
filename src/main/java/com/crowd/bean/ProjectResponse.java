@@ -2,6 +2,7 @@ package com.crowd.bean;
 
 
 import com.crowd.entity.Project;
+import com.crowd.entity.Status;
 
 import java.sql.Timestamp;
 
@@ -23,7 +24,7 @@ public class ProjectResponse {
 
     private Timestamp created;
 
-    private String status;
+    private Status status;
 
     private String nameProject;
 
@@ -132,11 +133,11 @@ public class ProjectResponse {
         this.fullNameUser = fullNameUser;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
