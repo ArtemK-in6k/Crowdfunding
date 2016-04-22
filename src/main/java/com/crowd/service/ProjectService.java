@@ -9,13 +9,10 @@ import com.crowd.entity.Project;
 import com.crowd.entity.Status;
 import com.crowd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class ProjectService {
