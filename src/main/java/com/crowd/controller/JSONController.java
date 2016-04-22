@@ -1,9 +1,7 @@
 package com.crowd.controller;
 
 import com.crowd.bean.ProjectResponse;
-import com.crowd.entity.Category;
 import com.crowd.entity.Project;
-import com.crowd.service.CategoryService;
 import com.crowd.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +21,6 @@ public class JSONController {
 
     @Autowired
     ProjectService projectService;
-    @Autowired
-    CategoryService categoryService;
 
     @RequestMapping(value = "projects", method = RequestMethod.GET)
     @ResponseBody
@@ -41,17 +37,4 @@ public class JSONController {
         return projectService.getProjectsByCategory(categoryId);
     }
 
-    @RequestMapping(value = "categories/{categoryId}/categoryProjects", method = RequestMethod.GET)
-    @ResponseBody
-    ResponseEntity<List<ProjectResponse>> getCategoryProjectsInJSON(@PathVariable int categoryId) {
-        System.out.println(categoryId);
-        Category category = categoryService.findById(categoryId);
-        Set<Project> projects = category.getProjects();
-        List<ProjectResponse> responseProject = projectService.getWrapperProjectsInResponse(projects);
-
-        System.out.println(responseProject);
-        return new ResponseEntity<List<ProjectResponse>>(responseProject, HttpStatus.OK);
-
-
-    }
 }
