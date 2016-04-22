@@ -3,11 +3,10 @@ package com.crowd.service;
 
 import com.crowd.bean.ProjectResponse;
 import com.crowd.bean.user.UserBean;
-import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
 import com.crowd.dao.UserDAO;
-import com.crowd.entity.Category;
 import com.crowd.entity.Project;
+import com.crowd.entity.Status;
 import com.crowd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,8 +24,6 @@ public class ProjectService {
     private UserDAO userDAO;
     @Autowired
     private ProjectDAO projectDAO;
-    @Autowired
-    private CategoyDAO categoryDao;
 
     public List<Project> selectAll() {
         return projectDAO.selectAll();
@@ -78,13 +75,6 @@ public class ProjectService {
         return !Objects.isNull(projectDAO.findById(projectId));
     }
 
-    public ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(int categoryId) {
-        Category category = categoryDao.findById(categoryId);
-        Set<Project> projects = (Objects.isNull(category)) ? new HashSet<>() : category.getProjects();
-        return new ResponseEntity<Set<ProjectResponse>>(projects
-                .stream().map(ProjectResponse::new).collect(Collectors.toSet()), HttpStatus.OK);
-    }
-
     public List<ProjectResponse> getUserProjects(String email){
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
@@ -101,7 +91,7 @@ public class ProjectService {
         project.setImage(image);
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
-        project.setStatus("Actual");
+        project.setStatus(Status.NOT_STARTED);
         project.setDate(new Timestamp(System.currentTimeMillis()));
         projectDAO.insert(project);
 
