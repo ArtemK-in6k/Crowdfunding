@@ -4,9 +4,10 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 class="main-title title text-center">Projects</h4></div>
         <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right">
             <option value="">All</option>
-            <option value="Actual">Actual</option>
-            <option value="Archive">Archive</option>
-            <option value="Whip-round">On going</option>
+            <option value="NOT_STARTED">Not started</option>
+            <option value="IN_PROGRESS">In progress</option>
+            <option value="FOUNDED">Founded</option>
+            <option value="COMPLETED">Completed</option>
         </select>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
