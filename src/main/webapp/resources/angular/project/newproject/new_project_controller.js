@@ -11,6 +11,6 @@
 
         var self = this;
 
-        self.htmlcontent = "Default message";
+        self.htmlcontent = "";
     }
 })();
