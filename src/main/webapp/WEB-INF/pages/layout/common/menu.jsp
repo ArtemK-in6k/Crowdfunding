@@ -20,7 +20,8 @@
             <div class="form-inline pull-right search-box-form">
                 <div class="form-group">
                     <div class="padded-row form-group">
-                        <angucomplete id="projects"
+                        <angucomplete class="form-group"
+                                      id="projects"
                                       ng-click="openProject()"
                                       placeholder="Search projects"
                                       pause="200"
