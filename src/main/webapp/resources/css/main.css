@@ -134,3 +134,7 @@ span.sub {
 #amount {
     margin-right: 55px !important;
 }
+
+.create-project-modal{
+    padding: 25px;
+}
