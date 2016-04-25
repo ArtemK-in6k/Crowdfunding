@@ -34,6 +34,8 @@ public class ProjectResponse {
 
     private String fullNameUser;
 
+    private String simpleStatus;
+
     public ProjectResponse() {
     }
 
@@ -50,6 +52,7 @@ public class ProjectResponse {
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
+        simpleStatus = project.getStatus().getStatus();
     }
 
 
@@ -155,5 +158,13 @@ public class ProjectResponse {
 
     public void setCreated(Timestamp created) {
         this.created = created;
+    }
+
+    public String getSimpleStatus() {
+        return simpleStatus;
+    }
+
+    public void setSimpleStatus(String simpleStatus) {
+        this.simpleStatus = simpleStatus;
     }
 }
