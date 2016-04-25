@@ -12,7 +12,7 @@
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="project in projectList.projects | filter:orderProp">
-            <div class="thumbnail">
+            <div class="thumbnail {{project.status}}">
                 <a href="/projects/{{project.id}}">
                     <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
                          style="width: 100%; height: 150px;"/>
@@ -32,7 +32,7 @@
                 <p class="text-center"> {{project.donate_amount}} &#8372; pledged of {{project.needAmount}} &#8372; goal</p>
                 <p class="text-center">Created : {{ project.created | date:'dd MMM yyyy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
-                <p class="text-center">Status : {{project.status}}</p>
+                <p class="text-center">Status : {{project.simpleStatus}}</p>
             </div>
         </div>
     </div>
