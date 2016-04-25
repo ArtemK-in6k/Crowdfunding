@@ -11,14 +11,15 @@
                     <br style="clear:both">
                     <h2 style="margin-bottom: 25px; text-align: center;">Create Project Form</h2>
                     <div class="form-group">
-                        <label for="projectName">Project name</label>
-                        <input type="text" class="form-control" id="projectName" name="projectName"
+                        <label for="projectName">Project name*</label>
+                        <input type="text" class="form-control" id="projectName" ng-model="newproject.name"
+                               name="projectName"
                                placeholder="Project name" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="needAmount">Funding goal in &#8372;</label>
+                        <label for="needAmount">Funding goal in &#8372;*</label>
                         <input type="number" min="0.01" step="0.01" class="form-control" id="needAmount"
-                               name="needAmount"
+                               ng-model="newproject.needAmount" name="needAmount"
                                placeholder="Funding goal in &#8372;" class="form-control" required>
                     </div>
                     <div class="form-group">
@@ -26,6 +27,12 @@
                         <input id="url" class="form-control" type="text" name="image" ng-model="newproject.image"
                                placeholder="Image URL"
                                ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventUrl">External event URL</label>
+                        <input id="eventUrl" class="form-control" type="text" name="url" ng-model="newproject.url"
+                               placeholder="Project external URL"
+                               ng-pattern="/^((?:http|ftp)s?:\/\/)(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|localhost|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::\d+)?(?:\/?|[\/?]\S+)$/i"/>
                     </div>
                     <div class="form-group" ng-controller="AppCtrl as app">
                         <label for="aboutProject">About project</label>
