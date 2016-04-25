@@ -45,11 +45,11 @@
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
                             <form action="/projects/${projectId}/donate" method="POST">
-                                <div class="col-lg-6  no-padding">
+                                <div class="col-lg-3  no-padding">
                                     <input class="form-control text-center" value="15" min="1" name="amount"
                                            placeholder="Amount" type="number">
                                 </div>
-                                <div class="col-lg-5 col-md-5 pull-right-lg no-padding ">
+                                <div class="col-lg-8 col-md-8 pull-right-lg no-padding ">
                                     <button type="submit" data-toggle="modal" style="width: 100%!important;"
                                             class="btn btn-primary btn-lg">Donate
                                     </button>
