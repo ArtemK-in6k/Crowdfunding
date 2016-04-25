@@ -2,8 +2,10 @@ package com.crowd.bean;
 
 
 import com.crowd.entity.Project;
+import com.crowd.utils.StringUtils;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 
 public class ProjectResponse {
 
@@ -20,6 +22,8 @@ public class ProjectResponse {
     private double donate_amount;
 
     private String date;
+
+    private String url;
 
     private Timestamp created;
 
@@ -49,6 +53,7 @@ public class ProjectResponse {
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
+        url = project.getUrl();
     }
 
 
@@ -154,5 +159,17 @@ public class ProjectResponse {
 
     public void setCreated(Timestamp created) {
         this.created = created;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public boolean isUrlPresent(){
+        return !StringUtils.isBlank(url);
     }
 }
