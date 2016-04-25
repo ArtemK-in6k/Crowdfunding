@@ -12,5 +12,12 @@
         var self = this;
 
         self.htmlcontent = "";
+
+        self.isEditorLoaded = false;
+        setTimeout(function () {
+            self.$apply(function () {
+                self.isEditorLoaded = true;
+            });
+        }, 1000);
     }
 })();
