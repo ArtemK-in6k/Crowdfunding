@@ -25,9 +25,6 @@
     <definition name="notfound" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/notfound.jsp"></put-attribute>
     </definition>
-    <definition name="search" extends="layoutMain">
-        <put-attribute name="body" value="/WEB-INF/pages/search.jsp"></put-attribute>
-    </definition>
     <definition name="project" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/project.jsp"/>
     </definition>
