@@ -22,7 +22,6 @@
                     <div class="padded-row form-group">
                         <angucomplete class="form-group"
                                       id="projects"
-                                      ng-click="openProject()"
                                       placeholder="Search projects"
                                       pause="200"
                                       selectedobject="selectedObject"
