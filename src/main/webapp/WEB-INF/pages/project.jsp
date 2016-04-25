@@ -9,7 +9,8 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 15px">
         <span class="text-black h3 m-r ng-binding">{{projectDetails.project.nameProject}}</span>
         <div class="text-muted m-t-xs ng-binding">
-            <i class="fa fa-calendar"></i>{{ projectDetails.project.created | date:'dd MMM yyyy'}}
+            <i class="fa fa-calendar"></i> {{ projectDetails.project.created | date:'dd MMM yyyy'}}
+            <span ng-if="projectDetails.project.urlPresent"><i class="fa fa-link"></i> <a  href="{{projectDetails.project.url}}" target="_blank">See game details</a></span>
         </div>
     </div>
     <div class="row">
