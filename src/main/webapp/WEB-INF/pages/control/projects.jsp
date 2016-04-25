@@ -9,7 +9,7 @@
         <h3 class="text-center">My Projects</h3>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
-        <table class="table table-hover">
+        <table class="table table-hover table-project">
             <thead>
             <tr>
                 <th></th>
@@ -26,20 +26,21 @@
                     <img ng-src="{{project.image}}" height="50px" width="50px">
                 </td>
                 <td>
-                    <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
+                    <div class="table-long-text">
+                        <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
+                    </div>
                 </td>
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <p>{{project.simpleStatus}}</p>
-                    <button ng-if="project.status == 'FOUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Completed</button>
+                    <p ng-if="project.status != 'FOUNDED'" class="table-{{project.status}}">{{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FOUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id)">Complete</button>
                 </td>
                 <td>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                 </td>
             </tr>
             <tr class="text-center" >
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
