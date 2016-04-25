@@ -14,7 +14,6 @@
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
-                <th class="text-center">Author</th>
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
@@ -29,21 +28,13 @@
                 <td>
                     <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
                 </td>
-                <td>
-                    {{project.fullNameUser}}
-                </td>
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <select class="form-control" ng-model="project.status">
-                        <option value="NOT_STARTED">Not started</option>
-                        <option value="IN_PROGRESS">In progress</option>
-                        <option value="FOUNDED">Founded</option>
-                        <option value="COMPLETED">Completed</option>
-                    </select>
+                    <p>{{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FOUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Completed</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                 </td>
             </tr>
