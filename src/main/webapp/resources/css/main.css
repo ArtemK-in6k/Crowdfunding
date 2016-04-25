@@ -126,7 +126,9 @@ span.sub {
     color: red;
 }
 
-#long-text {
+.long-text {
+    width: 100%;
+    display: inline-block;!important;
     overflow:hidden !important;
     text-overflow:ellipsis !important;
     white-space: nowrap;!important;
@@ -159,3 +161,39 @@ span.sub {
     -moz-box-shadow: inset 0px 0px 10px 0px rgba(38,153,0,0.75);
     box-shadow: inset 0px 0px 10px 0px rgba(38,153,0,0.75);
 }
+
+.table-NOT_STARTED{
+    color: rgba(204,41,0,0.75);
+    text-shadow: 2px 8px 6px rgba(204,41,0,0.2),
+    0px -5px 35px rgba(255,255,255,0.3);
+
+}
+
+.table-IN_PROGRESS{
+    color: rgba(204,204,0,0.75);
+    text-shadow: 2px 8px 6px rgba(204,204,0,0.2),
+    0px -5px 35px rgba(255,255,255,0.3);
+}
+
+.table-FOUNDED{
+    color: rgba(0,122,204,0.75);
+    text-shadow: 2px 8px 6px rgba(0,122,204,0.2),
+    0px -5px 35px rgba(255,255,255,0.3);
+}
+
+.table-COMPLETED{
+    color: rgba(38,153,0,0.75);
+    text-shadow: 2px 8px 6px rgba(38,153,0,0.2),
+    0px -5px 35px rgba(255,255,255,0.3);
+}
+.table-long-text{
+    text-align: center;!important;
+    text-overflow: ellipsis;!important;
+    overflow: hidden;!important;
+}
+
+.table-project {
+    width: 100%;!important;
+    table-layout: fixed;!important;
+}
+
