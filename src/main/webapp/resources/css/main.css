@@ -125,6 +125,7 @@ span.sub {
 .error-text {
     color: red;
 }
+
 #long-text {
     overflow:hidden !important;
     text-overflow:ellipsis !important;
@@ -133,4 +134,28 @@ span.sub {
 
 #amount {
     margin-right: 55px !important;
+}
+
+.NOT_STARTED{
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(204,41,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(204,41,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(204,41,0,0.75);
+}
+
+.IN_PROGRESS{
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(204,204,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(204,204,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(204,204,0,0.75);
+}
+
+.FOUNDED{
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,122,204,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,122,204,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,122,204,0.75);
+}
+
+.COMPLETED{
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(38,153,0,0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(38,153,0,0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(38,153,0,0.75);
 }
