@@ -5,9 +5,9 @@
       .module('crowdfundingApp.control')
       .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$scope', '$http', '$timeout'];
+  OwnProjects.$inject = ['$scope', '$http', '$timeout', '$uibModal'];
 
-  function OwnProjects($scope, $http, $timeout) {
+  function OwnProjects($scope, $http, $timeout, $uibModal) {
 
     $http.get('/control/projects/ownprojects').success(function (data) {
       $scope.projects = data;
@@ -29,6 +29,16 @@
         }, 3000);
       })
     }
+
+    $scope.openCreateProjectModal = function (size) {
+
+      $uibModal.open({
+        templateUrl: '/templates/createProjectModalTemplate',
+        controller: 'AppCtrl as app',
+        size: size
+      });
+
+    };
 
 
     $scope.deleteProject = function (id, name) {
