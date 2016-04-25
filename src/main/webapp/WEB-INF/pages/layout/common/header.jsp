@@ -26,11 +26,13 @@
 <script src="<c:url value="/resources/angular/lib/textAngular/textAngular-rangy.min.js" />"></script>
 <script src="<c:url value="/resources/angular/lib/textAngular/textAngular-sanitize.min.js" />"></script>
 <script src="<c:url value="/resources/angular/lib/textAngular/textAngular.min.js" />"></script>
+<script src="<c:url value="/resources/angular/lib/angularAutoComplete/angular-touch.min.js" />"></script>
+<script src="<c:url value="/resources/angular/lib/angularAutoComplete/angucomplete.js" />"></script>
 
 <script src="<c:url value="/resources/angular/lib/xeditable.min.js" />"></script>
 <link href="<c:url value="/resources/css/xeditable.min.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/input.css" />" rel="stylesheet" type="text/css">
-
+<link href="<c:url value="/resources/css/angularAutoComplete/angucomplete.css" />" rel="stylesheet" type="text/css">
 
 <link href="<c:url value="/resources/css/admin.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet" type="text/css">
