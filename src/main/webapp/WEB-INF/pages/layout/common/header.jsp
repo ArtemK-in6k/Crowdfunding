@@ -36,6 +36,8 @@
 <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
 
+<script src="<c:url value="/resources/angular/lib/ui-bootstrap-tpls-1.3.2.min.js" />"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
