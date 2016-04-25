@@ -45,5 +45,5 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
-
+    <definition name="createProjectModalTemplate" template="/WEB-INF/pages/templates/createProjectModal.jsp"></definition>
 </tiles-definitions>
