@@ -7,6 +7,6 @@
             'crowdfundingApp.projects',
             'crowdfundingApp.control',
             'crowdfundingApp.search'
-        ]);
+        ])
 
 })();
