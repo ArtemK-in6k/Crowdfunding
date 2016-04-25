@@ -41,8 +41,7 @@
                     </div>
                     <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
 
-                    <div class="support-block" ng-if="projectDetails.project.status == 'IN_PROGRESS' or
-                    projectDetails.project.status == 'NOT_STARTED' or projectDetails.project.status == 'FOUNDED' ">
+                    <div class="support-block" ng-if="projectDetails.project.status != 'COMPLETED'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
                             <form action="/projects/${projectId}/donate" method="POST">
