@@ -6,7 +6,9 @@
 
 <div ng-controller="OwnProjects">
     <div class="col-sm-12 col-md-12 col-lg-12">
+
         <h3 class="text-center">My Projects</h3>
+        <a ng-click="openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
         <table class="table table-hover">
@@ -46,19 +48,8 @@
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                 </td>
             </tr>
-            <tr class="text-center" >
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href="/projects/new" class="btn btn-success">Create new project</a>
-                </td>
-            </tr>
-            </tbody>
         </table>
         <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3></div>
     </div>
+
 </div>
