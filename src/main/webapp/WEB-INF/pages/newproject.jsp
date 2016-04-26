@@ -6,7 +6,7 @@
 <div class="row col-sm-9 col-md-9 col-lg-9">
     <div class="container">
         <div class="col-sm-10 col-md-10 col-lg-10">
-            <div class="form-area">
+            <div class="form-area" ng-controller="CreateProjectController as app">
                 <form name="createProjectForm" role="form" action='/projects' method="POST">
                     <br style="clear:both">
                     <h2 style="margin-bottom: 25px; text-align: center;">Create Project Form</h2>
@@ -29,12 +29,12 @@
                                ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i"/>
                     </div>
                     <div class="form-group">
-                        <label for="eventUrl">External URL for project description</label>
-                        <input id="eventUrl" class="form-control" type="text" name="url" ng-model="newproject.url"
+                        <label for="externalUrl">External URL for project description</label>
+                        <input id="externalUrl" class="form-control" type="text" name="url" ng-model="newproject.url"
                                placeholder="Project description URL"
-                               ng-pattern="/^((?:http|ftp)s?:\/\/)(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|localhost|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::\d+)?(?:\/?|[\/?]\S+)$/i"/>
+                               ng-pattern="app.projectExternalUrlRegExp"/>
                     </div>
-                    <div class="form-group" ng-controller="AppCtrl as app">
+                    <div class="form-group" >
                         <label for="aboutProject">About project</label>
                         <div id="aboutProject" text-angular ng-model="app.htmlcontent" name="aboutProject">
                         </div>
