@@ -65,4 +65,6 @@
 
 <script src="<c:url value="/resources/angular/control/controlDonatesService.js" />"></script>
 
+<script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
+
 <script src="<c:url value="/resources/js/app.js" />"></script>

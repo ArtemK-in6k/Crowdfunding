@@ -10,9 +10,9 @@
             editableOptions.theme = 'bs3';
         });
 
-    OwnDonates.$inject = ['$scope', '$http', '$timeout', 'ControlDonatesService'];
+    OwnDonates.$inject = ['$scope', '$timeout', 'ControlDonatesService'];
 
-    function OwnDonates($scope, $http, $timeout, ControlDonatesService) {
+    function OwnDonates($scope, $timeout, ControlDonatesService) {
 
         ControlDonatesService.getAllOwnDonates()
             .then(function (result) {

@@ -43,7 +43,7 @@ public class ControlController {
         return "control/projects";
     }
 
-    @RequestMapping(value = "/projects/ownprojects", method = RequestMethod.GET)
+    @RequestMapping(value = "/projects/list", method = RequestMethod.GET)
     public ResponseEntity<List<ProjectResponse>> getOwnProjects(@ModelAttribute("userBean") UserBean user) {
 
         List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
@@ -51,7 +51,7 @@ public class ControlController {
         return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/projects/savestatus/", method = RequestMethod.POST)
+    @RequestMapping(value = "/projects", method = RequestMethod.POST)
     public ResponseEntity<List<ProjectResponse>> saveStatus(@ModelAttribute("userBean") UserBean user, @RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
@@ -67,7 +67,7 @@ public class ControlController {
     }
 
     @RequestMapping(value = "/projects/{projectId}", method = RequestMethod.DELETE)
-    public ResponseEntity<List<ProjectResponse>> deleteProject(@ModelAttribute("userBean") UserBean user, @PathVariable Integer projectId) {
+    public ResponseEntity<List<ProjectResponse>> deleteProject(@ModelAttribute("userBean") UserBean user, @PathVariable int projectId) {
 
         Project project = projectService.findById(projectId);
         projectService.delete(project);

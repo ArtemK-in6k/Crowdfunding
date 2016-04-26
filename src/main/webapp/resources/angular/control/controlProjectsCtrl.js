@@ -5,23 +5,21 @@
       .module('crowdfundingApp.control')
       .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$scope', '$http', '$timeout'];
+  OwnProjects.$inject = ['$scope', '$timeout','ControlProjectsService'];
 
-  function OwnProjects($scope, $http, $timeout) {
+  function OwnProjects($scope, $timeout,ControlProjectsService) {
 
-    $http.get('/control/projects/ownprojects').success(function (data) {
-      $scope.projects = data;
-    }).error(function (datat) {
-      console.log(datat);
+    ControlProjectsService.getAllOwnProject().then(function (result) {
+      $scope.projects = result.data;
     });
 
     $scope.updateStatus = function (status, id,name) {
       var project = {
         "id": id,
         "status": status
-      }
-      $http.post("/control/projects/savestatus/", project).success(function (data, status) {
-        $scope.projects = data;
+      };
+      ControlProjectsService.updateOwnProject(project).then(function (result) {
+        $scope.projects = result.data;
         $scope.projectCompleted = name;
         $scope.projectUpdateSuccess = true;
 
@@ -29,12 +27,12 @@
           $scope.projectUpdateSuccess = false;
         }, 3000);
       })
-    }
+    };
 
 
-    $scope.deleteProject = function (id, name) {
-      $http.delete("/control/projects/"+id).success(function (data) {
-        $scope.projects = data;
+    $scope.deleteProject = function (projectId, name) {
+      ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
+        $scope.projects = result.data;
         $scope.projectDelete = name;
         $scope.projectDeleteSuccess = true;
 
