@@ -42,7 +42,7 @@
                 </td>
                 <td>
                     <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
-                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
+                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id,donate.projectName)"
                             ng-confirm-click={{donate.projectName}}>Remove
                     </button>
                 </td>
