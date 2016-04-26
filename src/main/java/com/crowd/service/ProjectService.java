@@ -92,13 +92,9 @@ public class ProjectService {
     }
 
     public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url){
-        if (image.equals("")){
-            image="http://d2cmub9v8qb8gq.cloudfront.net/0.14.1/static/img/no-image-available.jpg";
-        }
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
-        project.setImage(image);
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus("Actual");
