@@ -47,7 +47,7 @@
 <script src="<c:url value="/resources/angular/project/donatelist/project_donates_service.js" />"></script>
 <script src="<c:url value="/resources/angular/project/project_details_controller.js" />"></script>
 
-<script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
+<script src="<c:url value="/resources/angular/project/newproject/create_project_controller.js" />"></script>
 
 <script src="<c:url value="/resources/angular/registration/registration.module.js" />"></script>
 
