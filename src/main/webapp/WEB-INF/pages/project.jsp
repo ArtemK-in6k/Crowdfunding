@@ -16,7 +16,7 @@
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="panel panel-default">
                 <div class="">
-                    <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image}}"
+                    <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image || projectDetails.defaultProjectImage}}"
                          alt="placeholder image"/>
                 </div>
             </div>
@@ -63,8 +63,7 @@
             <div class="short-project-details panel panel-default">
                 <div class="panel-body">
                     <a class="pull-left" href="#">
-                        <img width="75" height="75" src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
-                             class="media-photo">
+                        <img width="75" height="75" ng-src="{{projectDetails.avatarImageUrl}}" class="media-photo">
                     </a>
                     <div class="media-body ">
                         <div class="project-owner-info" >
@@ -89,9 +88,7 @@
                          ng-repeat="donate in projectDonates.donateList | startFrom: projectDonates.pagination.page * projectDonates.pagination.perPage | limitTo: projectDonates.pagination.perPage">
                         <div class="media ">
                             <a href="#" class="pull-left">
-                                <img width="35" height="35"
-                                     src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
-                                     class="media-photo">
+                                <img width="35" height="35" ng-src="{{projectDetails.avatarImageUrl}}" class="media-photo">
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
