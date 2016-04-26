@@ -64,6 +64,7 @@ public class ProjectControllerCreateProjectMethodTest {
                         .param("projectName", ProjectData.name)
                         .param("needAmount", String.valueOf(ProjectData.needAmount))
                         .param("image", ProjectData.imageUrl)
+                        .param("url", ProjectData.sourceUrl)
                         .param("aboutProject", ProjectData.about)
         ).andExpect(status().isMovedTemporarily());
     }
@@ -77,6 +78,7 @@ public class ProjectControllerCreateProjectMethodTest {
                         .param("needAmount", String.valueOf(ProjectData.needAmount))
                         .param("image", "")
                         .param("aboutProject", "")
+                        .param("url", ProjectData.sourceUrl)
         ).andExpect(status().isMovedTemporarily());
     }
 
@@ -85,5 +87,6 @@ public class ProjectControllerCreateProjectMethodTest {
         static double needAmount = 500.0;
         static String about = "Wonderful family game with simple rules and interesting playing mechanism.";
         static String imageUrl = "http://boardgame.com.ua/components/com_virtuemart/shop_image/product/Stone_Age_51c062d4f1ae9.jpg";
+        static String sourceUrl = "http://www.boardgames.com/boardgame/Treasures%20and%20Traps:%20Random%20Encounters%20expansion";
     }
 }
