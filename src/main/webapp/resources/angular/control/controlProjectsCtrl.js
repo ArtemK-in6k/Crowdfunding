@@ -34,7 +34,7 @@
 
       $uibModal.open({
         templateUrl: '/templates/createProjectModalTemplate',
-        controller: 'AppCtrl as app',
+        controller: 'CreateProjectController as app',
         size: size
       });
 

@@ -45,18 +45,18 @@ public class ProjectServiceCreateProjectMethodTest {
 
     @Test(expected = NullPointerException.class)
     public void When_ProjectCreateDataNull_Expect_ThrowsNullPointerException() {
-        projectService.createProject(null, null, 0, null, null);
+        projectService.createProject(null, null, 0, null, null, "");
     }
 
     @Test
     public void When_ProjectCreateDataFillWithFullValidData_Except_ProjectIdGreaterThan0() {
-        int projectId = projectService.createProject(userBean, name, needAmount, imageUrl, about);
+        int projectId = projectService.createProject(userBean, name, needAmount, imageUrl, about,"");
         assertThat("int", projectId, greaterThan(0));
     }
 
     @Test
     public void When_CreateProjectWithoutImage_Except_ProjectImageNotNull() {
-        int projectId = projectService.createProject(userBean, name, needAmount, "", about);
+        int projectId = projectService.createProject(userBean, name, needAmount, "", about,"");
         String projectImage = projectService.findById(projectId).getImage();
         assertThat(projectImage, is(notNullValue()));
     }
@@ -64,7 +64,7 @@ public class ProjectServiceCreateProjectMethodTest {
     @Test
     public void When_CreateProject_Except_NotEmptyProjectStatus() {
 
-        int projectId = projectService.createProject(userBean, name, needAmount, "", about);
+        int projectId = projectService.createProject(userBean, name, needAmount, "", about,"");
 
         String projectStatus = projectService.findById(projectId).getImage();
 
