@@ -1,9 +1,5 @@
 package com.crowd.config;
 
-import com.crowd.dao.UserDAO;
-import com.crowd.dao.UserDAOImpl;
-import com.crowd.service.ProjectService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

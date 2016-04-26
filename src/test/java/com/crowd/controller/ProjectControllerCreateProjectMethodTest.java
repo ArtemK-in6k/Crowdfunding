@@ -3,15 +3,12 @@ package com.crowd.controller;
 import com.crowd.bean.RegistrationFields;
 import com.crowd.bean.user.UserBean;
 import com.crowd.config.TestHibernateConfig;
-import com.crowd.entity.Project;
-import com.crowd.service.ProjectService;
 import com.crowd.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
@@ -21,13 +18,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.transaction.Transactional;
 
-import static com.crowd.controller.ProjectServiceCreateProjectMethodTest.ProjectData.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {TestHibernateConfig.class}, loader = AnnotationConfigWebContextLoader.class)
@@ -60,8 +52,8 @@ public class ProjectControllerCreateProjectMethodTest {
     @Test
     public void When_PassNotAllRequestParams_Expect_BadRequestResponse() throws Exception {
         mockMvc.perform(
-                    post("/projects").sessionAttr("userBean", userBean)
-                ).andExpect(status().isBadRequest());
+                post("/projects").sessionAttr("userBean", userBean)
+        ).andExpect(status().isBadRequest());
     }
 
     @Test
