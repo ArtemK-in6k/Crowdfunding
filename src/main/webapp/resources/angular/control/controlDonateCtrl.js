@@ -39,7 +39,7 @@
         "donate": donate
       };
       $scope.donationUpdateSuccess = true;
-      $http.post("/control/donates/save", donation).success(function (data) {
+      $http.post("/control/donates", donation).success(function (data) {
         $scope.donates = data;
 
         $timeout(function () {

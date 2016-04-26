@@ -100,7 +100,7 @@ public class ControlController {
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/donates/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/donates", method = RequestMethod.POST)
     public ResponseEntity<List<UserDonatesBean>> saveOwnDonation(@ModelAttribute("userBean") UserBean user,@RequestBody DonationContributionBean donationContributionBean) {
         donateService.saveChangeDonation(donationContributionBean);
         User fullUser = userService.findByEmail(user.getEmail());
