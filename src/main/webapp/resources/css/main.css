@@ -134,3 +134,12 @@ span.sub {
 #amount {
     margin-right: 55px !important;
 }
+
+.short-project-details div.panel-body{
+    position: relative;
+}
+
+.short-project-details div.panel-body div.project-owner-info p:last-child {
+    position: absolute;
+    bottom: 0px;
+}
