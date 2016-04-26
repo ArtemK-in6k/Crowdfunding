@@ -35,4 +35,9 @@ public class MainController {
         return "main";
     }
 
+    @RequestMapping(value = "/angular-test", method = RequestMethod.GET)
+    public String angularTestPage(){
+        return "angular-test";
+    }
+
 }

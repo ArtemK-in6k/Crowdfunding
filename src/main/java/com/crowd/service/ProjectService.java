@@ -91,18 +91,15 @@ public class ProjectService {
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 
-    public int createProject(UserBean user,String projectName, double needAmount, String image, String aboutProject){
-        if (image.equals("")){
-            image="http://www.edisonawards.com/news/wp-content/uploads/2016/01/chi-carol-sente-crowdfunding-1871-20150302.jpg";
-        }
+    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url){
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
-        project.setImage(image);
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus("Actual");
         project.setDate(new Timestamp(System.currentTimeMillis()));
+        project.setUrl(url);
         projectDAO.insert(project);
 
         return project.getId();

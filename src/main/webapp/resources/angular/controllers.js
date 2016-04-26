@@ -11,6 +11,8 @@
 
     var self = this;
 
+    self.defaultProjectImage = '/resources/img/no_img.jpg';
+
     self.loadProjects = function (category) {
       var url = (category) ? '/projects/categories/' + category : '/projects';
       $http.get(url).success(function (data) {

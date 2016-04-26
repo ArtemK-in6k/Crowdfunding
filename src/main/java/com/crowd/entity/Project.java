@@ -35,6 +35,9 @@ public class Project {
     @Column
     private String nameProject;
 
+    @Column
+    private String url;
+
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "category_id")
@@ -149,6 +152,14 @@ public class Project {
 
     public String dateFormat() {
         return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
