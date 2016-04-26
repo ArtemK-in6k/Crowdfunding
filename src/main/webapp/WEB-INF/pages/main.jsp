@@ -13,7 +13,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
-                    <img ng-src={{project.image}} class="img-responsive" alt="placeholder image"
+                    <img ng-src="{{project.image || projectList.defaultProjectImage}}" class="img-responsive" alt="placeholder image"
                          style="width: 100%; height: 150px;"/>
                 </a>
                 <div id="long-text" class="caption text-center ">
