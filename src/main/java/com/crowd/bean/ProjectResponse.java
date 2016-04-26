@@ -169,7 +169,12 @@ public class ProjectResponse {
         this.url = url;
     }
 
-    public boolean isUrlPresent(){
+    public boolean isUrlPresent() {
         return !StringUtils.isBlank(url);
     }
+
+    public boolean isImagePresent() {
+        return !StringUtils.isBlank(image);
+    }
+
 }
