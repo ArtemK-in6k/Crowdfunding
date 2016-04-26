@@ -66,13 +66,11 @@ public class ControlController {
         return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/projects/deleteProject/", method = RequestMethod.POST)
-    public ResponseEntity<List<ProjectResponse>> deleteProject(@ModelAttribute("userBean") UserBean user, @RequestBody ProjectStatus changeStatusProject) {
+    @RequestMapping(value = "/projects/{projectId}", method = RequestMethod.DELETE)
+    public ResponseEntity<List<ProjectResponse>> deleteProject(@ModelAttribute("userBean") UserBean user, @PathVariable Integer projectId) {
 
-        int id = changeStatusProject.getId();
-        Project project = projectService.findById(id);
+        Project project = projectService.findById(projectId);
         projectService.delete(project);
-
         List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
 
         return new ResponseEntity<List<ProjectResponse>>(responseProjects, HttpStatus.OK);
@@ -83,29 +81,29 @@ public class ControlController {
         return "control/donates";
     }
 
-    @RequestMapping(value = "/donates/owndonates", method = RequestMethod.GET)
+    @RequestMapping(value = "/donates/list", method = RequestMethod.GET)
     public ResponseEntity<List<UserDonatesBean>> getOwnDonates(@ModelAttribute("userBean") UserBean user) {
 
-        User fullUser = userService.findByEmail(user.getEmail());
-        List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
+        User donateOwner = userService.findByEmail(user.getEmail());
+        List<UserDonatesBean> donates = donateService.getWrapperDonates(donateOwner.getDonates());
 
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/donates/{donateId}/delete", method = RequestMethod.POST)
+    @RequestMapping(value = "/donates/{donateId}", method = RequestMethod.DELETE)
     public ResponseEntity<List<UserDonatesBean>> deleteDonate(@ModelAttribute("userBean") UserBean user, @PathVariable int donateId) {
 
         donateService.deleteDonateById(donateId);
-        User fullUser = userService.findByEmail(user.getEmail());
-        List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
+        User donateOwner = userService.findByEmail(user.getEmail());
+        List<UserDonatesBean> donates = donateService.getWrapperDonates(donateOwner.getDonates());
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/donates", method = RequestMethod.POST)
     public ResponseEntity<List<UserDonatesBean>> saveOwnDonation(@ModelAttribute("userBean") UserBean user, @RequestBody DonationContributionBean donationContributionBean) {
         donateService.saveChangeDonation(donationContributionBean);
-        User fullUser = userService.findByEmail(user.getEmail());
-        List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
+        User donateOwner = userService.findByEmail(user.getEmail());
+        List<UserDonatesBean> donates = donateService.getWrapperDonates(donateOwner.getDonates());
 
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }

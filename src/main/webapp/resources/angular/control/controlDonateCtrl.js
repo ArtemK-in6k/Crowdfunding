@@ -14,7 +14,7 @@
 
   function OwnDonates($scope, $http, $timeout) {
 
-    $http.get('/control/donates/owndonates').success(function (data) {
+    $http.get('/control/donates/list').success(function (data) {
       $scope.donates = data;
     }).error(function (datat) {
       console.log(datat);
@@ -22,7 +22,7 @@
 
     $scope.deleteProject = function (donateId, name) {
 
-      $http.post("/control/donates/" + donateId + "/delete").success(function (data) {
+      $http.delete("/control/donates/" + donateId).success(function (data) {
         $scope.donates = data;
         $scope.donateDelete = name;
         $scope.donateDeleteSuccess = true;

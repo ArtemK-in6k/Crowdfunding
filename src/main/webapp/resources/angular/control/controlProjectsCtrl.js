@@ -33,10 +33,7 @@
 
 
     $scope.deleteProject = function (id, name) {
-      var project = {
-        "id": id
-      }
-      $http.post("/control/projects/deleteProject/", project).success(function (data) {
+      $http.delete("/control/projects/"+id).success(function (data) {
         $scope.projects = data;
         $scope.projectDelete = name;
         $scope.projectDeleteSuccess = true;
