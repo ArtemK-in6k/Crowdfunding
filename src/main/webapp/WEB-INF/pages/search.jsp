@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
@@ -27,7 +28,8 @@
                     </div>
                     <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
                     <p class="text-center">This project was created
-                        : ${project.date.date}-${project.date.month + 1}-${project.date.year + 1900}</p>
+                        : <fmt:formatDate pattern="dd MMM yyyy"
+                                          value="${project.date}" /></p>
                     <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
                 </div>
             </div>

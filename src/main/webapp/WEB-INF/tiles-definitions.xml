@@ -46,4 +46,7 @@
     </definition>
 
     <definition name="createProjectModalTemplate" template="/WEB-INF/pages/templates/createProjectModal.jsp"></definition>
+    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp">
+    </definition>
+
 </tiles-definitions>
