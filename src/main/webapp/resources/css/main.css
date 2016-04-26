@@ -143,3 +143,7 @@ span.sub {
     position: absolute;
     bottom: 0px;
 }
+
+label.required:after {
+    content: '*';
+}

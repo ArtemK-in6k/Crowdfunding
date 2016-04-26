@@ -11,13 +11,13 @@
                     <br style="clear:both">
                     <h2 style="margin-bottom: 25px; text-align: center;">Create Project Form</h2>
                     <div class="form-group">
-                        <label for="projectName">Project name*</label>
+                        <label for="projectName" class="required">Project name</label>
                         <input type="text" class="form-control" id="projectName" ng-model="newproject.name"
                                name="projectName"
                                placeholder="Project name" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="needAmount">Funding goal in &#8372;*</label>
+                        <label for="needAmount" class="required">Funding goal in &#8372;</label>
                         <input type="number" min="0.01" step="0.01" class="form-control" id="needAmount"
                                ng-model="newproject.needAmount" name="needAmount"
                                placeholder="Funding goal in &#8372;" class="form-control" required>
