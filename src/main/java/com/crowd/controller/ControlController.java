@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
@@ -101,7 +102,7 @@ public class ControlController {
     }
 
     @RequestMapping(value = "/donates", method = RequestMethod.POST)
-    public ResponseEntity<List<UserDonatesBean>> saveOwnDonation(@ModelAttribute("userBean") UserBean user,@RequestBody DonationContributionBean donationContributionBean) {
+    public ResponseEntity<List<UserDonatesBean>> saveOwnDonation(@ModelAttribute("userBean") UserBean user, @RequestBody DonationContributionBean donationContributionBean) {
         donateService.saveChangeDonation(donationContributionBean);
         User fullUser = userService.findByEmail(user.getEmail());
         List<UserDonatesBean> donates = donateService.getWrapperDonates(fullUser.getDonates());
