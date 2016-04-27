@@ -19,7 +19,6 @@
 
         $timeout(function() {
             self.isEditorLoaded = true;
-
         }, 10);
 
     }

@@ -1,8 +1,8 @@
 <div class="row" ng-init="projectList.loadProjects()" ng-controller="ProjectList as projectList">
     <div class="col-lg-12 col-md-12 col-sm-12 ">
-        <div class="col-lg-3 col-md-3 col-sm-3  "></div>
-        <div class="col-lg-6 col-md-6 col-sm-3  "><h4 class="main-title title text-center">Projects</h4></div>
-        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-12  pull-right">
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-6 col-md-6 col-sm-3"><h4 class="main-title title text-center">Projects</h4></div>
+        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-12 pull-right">
             <option value="">All</option>
             <option value="Actual">Actual</option>
             <option value="Archive">Archive</option>
@@ -10,7 +10,7 @@
         </select>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-3 col-md-4 col-sm-4 " ng-repeat="project in projectList.projects | filter:orderProp">
+        <div class="col-lg-3 col-md-4 col-sm-4" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
                     <img ng-src="{{project.image || projectList.defaultProjectImage}}" class="img-responsive" alt="placeholder image"
