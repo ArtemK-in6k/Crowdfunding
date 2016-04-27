@@ -5,7 +5,7 @@
 <script src="<c:url value="/resources/angular/control/clickDirective.js" />"></script>
 
 <div ng-controller="OwnProjects">
-    <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class=" ">
         <h3 class="text-center">My Projects</h3>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
@@ -18,7 +18,7 @@
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
-                <th class="text-center">Action</th>
+                <th class="text-center" > </th>
             </tr>
             </thead>
             <tbody>
@@ -42,9 +42,11 @@
                     </select>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
-                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
-                </td>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
+                        <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
+                    </div>
+               </td>
             </tr>
             <tr class="text-center" >
                 <td></td>
@@ -54,7 +56,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <a href="/projects/new" class="btn btn-success">Create new project</a>
+                    <a href="/projects/new" class="btn btn-success pull-right">Create new project</a>
                 </td>
             </tr>
             </tbody>

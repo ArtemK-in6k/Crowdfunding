@@ -6,7 +6,7 @@
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
 
 <div ng-controller="OwnDonates">
-    <div class="col-sm-12 col-md-12">
+    <div class="">
         <h3 class="text-center">My Donations</h3>
         <div ng-show="donationUpdateSuccess" class="alert-success alert text-center">Donation updated successful</div>
         <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete
@@ -20,7 +20,7 @@
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Your contribution</th>
-                <th class="text-center">Action</th>
+                <th class="text-center"></th>
             </tr>
             </thead>
             <tbody class="text-center" ng-repeat="donate in donates | orderBy:'id'">
@@ -34,14 +34,17 @@
                 <td>{{donate.donateAmount}} &#8372;</td>
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
-                    <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation" e-form="rowform" onbeforesave="saveDonate($data, donate.id)" e-required>
+                    <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation"
+                          e-form="rowform" onbeforesave="saveDonate($data, donate.id)" e-required>
                             {{donate.donate}} &#8372;</span>
                 </td>
-                <td>
-                    <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
-                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
-                            ng-confirm-click={{donate.projectName}}>Remove
-                    </button>
+                <td style="width: 150px">
+                    <div class="pull-right">
+                        <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
+                        <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
+                                ng-confirm-click={{donate.projectName}}>Remove
+                        </button>
+                    </div>
                 </td>
             </tr>
             </tbody>
