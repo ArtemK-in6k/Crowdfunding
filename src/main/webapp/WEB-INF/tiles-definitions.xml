@@ -45,8 +45,6 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
-    <definition name="createProjectModalTemplate" template="/WEB-INF/pages/templates/createProjectModal.jsp"></definition>
-    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp">
-    </definition>
+    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp"></definition>
 
 </tiles-definitions>
