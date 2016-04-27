@@ -18,7 +18,7 @@
             <label for="url">Image URL</label>
             <input id="url" class="form-control" type="text" name="image" ng-model="newproject.image"
                    placeholder="Image URL"
-                   ng-pattern="/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i"/>
+                   ng-pattern="app.projectImageUrlRegExp"/>
         </div>
         <div class="form-group">
             <label for="externalUrl">External URL for project description</label>
