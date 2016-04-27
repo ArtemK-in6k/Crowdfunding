@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TemplateController {
 
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public String template(@PathVariable String name){
+    public String template(@PathVariable String name) {
         return name;
     }
 }
