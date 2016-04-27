@@ -33,7 +33,7 @@
     $scope.openCreateProjectModal = function (size) {
 
       $uibModal.open({
-        templateUrl: '/templates/createProjectModalTemplate',
+        templateUrl: '/resources/angular/templates/createProjectModal.html',
         controller: 'CreateProjectController as app',
         size: size
       });
