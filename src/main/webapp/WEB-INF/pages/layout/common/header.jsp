@@ -67,4 +67,8 @@
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 
+<script src="<c:url value="/resources/angular/control/settings/change_password_controller.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
+
 <script src="<c:url value="/resources/js/app.js" />"></script>
