@@ -1,10 +1,8 @@
-package com.crowd.controller;
+package com.crowd.service;
 
 import com.crowd.bean.RegistrationFields;
 import com.crowd.bean.user.UserBean;
 import com.crowd.config.TestHibernateConfig;
-import com.crowd.service.ProjectService;
-import com.crowd.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.transaction.Transactional;
 
-import static com.crowd.controller.ProjectServiceCreateProjectMethodTest.ProjectData.*;
+import static com.crowd.service.ProjectServiceCreateProjectMethodTest.ProjectData.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.notNullValue;
