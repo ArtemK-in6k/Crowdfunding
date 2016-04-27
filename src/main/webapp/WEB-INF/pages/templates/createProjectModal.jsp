@@ -26,7 +26,7 @@
                    placeholder="Project description URL"
                    ng-pattern="app.projectExternalUrlRegExp"/>
         </div>
-        <div class="form-group" >
+        <div class="form-group" ng-if="app.isEditorLoaded">
             <label for="aboutProject">About project</label>
             <div id="aboutProject" text-angular ng-model="app.htmlcontent" name="aboutProject">
             </div>
