@@ -150,5 +150,9 @@ label.required:after {
 
 
 .create-project-modal {
-    padding: 25px;
+    padding: 0px 25px 25px 25px;
+}
+
+.create-project-btn{
+    margin-right: 10px;
 }
