@@ -37,11 +37,6 @@ public class Project {
     @Column
     private String url;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
     private List<Donate> donateList = new ArrayList<>();
 
