@@ -44,7 +44,7 @@ public class ChangeProjectStatusServiceTest {
         projectService.createProject(userBean,"The Ticket to Ride",200.00,"http://img.ozgameshop.com/board_games/party_and_family/ticket_to_ride_10th_anniversary_edition_raw.jpg",
                 "The Ticket to Ride Card Game is for 2-4 players ages 8 and older. It includes 96 Train cards, 6 Big Cities Bonus cards, 46 Destination Tickets and a rules booklet. Playing time is approximately 30 minutes.\n" +
                 "\n" +
-                "The Ticket to Ride Card Game is the perfect portable way to take your next train adventure!");
+                "The Ticket to Ride Card Game is the perfect portable way to take your next train adventure!","");
         project = projectService.findByProjectName("The Ticket to Ride");
     }
 
