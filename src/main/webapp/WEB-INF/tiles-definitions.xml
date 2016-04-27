@@ -7,6 +7,12 @@
         <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
     </definition>
 
+    <definition name="layoutControl" template="/WEB-INF/pages/layout/layout-control.jsp">
+        <put-attribute name="navigation" value="/WEB-INF/pages/layout/common/navigation.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/pages/layout/common/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/pages/layout/common/menu.jsp"/>
+    </definition>
+
     <definition name="login" template="/WEB-INF/pages/login.jsp"></definition>
 
     <definition name="donate" extends="layoutMain">
@@ -31,10 +37,10 @@
     <definition name="project" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/project.jsp"/>
     </definition>
-    <definition name="control/projects" extends="layoutMain">
+    <definition name="control/projects" extends="layoutControl">
         <put-attribute name="body" value="/WEB-INF/pages/control/projects.jsp"></put-attribute>
     </definition>
-    <definition name="control/donates" extends="layoutMain">
+    <definition name="control/donates" extends="layoutControl">
         <put-attribute name="body" value="/WEB-INF/pages/control/donates.jsp"></put-attribute>
     </definition>
 
@@ -45,7 +51,9 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
-    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp">
-    </definition>
+    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp"></definition>
 
+    <definition name="control/settings" extends="layoutControl">
+            <put-attribute name="body" value="/WEB-INF/pages/control/settings.jsp"></put-attribute>
+            </definition>
 </tiles-definitions>
