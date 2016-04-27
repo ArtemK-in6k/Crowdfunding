@@ -3,10 +3,9 @@ package com.crowd.entity;
 import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,7 +35,7 @@ public class Project {
     private String nameProject;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
-    private List<Donate> donateList;
+    private List<Donate> donateList = new ArrayList<>();
 
     public Project() {
     }
