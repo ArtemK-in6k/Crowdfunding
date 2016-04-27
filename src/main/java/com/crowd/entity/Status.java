@@ -3,7 +3,7 @@ package com.crowd.entity;
 public enum Status {
         NOT_STARTED("Not started"),
         IN_PROGRESS("In progress"),
-        FOUNDED("Founded"),
+        FUNDED("Funded"),
         COMPLETED("Completed");
 
         private String status;

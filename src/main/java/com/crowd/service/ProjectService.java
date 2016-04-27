@@ -108,7 +108,7 @@ public class ProjectService {
 
             case IN_PROGRESS:{
                 if (project.getDonate_amount()>=project.getNeedAmount()){
-                    project.setStatus(Status.FOUNDED);
+                    project.setStatus(Status.FUNDED);
                     update(project);
                 }
             }
