@@ -5,9 +5,9 @@
         .module('crowdfundingApp.projects')
         .controller('CreateProjectController', CreateProjectController);
 
-    CreateProjectController.$inject = ['$timeout'];
+    CreateProjectController.$inject = ['$timeout' ,'$uibModalInstance'];
 
-    function CreateProjectController($timeout) {
+    function CreateProjectController($timeout, $uibModalInstance) {
 
         var self = this;
 
@@ -21,5 +21,8 @@
             self.isEditorLoaded = true;
         }, 10);
 
+        self.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     }
 })();
