@@ -101,6 +101,7 @@ public class ProjectService {
                     update(project);
                 }else if (project.getDonate_amount()>0){
                     project.setStatus(Status.IN_PROGRESS);
+                    update(project);
                 }
             }
             break;
