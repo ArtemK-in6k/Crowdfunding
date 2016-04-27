@@ -32,8 +32,6 @@ public class ProjectResponse {
 
     private String nameProject;
 
-    private int categoryId;
-
     private double percendDonate;
 
     private String fullNameUser;
@@ -58,15 +56,6 @@ public class ProjectResponse {
         created = project.getDate();
         simpleStatus = project.getStatus().getStatus();
         url = project.getUrl();
-    }
-
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
     }
 
     public int getId() {
