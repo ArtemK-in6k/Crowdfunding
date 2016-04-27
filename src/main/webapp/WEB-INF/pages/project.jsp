@@ -9,14 +9,14 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 15px">
         <span class="text-black h3 m-r ng-binding">{{projectDetails.project.nameProject}}</span>
         <div class="text-muted m-t-xs ng-binding">
-            <i class="fa fa-calendar"></i>{{ projectDetails.project.created | date:'dd MMM yyyy'}}
+            <span ng-if="projectDetails.project.urlPresent"><i class="fa fa-link"></i> <a  href="{{projectDetails.project.url}}" target="_blank">See game details</a></span>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="panel panel-default">
                 <div class="">
-                    <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image}}"
+                    <img class="img-responsive project-details-img" ng-src="{{projectDetails.project.image || projectDetails.defaultProjectImage}}"
                          alt="placeholder image"/>
                 </div>
             </div>
@@ -60,17 +60,20 @@
                 </div>
             </div>
             <!-- /.panel -->
-            <div class="panel panel-default">
+            <div class="short-project-details panel panel-default">
                 <div class="panel-body">
                     <a class="pull-left" href="#">
-                        <img width="75" height="75" src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
-                             class="media-photo">
+                        <img width="75" height="75" ng-src="{{projectDetails.avatarImageUrl}}" class="media-photo">
                     </a>
                     <div class="media-body ">
-                        <div class="project-owner-info">
+                        <div class="project-owner-info" >
                             <h4 class="media-heading text-bold">{{projectDetails.project.fullNameUser}}</h4>
                             <p class="label label-info">Project owner</p>
+                            <p>
+                                Project was created on {{ projectDetails.project.created | date:'dd MMM yyyy'}}
+                            </p>
                         </div>
+
                     </div>
                 </div>
                 <!-- /.panel-body -->
@@ -85,9 +88,7 @@
                          ng-repeat="donate in projectDonates.donateList | startFrom: projectDonates.pagination.page * projectDonates.pagination.perPage | limitTo: projectDonates.pagination.perPage">
                         <div class="media ">
                             <a href="#" class="pull-left">
-                                <img width="35" height="35"
-                                     src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg"
-                                     class="media-photo">
+                                <img width="35" height="35" ng-src="{{projectDetails.avatarImageUrl}}" class="media-photo">
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>

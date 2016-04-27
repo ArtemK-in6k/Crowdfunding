@@ -40,9 +40,9 @@ public class ProjectController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String createProject(@ModelAttribute("userBean") UserBean user, @RequestParam String projectName, @RequestParam double needAmount,
-                                @RequestParam String image, @RequestParam String aboutProject) throws IOException {
+                                @RequestParam String image, @RequestParam String aboutProject, @RequestParam String url) throws IOException {
 
-        int projectId = projectService.createProject(user, projectName, needAmount, image, aboutProject);
+        int projectId = projectService.createProject(user, projectName, needAmount, image, aboutProject, url);
         return "redirect:/projects/" + projectId;
     }
 

@@ -26,7 +26,7 @@
             <tbody class="text-center" ng-repeat="donate in donates | orderBy:'id'">
             <tr>
                 <td>
-                    <img ng-src="{{donate.image}}" height="50px" width="50px">
+                    <img ng-src="{{donate.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
                 <td>
                     <div class="table-long-text">

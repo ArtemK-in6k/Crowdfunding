@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -42,6 +43,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine-html.js"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular-mocks.js"></script>
+<script src="<c:url value="/resources/js/test/angular/create_project_controller_reg_exp_test.js" />"></script>
 
 
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
@@ -68,3 +70,12 @@
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
+
+
+<div class="row">
+    <script>
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.addReporter(new jasmine.HtmlReporter());
+        jasmineEnv.execute();
+    </script>
+</div>

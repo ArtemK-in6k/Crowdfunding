@@ -138,6 +138,20 @@ span.sub {
     margin-right: 55px !important;
 }
 
+.short-project-details div.panel-body{
+    position: relative;
+}
+
+.short-project-details div.panel-body div.project-owner-info p:last-child {
+    position: absolute;
+    bottom: 0px;
+}
+
+label.required:after {
+    content: '*';
+}
+
+
 .NOT_STARTED{
     -webkit-box-shadow: inset 0px 0px 10px 0px rgba(204,41,0,0.75);
     -moz-box-shadow: inset 0px 0px 10px 0px rgba(204,41,0,0.75);

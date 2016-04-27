@@ -27,7 +27,9 @@
                         </div>
                     </div>
                     <p class="text-center">$${project.donate_amount} pledged of $${project.needAmount} goal</p>
-                    <p class="text-center">Created : <fmt:formatDate pattern="dd MMM yyyy" value="${project.date}"/></p>
+                    <p class="text-center">This project was created
+                        : <fmt:formatDate pattern="dd MMM yyyy"
+                                          value="${project.date}" /></p>
                     <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
                     <p class="text-center">Status : ${project.status.getStatus()}</p>
                 </div>

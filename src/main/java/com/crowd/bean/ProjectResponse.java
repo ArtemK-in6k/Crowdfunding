@@ -2,9 +2,11 @@ package com.crowd.bean;
 
 
 import com.crowd.entity.Project;
+import com.crowd.utils.StringUtils;
 import com.crowd.entity.Status;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 
 public class ProjectResponse {
 
@@ -21,6 +23,8 @@ public class ProjectResponse {
     private double donate_amount;
 
     private String date;
+
+    private String url;
 
     private Timestamp created;
 
@@ -53,6 +57,7 @@ public class ProjectResponse {
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
         simpleStatus = project.getStatus().getStatus();
+        url = project.getUrl();
     }
 
 
@@ -167,4 +172,21 @@ public class ProjectResponse {
     public void setSimpleStatus(String simpleStatus) {
         this.simpleStatus = simpleStatus;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public boolean isUrlPresent() {
+        return !StringUtils.isBlank(url);
+    }
+
+    public boolean isImagePresent() {
+        return !StringUtils.isBlank(image);
+    }
+
 }
