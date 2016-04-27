@@ -99,21 +99,22 @@ public class ProjectService {
     public void checkProjectStatus(Project project){
         switch (project.getStatus()) {
             case NOT_STARTED:  {
-                if (project.getDonate_amount()>0){
-                    project.setStatus(Status.IN_PROGRESS);
+                if (project.getDonate_amount()>=project.getNeedAmount()){
+                    project.setStatus(Status.FUNDED);
                     update(project);
+                }else if (project.getDonate_amount()>0){
+                    project.setStatus(Status.IN_PROGRESS);
                 }
             }
             break;
 
             case IN_PROGRESS:{
                 if (project.getDonate_amount()>=project.getNeedAmount()){
-                    project.setStatus(Status.FOUNDED);
+                    project.setStatus(Status.FUNDED);
                     update(project);
                 }
             }
                 break;
-
             default: break;
         }
     }

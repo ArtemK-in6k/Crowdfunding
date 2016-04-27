@@ -70,6 +70,7 @@ public class DonateService {
         }
 
         donateDAO.saveUpdate(donate);
+        project.getDonateList().add(donate);
         projectService.checkProjectStatus(project);
 
         return true;

@@ -33,8 +33,8 @@
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <p ng-if="project.status != 'FOUNDED'" class="table-{{project.status}}">{{project.simpleStatus}}</p>
-                    <button ng-if="project.status == 'FOUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
+                    <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">{{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
                 </td>
                 <td>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>

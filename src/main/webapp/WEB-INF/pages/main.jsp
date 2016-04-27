@@ -6,7 +6,7 @@
             <option value="">All</option>
             <option value="NOT_STARTED">Not started</option>
             <option value="IN_PROGRESS">In progress</option>
-            <option value="FOUNDED">Founded</option>
+            <option value="FUNDED">Funded</option>
             <option value="COMPLETED">Completed</option>
         </select>
     </div>
