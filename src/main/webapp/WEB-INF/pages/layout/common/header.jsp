@@ -67,4 +67,6 @@
 
 <script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
 
+<script src="<c:url value="/resources/angular/projectListService.js" />"></script>
+
 <script src="<c:url value="/resources/js/app.js" />"></script>
