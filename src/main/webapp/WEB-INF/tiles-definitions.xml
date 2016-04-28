@@ -51,6 +51,6 @@
     <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp"></definition>
 
     <definition name="control/settings" extends="layoutControl">
-            <put-attribute name="body" value="/WEB-INF/pages/control/settings.jsp"></put-attribute>
-            </definition>
+        <put-attribute name="body" value="/WEB-INF/pages/control/settings.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>

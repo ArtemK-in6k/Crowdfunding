@@ -123,8 +123,7 @@ span.sub {
 #long-text {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    white-space: nowrap;
-!important;
+    white-space: nowrap !important;
 }
 
 #amount {
@@ -151,6 +150,7 @@ label.required:after {
 .create-project-btn{
     margin-right: 10px;
 }
+
 .navigation {
     margin-top: 90px;
 }

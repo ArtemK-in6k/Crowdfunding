@@ -3,7 +3,6 @@ describe('Testing create project controller reg exp', function() {
 
     beforeEach(function (){
 
-
         module('crowdfundingApp.projects');
 
         module(function ($provide) {
@@ -19,8 +18,6 @@ describe('Testing create project controller reg exp', function() {
         });
     });
 
-
-
     it('should accept checks for correct url', function() {
         var regexp = ctrl.projectExternalUrlRegExp;
         var url = "http://boardgame.com.ua/virtuemart?page=shop.product_details&category_id=28&flypage=flypage.tpl&product_id=480";
@@ -34,5 +31,4 @@ describe('Testing create project controller reg exp', function() {
         var res = regexp.test(url)
         expect(res).toEqual(false);
     });
-
 });
