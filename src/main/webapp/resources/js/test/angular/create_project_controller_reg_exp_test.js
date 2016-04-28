@@ -6,6 +6,10 @@ describe('Testing create project controller reg exp', function() {
 
         module('crowdfundingApp.projects');
 
+        module(function ($provide) {
+            $provide.value('$uibModalInstance', jasmine.createSpy());
+        });
+
         inject(function($rootScope, $controller, $q, _$timeout_) {
             $scope = $rootScope.$new();
             $timeout = _$timeout_;
