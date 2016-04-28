@@ -90,4 +90,16 @@ public class DonateService {
         donate.setAmount(donationContributionBean.getDonate());
         donateDAO.saveUpdate(donate);
     }
+
+    public ResponseEntity<Boolean> approveDonate(int donateId){
+        Donate donate = donateDAO.findById(donateId);
+
+        if (Objects.isNull(donate)){
+            throw new IllegalArgumentException(String.format("Donate with id %d not found", donateId));
+        }
+
+        donate.setApproved(true);
+        donateDAO.saveUpdate(donate);
+        return new ResponseEntity<Boolean>(Boolean.TRUE, HttpStatus.OK);
+    }
 }
