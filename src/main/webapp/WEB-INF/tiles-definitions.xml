@@ -19,9 +19,6 @@
         <put-attribute name="body" value="/WEB-INF/pages/main.jsp"></put-attribute>
     </definition>
 
-    <definition name="newproject" extends="layoutMain">
-        <put-attribute name="body" value="/WEB-INF/pages/newproject.jsp"></put-attribute>
-    </definition>
     <definition name="notfound" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/pages/notfound.jsp"></put-attribute>
     </definition>
@@ -45,7 +42,6 @@
         <put-attribute name="body" value="/WEB-INF/pages/signin.jsp"></put-attribute>
     </definition>
 
-    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp">
-    </definition>
+    <definition name="angular-test" template="/WEB-INF/pages/angular-test.jsp"></definition>
 
 </tiles-definitions>

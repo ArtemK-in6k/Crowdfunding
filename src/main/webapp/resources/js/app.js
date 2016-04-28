@@ -1,11 +1,12 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('crowdfundingApp', [
-        'crowdfundingApp.registration',
-        'crowdfundingApp.projects',
-        'crowdfundingApp.control',
-      ]);
+    angular
+        .module('crowdfundingApp', [
+            'ui.bootstrap',
+            'crowdfundingApp.registration',
+            'crowdfundingApp.projects',
+            'crowdfundingApp.control',
+        ]);
 
 })();

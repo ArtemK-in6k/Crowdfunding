@@ -211,3 +211,12 @@ label.required:after {
     table-layout: fixed;!important;
 }
 
+
+
+.create-project-modal {
+    padding: 0px 25px 25px 25px;
+}
+
+.create-project-btn{
+    margin-right: 10px;
+}

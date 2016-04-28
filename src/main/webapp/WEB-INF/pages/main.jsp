@@ -1,8 +1,8 @@
 <div class="row" ng-init="projectList.loadProjects()" ng-controller="ProjectList as projectList">
-    <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 class="main-title title text-center">Projects</h4></div>
-        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right">
+    <div class="col-lg-12 col-md-12 col-sm-12 ">
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-6 col-md-6 col-sm-3"><h4 class="main-title title text-center">Projects</h4></div>
+        <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-12 pull-right">
             <option value="">All</option>
             <option value="NOT_STARTED">Not started</option>
             <option value="IN_PROGRESS">In progress</option>
@@ -10,6 +10,9 @@
             <option value="COMPLETED">Completed</option>
         </select>
     </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-3 col-md-4 col-sm-4" ng-repeat="project in projectList.projects | filter:orderProp">
+            <div class="thumbnail">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail {{project.status}}">

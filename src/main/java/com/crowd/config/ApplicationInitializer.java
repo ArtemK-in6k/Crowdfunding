@@ -1,5 +1,6 @@
 package com.crowd.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.support.OpenSessionInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -12,7 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 import java.util.EnumSet;
 
-
+@Configuration
 public class ApplicationInitializer implements WebApplicationInitializer {
 
     @Override
