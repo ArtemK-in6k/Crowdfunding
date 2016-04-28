@@ -5,13 +5,13 @@
     <li><a class="" href="/control/settings">Settings</a></li>
 </ul>
 <script type="text/javascript">
-    $(function(){
+    $(function() {
         function getLocationLvlPath(url) {
             var pathArray = url.split( '/' );
             var secondLevelLocation = pathArray[2];
             return secondLevelLocation;
         }
-        $('.navigation a').each(function(){
+        $('.navigation a').each(function() {
             var navigationPath = $(this).attr('href');
             var n = getLocationLvlPath(navigationPath)
             var u = getLocationLvlPath(window.location.pathname);

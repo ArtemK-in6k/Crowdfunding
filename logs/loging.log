@@ -138,3 +138,7 @@
 		No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
 2016-04-28 08:53:04,467:: WARN: qtp1146694713-18 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
 		No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-04-28 10:42:17,153:: WARN: qtp1146694713-35 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/test-angular] in DispatcherServlet with name 'dispatcher'
+2016-04-28 10:42:17,153:: WARN: qtp1146694713-35 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/test-angular] in DispatcherServlet with name 'dispatcher'
