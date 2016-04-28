@@ -49,11 +49,6 @@ public class ProjectController {
         return "redirect:/projects/" + projectId;
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.GET)
-    public String createProjectPage() {
-        return "newproject";
-    }
-
     @RequestMapping(value = "/project/{id}", method = RequestMethod.GET)
     public ResponseEntity<ProjectResponse> getProjectById(@PathVariable int id) {
         ProjectResponse projects = new ProjectResponse(projectService.findById(id));

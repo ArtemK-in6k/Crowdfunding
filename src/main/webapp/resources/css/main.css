@@ -145,6 +145,14 @@ label.required:after {
     content: '*';
 }
 
+
+.create-project-modal {
+    padding: 0px 25px 25px 25px;
+}
+
+.create-project-btn{
+    margin-right: 10px;
+}
 .navigation {
     margin-top: 90px;
 }

@@ -134,3 +134,7 @@
 		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
 2016-04-13 15:46:22,419:: WARN: qtp802573073-21 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
 		No mapping found for HTTP request with URI [/admin/{{project.image}}] in DispatcherServlet with name 'dispatcher'
+2016-04-28 08:53:04,467:: WARN: qtp1146694713-18 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-04-28 08:53:04,467:: WARN: qtp1146694713-18 | DispatcherServlet.noHandlerFound()	| org.springframework.web.servlet.PageNotFound
+		No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
