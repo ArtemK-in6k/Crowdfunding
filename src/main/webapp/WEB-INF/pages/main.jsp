@@ -10,11 +10,9 @@
             <option value="COMPLETED">Completed</option>
         </select>
     </div>
+
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-3 col-md-4 col-sm-4" ng-repeat="project in projectList.projects | filter:orderProp">
-            <div class="thumbnail">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="project in projectList.projects | filter:orderProp">
+        <div class="col-lg-3 col-md-3 col-sm-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail {{project.status}}">
                 <a href="/projects/{{project.id}}">
                     <img ng-src="{{project.image || projectList.defaultProjectImage}}" class="img-responsive" alt="placeholder image"
