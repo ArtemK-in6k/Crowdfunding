@@ -1,5 +1,6 @@
 package com.crowd.service;
 
+import com.crowd.bean.donate.ApproveDonateResponse;
 import com.crowd.bean.donate.DonationContributionBean;
 import com.crowd.bean.donate.ProjectDonatesResponse;
 import com.crowd.bean.donate.UserDonatesBean;
@@ -91,15 +92,16 @@ public class DonateService {
         donateDAO.saveUpdate(donate);
     }
 
-    public ResponseEntity<Boolean> approveDonate(int donateId){
+    public ResponseEntity<ApproveDonateResponse> approveDonate(int donateId){
         Donate donate = donateDAO.findById(donateId);
 
         if (Objects.isNull(donate)){
-            throw new IllegalArgumentException(String.format("Donate with id %d not found", donateId));
+            return new ResponseEntity<ApproveDonateResponse>(
+                    new ApproveDonateResponse(false, String.format("Donate with id %d not found", donateId)), HttpStatus.BAD_REQUEST);
         }
 
         donate.setApproved(true);
         donateDAO.saveUpdate(donate);
-        return new ResponseEntity<Boolean>(Boolean.TRUE, HttpStatus.OK);
+        return new ResponseEntity<ApproveDonateResponse>(new ApproveDonateResponse(true, "Donate approved successful"), HttpStatus.OK);
     }
 }

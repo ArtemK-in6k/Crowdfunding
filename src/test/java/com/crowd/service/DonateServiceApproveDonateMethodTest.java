@@ -1,6 +1,7 @@
 package com.crowd.service;
 
 import com.crowd.bean.RegistrationFields;
+import com.crowd.bean.donate.ApproveDonateResponse;
 import com.crowd.bean.user.UserBean;
 import com.crowd.config.TestHibernateConfig;
 import com.crowd.dao.DonateDAO;
@@ -60,8 +61,8 @@ public class DonateServiceApproveDonateMethodTest {
         Integer donateId = donateDAO.findByDonatorAndProject(userBean.getId(), createdProjectId).getId();
         assertThat(donateId, is(notNullValue()));
 
-        boolean result = donateService.approveDonate(donateId).getBody();
-        assertThat(result, is(true));
+        ApproveDonateResponse response = donateService.approveDonate(donateId).getBody();
+        assertThat(response.isSuccess(), is(true));
     }
 
     @Test(expected = IllegalArgumentException.class)

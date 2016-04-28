@@ -1,5 +1,6 @@
 package com.crowd.controller.api;
 
+import com.crowd.bean.donate.ApproveDonateResponse;
 import com.crowd.service.DonateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class DonateApiController {
     private DonateService donateService;
 
     @RequestMapping(value = "{donateId}/approve", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> approveDonate(@PathVariable Integer donateId){
+    public ResponseEntity<ApproveDonateResponse> approveDonate(@PathVariable Integer donateId){
         return donateService.approveDonate(donateId);
     }
 
