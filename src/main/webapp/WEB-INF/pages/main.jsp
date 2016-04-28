@@ -32,7 +32,9 @@
                 <p class="text-center"> {{project.donate_amount}} &#8372; pledged of {{project.needAmount}} &#8372; goal</p>
                 <p class="text-center">Created : {{ project.created | date:'dd MMM yyyy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
-                <p class="text-center">Status : {{project.simpleStatus}}</p>
+                <p class="text-center">Status :
+                    <span  class="label label-pill {{projectList.statusForBootstrap(project.status)}}">{{project.simpleStatus}}</span>
+                </p>
             </div>
         </div>
     </div>
