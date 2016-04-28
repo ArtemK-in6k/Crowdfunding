@@ -65,9 +65,10 @@ public class DonateServiceApproveDonateMethodTest {
         assertThat(response.isSuccess(), is(true));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void When_ApproveNotExistingDonate_Except_Exception() {
-        donateService.approveDonate(510);
+        ApproveDonateResponse response = donateService.approveDonate(510).getBody();
+        assertThat(response.isSuccess(), is(false));
     }
 
     static class ProjectData {
