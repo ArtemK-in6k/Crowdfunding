@@ -11,13 +11,13 @@
 
         var self = this;
 
-        function isConfirmPasswordEqualToNewPassword() {
+        self.isConfirmPasswordEqualToNewPassword = function () {
             self.passwordsNotEquals = self.newPassword != self.confirmPassword;
             return !self.passwordsNotEquals;
         }
 
         self.updatePassword = function () {
-            if (isConfirmPasswordEqualToNewPassword()) {
+            if (self.isConfirmPasswordEqualToNewPassword()) {
                 SettingsService.updatePassword(self.currentPassword, self.newPassword).then(function (result) {
                     if (result.data.success) {
                         self.success = true;
