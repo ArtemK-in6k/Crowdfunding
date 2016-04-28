@@ -4,12 +4,12 @@
          pageEncoding="ISO-8859-1" %>
 <script src="<c:url value="/resources/angular/control/clickDirective.js" />"></script>
 
-<div ng-controller="OwnProjects">
+<div ng-controller="OwnProjects as ownProjects">
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
-        <a ng-click="openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
-        <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
-        <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
+        <a ng-click="ownProjects.openCreateProjectModal('lg')" style="z-index: 1545!important;" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
+        <div ng-show="ownProjects.projectUpdateSuccess" style="z-index: 1!important;" class="alert-success alert text-center">Project updated successful</div>
+        <div ng-show="ownProjects.projectDeleteSuccess" style="z-index: 1!important;" class="alert-danger alert text-center">Project {{ownProjects.projectDelete}} delete successful</div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -23,7 +23,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="text-center" ng-repeat="project in projects | orderBy : 'id' ">
+            <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
                 <td>
                     <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
@@ -44,8 +44,8 @@
                 </td>
                 <td>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
-                        <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
+                        <button type="button" class="btn btn-primary btn-sm" ng-click="ownProjects.updateStatus(project.status, project.id)">Update</button>
+                        <button class="btn btn-danger btn-sm" confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                     </div>
                </td>
             </tr>
