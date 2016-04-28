@@ -43,7 +43,10 @@ public class ProjectService {
     }
 
     public void delete(Project project) {
-        projectDAO.delete(project);
+        if (project.getStatus().equals(Status.NOT_STARTED) ||  project.getStatus().equals(Status.IN_PROGRESS)){
+            projectDAO.delete(project);
+        }
+
     }
 
     public List<Project> findByPartOfProjectName(String projectName) {
@@ -104,6 +107,7 @@ public class ProjectService {
                     update(project);
                 }else if (project.getDonate_amount()>0){
                     project.setStatus(Status.IN_PROGRESS);
+                    update(project);
                 }
             }
             break;
