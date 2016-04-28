@@ -1,46 +1,49 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('crowdfundingApp.control')
-      .controller('OwnProjects', OwnProjects);
+    angular
+        .module('crowdfundingApp.control')
+        .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$scope', '$timeout','ControlProjectsService'];
+    OwnProjects.$inject = ['$timeout', 'ControlProjectsService'];
 
-  function OwnProjects($scope, $timeout,ControlProjectsService) {
+    function OwnProjects($timeout, ControlProjectsService) {
+        var self = this;
 
-    ControlProjectsService.getAllOwnProject().then(function (result) {
-      $scope.projects = result.data;
-    });
+        ControlProjectsService.getAllOwnProject().then(function (result) {
+            self.projects = result.data;
+        });
 
-    $scope.updateStatus = function (status, id,name) {
-      var project = {
-        "id": id,
-        "status": status
-      };
-      ControlProjectsService.updateOwnProject(project).then(function (result) {
-        $scope.projects = result.data;
-        $scope.projectCompleted = name;
-        $scope.projectUpdateSuccess = true;
+        self.updateStatus = function (status, id, name) {
+            var project = {
+                "id": id,
+                "status": status
+            };
+            ControlProjectsService.updateOwnProject(project).then(function (result) {
+                self.projects = result.data;
+                self.projectCompleted = name;
+                self.projectUpdateSuccess = true;
 
-        $timeout(function () {
-          $scope.projectUpdateSuccess = false;
-        }, 3000);
-      })
-    };
+                $timeout(function () {
+                    self.projectUpdateSuccess = false;
+                }, 3000);
+            })
+        };
 
 
-    $scope.deleteProject = function (projectId, name) {
-      ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
-        $scope.projects = result.data;
-        $scope.projectDelete = name;
-        $scope.projectDeleteSuccess = true;
+        self.deleteProject = function (projectId, name) {
+            ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
+                self.projectDeleteSuccess = ControlProjectsService.isProjectDeleted(self.projects, result.data);
+                self.projectDeleteWarning = !ControlProjectsService.isProjectDeleted(self.projects, result.data);
+                self.projects = result.data;
+                self.projectDelete = name;
 
-        $timeout(function () {
-          $scope.projectDeleteSuccess = false;
-        }, 3000);
-      })
+                $timeout(function () {
+                    self.projectDeleteSuccess = false;
+                    self.projectDeleteWarning = false;
+                }, 3000);
+            })
 
+        }
     }
-  }
 })();
