@@ -6,6 +6,7 @@ import com.crowd.bean.donate.DonationContributionBean;
 import com.crowd.bean.donate.UserDonatesBean;
 import com.crowd.bean.user.UserBean;
 import com.crowd.entity.Project;
+import com.crowd.entity.Status;
 import com.crowd.entity.User;
 import com.crowd.service.DonateService;
 import com.crowd.service.ProjectService;
@@ -53,7 +54,7 @@ public class ControlController {
     public ResponseEntity<List<ProjectResponse>> saveStatus(@ModelAttribute("userBean") UserBean user, @RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
-        String status = changeStatusProject.getStatus();
+        Status status = changeStatusProject.getStatus();
 
         Project project = projectService.findById(id);
         project.setStatus(status);

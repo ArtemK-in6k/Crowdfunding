@@ -6,13 +6,13 @@
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
 
 <div ng-controller="OwnDonates">
-    <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
         <h3 class="text-center">My Donations</h3>
         <div ng-show="donationUpdateSuccess" class="alert-success alert text-center">Donation updated successful</div>
         <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete
             successful
         </div>
-        <table class="table table-hover">
+        <table class="table table-hover table-project">
             <thead>
             <tr>
                 <th></th>
@@ -29,7 +29,10 @@
                     <img ng-src="{{donate.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
                 <td>
-                    <a href="/projects/{{donate.projectId}}"> {{donate.projectName}} </a>
+                    <div class="table-long-text">
+                        <a class="table-long-text" href="/projects/{{donate.projectId}}" title="{{donate.projectName}}">
+                            {{donate.projectName}} </a>
+                    </div>
                 </td>
                 <td>{{donate.donateAmount}} &#8372;</td>
                 <td>{{donate.needAmount}} &#8372;</td>

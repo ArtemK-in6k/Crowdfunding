@@ -7,16 +7,17 @@
 <div ng-controller="OwnProjects">
     <div class="col-sm-12 col-md-12 col-lg-12">
 
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
         <h3 class="text-center">My Projects</h3>
         <a ng-click="openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
         <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
+        <div ng-show="projectUpdateSuccess" class="alert-success alert text-center">Project {{projectCompleted}} completed</div>
         <div ng-show="projectDeleteSuccess" class="alert-danger alert text-center">Project {{projectDelete}} delete successful</div>
-        <table class="table table-hover">
+        <table class="table table-hover table-project">
             <thead>
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
-                <th class="text-center">Author</th>
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
@@ -29,25 +30,22 @@
                     <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
                 <td>
-                    <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
-                </td>
-                <td>
-                    {{project.fullNameUser}}
+                    <div class="table-long-text">
+                        <a href="/projects/{{project.id}}" title="{{project.nameProject}}"> {{project.nameProject}} </a>
+                    </div>
                 </td>
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <select class="form-control" ng-model="project.status">
-                        <option value="Archive">Archive</option>
-                        <option value="Actual">Actual</option>
-                        <option value="Whip-round">On going</option>
-                    </select>
+                    <p ng-if="project.status != 'FUNDED'" ng-class="table-{{project.status}}">{{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm" ng-click="updateStatus(project.status, project.id)">Update</button>
                     <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                 </td>
             </tr>
+
+            </tbody>
         </table>
         <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3></div>
     </div>

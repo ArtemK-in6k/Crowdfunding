@@ -70,3 +70,5 @@
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
+
+<script src="<c:url value="/resources/angular/projectStatusService.js" />"></script>
