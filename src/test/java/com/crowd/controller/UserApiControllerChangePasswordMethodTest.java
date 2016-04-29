@@ -7,6 +7,7 @@ import com.crowd.bean.user.UserBean;
 import com.crowd.config.TestHibernateConfig;
 import com.crowd.controller.api.UserApiController;
 import com.crowd.service.UserService;
+import com.crowd.utils.Cipher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.util.Asserts;
@@ -28,7 +29,12 @@ import javax.transaction.Transactional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -55,25 +61,38 @@ public class UserApiControllerChangePasswordMethodTest {
     @Before
     public void setup() {
         String login = "kentback";
-        userService.createAccount(new RegistrationFields(login, "kentback@example.com", "Kent", "Back", "testpwd"));
+        String password = "testpwd";
+        userService.createAccount(new RegistrationFields(login, "kentback@example.com", "Kent", "Back", password));
         userBean = userService.getUserByLogin(login);
 
         MockitoAnnotations.initMocks(this);
 
         this.mockMvc = MockMvcBuilders.standaloneSetup(userApiController).build();
+
+        userService = mock(UserService.class);
+
     }
 
     @Test
     public void When_PassNotAllRequestParams_Expect_UnsupportedMediaType() throws Exception {
+        when(userService
+                .changePasswordForUser(userBean.getId(),  null))
+                .thenReturn(new ChangePasswordResponse(true, "Password changed successful"));
+
         mockMvc.perform(
                 post(CHANGE_PASSWORD_URL).sessionAttr("userBean", userBean)
         ).andExpect(status().isUnsupportedMediaType());
     }
 
     @Test
-    public void When_PassAllRequestParams_Expect_OnSuccessfulResponse() throws Exception {
+    public void When_PassAllRequestParams_Expect_SuccessfulResponse() throws Exception {
         String currentPassword = "testpwd";
         String newPassword = "1234567";
+
+        when(userService
+                .changePasswordForUser(userBean.getId(), new ChangePasswordRequest(currentPassword, newPassword)))
+                .thenReturn(new ChangePasswordResponse(true, "Password changed successful"));
+
         ChangePasswordRequest request = new ChangePasswordRequest(currentPassword, newPassword);
 
         mockMvc.perform(
@@ -85,9 +104,13 @@ public class UserApiControllerChangePasswordMethodTest {
     }
 
     @Test
-    public void When_PassAllRequestParams_Expect_OnNotSuccessfulResponse() throws Exception {
+    public void When_PassAllRequestParams_Expect_NotSuccessfulResponse() throws Exception {
         String currentPassword = "testpwd";
         ChangePasswordRequest request = new ChangePasswordRequest(currentPassword, "");
+
+        when(userService
+                .changePasswordForUser(userBean.getId(), new ChangePasswordRequest(currentPassword, "")))
+                .thenReturn(new ChangePasswordResponse(true, "Password changed successful"));
 
         MvcResult result  = mockMvc.perform(
                 post(CHANGE_PASSWORD_URL)
