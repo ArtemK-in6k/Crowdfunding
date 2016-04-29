@@ -156,3 +156,7 @@ label.required:after {
 .create-project-btn{
     margin-right: 10px;
 }
+
+a.donate-approve{
+    margin-left: 5px;
+}
