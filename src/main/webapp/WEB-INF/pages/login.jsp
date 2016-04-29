@@ -13,7 +13,7 @@
     <h2>Login</h2>
     <form name="loginForm" action='/j_spring_security_check' method='post'>
         <div class="form">
-            <input id = "user" type="text" placeholder="Username" name="j_username"/>
+            <input id="user" type="text" placeholder="Username" name="j_username"/>
             <input id="pass" type="password" placeholder="Password" name="j_password"/>
             <button> Sign in</button>
             <a href="/register"><p> Don't have an account? Register </p></a>

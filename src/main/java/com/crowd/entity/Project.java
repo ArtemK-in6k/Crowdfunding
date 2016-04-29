@@ -23,7 +23,8 @@ public class Project {
     private User user;
     @Column
     private double needAmount;
-    @Column @Type(type="text")
+    @Column
+    @Type(type = "text")
     private String aboutProject;
     @Column
     private String image;
@@ -39,7 +40,7 @@ public class Project {
     @Column
     private String url;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "project")
     private List<Donate> donateList = new ArrayList<>();
 
     public Project() {
@@ -146,7 +147,7 @@ public class Project {
     }
 
     public double percendDonate() {
-        double percent =  getDonate_amount() / needAmount * 100;
+        double percent = getDonate_amount() / needAmount * 100;
         return NumberFormatter.format(percent);
     }
 

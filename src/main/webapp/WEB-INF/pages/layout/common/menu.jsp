@@ -31,8 +31,8 @@
                                       minlength="2"
                                       inputclass="form-control form-control-small"/>
                     </div>
-                        <a class="btn btn-default" href="/control">Control</a>
-                        <a class="btn btn-default" href="/logout">Logout</a>
+                    <a class="btn btn-default" href="/control">Control</a>
+                    <a class="btn btn-default" href="/logout">Logout</a>
                 </div>
             </div>
         </div>

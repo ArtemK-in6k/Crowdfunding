@@ -14,7 +14,7 @@
                 $scope.$watch('selectedObject', function () {
                         if ($scope.selectedObject) {
                             console.log($scope.selectedObject);
-                            var url ='/projects/' + $scope.selectedObject.originalObject.id;
+                            var url = '/projects/' + $scope.selectedObject.originalObject.id;
                             $window.location.href = url;
                         }
                     }
