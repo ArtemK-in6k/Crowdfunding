@@ -67,4 +67,6 @@
 
 <script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
 
+<script src="<c:url value="/resources/angular/control/navigation/navigation_directive.js" />"></script>
+
 <script src="<c:url value="/resources/js/app.js" />"></script>
