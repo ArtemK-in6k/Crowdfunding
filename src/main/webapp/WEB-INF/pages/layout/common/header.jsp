@@ -68,3 +68,5 @@
 <script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
