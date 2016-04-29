@@ -10,6 +10,5 @@ describe('search testing', function () {
         expect(field.isPresent()).toBe(true);
 
         field.click();
-        //field.sendKeys('ttttttttttttt');
     });
 });
