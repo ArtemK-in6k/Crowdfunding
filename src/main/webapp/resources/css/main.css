@@ -234,3 +234,15 @@ table.donate-list tr:last-child td:last-child {
     width: 300px;
     height: 200px;
 }
+
+.donate-box-details{
+    margin-top: 10px!important;
+}
+
+.donate-box-approved{
+    background-color: #e6ffe6;
+}
+
+.badge-approved{
+    background-color: green;
+}
