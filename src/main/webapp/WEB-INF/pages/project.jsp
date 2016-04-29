@@ -41,7 +41,7 @@
                     </div>
                     <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
 
-                    <div class="support-block" ng-if="projectDetails.isCompleted()">
+                    <div class="support-block" ng-if="projectDetails.project.status != 'COMPLETED'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
                             <form action="/projects/${projectId}/donate" method="POST">
@@ -93,9 +93,13 @@
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
-                                <i class="fa fa-check pull-right"  ng-if="donate.approved" aria-hidden="true"></i>
+                                <i class="fa fa-check pull-right" ng-if="donate.approved" aria-hidden="true"></i>
 
-                                <a href="#" ng-if="projectDetails.project.canModerate && !donate.approved" class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                <a confirmed-click="projectDonates.approveDonate(donate.id,projectDetails.project.id)"
+                                   ng-if="projectDetails.project.canModerate && !donate.approved"
+                                   ng-confirm-click
+                                   class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
+
                                 <span class="pull-right ">
                                         {{ donate.date | date:'dd MMM HH:mm'}}
                                 </span>
