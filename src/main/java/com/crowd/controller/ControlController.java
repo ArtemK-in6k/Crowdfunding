@@ -108,4 +108,9 @@ public class ControlController {
 
         return new ResponseEntity<List<UserDonatesBean>>(donates, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/settings", method = RequestMethod.GET)
+    public String settingsPage(){
+        return "control/settings";
+    }
 }

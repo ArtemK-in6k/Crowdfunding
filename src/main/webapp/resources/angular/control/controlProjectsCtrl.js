@@ -5,33 +5,35 @@
       .module('crowdfundingApp.control')
       .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$scope', '$http', '$timeout', '$uibModal'];
+  OwnProjects.$inject = ['$http', '$timeout', '$uibModal'];
 
-  function OwnProjects($scope, $http, $timeout, $uibModal) {
+  function OwnProjects($http, $timeout, $uibModal) {
 
+    var self = this;
     $http.get('/control/projects/ownprojects').success(function (data) {
-      $scope.projects = data;
+      self.projects = data;
     }).error(function (datat) {
       console.log(datat);
     });
-
-    $scope.updateStatus = function (status, id, name) {
+      
+    self.updateStatus = function (status, id, name) {
       var project = {
         "id": id,
         "status": status
       };
+        
       $http.post("/control/projects/savestatus/", project).success(function (data, status) {
-        $scope.projects = data;
-        $scope.projectCompleted = name;
-        $scope.projectUpdateSuccess = true;
+          self.projects = data;
+        self.projectCompleted = name;
+          self.projectUpdateSuccess = true;
 
         $timeout(function () {
-          $scope.projectUpdateSuccess = false;
+          self.projectUpdateSuccess = false;
         }, 3000);
       })
     };
 
-    $scope.openCreateProjectModal = function (size) {
+    self.openCreateProjectModal = function (size) {
 
       $uibModal.open({
         templateUrl: '/resources/angular/templates/createProjectModal.html',
@@ -42,17 +44,17 @@
     };
 
 
-    $scope.deleteProject = function (id, name) {
+    self.deleteProject = function (id, name) {
       var project = {
         "id": id
       };
       $http.post("/control/projects/deleteProject/", project).success(function (data) {
-        $scope.projects = data;
-        $scope.projectDelete = name;
-        $scope.projectDeleteSuccess = true;
+        self.projects = data;
+        self.projectDelete = name;
+        self.projectDeleteSuccess = true;
 
         $timeout(function () {
-          $scope.projectDeleteSuccess = false;
+          self.projectDeleteSuccess = false;
         }, 3000);
       })
 

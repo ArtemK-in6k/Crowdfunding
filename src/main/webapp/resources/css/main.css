@@ -3,11 +3,6 @@ body {
 }
 
 .body-wrapper {
-    border: 1px solid #dee5e7 !important;
-    -webkit-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
-    -moz-box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
-    box-shadow: -2px -1px 17px -6px rgba(0, 0, 0, 0.49);
-    min-height: 800px;
     padding: 25px;
 }
 
@@ -217,6 +212,18 @@ label.required:after {
 
 .create-project-btn {
     margin-right: 10px;
+}
+
+.navigation {
+    margin-top: 90px;
+}
+
+table.donate-list tr:last-child td:last-child {
+    width: 150px;
+}
+
+.create-project-modal-btn {
+    margin-right: 15px;
 }
 
 .search-img {

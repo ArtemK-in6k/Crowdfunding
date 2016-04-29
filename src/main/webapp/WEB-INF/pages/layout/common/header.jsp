@@ -40,12 +40,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine-html.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine.css" rel="stylesheet" />
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular-mocks.js"></script>
-
-
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
 
 <script src="<c:url value="/resources/angular/controllers.js" />"></script>
@@ -68,6 +62,14 @@
 <script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/settings/change_password_controller.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/navigation/navigation_directive.js" />"></script>
+
+<script src="<c:url value="/resources/angular/lib/angular-validator.min.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
 
