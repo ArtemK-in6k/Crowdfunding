@@ -22,8 +22,6 @@ public class ProjectService {
     @Autowired
     private ProjectDAO projectDAO;
     @Autowired
-    private CategoyDAO categoryDao;
-    @Autowired
     private AuthService authService;
 
     public List<Project> selectAll() {
