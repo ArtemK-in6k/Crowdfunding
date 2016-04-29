@@ -2,7 +2,6 @@ package com.crowd.controller;
 
 import com.crowd.entity.Project;
 import com.crowd.entity.User;
-import com.crowd.service.CategoryService;
 import com.crowd.service.ProjectService;
 import com.crowd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +22,6 @@ public class SearchController {
     ProjectService projectService;
     @Autowired
     UserService userService;
-    @Autowired
-    CategoryService categoryService;
 
     @RequestMapping("/search")
     public String seach(Model model, HttpSession session, @RequestParam String search, @RequestParam String select, HttpServletRequest httpServletRequest) {
@@ -51,7 +48,6 @@ public class SearchController {
 
         model.addAttribute("projectlist",projectList);
         model.addAttribute("search",search);
-        model.addAttribute("categories",categoryService.selectAll());
 
         return "search";
     }

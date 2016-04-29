@@ -26,6 +26,7 @@ public class DonateService {
     @Autowired private DonateDAO donateDAO;
     @Autowired private ProjectDAO projectDAO;
     @Autowired private UserDAO userDAO;
+    @Autowired private ProjectService projectService;
 
     public List<Donate> selectAll() {
         return donateDAO.selectAll();
@@ -70,6 +71,8 @@ public class DonateService {
         }
 
         donateDAO.saveUpdate(donate);
+        project.getDonateList().add(donate);
+        projectService.checkProjectStatus(project);
 
         return true;
     }

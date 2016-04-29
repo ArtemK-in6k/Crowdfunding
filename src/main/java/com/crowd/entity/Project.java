@@ -3,10 +3,9 @@ package com.crowd.entity;
 import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,21 +29,16 @@ public class Project {
     private double donate_amount;
     @Column
     private Timestamp date;
-    @Column
-    private String status;
+    @Enumerated
+    private Status status;
     @Column
     private String nameProject;
 
     @Column
     private String url;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
-    private List<Donate> donateList;
+    private List<Donate> donateList = new ArrayList<>();
 
     public Project() {
     }
@@ -105,11 +99,11 @@ public class Project {
         this.date = date;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -119,14 +113,6 @@ public class Project {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public String getNameProject() {
@@ -174,7 +160,6 @@ public class Project {
                 ", date=" + date +
                 ", status='" + status + '\'' +
                 ", nameProject='" + nameProject + '\'' +
-                ", category=" + category +
                 ", donateList=" + donateList +
                 '}';
     }

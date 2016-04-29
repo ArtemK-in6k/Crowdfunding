@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 
@@ -9,14 +9,20 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <c:forEach items="${projectlist}" var="project">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <div class="thumbnail">
+                <div class="thumbnail ${project.status}">
                     <a href="/projects/${project.id}">
-                        <img class="img-responsive" src="${project.image}" alt="placeholder image"
-                             style="width: 200px; height: 200px;"/>
+                        <c:choose>
+                            <c:when test="${project.image}">
+                                <img class="img-responsive search-img" src="${project.image}" alt="placeholder image"/>
+                            </c:when>
+                            <c:otherwise>
+                                <img class="img-responsive search-img" src="/resources/img/no_img.jpg" alt="placeholder image"/>
+                            </c:otherwise>
+                        </c:choose>
                     </a>
                     <div class="caption text-center">
                         <a href="/projects/${project.id}">
-                            <p class="lead">${project.nameProject}</p>
+                            <p class="lead long-text">${project.nameProject}</p>
                         </a>
                         <div class="progress">
                             <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
@@ -31,6 +37,7 @@
                         : <fmt:formatDate pattern="dd MMM yyyy"
                                           value="${project.date}" /></p>
                     <p class="text-center">by ${project.user.firstName} ${project.user.lastName}</p>
+                    <p class="text-center">Status : ${project.status.getStatus()}</p>
                 </div>
             </div>
         </c:forEach>

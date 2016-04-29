@@ -20,5 +20,12 @@
                     self.pagination.numPages = Math.ceil(self.donateList.length / self.pagination.perPage);
                 });
         }
+
+        self.approveDonate = function (donateId,projectId) {
+            ProjectDonatesService.approveDonate(donateId).then(function (result) {
+                self.loadDonates(projectId);
+            })
+
+        }
     }
 })();

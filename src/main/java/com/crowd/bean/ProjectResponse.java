@@ -3,7 +3,7 @@ package com.crowd.bean;
 
 import com.crowd.entity.Project;
 import com.crowd.utils.StringUtils;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.crowd.entity.Status;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -28,11 +28,9 @@ public class ProjectResponse {
 
     private Timestamp created;
 
-    private String status;
+    private Status status;
 
     private String nameProject;
-
-    private int categoryId;
 
     private double percendDonate;
 
@@ -57,15 +55,6 @@ public class ProjectResponse {
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
         url = project.getUrl();
-    }
-
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
     }
 
     public int getId() {
@@ -140,11 +129,11 @@ public class ProjectResponse {
         this.fullNameUser = fullNameUser;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -162,6 +151,10 @@ public class ProjectResponse {
 
     public void setCreated(Timestamp created) {
         this.created = created;
+    }
+
+    public String getSimpleStatus() {
+        return status.getStatus();
     }
 
     public String getUrl() {

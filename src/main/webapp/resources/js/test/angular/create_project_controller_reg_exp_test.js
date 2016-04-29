@@ -3,8 +3,11 @@ describe('Testing create project controller reg exp', function() {
 
     beforeEach(function (){
 
-
         module('crowdfundingApp.projects');
+
+        module(function ($provide) {
+            $provide.value('$uibModalInstance', jasmine.createSpy());
+        });
 
         inject(function($rootScope, $controller, $q, _$timeout_) {
             $scope = $rootScope.$new();
@@ -14,8 +17,6 @@ describe('Testing create project controller reg exp', function() {
             });
         });
     });
-
-
 
     it('should accept checks for correct url', function() {
         var regexp = ctrl.projectExternalUrlRegExp;
@@ -30,5 +31,4 @@ describe('Testing create project controller reg exp', function() {
         var res = regexp.test(url)
         expect(res).toEqual(false);
     });
-
 });

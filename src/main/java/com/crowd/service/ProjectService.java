@@ -3,20 +3,16 @@ package com.crowd.service;
 
 import com.crowd.bean.ProjectResponse;
 import com.crowd.bean.user.UserBean;
-import com.crowd.dao.CategoyDAO;
 import com.crowd.dao.ProjectDAO;
 import com.crowd.dao.UserDAO;
-import com.crowd.entity.Category;
 import com.crowd.entity.Project;
+import com.crowd.entity.Status;
 import com.crowd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class ProjectService {
@@ -80,31 +76,49 @@ public class ProjectService {
         return !Objects.isNull(projectDAO.findById(projectId));
     }
 
-    public ResponseEntity<Set<ProjectResponse>> getProjectsByCategory(int categoryId) {
-        Category category = categoryDao.findById(categoryId);
-        Set<Project> projects = (Objects.isNull(category)) ? new HashSet<>() : category.getProjects();
-        return new ResponseEntity<Set<ProjectResponse>>(projects
-                .stream().map(ProjectResponse::new).collect(Collectors.toSet()), HttpStatus.OK);
-    }
-
-    public List<ProjectResponse> getUserProjects(String email){
+    public List<ProjectResponse> getUserProjects(String email) {
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 
-    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url){
+    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url) {
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
-        project.setStatus("Actual");
+        project.setStatus(Status.NOT_STARTED);
         project.setDate(new Timestamp(System.currentTimeMillis()));
         project.setUrl(url);
         projectDAO.insert(project);
 
         return project.getId();
+    }
+
+
+    public void checkProjectStatus(Project project) {
+        switch (project.getStatus()) {
+            case NOT_STARTED: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
+                    project.setStatus(Status.FUNDED);
+                } else if (project.getDonate_amount() > 0) {
+                    project.setStatus(Status.IN_PROGRESS);
+                }
+                update(project);
+            }
+            break;
+
+            case IN_PROGRESS: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
+                    project.setStatus(Status.FUNDED);
+                }
+                update(project);
+            }
+            break;
+            default:
+                break;
+        }
     }
 
     public ProjectResponse getProjectById(int projectId){
