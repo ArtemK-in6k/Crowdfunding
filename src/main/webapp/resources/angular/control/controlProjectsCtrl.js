@@ -5,39 +5,52 @@
       .module('crowdfundingApp.control')
       .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$scope', '$timeout','ControlProjectsService'];
+  OwnProjects.$inject = ['$http', '$timeout', '$uibModal','ControlProjectsService'];
 
-  function OwnProjects($scope, $timeout,ControlProjectsService) {
+  function OwnProjects($http, $timeout, $uibModal,ControlProjectsService) {
+
+    var self = this;
 
     ControlProjectsService.getAllOwnProject().then(function (result) {
-      $scope.projects = result.data;
+        self.projects = result.data;
     });
 
-    $scope.updateStatus = function (status, id,name) {
+    self.updateStatus = function (status, id, name) {
       var project = {
         "id": id,
         "status": status
       };
-      ControlProjectsService.updateOwnProject(project).then(function (result) {
-        $scope.projects = result.data;
-        $scope.projectCompleted = name;
-        $scope.projectUpdateSuccess = true;
+
+        ControlProjectsService.updateOwnProject(project).then(function (result) {
+            self.projects = result.data;
+            self.projectCompleted = name;
+            self.projectUpdateSuccess = true;
 
         $timeout(function () {
-          $scope.projectUpdateSuccess = false;
+          self.projectUpdateSuccess = false;
         }, 3000);
       })
     };
 
+    self.openCreateProjectModal = function (size) {
 
-    $scope.deleteProject = function (projectId, name) {
-      ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
-        $scope.projects = result.data;
-        $scope.projectDelete = name;
-        $scope.projectDeleteSuccess = true;
+      $uibModal.open({
+        templateUrl: '/resources/angular/templates/createProjectModal.html',
+        controller: 'CreateProjectController as app',
+        size: size
+      });
+
+    };
+
+
+    self.deleteProject = function (id, name) {
+        ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
+            self.projects = result.data;
+            self.projectDelete = name;
+            self.projectDeleteSuccess = true;
 
         $timeout(function () {
-          $scope.projectDeleteSuccess = false;
+          self.projectDeleteSuccess = false;
         }, 3000);
       })
 

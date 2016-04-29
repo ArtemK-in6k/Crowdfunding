@@ -72,50 +72,48 @@ public class ProjectService {
         return !Objects.isNull(projectDAO.findById(projectId));
     }
 
-    public List<ProjectResponse> getUserProjects(String email){
+    public List<ProjectResponse> getUserProjects(String email) {
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 
-    public int createProject(UserBean user,String projectName, double needAmount, String image, String aboutProject){
-        if (image.equals("")){
-            image="http://www.edisonawards.com/news/wp-content/uploads/2016/01/chi-carol-sente-crowdfunding-1871-20150302.jpg";
-        }
+    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url) {
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
-        project.setImage(image);
         project.setAboutProject(aboutProject);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus(Status.NOT_STARTED);
         project.setDate(new Timestamp(System.currentTimeMillis()));
+        project.setUrl(url);
         projectDAO.insert(project);
 
         return project.getId();
     }
 
 
-    public void checkProjectStatus(Project project){
+    public void checkProjectStatus(Project project) {
         switch (project.getStatus()) {
-            case NOT_STARTED:  {
-                if (project.getDonate_amount()>=project.getNeedAmount()){
+            case NOT_STARTED: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
                     project.setStatus(Status.FUNDED);
-                    update(project);
-                }else if (project.getDonate_amount()>0){
+                } else if (project.getDonate_amount() > 0) {
                     project.setStatus(Status.IN_PROGRESS);
                 }
+                update(project);
             }
             break;
 
-            case IN_PROGRESS:{
-                if (project.getDonate_amount()>=project.getNeedAmount()){
+            case IN_PROGRESS: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
                     project.setStatus(Status.FUNDED);
-                    update(project);
                 }
+                update(project);
             }
+            break;
+            default:
                 break;
-            default: break;
         }
     }
 }
