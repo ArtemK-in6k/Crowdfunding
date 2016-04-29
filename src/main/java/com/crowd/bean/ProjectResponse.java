@@ -36,8 +36,6 @@ public class ProjectResponse {
 
     private String fullNameUser;
 
-    private String simpleStatus;
-
     public ProjectResponse() {
     }
 
@@ -54,7 +52,6 @@ public class ProjectResponse {
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
-        simpleStatus = project.getStatus().getStatus();
         url = project.getUrl();
     }
 
@@ -155,11 +152,7 @@ public class ProjectResponse {
     }
 
     public String getSimpleStatus() {
-        return simpleStatus;
-    }
-
-    public void setSimpleStatus(String simpleStatus) {
-        this.simpleStatus = simpleStatus;
+        return status.getStatus();
     }
 
     public String getUrl() {

@@ -37,7 +37,7 @@
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">{{project.simpleStatus}}</p>
+                    <p ng-if="project.status != 'FUNDED'" ng-class="table-{{project.status}}">{{project.simpleStatus}}</p>
                     <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
                 </td>
                 <td>

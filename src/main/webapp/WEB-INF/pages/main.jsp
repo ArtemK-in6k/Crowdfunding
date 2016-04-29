@@ -4,10 +4,7 @@
         <div class="col-lg-6 col-md-6 col-sm-3"><h4 class="main-title title text-center">Projects</h4></div>
         <select ng-model="orderProp" class="selectpicker col-lg-3 col-md-3 col-sm-12 pull-right">
             <option value="">All</option>
-            <option value="NOT_STARTED">Not started</option>
-            <option value="IN_PROGRESS">In progress</option>
-            <option value="FUNDED">Funded</option>
-            <option value="COMPLETED">Completed</option>
+            <option ng-repeat="(status, simpleStatus) in projectList.projectStatuses" value="{{status}}">{{simpleStatus}}</option>
         </select>
     </div>
 

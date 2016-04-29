@@ -11,8 +11,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <div class="thumbnail ${project.status}">
                     <a href="/projects/${project.id}">
-                        <img class="img-responsive" src="${project.image}" alt="placeholder image"
-                             style="width: 300px; height: 200px;"/>
+                        <img class="img-responsive search-img" src="${project.image}" alt="placeholder image"/>
                     </a>
                     <div class="caption text-center">
                         <a href="/projects/${project.id}">

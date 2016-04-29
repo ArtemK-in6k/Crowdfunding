@@ -72,13 +72,13 @@ public class ProjectService {
         return !Objects.isNull(projectDAO.findById(projectId));
     }
 
-    public List<ProjectResponse> getUserProjects(String email){
+    public List<ProjectResponse> getUserProjects(String email) {
         User user = userDAO.findByEmail(email);
         List<Project> projects = user.getProjects();
         return getWrapperProjectsInResponse(new HashSet<Project>(projects));
     }
 
-    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url){
+    public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url) {
         Project project = new Project();
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
@@ -93,27 +93,27 @@ public class ProjectService {
     }
 
 
-    public void checkProjectStatus(Project project){
+    public void checkProjectStatus(Project project) {
         switch (project.getStatus()) {
-            case NOT_STARTED:  {
-                if (project.getDonate_amount()>=project.getNeedAmount()){
+            case NOT_STARTED: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
                     project.setStatus(Status.FUNDED);
-                    update(project);
-                }else if (project.getDonate_amount()>0){
+                } else if (project.getDonate_amount() > 0) {
                     project.setStatus(Status.IN_PROGRESS);
-                    update(project);
                 }
+                update(project);
             }
             break;
 
-            case IN_PROGRESS:{
-                if (project.getDonate_amount()>=project.getNeedAmount()){
+            case IN_PROGRESS: {
+                if (project.getDonate_amount() >= project.getNeedAmount()) {
                     project.setStatus(Status.FUNDED);
-                    update(project);
                 }
+                update(project);
             }
             break;
-            default: break;
+            default:
+                break;
         }
     }
 }

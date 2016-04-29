@@ -19,5 +19,9 @@
                 self.project = data;
             })
         };
+
+        self.isCompleted = function () {
+            return self.project.status != 'COMPLETED';
+        };
     }
 })();
