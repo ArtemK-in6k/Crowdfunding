@@ -69,4 +69,6 @@
 
 <script src="<c:url value="/resources/angular/control/navigation/navigation_directive.js" />"></script>
 
+<script src="<c:url value="/resources/angular/lib/angular-validator.min.js" />"></script>
+
 <script src="<c:url value="/resources/js/app.js" />"></script>
