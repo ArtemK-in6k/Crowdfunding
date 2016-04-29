@@ -11,7 +11,14 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <div class="thumbnail ${project.status}">
                     <a href="/projects/${project.id}">
-                        <img class="img-responsive search-img" src="${project.image}" alt="placeholder image"/>
+                        <c:choose>
+                            <c:when test="${project.image}">
+                                <img class="img-responsive search-img" src="${project.image}" alt="placeholder image"/>
+                            </c:when>
+                            <c:otherwise>
+                                <img class="img-responsive search-img" src="/resources/img/no_img.jpg" alt="placeholder image"/>
+                            </c:otherwise>
+                        </c:choose>
                     </a>
                     <div class="caption text-center">
                         <a href="/projects/${project.id}">

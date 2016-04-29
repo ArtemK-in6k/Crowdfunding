@@ -9,7 +9,7 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Old password</label>
             <div class="col-sm-9">
-                <input  type = "text"
+                <input  type = "password"
                         name = "currentPassword"
                         class = "form-control"
                         ng-model = "changePassword.currentPassword"
@@ -19,7 +19,7 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">New password</label>
             <div class="col-sm-9">
-                <input  type = "text"
+                <input  type = "password"
                         name = "password"
                         class = "form-control"
                         ng-model = "changePassword.newPassword"
@@ -29,7 +29,7 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Confirm new password</label>
             <div class="col-sm-9">
-                <input  type = "text"
+                <input  type = "password"
                         name = "confirmPassword"
                         class = "form-control"
                         ng-model = "changePassword.confirmPassword"

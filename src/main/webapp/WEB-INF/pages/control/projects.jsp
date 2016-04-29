@@ -7,8 +7,9 @@
 <div ng-controller="OwnProjects as ownProjects">
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
-        <a ng-click="ownProjects.openCreateProjectModal('lg')"
+        <a ng-click="ownProjects.openCreateProjectModal('lg')" ng-show="!ownProjects.projectUpdateSuccess && !ownProjects.projectDeleteSuccess"
            class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
+
         <div ng-show="ownProjects.projectUpdateSuccess" class="alert-success alert text-center">Project updated
             successful
         </div>
@@ -16,53 +17,54 @@
             {{ownProjects.projectDelete}} delete successful
         </div>
         <table class="table table-hover">
-        <a ng-click="openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
-    <table class="table table-hover table-project">
-            <thead>
-            <tr>
-                <th></th>
-                <th class="text-center">Project name</th>
-                <th class="text-center">Author</th>
-                <th class="text-center">Raised</th>
-                <th class="text-center">Goal</th>
-                <th class="text-center">Status</th>
-                <th class="text-center"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
-                <td>
-                    <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
-                </td>
-                <td>
-                    <div class="table-long-text">
-                        <a href="/projects/{{project.id}}" title="{{project.nameProject}}"> {{project.nameProject}} </a>
-                    </div>
-                </td>
-                <td>{{project.donate_amount}} &#8372;</td>
-                <td>{{project.needAmount}} &#8372;</td>
-                <td>
-                    <p ng-if="project.status != 'FUNDED'" ng-class="table-{{project.status}}">{{project.simpleStatus}}</p>
-                    <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
-                </td>
-                <td>
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-primary btn-sm"
-                                ng-click="ownProjects.updateStatus(project.status, project.id)">Update
-                        </button>
-                        <button class="btn btn-danger btn-sm"
-                                confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
-                                ng-confirm-click="{{project.nameProject}}">Remove
-                        </button>
-                    </div>
-                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
-                </td>
-            </tr>
+            <table class="table table-hover table-project">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-center">Project name</th>
+                    <th class="text-center">Raised</th>
+                    <th class="text-center">Goal</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
+                    <td>
+                        <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
+                    </td>
+                    <td>
+                        <div class="table-long-text">
+                            <a href="/projects/{{project.id}}" title="{{project.nameProject}}">
+                                {{project.nameProject}} </a>
+                        </div>
+                    </td>
+                    <td>{{project.donate_amount}} &#8372;</td>
+                    <td>{{project.needAmount}} &#8372;</td>
+                    <td>
 
-            </tbody>
-            </tbody>
-        </table>
-        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3>
-        </div>
+                        <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">
+                            {{project.simpleStatus}}</p>
+                        <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm"
+                                ng-click="ownProjects.updateStatus('COMPLETED', project.id,project.nameProject)">Complete
+                        </button>
+                    </td>
+                    <td>
+                        <div class="pull-right">
+
+                            <button class="btn btn-danger btn-sm"
+                                    confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
+                                    ng-confirm-click="{{project.nameProject}}">Remove
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+                </tbody>
+            </table>
+            <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any
+                projects</h3>
+            </div>
     </div>
 </div>
