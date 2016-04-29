@@ -27,6 +27,8 @@ public class ProjectService {
     private ProjectDAO projectDAO;
     @Autowired
     private CategoyDAO categoryDao;
+    @Autowired
+    private AuthService authService;
 
     public List<Project> selectAll() {
         return projectDAO.selectAll();
@@ -61,7 +63,7 @@ public class ProjectService {
         List<Project> projects = projectDAO.selectAll();
         List<ProjectResponse> projectResponses = new ArrayList<ProjectResponse>();
         for (Project project : projects) {
-            projectResponses.add(new ProjectResponse(project));
+                projectResponses.add(new ProjectResponse(project));
         }
         return projectResponses;
     }
@@ -103,5 +105,11 @@ public class ProjectService {
         projectDAO.insert(project);
 
         return project.getId();
+    }
+
+    public ProjectResponse getProjectById(int projectId){
+        ProjectResponse projectResponse = new ProjectResponse(projectDAO.findById(projectId));
+        projectResponse.isCanModerate(authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId())));
+        return projectResponse;
     }
 }
