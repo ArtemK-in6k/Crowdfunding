@@ -44,7 +44,7 @@
             self.currentPassword = '';
             self.newPassword = '';
             self.confirmPassword = '';
-            $scope.form.reset()
+            $scope.form.reset();
         }
     }
 })();

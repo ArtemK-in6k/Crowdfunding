@@ -76,7 +76,7 @@
 
 <script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
 
-<%--<script src="<c:url value="/resources/js/test/angular/change_password_in_settings_service_test.js" />"></script>--%>
+<script src="<c:url value="/resources/js/test/angular/change_password_in_settings_service_test.js" />"></script>
 
 <script src="<c:url value="/resources/angular/project/donatelist/clickApproveDirective.js" />"></script>
 
