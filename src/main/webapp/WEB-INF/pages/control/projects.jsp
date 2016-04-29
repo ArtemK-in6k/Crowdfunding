@@ -7,9 +7,14 @@
 <div ng-controller="OwnProjects as ownProjects">
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
-        <a ng-click="ownProjects.openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
-        <div ng-show="ownProjects.projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
-        <div ng-show="ownProjects.projectDeleteSuccess" class="alert-danger alert text-center">Project {{ownProjects.projectDelete}} delete successful</div>
+        <a ng-click="ownProjects.openCreateProjectModal('lg')"
+           class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
+        <div ng-show="ownProjects.projectUpdateSuccess" class="alert-success alert text-center">Project updated
+            successful
+        </div>
+        <div ng-show="ownProjects.projectDeleteSuccess" class="alert-danger alert text-center">Project
+            {{ownProjects.projectDelete}} delete successful
+        </div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -19,7 +24,7 @@
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
-                <th class="text-center" > </th>
+                <th class="text-center"></th>
             </tr>
             </thead>
             <tbody>
@@ -44,13 +49,19 @@
                 </td>
                 <td>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-primary btn-sm" ng-click="ownProjects.updateStatus(project.status, project.id)">Update</button>
-                        <button class="btn btn-danger btn-sm" confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
+                        <button type="button" class="btn btn-primary btn-sm"
+                                ng-click="ownProjects.updateStatus(project.status, project.id)">Update
+                        </button>
+                        <button class="btn btn-danger btn-sm"
+                                confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
+                                ng-confirm-click="{{project.nameProject}}">Remove
+                        </button>
                     </div>
-               </td>
+                </td>
             </tr>
             </tbody>
         </table>
-        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3></div>
+        <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3>
+        </div>
     </div>
 </div>
