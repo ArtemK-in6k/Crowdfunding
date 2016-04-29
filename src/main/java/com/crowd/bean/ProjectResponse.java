@@ -3,6 +3,7 @@ package com.crowd.bean;
 
 import com.crowd.entity.Project;
 import com.crowd.utils.StringUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -36,6 +37,8 @@ public class ProjectResponse {
     private double percendDonate;
 
     private String fullNameUser;
+
+    private boolean canModerate;
 
     public ProjectResponse() {
     }
@@ -177,4 +180,11 @@ public class ProjectResponse {
         return !StringUtils.isBlank(image);
     }
 
+    public boolean isCanModerate() {
+        return canModerate;
+    }
+
+    public void isCanModerate(boolean canModerate) {
+        this.canModerate = canModerate;
+    }
 }
