@@ -44,7 +44,7 @@
 
 
     self.deleteProject = function (id, name) {
-        ControlProjectsService.deleteOwnProject(projectId).then(function (result) {
+        ControlProjectsService.deleteOwnProject(id).then(function (result) {
             self.projects = result.data;
             self.projectDelete = name;
             self.projectDeleteSuccess = true;
