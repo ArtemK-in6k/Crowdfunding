@@ -12,7 +12,7 @@
         <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete
             successful
         </div>
-        <table class="table table-hover">
+        <table class="table table-hover donate-list">
             <thead>
             <tr>
                 <th></th>
@@ -38,7 +38,7 @@
                           e-form="rowform" onbeforesave="saveDonate($data, donate.id)" e-required>
                             {{donate.donate}} &#8372;</span>
                 </td>
-                <td style="width: 150px">
+                <td>
                     <div class="pull-right">
                         <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
                         <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"

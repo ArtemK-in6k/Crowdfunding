@@ -154,3 +154,7 @@ label.required:after {
 .navigation {
     margin-top: 90px;
 }
+
+table.donate-list tr:last-child td:last-child{
+    width: 150px;
+}
