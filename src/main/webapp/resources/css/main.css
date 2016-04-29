@@ -246,3 +246,7 @@ table.donate-list tr:last-child td:last-child {
 .badge-approved{
     background-color: green;
 }
+
+a.donate-approve{
+    cursor: pointer;
+}
