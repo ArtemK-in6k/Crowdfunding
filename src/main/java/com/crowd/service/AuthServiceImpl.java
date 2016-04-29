@@ -22,6 +22,6 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public boolean isSameWithAuthUser(User user) {
-        return user.getUsername().equals(user.getUsername());
+        return user.getUsername().equals(getCurrentUser().getUsername());
     }
 }
