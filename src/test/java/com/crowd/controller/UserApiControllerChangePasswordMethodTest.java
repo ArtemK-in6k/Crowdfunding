@@ -70,7 +70,6 @@ public class UserApiControllerChangePasswordMethodTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(userApiController).build();
 
         userService = mock(UserService.class);
-
     }
 
     @Test
