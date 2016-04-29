@@ -16,6 +16,8 @@
             {{ownProjects.projectDelete}} delete successful
         </div>
         <table class="table table-hover">
+        <a ng-click="openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
+    <table class="table table-hover table-project">
             <thead>
             <tr>
                 <th></th>
@@ -33,19 +35,15 @@
                     <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
                 <td>
-                    <a href="/projects/{{project.id}}"> {{project.nameProject}} </a>
-                </td>
-                <td>
-                    {{project.fullNameUser}}
+                    <div class="table-long-text">
+                        <a href="/projects/{{project.id}}" title="{{project.nameProject}}"> {{project.nameProject}} </a>
+                    </div>
                 </td>
                 <td>{{project.donate_amount}} &#8372;</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
-                    <select class="form-control" ng-model="project.status">
-                        <option value="Archive">Archive</option>
-                        <option value="Actual">Actual</option>
-                        <option value="Whip-round">On going</option>
-                    </select>
+                    <p ng-if="project.status != 'FUNDED'" ng-class="table-{{project.status}}">{{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm" ng-click="updateStatus('COMPLETED', project.id,project.nameProject)">Complete</button>
                 </td>
                 <td>
                     <div class="pull-right">
@@ -57,8 +55,11 @@
                                 ng-confirm-click="{{project.nameProject}}">Remove
                         </button>
                     </div>
+                    <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(project.id,project.nameProject)" ng-confirm-click={{project.nameProject}}>Remove</button>
                 </td>
             </tr>
+
+            </tbody>
             </tbody>
         </table>
         <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any projects</h3>

@@ -29,7 +29,10 @@
                     <img ng-src="{{donate.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
                 <td>
-                    <a href="/projects/{{donate.projectId}}"> {{donate.projectName}} </a>
+                    <div class="table-long-text">
+                        <a class="table-long-text" href="/projects/{{donate.projectId}}" title="{{donate.projectName}}">
+                            {{donate.projectName}} </a>
+                    </div>
                 </td>
                 <td>{{donate.donateAmount}} &#8372;</td>
                 <td>{{donate.needAmount}} &#8372;</td>

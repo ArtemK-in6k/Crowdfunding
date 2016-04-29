@@ -1,14 +1,16 @@
 package com.crowd.bean;
 
+import com.crowd.entity.Status;
+
 public class ProjectStatus {
 
     private int id;
-    private String status;
+    private Status status;
 
     public ProjectStatus() {
     }
 
-    public ProjectStatus(int id, String status) {
+    public ProjectStatus(int id, Status status) {
         this.id = id;
         this.status = status;
     }
@@ -21,11 +23,11 @@ public class ProjectStatus {
         this.id = id;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

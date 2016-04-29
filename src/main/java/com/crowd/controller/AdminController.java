@@ -1,6 +1,7 @@
 package com.crowd.controller;
 
 import com.crowd.bean.ProjectStatus;
+import com.crowd.entity.Status;
 import com.crowd.service.ProjectService;
 import com.crowd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +54,7 @@ public class AdminController {
     public ResponseEntity<List<ProjectResponse>> saveStatus(@RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
-        String status = changeStatusProject.getStatus();
+        Status status = changeStatusProject.getStatus();
 
         Project project = projectService.findById(id);
         project.setStatus(status);

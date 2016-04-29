@@ -5,7 +5,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <div class="row " ng-controller="ProjectDetailsController as projectDetails"
-     ng-init="projectDetails.getProjectData(${projectId})">
+     ng-init="projectDetails.getProjectData(${projectId})" ng-cloack>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 15px">
         <span class="text-black h3 m-r ng-binding">{{projectDetails.project.nameProject}}</span>
         <div class="text-muted m-t-xs ng-binding">
@@ -41,7 +41,7 @@
                     </div>
                     <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
 
-                    <div class="support-block" ng-if="projectDetails.project.status == 'Actual'">
+                    <div class="support-block" ng-if="projectDetails.isCompleted()">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
                             <form action="/projects/${projectId}/donate" method="POST">

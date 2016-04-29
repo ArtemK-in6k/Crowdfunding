@@ -3,7 +3,6 @@ package com.crowd.controller;
 
 import com.crowd.bean.ProjectResponse;
 import com.crowd.bean.user.UserBean;
-import com.crowd.service.CategoryService;
 import com.crowd.service.DonateService;
 import com.crowd.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,6 @@ public class ProjectController {
 
     @Autowired
     ProjectService projectService;
-    @Autowired
-    CategoryService categoryService;
     @Autowired
     DonateService donateService;
 

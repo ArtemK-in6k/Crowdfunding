@@ -3,6 +3,7 @@ package com.crowd.service;
 import com.crowd.bean.RegistrationFields;
 import com.crowd.bean.user.UserBean;
 import com.crowd.config.TestHibernateConfig;
+import com.crowd.entity.Status;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -65,7 +66,7 @@ public class ProjectServiceCreateProjectMethodTest {
 
         int projectId = projectService.createProject(userBean, name, needAmount, "", about, sourceUrl);
 
-        String projectStatus = projectService.findById(projectId).getStatus();
+        Status projectStatus = projectService.findById(projectId).getStatus();
 
         assertThat(projectStatus, is(notNullValue()));
     }
