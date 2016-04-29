@@ -85,6 +85,7 @@ public class ProjectService {
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
         project.setAboutProject(aboutProject);
+        project.setImage(image);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus(Status.NOT_STARTED);
         project.setDate(new Timestamp(System.currentTimeMillis()));
