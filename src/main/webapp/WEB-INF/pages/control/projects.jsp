@@ -7,9 +7,9 @@
 <div ng-controller="OwnProjects as ownProjects">
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
-        <a ng-click="ownProjects.openCreateProjectModal('lg')" style="z-index: 1545!important;" class="btn btn-success btn-sm pull-right" style="margin-right:15px">Create new project</a>
-        <div ng-show="ownProjects.projectUpdateSuccess" style="z-index: 1!important;" class="alert-success alert text-center">Project updated successful</div>
-        <div ng-show="ownProjects.projectDeleteSuccess" style="z-index: 1!important;" class="alert-danger alert text-center">Project {{ownProjects.projectDelete}} delete successful</div>
+        <a ng-click="ownProjects.openCreateProjectModal('lg')" class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
+        <div ng-show="ownProjects.projectUpdateSuccess" class="alert-success alert text-center">Project updated successful</div>
+        <div ng-show="ownProjects.projectDeleteSuccess" class="alert-danger alert text-center">Project {{ownProjects.projectDelete}} delete successful</div>
         <table class="table table-hover">
             <thead>
             <tr>
