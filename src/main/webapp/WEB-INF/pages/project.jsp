@@ -93,6 +93,9 @@
                             </a>
                             <div class="media-body text-center">
                                 <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
+                                <i class="fa fa-check pull-right"  ng-if="donate.approved" aria-hidden="true"></i>
+
+                                <a href="#" ng-if="projectDetails.project.canModerate && !donate.approved" class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
                                 <span class="pull-right ">
                                         {{ donate.date | date:'dd MMM HH:mm'}}
                                 </span>
