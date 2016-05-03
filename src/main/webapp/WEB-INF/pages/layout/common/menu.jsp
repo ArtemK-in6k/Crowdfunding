@@ -22,8 +22,15 @@
                            required>
                     <input hidden name="select" value="project">
                     <button type="submit" class="btn btn-default">Search</button>
-                        <a class="btn btn-default" href="/control">Control</a>
-                        <a class="btn btn-default" href="/logout">Logout</a>
+                </div>
+                <div id="dropdown-button" class="dropdown form-group">
+                    <button class="btn btn-default dropdown-toggle form-group" type="button"
+                            data-toggle="dropdown">${userBean.firstName } ${userBean.lastName}
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/control">Control</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
                 </div>
             </form>
         </div>
