@@ -237,6 +237,7 @@ table.donate-list tr:last-child td:last-child {
 
 .donate-box-details{
     margin-top: 10px!important;
+    position: relative;
 }
 
 .donate-box-approved{
@@ -247,6 +248,16 @@ table.donate-list tr:last-child td:last-child {
     background-color: green;
 }
 
-a.donate-approve{
+.badge-not-approved{
+    background-color: #a94442;
+}
+
+a.donate-approve {
     cursor: pointer;
+    position: absolute;
+    right: 0px;
+}
+
+.donate-btn{
+    width: 100%!important;
 }
