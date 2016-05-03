@@ -50,8 +50,8 @@
                                            placeholder="Amount" type="number">
                                 </div>
                                 <div class="col-lg-8 col-md-8 pull-right-lg no-padding">
-                                    <button type="submit" data-toggle="modal" style="width: 100%!important;"
-                                            class="btn btn-primary btn-lg">Donate
+                                    <button type="submit" data-toggle="modal"
+                                            class="btn btn-primary btn-lg donate-btn">Donate
                                     </button>
                                 </div>
                             </form>
@@ -96,11 +96,11 @@
                                         <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
 
                                         <a confirmed-click="projectDonates.approveDonate(donate.id,projectDetails.project.id)"
-                                           ng-if="projectDetails.project.canModerate && !donate.approved"
+                                           ng-if="projectDetails.project.editable && !donate.approved"
                                            ng-confirm-click
                                            class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
 
-                                        <span id="amount" ng-class="{'badge-approved':donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
+                                        <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                                     </div>
                             </div>
                         </div>
