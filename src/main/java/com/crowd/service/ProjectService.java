@@ -122,7 +122,7 @@ public class ProjectService {
 
     public ProjectResponse getProjectById(int projectId){
         ProjectResponse projectResponse = new ProjectResponse(projectDAO.findById(projectId));
-        projectResponse.isCanModerate(authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId())));
+        projectResponse.isEditable(authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId())));
         return projectResponse;
     }
 }
