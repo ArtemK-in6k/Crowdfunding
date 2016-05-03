@@ -5,9 +5,9 @@
         .module('crowdfundingApp.control')
         .controller('ChangePasswordController', ChangePasswordController);
 
-    ChangePasswordController.$inject = ['SettingsService', '$timeout', '$scope'];
+    ChangePasswordController.$inject = ['SettingsService', '$timeout', '$scope', 'Notification'];
 
-    function ChangePasswordController(SettingsService, $timeout, $scope) {
+    function ChangePasswordController(SettingsService, $timeout, $scope, Notification) {
 
         var self = this;
 
@@ -21,17 +21,10 @@
         self.updatePassword = function () {
             if (self.isConfirmPasswordEqualToNewPassword()) {
                 SettingsService.updatePassword(self.currentPassword, self.newPassword).then(function (result) {
-
-                    self.alert.msg = result.data.message;
-
                     if (result.data.success) {
-                        self.alert.type = 'success';
                         resetFormFields();
-                    } else {
-                        self.alert.type = 'danger';
                     }
-
-                    self.show = true;
+                    Notification({message: result.data.message, title: 'Notification'});
                 });
             }
         }
