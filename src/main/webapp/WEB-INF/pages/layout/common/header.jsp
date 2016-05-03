@@ -40,6 +40,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
+<link href="<c:url value="/resources/css/angular-ui-notification.min.css" />" rel="stylesheet" type="text/css">
+
+<script src="<c:url value="/resources/angular/lib/angular-ui-notification.min.js" />"></script>
+
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
 
 <script src="<c:url value="/resources/angular/controllers.js" />"></script>
