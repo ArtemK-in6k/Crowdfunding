@@ -109,7 +109,7 @@ public class ControlController {
     }
 
     @RequestMapping(value = "/settings", method = RequestMethod.GET)
-    public String settingsPage(){
+    public String settingsPage() {
         return "control/settings";
     }
 }

@@ -22,7 +22,7 @@
         return {
             getAllOwnDonates: getAllOwnDonates,
             deleteOwnDonate: deleteOwnDonate,
-            saveOwnDonate:saveOwnDonate
+            saveOwnDonate: saveOwnDonate
         };
     }
 })();

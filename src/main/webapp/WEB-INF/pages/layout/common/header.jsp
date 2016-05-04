@@ -69,6 +69,10 @@
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
 
+<script src="<c:url value="/resources/angular/control/controlDonatesService.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
+
 <script src="<c:url value="/resources/angular/control/settings/change_password_controller.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
@@ -76,6 +80,8 @@
 <script src="<c:url value="/resources/angular/control/navigation/navigation_directive.js" />"></script>
 
 <script src="<c:url value="/resources/angular/lib/angular-validator.min.js" />"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
 
 <script src="<c:url value="/resources/angular/projectStatusService.js" />"></script>
 

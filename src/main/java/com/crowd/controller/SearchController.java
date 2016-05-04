@@ -23,7 +23,7 @@ public class SearchController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/search",method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ResponseEntity<List<ProjectResponse>> search(@RequestParam String search) {
         List<Project> projectList = projectService.findByPartOfProjectName(search.toLowerCase());
         List<ProjectResponse> projects = projectService.getWrapperProjectsInResponse(new HashSet<>(projectList));

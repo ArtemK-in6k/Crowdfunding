@@ -5,9 +5,10 @@
         .module('crowdfundingApp.control')
         .controller('OwnProjects', OwnProjects);
 
-    OwnProjects.$inject = ['$timeout', 'ControlProjectsService', '$uibModal'];
+    OwnProjects.$inject = ['$http', '$timeout', '$uibModal', 'ControlProjectsService'];
 
-    function OwnProjects($timeout, ControlProjectsService, $uibModal) {
+    function OwnProjects($http, $timeout, $uibModal, ControlProjectsService) {
+
         var self = this;
 
         ControlProjectsService.getAllOwnProject().then(function (result) {
@@ -19,6 +20,7 @@
                 "id": id,
                 "status": status
             };
+
             ControlProjectsService.updateOwnProject(project).then(function (result) {
                 self.projects = result.data;
                 self.projectCompleted = name;
@@ -30,15 +32,15 @@
             })
         };
 
-    self.openCreateProjectModal = function (size) {
+        self.openCreateProjectModal = function (size) {
 
-      $uibModal.open({
-        templateUrl: '/resources/angular/templates/createProjectModal.html',
-        controller: 'CreateProjectController as app',
-        size: size
-      });
+            $uibModal.open({
+                templateUrl: '/resources/angular/templates/createProjectModal.html',
+                controller: 'CreateProjectController as app',
+                size: size
+            });
 
-    };
+        };
 
 
         self.deleteProject = function (projectId, name) {
