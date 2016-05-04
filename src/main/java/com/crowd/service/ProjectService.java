@@ -21,6 +21,8 @@ public class ProjectService {
     private UserDAO userDAO;
     @Autowired
     private ProjectDAO projectDAO;
+    @Autowired
+    private AuthService authService;
 
     public List<Project> selectAll() {
         return projectDAO.selectAll();
@@ -55,7 +57,7 @@ public class ProjectService {
         List<Project> projects = projectDAO.selectAll();
         List<ProjectResponse> projectResponses = new ArrayList<ProjectResponse>();
         for (Project project : projects) {
-            projectResponses.add(new ProjectResponse(project));
+                projectResponses.add(new ProjectResponse(project));
         }
         return projectResponses;
     }
@@ -83,6 +85,7 @@ public class ProjectService {
         project.setNameProject(projectName);
         project.setNeedAmount(needAmount);
         project.setAboutProject(aboutProject);
+        project.setImage(image);
         project.setUser(userDAO.findByEmail(user.getEmail()));
         project.setStatus(Status.NOT_STARTED);
         project.setDate(new Timestamp(System.currentTimeMillis()));
@@ -115,5 +118,11 @@ public class ProjectService {
             default:
                 break;
         }
+    }
+
+    public ProjectResponse getProjectById(int projectId){
+        ProjectResponse projectResponse = new ProjectResponse(projectDAO.findById(projectId));
+        projectResponse.isEditable(authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId())));
+        return projectResponse;
     }
 }

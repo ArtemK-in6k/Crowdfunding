@@ -48,8 +48,7 @@ public class ProjectController {
 
     @RequestMapping(value = "/project/{id}", method = RequestMethod.GET)
     public ResponseEntity<ProjectResponse> getProjectById(@PathVariable int id) {
-        ProjectResponse projects = new ProjectResponse(projectService.findById(id));
-        return new ResponseEntity<ProjectResponse>(projects, HttpStatus.OK);
-
+        return new ResponseEntity<ProjectResponse>(projectService.getProjectById(id), HttpStatus.OK);
     }
+
 }

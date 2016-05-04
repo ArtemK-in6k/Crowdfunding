@@ -47,6 +47,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
 <script src="<c:url value="/resources/js/test/angular/create_project_controller_reg_exp_test.js" />"></script>
 
+<script src="<c:url value="/resources/js/test/angular/approve_donate_method_test.js" />"></script>
 
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
 
@@ -75,7 +76,9 @@
 
 <script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
 
-<script src="<c:url value="/resources/js/test/angular/test_change_password_in_settings_service.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/change_password_in_settings_service_test.js" />"></script>
+
+<script src="<c:url value="/resources/angular/project/donatelist/clickApproveDirective.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
 
