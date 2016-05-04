@@ -5,9 +5,9 @@
       .module('crowdfundingApp.projects')
       .controller('ProjectList', ProjectList);
 
-  ProjectList.$inject = ['$http','ProjectStatusService'];
+  ProjectList.$inject = ['$http','ProjectStatusService','ProjectListService'];
 
-  function ProjectList($http,ProjectStatusService) {
+  function ProjectList($http,ProjectStatusService,ProjectListService) {
 
     var self = this;
 

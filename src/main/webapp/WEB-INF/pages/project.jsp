@@ -97,7 +97,7 @@
 
                                         <a confirmed-click="projectDonates.approveDonate(donate.id,projectDetails.project.id)"
                                            ng-if="projectDetails.project.editable && !donate.approved"
-                                           ng-confirm-click
+                                           ng-confirm-click-approve
                                            class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
 
                                         <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
