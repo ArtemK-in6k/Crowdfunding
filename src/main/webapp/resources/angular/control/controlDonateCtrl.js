@@ -21,7 +21,7 @@
                 self.donates = result.data;
             });
 
-        self.deleteProject = function (donateId, name) {
+        self.deleteDonate = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
                 self.donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
                 self.donateDeleteWarning = !ControlDonatesService.isDonateDeleted(self.donates, result.data);

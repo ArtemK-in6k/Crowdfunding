@@ -49,7 +49,8 @@
                 <td>
                     <div class="pull-right">
                         <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
-                        <button class="btn btn-danger btn-sm" confirmed-click="ownDonates.deleteProject(donate.id)"
+                        <button class="btn btn-danger btn-sm"
+                                confirmed-click="ownDonates.deleteDonate(donate.id,donate.projectName)"
                                 ng-confirm-click-donate={{donate.projectName}}>Remove
                         </button>
                     </div>
