@@ -10,39 +10,43 @@
             editableOptions.theme = 'bs3';
         });
 
-    OwnDonates.$inject = ['$scope', '$timeout', 'ControlDonatesService'];
+    OwnDonates.$inject = ['$timeout', 'ControlDonatesService'];
 
-    function OwnDonates($scope, $timeout, ControlDonatesService) {
+    function OwnDonates($timeout, ControlDonatesService) {
+
+        var self = this;
 
         ControlDonatesService.getAllOwnDonates()
             .then(function (result) {
-                $scope.donates = result.data;
+                self.donates = result.data;
             });
 
-        $scope.deleteProject = function (donateId, name) {
+        self.deleteProject = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
-                $scope.donates = result.data;
-                $scope.donateDelete = name;
-                $scope.donateDeleteSuccess = true;
+                self.donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
+                self.donateDeleteWarning = !ControlDonatesService.isDonateDeleted(self.donates, result.data);
+                self.donates = result.data;
+                self.donateDelete = name;
 
                 $timeout(function () {
-                    $scope.donateDeleteSuccess = false;
+                    self.donateDeleteSuccess = false;
+                    self.donateDeleteWarning = false;
                 }, 3000);
             })
 
         };
 
-        $scope.saveDonate = function (donate, id) {
+        self.saveDonate = function (donate, id) {
             var donation = {
                 "id": id,
                 "donate": donate
             };
-            $scope.donationUpdateSuccess = true;
+            self.donationUpdateSuccess = true;
             ControlDonatesService.saveOwnDonate(donation).then(function (result) {
-                $scope.donates = result.data;
+                self.donates = result.data;
 
                 $timeout(function () {
-                    $scope.donationUpdateSuccess = false;
+                    self.donationUpdateSuccess = false;
                 }, 3000);
             })
         };
