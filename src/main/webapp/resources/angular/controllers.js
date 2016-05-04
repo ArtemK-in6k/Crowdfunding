@@ -5,9 +5,9 @@
       .module('crowdfundingApp.projects')
       .controller('ProjectList', ProjectList);
 
-  ProjectList.$inject = ['ProjectStatusService','$http'];
+  ProjectList.$inject = ['$http','ProjectStatusService','ProjectListService'];
 
-  function ProjectList(ProjectStatusService,$http) {
+  function ProjectList($http,ProjectStatusService,ProjectListService) {
 
     var self = this;
 
@@ -21,7 +21,10 @@
       });
     };
 
-    self.projectStatuses = ProjectStatusService.getAllProjectStatuses();
+    self.statusForBootstrap = function(status){
+      return ProjectListService.getLabelByStatus(status);
+    };
+      self.projectStatuses = ProjectStatusService.getAllProjectStatuses();
 
     self.orderProp = '';
   }

@@ -1,14 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('crowdfundingApp.projects').factory('ProjectStatusService', ProjectStatusService);
+    angular.module('crowdfundingApp.projects').factory('ProjectListService', ProjectListService);
 
-    function ProjectStatusService() {
-
-        function getAllProjectStatuses() {
-            return {"NOT_STARTED" : "Not started", "IN_PROGRESS" : "In progress",
-                "FUNDED": "Funded","COMPLETED" : "Completed"};
-        }
+    function ProjectListService() {
 
         function getLabelByStatus(status) {
             var label;
@@ -37,8 +32,7 @@
         }
 
         return {
-            getAllProjectStatuses: getAllProjectStatuses,
-            getLabelByStatus : getLabelByStatus
+            getLabelByStatus: getLabelByStatus
         };
     }
 })();
