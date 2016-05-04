@@ -6,8 +6,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="imagetoolbar" content="no" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="http://kidmondo.com/wp-content/themes/kidmondo2/images/favicon.ico" />
     <meta name="robots" content="noindex,nofollow" />
     <title>Nothing found for 404</title>
 

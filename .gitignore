@@ -4,3 +4,5 @@ tempates
 out
 gen
 target
+logs
+node_modules

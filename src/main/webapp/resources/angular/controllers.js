@@ -1,13 +1,31 @@
-'use strict';
+(function () {
+  'use strict';
 
-var crowdfundingApp = angular.module('crowdfundingApp', []);
+  angular
+      .module('crowdfundingApp.projects')
+      .controller('ProjectList', ProjectList);
 
-crowdfundingApp.controller('ProjectList', ['$scope', '$http', function ($scope, $http) {
-    $http.get('/projects').success(function (data) {
-        $scope.projects = data;
-    }).error(function (datat) {
-        console.log(datat);
-    })
-    ;
-    $scope.orderProp = '';
-}]);
+  ProjectList.$inject = ['$http','ProjectStatusService','ProjectListService'];
+
+  function ProjectList($http,ProjectStatusService,ProjectListService) {
+
+    var self = this;
+
+    self.defaultProjectImage = '/resources/img/no_img.jpg';
+
+    self.loadProjects = function (category) {
+      var url = (category) ? '/projects/categories/' + category : '/projects';
+      $http.get(url).success(function (data) {
+        self.projects = data;
+      }).error(function (datat) {
+      });
+    };
+
+    self.statusForBootstrap = function(status){
+      return ProjectListService.getLabelByStatus(status);
+    };
+      self.projectStatuses = ProjectStatusService.getAllProjectStatuses();
+
+    self.orderProp = '';
+  }
+})();
