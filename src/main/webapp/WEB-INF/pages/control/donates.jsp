@@ -5,12 +5,17 @@
 
 <script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
 
-<div ng-controller="OwnDonates">
+<div ng-controller="OwnDonates as ownDonates">
     <div class="">
         <h3 class="text-center">My Donations</h3>
-        <div ng-show="donationUpdateSuccess" class="alert-success alert text-center">Donation updated successful</div>
-        <div ng-show="donateDeleteSuccess" class="alert-danger alert text-center">Donation {{donateDelete}} delete
+        <div ng-show="ownDonates.donationUpdateSuccess" class="alert-success alert text-center">Donation updated
             successful
+        </div>
+        <div ng-show="ownDonates.donateDeleteSuccess" class="alert-danger alert text-center">Donation
+            {{ownDonates.donateDelete}} delete successful
+        </div>
+        <div ng-show="ownDonates.donateDeleteWarning" class="alert-warning alert text-center">You can't delete
+            {{ownDonates.donateDelete}},because this project have move than 90% donates
         </div>
         <table class="table table-hover donate-list">
             <thead>
@@ -23,7 +28,7 @@
                 <th class="text-center"></th>
             </tr>
             </thead>
-            <tbody class="text-center" ng-repeat="donate in donates | orderBy:'id'">
+            <tbody class="text-center" ng-repeat="donate in ownDonates.donates | orderBy:'id'">
             <tr>
                 <td>
                     <img ng-src="{{donate.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
@@ -38,13 +43,13 @@
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
                     <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation"
-                          e-form="rowform" onbeforesave="saveDonate($data, donate.id)" e-required>
+                          e-form="rowform" onbeforesave="ownDonates.saveDonate($data, donate.id)" e-required>
                             {{donate.donate}} &#8372;</span>
                 </td>
                 <td>
                     <div class="pull-right">
                         <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit</button>
-                        <button class="btn btn-danger btn-sm" confirmed-click="deleteProject(donate.id)"
+                        <button class="btn btn-danger btn-sm" confirmed-click="ownDonates.deleteProject(donate.id)"
                                 ng-confirm-click-donate={{donate.projectName}}>Remove
                         </button>
                     </div>
@@ -52,6 +57,7 @@
             </tr>
             </tbody>
         </table>
-        <div ng-if="donates.length == 0" class="text-center text-danger"><h3>Sorry, you haven't any donations</h3></div>
+        <div ng-if="ownDonates.donates.length == 0" class="text-center text-danger"><h3>Sorry, you haven't any
+            donations</h3></div>
     </div>
 </div>
