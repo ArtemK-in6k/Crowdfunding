@@ -38,7 +38,13 @@
 <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
 
+<script src="<c:url value="/resources/angular/lib/ui-bootstrap-tpls-1.3.2.min.js" />"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+<link href="<c:url value="/resources/css/angular-ui-notification.min.css" />" rel="stylesheet" type="text/css">
+
+<script src="<c:url value="/resources/angular/lib/angular-ui-notification.min.js" />"></script>
 
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
 
@@ -49,7 +55,7 @@
 <script src="<c:url value="/resources/angular/project/donatelist/project_donates_service.js" />"></script>
 <script src="<c:url value="/resources/angular/project/project_details_controller.js" />"></script>
 
-<script src="<c:url value="/resources/angular/project/newproject/new_project_controller.js" />"></script>
+<script src="<c:url value="/resources/angular/project/newproject/create_project_controller.js" />"></script>
 
 <script src="<c:url value="/resources/angular/registration/registration.module.js" />"></script>
 
@@ -62,6 +68,18 @@
 <script src="<c:url value="/resources/angular/control/controlProjectsCtrl.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlDonateCtrl.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/settings/change_password_controller.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
+
+<script src="<c:url value="/resources/angular/control/navigation/navigation_directive.js" />"></script>
+
+<script src="<c:url value="/resources/angular/lib/angular-validator.min.js" />"></script>
+
+<script src="<c:url value="/resources/angular/projectStatusService.js" />"></script>
+
+<script src="<c:url value="/resources/angular/project/donatelist/clickApproveDirective.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlDonatesService.js" />"></script>
 

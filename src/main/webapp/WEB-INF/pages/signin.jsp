@@ -60,7 +60,7 @@
 
             <div class="form-group">
 
-                <input type="submit" name="submit" value="Create account" ng-disabled="regController.regForm.$invalid"
+                <input type="submit" name="submit" value="Create account" ng-disabled="regController.regForm.$invalid || regController.isEmailNotUnique || regController.isLoginNotUnique"
                        class="btn btn-success pull-right">
             </div>
 

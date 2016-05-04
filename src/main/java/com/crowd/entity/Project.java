@@ -3,7 +3,6 @@ package com.crowd.entity;
 import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
@@ -35,6 +34,9 @@ public class Project {
     private Status status;
     @Column
     private String nameProject;
+
+    @Column
+    private String url;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
     private List<Donate> donateList = new ArrayList<>();
@@ -149,6 +151,14 @@ public class Project {
 
     public String dateFormat() {
         return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class DonateBean {
     private String projectName;
     private int projectId;
     private Timestamp date;
-
+    private boolean approved;
     public DonateBean(){}
 
     public DonateBean(Donate donate){
@@ -26,6 +26,7 @@ public class DonateBean {
         setProjectName(donate.getProject().getNameProject());
         setProjectId(donate.getProjectId().getId());
         setDate(donate.getDate());
+        setApproved(donate.isApproved());
     }
 
     public int getId() {
@@ -82,5 +83,13 @@ public class DonateBean {
 
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
     }
 }
