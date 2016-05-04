@@ -11,7 +11,7 @@
     return {
       link: function (scope, element, attr) {
         var msg = "Would you delete your donate " + attr.ngConfirmClickDonate + "? \nYou can lost all data for this project." || "Are you sure?";
-        var clickAction = attr.confirmedClick;
+        var clickAction = attr.confirmClickDonate;
         element.bind('click', function (event) {
           if (window.confirm(msg)) {
             scope.$eval(clickAction)
