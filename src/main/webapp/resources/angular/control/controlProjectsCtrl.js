@@ -5,9 +5,9 @@
         .module('crowdfundingApp.control')
         .controller('OwnProjects', OwnProjects);
 
-    OwnProjects.$inject = ['$timeout', '$uibModal', 'ControlProjectsService'];
+    OwnProjects.$inject = ['$timeout', '$uibModal', 'ControlProjectsService', 'Notification'];
 
-    function OwnProjects($timeout, $uibModal, ControlProjectsService) {
+    function OwnProjects($timeout, $uibModal, ControlProjectsService, Notification) {
 
         var self = this;
 
@@ -24,11 +24,7 @@
             ControlProjectsService.updateOwnProject(project).then(function (result) {
                 self.projects = result.data;
                 self.projectCompleted = name;
-                self.projectUpdateSuccess = true;
-
-                $timeout(function () {
-                    self.projectUpdateSuccess = false;
-                }, 3000);
+                Notification({message: 'Donation updated successful', title: 'Notification'}, 'success');
             })
         };
 
@@ -50,10 +46,17 @@
                 self.projects = result.data;
                 self.projectDelete = name;
 
-                $timeout(function () {
-                    self.projectDeleteSuccess = false;
-                    self.projectDeleteWarning = false;
-                }, 3000);
+                if (self.projectDeleteWarning) {
+                    Notification({
+                        message: 'You can\'t delete this project',
+                        title: 'Notification'
+                    }, 'warning');
+                } else if (self.projectDeleteSuccess) {
+                    Notification({
+                        message: 'Project ' + self.projectDelete + ' delete successful',
+                        title: 'Notification'
+                    }, 'info');
+                }
             })
 
         }

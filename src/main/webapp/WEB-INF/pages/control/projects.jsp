@@ -8,18 +8,7 @@
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
         <a ng-click="ownProjects.openCreateProjectModal('lg')"
-           ng-show="!ownProjects.projectUpdateSuccess && !ownProjects.projectDeleteSuccess && !ownProjects.projectDeleteWarning"
            class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
-
-        <div ng-show="ownProjects.projectUpdateSuccess" class="alert-success alert text-center">Project updated
-            successful
-        </div>
-        <div ng-show="ownProjects.projectDeleteSuccess" class="alert-danger alert text-center">Project
-            {{ownProjects.projectDelete}} delete successful
-        </div>
-        <div ng-show="ownProjects.projectDeleteWarning" class="alert-warning alert text-center">You can't delete this
-            project
-        </div>
         <table class="table table-hover table-project">
             <thead>
             <tr>
