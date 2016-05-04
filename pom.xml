@@ -221,7 +221,6 @@
             <artifactId>postgresql</artifactId>
             <version>9.3-1102-jdbc41</version>
         </dependency>
-<<<<<<< Temporary merge branch 1
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -271,14 +270,9 @@
             <type>jar</type>
             <scope>test</scope>
         </dependency>
-=======
+
 
     </dependencies>
->>>>>>> Temporary merge branch 2
-
-    </dependencies>
-
-
 
     <build>
         <plugins>

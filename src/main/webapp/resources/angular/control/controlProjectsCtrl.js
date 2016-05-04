@@ -5,9 +5,9 @@
         .module('crowdfundingApp.control')
         .controller('OwnProjects', OwnProjects);
 
-    OwnProjects.$inject = ['$http', '$timeout', '$uibModal', 'ControlProjectsService'];
+    OwnProjects.$inject = ['$timeout', '$uibModal', 'ControlProjectsService'];
 
-    function OwnProjects($http, $timeout, $uibModal, ControlProjectsService) {
+    function OwnProjects($timeout, $uibModal, ControlProjectsService) {
 
         var self = this;
 
