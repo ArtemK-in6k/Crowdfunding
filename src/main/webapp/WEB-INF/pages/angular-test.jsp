@@ -80,8 +80,11 @@
 
 <script src="<c:url value="/resources/angular/project/donatelist/clickApproveDirective.js" />"></script>
 
-<script src="<c:url value="/resources/js/app.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/delete_project_test.js" />"></script>
 
+<script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
+
+<script src="<c:url value="/resources/js/app.js" />"></script>
 
 <div class="row">
     <script>
