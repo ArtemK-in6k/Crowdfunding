@@ -1,4 +1,4 @@
-describe('ApproveDeleteProject', function () {
+describe('ApproveDonateProject', function () {
     var scope, donateService;
 
     beforeEach(module("crowdfundingApp.control"));
@@ -28,6 +28,6 @@ describe('ApproveDeleteProject', function () {
 
         var donateAfterRemove = {};
 
-        expect(projectService.isDonateDeleted(donateAfterRemove, donateBeforeRemove)).toBe(false);
+        expect(donateService.isDonateDeleted(donateAfterRemove, donateBeforeRemove)).toBe(true);
     });
 });
