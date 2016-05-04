@@ -3,11 +3,11 @@
 
   angular
       .module('crowdfundingApp.control')
-      .directive('ngConfirmClick', ngConfirmClick);
+      .directive('ngConfirmClickApprove', ngConfirmClickApprove);
 
-  ngConfirmClick.$inject = [];
+  ngConfirmClickApprove.$inject = [];
 
-  function ngConfirmClick() {
+  function ngConfirmClickApprove() {
     return {
       link: function (scope, element, attr) {
         var msg = "Are you sure approve this donate? ";
