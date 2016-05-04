@@ -8,15 +8,6 @@
 <div ng-controller="OwnDonates as ownDonates">
     <div class="">
         <h3 class="text-center">My Donations</h3>
-        <div ng-show="ownDonates.donationUpdateSuccess" class="alert-success alert text-center">Donation updated
-            successful
-        </div>
-        <div ng-show="ownDonates.donateDeleteSuccess" class="alert-danger alert text-center">Donation
-            {{ownDonates.donateDelete}} delete successful
-        </div>
-        <div ng-show="ownDonates.donateDeleteWarning" class="alert-warning alert text-center">You can't delete
-            {{ownDonates.donateDelete}},because this project have move than 90% donates
-        </div>
         <table class="table table-hover donate-list">
             <thead>
             <tr>
