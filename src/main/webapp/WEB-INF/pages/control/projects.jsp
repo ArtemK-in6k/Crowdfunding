@@ -20,53 +20,53 @@
         <div ng-show="ownProjects.projectDeleteWarning" class="alert-warning alert text-center">You can't delete this
             project
         </div>
-            <table class="table table-hover table-project">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th class="text-center">Project name</th>
-                    <th class="text-center">Raised</th>
-                    <th class="text-center">Goal</th>
-                    <th class="text-center">Status</th>
-                    <th class="text-center"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
-                    <td>
-                        <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
-                    </td>
-                    <td>
-                        <div class="table-long-text">
-                            <a href="/projects/{{project.id}}" title="{{project.nameProject}}">
-                                {{project.nameProject}} </a>
-                        </div>
-                    </td>
-                    <td>{{project.donate_amount}} &#8372;</td>
-                    <td>{{project.needAmount}} &#8372;</td>
-                    <td>
+        <table class="table table-hover table-project">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="text-center">Project name</th>
+                <th class="text-center">Raised</th>
+                <th class="text-center">Goal</th>
+                <th class="text-center">Status</th>
+                <th class="text-center"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
+                <td>
+                    <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
+                </td>
+                <td>
+                    <div class="table-long-text">
+                        <a href="/projects/{{project.id}}" title="{{project.nameProject}}">
+                            {{project.nameProject}} </a>
+                    </div>
+                </td>
+                <td>{{project.donate_amount}} &#8372;</td>
+                <td>{{project.needAmount}} &#8372;</td>
+                <td>
 
-                        <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">
-                            {{project.simpleStatus}}</p>
-                        <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm"
-                                ng-click="ownProjects.updateStatus('COMPLETED', project.id,project.nameProject)">
-                            Complete
+                    <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">
+                        {{project.simpleStatus}}</p>
+                    <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm"
+                            ng-click="ownProjects.updateStatus('COMPLETED', project.id,project.nameProject)">
+                        Complete
+                    </button>
+                </td>
+                <td>
+                    <div class="pull-right">
+                        <button class="btn btn-danger btn-sm"
+                                confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
+                                ng-confirm-click="{{project.nameProject}}">Remove
                         </button>
-                    </td>
-                    <td>
-                        <div class="pull-right">
-                            <button class="btn btn-danger btn-sm"
-                                    confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
-                                    ng-confirm-click="{{project.nameProject}}">Remove
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                    </div>
+                </td>
+            </tr>
 
-                </tbody>
-            </table>
-            <div ng-if="projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any
-                projects</h3>
-            </div>
+            </tbody>
+        </table>
+        <div ng-if="ownProjects.projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any
+            projects</h3>
+        </div>
     </div>
 </div>
