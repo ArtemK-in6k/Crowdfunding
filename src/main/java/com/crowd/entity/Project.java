@@ -3,8 +3,10 @@ package com.crowd.entity;
 import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,8 @@ public class Project {
     private User user;
     @Column
     private double needAmount;
-    @Column @Type(type="text")
+    @Column
+    @Type(type = "text")
     private String aboutProject;
     @Column
     private String image;
@@ -37,10 +40,22 @@ public class Project {
     @Column
     private String url;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "project")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "project")
     private List<Donate> donateList = new ArrayList<>();
 
     public Project() {
+    }
+
+    public Project(User user, double needAmount, String aboutProject, String image, double donate_amount, Timestamp date, Status status, String nameProject, List<Donate> donateList) {
+        this.user = user;
+        this.needAmount = needAmount;
+        this.aboutProject = aboutProject;
+        this.image = image;
+        this.donate_amount = donate_amount;
+        this.date = date;
+        this.status = status;
+        this.nameProject = nameProject;
+        this.donateList = donateList;
     }
 
     public int getId() {
@@ -132,7 +147,7 @@ public class Project {
     }
 
     public double percendDonate() {
-        double percent =  getDonate_amount() / needAmount * 100;
+        double percent = getDonate_amount() / needAmount * 100;
         return NumberFormatter.format(percent);
     }
 

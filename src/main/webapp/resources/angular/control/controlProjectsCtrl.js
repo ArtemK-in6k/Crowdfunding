@@ -1,63 +1,59 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('crowdfundingApp.control')
-      .controller('OwnProjects', OwnProjects);
+    angular
+        .module('crowdfundingApp.control')
+        .controller('OwnProjects', OwnProjects);
 
-  OwnProjects.$inject = ['$http', '$timeout', '$uibModal'];
+    OwnProjects.$inject = ['$http', '$timeout', '$uibModal', 'ControlProjectsService'];
 
-  function OwnProjects($http, $timeout, $uibModal) {
+    function OwnProjects($http, $timeout, $uibModal, ControlProjectsService) {
 
-    var self = this;
-    $http.get('/control/projects/ownprojects').success(function (data) {
-      self.projects = data;
-    }).error(function (datat) {
-      console.log(datat);
-    });
-      
-    self.updateStatus = function (status, id, name) {
-      var project = {
-        "id": id,
-        "status": status
-      };
-        
-      $http.post("/control/projects/savestatus/", project).success(function (data, status) {
-          self.projects = data;
-        self.projectCompleted = name;
-          self.projectUpdateSuccess = true;
+        var self = this;
 
-        $timeout(function () {
-          self.projectUpdateSuccess = false;
-        }, 3000);
-      })
-    };
+        ControlProjectsService.getAllOwnProject().then(function (result) {
+            self.projects = result.data;
+        });
 
-    self.openCreateProjectModal = function (size) {
+        self.updateStatus = function (status, id, name) {
+            var project = {
+                "id": id,
+                "status": status
+            };
 
-      $uibModal.open({
-        templateUrl: '/resources/angular/templates/createProjectModal.html',
-        controller: 'CreateProjectController as app',
-        size: size
-      });
+            ControlProjectsService.updateOwnProject(project).then(function (result) {
+                self.projects = result.data;
+                self.projectCompleted = name;
+                self.projectUpdateSuccess = true;
 
-    };
+                $timeout(function () {
+                    self.projectUpdateSuccess = false;
+                }, 3000);
+            })
+        };
+
+        self.openCreateProjectModal = function (size) {
+
+            $uibModal.open({
+                templateUrl: '/resources/angular/templates/createProjectModal.html',
+                controller: 'CreateProjectController as app',
+                size: size
+            });
+
+        };
 
 
-    self.deleteProject = function (id, name) {
-      var project = {
-        "id": id
-      };
-      $http.post("/control/projects/deleteProject/", project).success(function (data) {
-        self.projects = data;
-        self.projectDelete = name;
-        self.projectDeleteSuccess = true;
+        self.deleteProject = function (id, name) {
+            ControlProjectsService.deleteOwnProject(id).then(function (result) {
+                self.projects = result.data;
+                self.projectDelete = name;
+                self.projectDeleteSuccess = true;
 
-        $timeout(function () {
-          self.projectDeleteSuccess = false;
-        }, 3000);
-      })
+                $timeout(function () {
+                    self.projectDeleteSuccess = false;
+                }, 3000);
+            })
 
+        }
     }
-  }
 })();

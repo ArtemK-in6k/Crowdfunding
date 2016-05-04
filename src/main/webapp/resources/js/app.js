@@ -8,6 +8,7 @@
             'crowdfundingApp.registration',
             'crowdfundingApp.projects',
             'crowdfundingApp.control',
+            'crowdfundingApp.search',
             'ui-notification'
         ]);
 
