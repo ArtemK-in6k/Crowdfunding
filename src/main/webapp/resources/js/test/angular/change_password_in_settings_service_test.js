@@ -8,6 +8,7 @@ describe('ChangePasswordController', function () {
             function ($controller, $rootScope, SettingsService, $httpBackend) {
                 httpBackend = $httpBackend;
                 scope = $rootScope.$new();
+                scope.form = {reset:function () {}}
                 ctrl = $controller("ChangePasswordController", {
                     $scope: scope, SettingsService: SettingsService
                 });
@@ -24,12 +25,11 @@ describe('ChangePasswordController', function () {
         expect(ctrl.isConfirmPasswordEqualToNewPassword()).toBe(true);
     });
 
-    it('should set searchResult on successful search', function () {
+    it('should be successful', function () {
 
         ctrl.currentPassword = '1234';
         ctrl.newPassword = '12345';
         ctrl.confirmPassword = '12345';
-
         ctrl.updatePassword();
 
         httpBackend
@@ -38,6 +38,6 @@ describe('ChangePasswordController', function () {
 
         httpBackend.flush();
 
-        expect(ctrl.success).toBe(true);
+        expect(ctrl.show).toBe(true);
     });
 });

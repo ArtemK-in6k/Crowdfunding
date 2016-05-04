@@ -41,7 +41,7 @@
                     </div>
                     <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
 
-                    <div class="support-block" ng-if="projectDetails.isCompleted()">
+                    <div class="support-block" ng-if="projectDetails.project.status != 'COMPLETED'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
                             <form action="/projects/${projectId}/donate" method="POST">
@@ -50,8 +50,8 @@
                                            placeholder="Amount" type="number">
                                 </div>
                                 <div class="col-lg-8 col-md-8 pull-right-lg no-padding">
-                                    <button type="submit" data-toggle="modal" style="width: 100%!important;"
-                                            class="btn btn-primary btn-lg">Donate
+                                    <button type="submit" data-toggle="modal"
+                                            class="btn btn-primary btn-lg donate-btn">Donate
                                     </button>
                                 </div>
                             </form>
@@ -84,19 +84,24 @@
                 <div id="project-donates-box" class="panel-body" ng-init="projectDonates.loadDonates(${projectId})"
                      ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"
                      ng-controller="ProjectDonateListController as projectDonates">
-                    <div class="list-group "
+                    <div class="list-group " ng-class="{'donate-box-approved':donate.approved, 'donate-box-not-approved' :!donate.approved }"
                          ng-repeat="donate in projectDonates.donateList | startFrom: projectDonates.pagination.page * projectDonates.pagination.perPage | limitTo: projectDonates.pagination.perPage">
                         <div class="media ">
                             <a href="#" class="pull-left">
                                 <img width="35" height="35" ng-src="{{projectDetails.avatarImageUrl}}"
                                      class="media-photo">
                             </a>
-                            <div class="media-body text-center">
-                                <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
-                                <span class="pull-right ">
-                                        {{ donate.date | date:'dd MMM HH:mm'}}
-                                </span>
-                                <span id="amount" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
+                            <div class="media-body text-center " >
+                                    <div class="donate-box-details">
+                                        <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
+
+                                        <a confirmed-click="projectDonates.approveDonate(donate.id,projectDetails.project.id)"
+                                           ng-if="projectDetails.project.editable && !donate.approved"
+                                           ng-confirm-click
+                                           class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
+
+                                        <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
+                                    </div>
                             </div>
                         </div>
                     </div>

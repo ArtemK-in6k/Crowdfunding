@@ -31,8 +31,15 @@
                                       minlength="2"
                                       inputclass="form-control form-control-small"/>
                     </div>
-                    <a class="btn btn-default" href="/control">Control</a>
-                    <a class="btn btn-default" href="/logout">Logout</a>
+                    <div id="dropdown-button" class="dropdown form-group">
+                        <button class="btn btn-default dropdown-toggle form-group" type="button"
+                                data-toggle="dropdown">${userBean.firstName } ${userBean.lastName}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/control">Control</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

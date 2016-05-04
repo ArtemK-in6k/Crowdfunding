@@ -11,8 +11,13 @@
             return $http.get('/api/projects/' + project + '/donates');
         }
 
+        function approveDonate(donateId) {
+            return $http.post('/api/donates/' + donateId + '/approve');
+        }
+
         return {
             getAllProjectDonates: getAllProjectDonates,
+            approveDonate: approveDonate
         };
     }
 })();

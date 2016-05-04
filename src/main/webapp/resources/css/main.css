@@ -214,6 +214,10 @@ label.required:after {
     margin-right: 10px;
 }
 
+a.donate-approve{
+    margin-left: 5px;
+}
+
 .navigation {
     margin-top: 90px;
 }
@@ -229,4 +233,31 @@ table.donate-list tr:last-child td:last-child {
 .search-img {
     width: 300px;
     height: 200px;
+}
+
+.donate-box-details{
+    margin-top: 10px!important;
+    position: relative;
+}
+
+.donate-box-approved{
+    background-color: #e6ffe6;
+}
+
+.badge-approved{
+    background-color: green;
+}
+
+.badge-not-approved{
+    background-color: #a94442;
+}
+
+a.donate-approve {
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+}
+
+.donate-btn{
+    width: 100%!important;
 }

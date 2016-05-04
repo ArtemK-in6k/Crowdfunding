@@ -23,6 +23,9 @@ public class Donate {
     private Project project;
 
     @Column
+    private boolean approved;
+
+    @Column
     private Timestamp date;
 
 
@@ -81,4 +84,11 @@ public class Donate {
         return "" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + (date.getYear() + 1900);
     }
 
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+    }
 }
