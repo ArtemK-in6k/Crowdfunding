@@ -25,10 +25,10 @@
                             aria-valuemax="100"
                             ng-style="{'width':project.percentApprovedDonate +'%'}">
                         </div>
-                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{project.percendDonate}}" aria-valuemin="0"
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                             aria-valuenow="{{project.donateSubtractApprovePercent}}" aria-valuemin="0"
                              aria-valuemax="100"
-                             ng-style="{'width':project.percendDonate +'%'}">
+                             ng-style="{'width':project.donateSubtractApprovePercent +'%'}">
                         </div>
                     </div>
                 </div>
