@@ -38,6 +38,10 @@ public class ProjectResponse {
 
     private boolean editable;
 
+    private double percentApprovedDonate;
+
+    private double donateSubtractApprovePercent;
+
     public ProjectResponse() {
     }
 
@@ -55,6 +59,8 @@ public class ProjectResponse {
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
         url = project.getUrl();
+        percentApprovedDonate = project.percentApprovedDonate();
+        donateSubtractApprovePercent = project.donateSubtractApprovePercent();
     }
 
     public int getId() {
@@ -179,5 +185,21 @@ public class ProjectResponse {
 
     public void isEditable(boolean canModerate) {
         this.editable = canModerate;
+    }
+
+    public double getPercentApprovedDonate() {
+        return percentApprovedDonate;
+    }
+
+    public void setPercentApprovedDonate(double percentApprovedDonate) {
+        this.percentApprovedDonate = percentApprovedDonate;
+    }
+
+    public double getDonateSubtractApprovePercent() {
+        return donateSubtractApprovePercent;
+    }
+
+    public void setDonateSubtractApprovePercent(double donateSubtractApprovePercent) {
+        this.donateSubtractApprovePercent = donateSubtractApprovePercent;
     }
 }
