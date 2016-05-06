@@ -2,7 +2,7 @@
 <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" ng-click="app.cancel()">&times;</button>
-        <h4 class="modal-title">Create Project Form</h4>
+        <h4 class="text-retreat-left modal-title">Create Project Form</h4>
     </div>
     <div class="modal-body">
         <div class="form-area create-project-modal">
@@ -37,12 +37,15 @@
                     <div id="aboutProject" text-angular ng-model="app.htmlcontent" name="aboutProject">
                     </div>
                 </div>
-                <a class="btn btn-default pull-right" ng-click="app.cancel()">Cancel</a>
-
-                <button ng-disabled="createProjectForm.$invalid" type="submit" id="submit" name="submit"
-                        class="btn btn-primary pull-right create-project-btn">
-                    Create
-                </button>
+                <div class="form-group modal-marginl-right" >
+                    <div class="pull-right">
+                        <a class="btn btn-default create-project-btn" ng-click="app.cancel()">Cancel</a>
+                        <button ng-disabled="createProjectForm.$invalid" type="submit" id="submit" name="submit"
+                                class="btn btn-success create-project-btn">
+                            Create
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
