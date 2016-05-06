@@ -3,7 +3,23 @@ body {
 }
 
 .body-wrapper {
-    padding: 25px;
+    padding-top: 25px;
+}
+
+.body-padding {
+    margin-top : 10px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.select-padding {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.container-padding {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 .logo-img {
@@ -227,7 +243,7 @@ table.donate-list tr:last-child td:last-child {
 }
 
 .create-project-modal-btn {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .search-img {
@@ -261,3 +277,11 @@ a.donate-approve {
 .donate-btn{
     width: 100%!important;
 }
+
+.remove-left-padding {
+    padding-left: 0px !important;
+}
+.remove-right-padding {
+    padding-right: 0px !important;
+}
+
