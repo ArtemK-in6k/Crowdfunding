@@ -13,6 +13,7 @@
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
+                <th class="text-center">Project status</th>
                 <th class="text-center">Raised</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Your contribution</th>
@@ -30,6 +31,7 @@
                             {{donate.projectName}} </a>
                     </div>
                 </td>
+                <td class="table-{{donate.status}}">{{donate.simpleStatus}}</td>
                 <td>{{donate.donateAmount}} &#8372;</td>
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
