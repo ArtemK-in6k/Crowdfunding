@@ -55,7 +55,7 @@
                     Notification({
                         message: 'Project ' + self.projectDelete + ' delete successful',
                         title: 'Notification'
-                    }, 'info');
+                    }, 'primary');
                 }
             })
 

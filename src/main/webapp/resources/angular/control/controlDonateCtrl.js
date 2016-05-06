@@ -39,7 +39,7 @@
                     Notification({
                         message: 'Donation ' + self.donateDelete + ' delete successful',
                         title: 'Notification'
-                    }, 'info');
+                    }, 'primary');
                 }
 
             })
