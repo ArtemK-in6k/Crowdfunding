@@ -202,4 +202,10 @@ public class ProjectResponse {
     public void setDonateSubtractApprovePercent(double donateSubtractApprovePercent) {
         this.donateSubtractApprovePercent = donateSubtractApprovePercent;
     }
+
+    public boolean isProjectInProgress(){
+        if (getStatus() == Status.IN_PROGRESS)
+            return true;
+        else return false;
+    }
 }
