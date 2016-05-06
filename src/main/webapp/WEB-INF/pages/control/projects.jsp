@@ -6,15 +6,19 @@
 
 <div ng-controller="OwnProjects as ownProjects">
     <div class=" ">
-        <h3 class="text-center">My Projects</h3>
-        <a ng-click="ownProjects.openCreateProjectModal('lg')"
-           class="btn btn-primary btn-sm pull-right create-project-modal-btn">Create new project</a>
+        <div class="row">
+            <div class="h3 text-center">My Projects
+                <a ng-click="ownProjects.openCreateProjectModal('lg')"
+                   class="btn btn-primary btn-sm pull-right create-project-modal-btn">Create new project</a>
+            </div>
+        </div>
+
         <table class="table table-hover table-project">
             <thead>
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
-                <th class="text-center">Raised</th>
+                <th class="text-center">Raised(Percent)</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Status</th>
                 <th class="text-center"></th>
@@ -31,7 +35,7 @@
                             {{project.nameProject}} </a>
                     </div>
                 </td>
-                <td>{{project.donate_amount}} &#8372;</td>
+                <td>{{project.donate_amount}} &#8372;({{project.percendDonate}}%)</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
 
@@ -51,7 +55,6 @@
                     </div>
                 </td>
             </tr>
-
             </tbody>
         </table>
         <div ng-if="ownProjects.projects.length == 0" class="text-center text-danger"><h3>Sorry, you don't have any
