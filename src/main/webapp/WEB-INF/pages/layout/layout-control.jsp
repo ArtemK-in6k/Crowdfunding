@@ -18,10 +18,10 @@
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>
-            <div class="col-lg-2">
+            <div class="col-lg-2 remove-left-padding">
                 <tiles:insertAttribute name="navigation"/>
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-10 remove-right-padding">
                 <tiles:insertAttribute name="body"/>
             </div>
         </div>
