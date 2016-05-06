@@ -18,7 +18,7 @@
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>
-            <div class="body-wrapper ">
+            <div class="body-wrapper remove-left-padding remove-right-padding">
                 <tiles:insertAttribute name="body"/>
             </div>
         </div>

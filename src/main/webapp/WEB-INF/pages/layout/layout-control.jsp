@@ -14,7 +14,7 @@
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="container">
+<div class="container container-padding">
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>
