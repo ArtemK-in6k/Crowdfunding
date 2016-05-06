@@ -19,7 +19,7 @@
                     <a href="/projects/{{project.id}}" class="resize-text" title="{{project.nameProject}}">
                         <p class="lead long-text">{{project.nameProject}}</p>
                     </a>
-                    <p class="text-center"> {{project.donate_amount}} &#8372; pledged of {{project.needAmount}} &#8372; goal</p>
+                    <p class="text-center"> <b>{{project.donate_amount}} &#8372;</b> pledged of <b>{{project.needAmount}} &#8372;</b> goal</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                             aria-valuenow="{{project.percentApprovedDonate}}" aria-valuemin="0"
