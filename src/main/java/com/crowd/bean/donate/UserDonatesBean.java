@@ -1,6 +1,7 @@
 package com.crowd.bean.donate;
 
 import com.crowd.entity.Donate;
+import com.crowd.entity.Status;
 
 import java.sql.Timestamp;
 
@@ -11,9 +12,11 @@ public class UserDonatesBean {
     private Timestamp date;
     private String image;
     private double needAmount;
-    private String author;
+    private Status status;
     private double donateAmount;
     private int projectId;
+    private String simpleStatus;
+    private double percendDonateProject;
 
     public UserDonatesBean() {
     }
@@ -27,7 +30,9 @@ public class UserDonatesBean {
         this.image = donate.getProject().getImage();
         this.needAmount = donate.getProject().getNeedAmount();
         this.donateAmount = donate.getProject().getDonate_amount();
-        this.author = donate.getProject().getUser().fullName();
+        this.status = donate.getProject().getStatus();
+        this.simpleStatus = status.getStatus();
+        this.percendDonateProject = donate.getProject().percendDonate();
     }
 
     public int getId() {
@@ -70,12 +75,8 @@ public class UserDonatesBean {
         this.needAmount = needAmount;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        author = author;
+    public Status getStatus() {
+        return status;
     }
 
     public double getDonate() {
@@ -84,6 +85,18 @@ public class UserDonatesBean {
 
     public void setDonate(double donate) {
         this.donate = donate;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public String getSimpleStatus() {
+        return simpleStatus;
+    }
+
+    public void setSimpleStatus(String simpleStatus) {
+        this.simpleStatus = simpleStatus;
     }
 
     public double getDonateAmount() {
@@ -100,5 +113,13 @@ public class UserDonatesBean {
 
     public void setProjectId(int projectId) {
         this.projectId = projectId;
+    }
+
+    public double getPercendDonateProject() {
+        return percendDonateProject;
+    }
+
+    public void setPercendDonateProject(double percendDonateProject) {
+        this.percendDonateProject = percendDonateProject;
     }
 }
