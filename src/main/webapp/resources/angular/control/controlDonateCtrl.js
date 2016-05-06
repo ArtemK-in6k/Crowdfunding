@@ -53,7 +53,7 @@
             };
             ControlDonatesService.saveOwnDonate(donation).then(function (result) {
                 self.donates = result.data;
-                Notification({message: 'Project updated successful', title: 'Notification'}, 'success');
+                Notification({message: 'Donation updated successful', title: 'Notification'}, 'success');
             })
         };
     }
