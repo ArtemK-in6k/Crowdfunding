@@ -8,7 +8,7 @@
     <div class=" ">
         <h3 class="text-center">My Projects</h3>
         <a ng-click="ownProjects.openCreateProjectModal('lg')"
-           class="btn btn-success btn-sm pull-right create-project-modal-btn">Create new project</a>
+           class="btn btn-primary btn-sm pull-right create-project-modal-btn">Create new project</a>
         <table class="table table-hover table-project">
             <thead>
             <tr>
