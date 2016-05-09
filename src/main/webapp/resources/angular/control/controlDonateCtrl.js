@@ -43,19 +43,22 @@
 
         };
 
-        self.saveDonate = function (donate, id, percentDonate) {
+        self.saveDonate = function (changeDonate, donate) {
             var donation = {
-                "id": id,
-                "donate": donate
+                "id": donate.id,
+                "donate": changeDonate
             };
-            if (ControlDonatesService.isDonateHaveProjectWithLess90PercentDonate(percentDonate)){
+            if (ControlDonatesService.isDonateHaveProjectWithLess90PercentDonate(donate.percentDonateProject) ||
+                ControlDonatesService.isIncreaseDonation(changeDonate, donate.donateAmount)) {
                 ControlDonatesService.saveOwnDonate(donation).then(function (result) {
                     self.donates = result.data;
                     Notification({message: 'Donation updated successful ', title: 'Notification'}, 'success');
                 })
-            }else {
-                Notification({message: 'You can\'t change your donate' +
-                ' ,because this project have more than 90% donates', title: 'Notification', delay: 10000}, 'error');
+            } else {
+                Notification({
+                    message: 'You can\'t change your donate' +
+                    ' ,because this project have more than 90% donates', title: 'Notification', delay: 10000
+                }, 'error');
             }
 
         };
