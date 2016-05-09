@@ -23,11 +23,16 @@
             return !(donatesAfterRemove.length == donatesBeforeRemove.length);
         }
 
+        function isDonateHaveProjectWithLess90PercentDonate(percentDonate){
+            return percentDonate <= 90;
+        }
+
         return {
             getAllOwnDonates: getAllOwnDonates,
             deleteOwnDonate: deleteOwnDonate,
             saveOwnDonate: saveOwnDonate,
-            isDonateDeleted: isDonateDeleted
+            isDonateDeleted: isDonateDeleted,
+            isDonateHaveProjectWithLess90PercentDonate : isDonateHaveProjectWithLess90PercentDonate
         };
     }
 })();
