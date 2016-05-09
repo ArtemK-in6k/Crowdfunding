@@ -10,40 +10,47 @@
             editableOptions.theme = 'bs3';
         });
 
-    OwnDonates.$inject = ['$scope', '$timeout', 'ControlDonatesService'];
+    OwnDonates.$inject = ['$timeout', 'ControlDonatesService', 'Notification'];
 
-    function OwnDonates($scope, $timeout, ControlDonatesService) {
+    function OwnDonates($timeout, ControlDonatesService, Notification) {
+
+        var self = this;
 
         ControlDonatesService.getAllOwnDonates()
             .then(function (result) {
-                $scope.donates = result.data;
+                self.donates = result.data;
             });
 
-        $scope.deleteProject = function (donateId, name) {
+        self.deleteDonate = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
-                $scope.donates = result.data;
-                $scope.donateDelete = name;
-                $scope.donateDeleteSuccess = true;
+                var donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
+                self.donates = result.data;
 
-                $timeout(function () {
-                    $scope.donateDeleteSuccess = false;
-                }, 3000);
+                if (donateDeleteSuccess) {
+                    Notification({
+                        message: 'Donation ' + name + ' delete successful',
+                        title: 'Notification'
+                    }, 'primary');
+                } else {
+                    Notification({
+                        message: 'You can\'t delete ' +
+                        name + ' ,because this project have move than 90% donates',
+                        title: 'Notification'
+                    }, 'warning');
+                }
+
             })
 
         };
 
-        $scope.saveDonate = function (donate, id) {
+        self.saveDonate = function (donate, id) {
             var donation = {
                 "id": id,
                 "donate": donate
             };
-            $scope.donationUpdateSuccess = true;
             ControlDonatesService.saveOwnDonate(donation).then(function (result) {
-                $scope.donates = result.data;
-
-                $timeout(function () {
-                    $scope.donationUpdateSuccess = false;
-                }, 3000);
+                self.donates = result.data;
+                Notification({message: 'Project updated successful', title: 'Notification'}, 'success');
             })
         };
     }

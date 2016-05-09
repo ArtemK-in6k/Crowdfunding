@@ -19,7 +19,7 @@
             return $http.post("/control/projects", project);
         }
 
-        function isProjectDeleted(projectsToRemove, projectsAfterRemove){
+        function isProjectDeleted(projectsToRemove, projectsAfterRemove) {
             var projectDeleted = projectsAfterRemove.length == projectsToRemove.length;
             return !projectDeleted;
         }
@@ -28,7 +28,7 @@
             getAllOwnProject: getAllOwnProject,
             deleteOwnProject: deleteOwnProject,
             updateOwnProject: updateOwnProject,
-            isProjectDeleted : isProjectDeleted
+            isProjectDeleted: isProjectDeleted
         };
     }
 })();

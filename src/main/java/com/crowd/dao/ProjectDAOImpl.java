@@ -32,9 +32,9 @@ public class ProjectDAOImpl implements ProjectDAO {
         Project project = (Project) sessionFactory.getCurrentSession().get(Project.class,id);
         return project;
     }
-    public Project findByProjectName(String nameProject) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from projects where nameProject = :nameProject");
-        query.setString("nameProject",nameProject);
+    public Project findByProjectName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects where name = :name");
+        query.setString("nameProject",name);
         return (Project) query.uniqueResult();
     }
 
@@ -46,9 +46,9 @@ public class ProjectDAOImpl implements ProjectDAO {
         sessionFactory.getCurrentSession().update(project);
     }
 
-    public List<Project> findByPartOfProjectName(String projectName) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from projects where lower(nameProject) like :projectName");
-        query.setString("projectName","%"+projectName+"%");
+    public List<Project> findByPartOfProjectName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from projects where lower(name) like :name");
+        query.setString("projectName","%"+name+"%");
         return query.list();
     }
 

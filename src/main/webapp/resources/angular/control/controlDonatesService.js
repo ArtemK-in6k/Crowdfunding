@@ -19,10 +19,15 @@
             return $http.post("/control/donates", donation);
         }
 
+        function isDonateDeleted(donatesBeforeRemove, donatesAfterRemove) {
+            return !(donatesAfterRemove.length == donatesBeforeRemove.length);
+        }
+
         return {
             getAllOwnDonates: getAllOwnDonates,
             deleteOwnDonate: deleteOwnDonate,
-            saveOwnDonate: saveOwnDonate
+            saveOwnDonate: saveOwnDonate,
+            isDonateDeleted: isDonateDeleted
         };
     }
 })();

@@ -1,10 +1,7 @@
 package com.crowd.bean.donate;
 
 import com.crowd.entity.Donate;
-import com.crowd.entity.Project;
-import com.crowd.entity.User;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 public class DonateBean {
@@ -23,7 +20,7 @@ public class DonateBean {
         setOwnerId(donate.getUser().getId());
         setOwnerName(donate.getUser().fullName());
         setAmount(donate.getAmount());
-        setProjectName(donate.getProject().getNameProject());
+        setProjectName(donate.getProject().getName());
         setProjectId(donate.getProjectId().getId());
         setDate(donate.getDate());
         setApproved(donate.isApproved());

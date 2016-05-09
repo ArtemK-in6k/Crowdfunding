@@ -23,23 +23,27 @@ import java.util.Objects;
 @Service
 public class DonateService {
 
-    @Autowired private DonateDAO donateDAO;
-    @Autowired private ProjectDAO projectDAO;
-    @Autowired private UserDAO userDAO;
-    @Autowired private ProjectService projectService;
+    @Autowired
+    private DonateDAO donateDAO;
+    @Autowired
+    private ProjectDAO projectDAO;
+    @Autowired
+    private UserDAO userDAO;
+    @Autowired
+    private ProjectService projectService;
 
     public List<Donate> selectAll() {
         return donateDAO.selectAll();
     }
 
-    public void insert(Donate donate){
+    public void insert(Donate donate) {
         donateDAO.insert(donate);
     }
 
-    public ResponseEntity<ProjectDonatesResponse> getProjectDonates(int projectId){
+    public ResponseEntity<ProjectDonatesResponse> getProjectDonates(int projectId) {
         Project project = projectDAO.findById(projectId);
 
-        if (Objects.isNull(project)){
+        if (Objects.isNull(project)) {
             return new ResponseEntity<ProjectDonatesResponse>(new ProjectDonatesResponse(), HttpStatus.BAD_REQUEST);
         }
 
@@ -47,13 +51,12 @@ public class DonateService {
         return new ResponseEntity<ProjectDonatesResponse>(response, HttpStatus.OK);
     }
 
-    public boolean addDonateForProject(float amount, int projectId, int donatorId){
+    public boolean addDonateForProject(float amount, int projectId, int donatorId) {
         Project project = projectDAO.findById(projectId);
         User donator = userDAO.findById(donatorId);
 
 
-
-        if (Objects.isNull(project) || Objects.isNull(donator)){
+        if (Objects.isNull(project) || Objects.isNull(donator)) {
             throw new IllegalArgumentException("Input parameters can't be null");
         }
 
@@ -65,7 +68,7 @@ public class DonateService {
             donate.setAmount(amount);
             donate.setProject(project);
             donate.setUser(donator);
-        }else {
+        } else {
             donate.setAmount(donate.getAmount() + amount);
             donate.setDate(new Timestamp(System.currentTimeMillis()));
         }
@@ -77,28 +80,33 @@ public class DonateService {
         return true;
     }
 
-    public List<UserDonatesBean> getWrapperDonates(List<Donate> donates){
+    public List<UserDonatesBean> getWrapperDonates(List<Donate> donates) {
         List<UserDonatesBean> userDonatesBeen = new ArrayList<>();
-        for (Donate donate : donates){
+        for (Donate donate : donates) {
             userDonatesBeen.add(new UserDonatesBean(donate));
         }
         return userDonatesBeen;
     }
 
-    public void deleteDonateById(int id){
-        donateDAO.deleteById(id);
+    public void deleteDonateById(int id) {
+        Donate donate = donateDAO.findById(id);
+        Project project = donate.getProject();
+
+        if (project.hasRichedDonationPercent()) {
+            donateDAO.deleteById(id);
+        }
     }
 
-    public void saveChangeDonation(DonationContributionBean donationContributionBean){
+    public void saveChangeDonation(DonationContributionBean donationContributionBean) {
         Donate donate = donateDAO.findById(donationContributionBean.getId());
         donate.setAmount(donationContributionBean.getDonate());
         donateDAO.saveUpdate(donate);
     }
 
-    public ResponseEntity<ApproveDonateResponse> approveDonate(int donateId){
+    public ResponseEntity<ApproveDonateResponse> approveDonate(int donateId) {
         Donate donate = donateDAO.findById(donateId);
 
-        if (Objects.isNull(donate)){
+        if (Objects.isNull(donate)) {
             return new ResponseEntity<ApproveDonateResponse>(
                     new ApproveDonateResponse(false, String.format("Donate with id %d not found", donateId)), HttpStatus.BAD_REQUEST);
         }

@@ -55,10 +55,9 @@ public class ControlController {
     public ResponseEntity<List<ProjectResponse>> saveStatus(@ModelAttribute("userBean") UserBean user, @RequestBody ProjectStatus changeStatusProject) {
 
         int id = changeStatusProject.getId();
-        Status status = changeStatusProject.getStatus();
 
         Project project = projectService.findById(id);
-        project.setStatus(status);
+        project.setStatus(Status.COMPLETED);
         projectService.update(project);
 
         List<ProjectResponse> responseProjects = projectService.getUserProjects(user.getEmail());
