@@ -14,6 +14,8 @@ import java.util.List;
 @Entity(name = "projects")
 public class Project {
 
+    private static final double PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES  = 90;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -149,6 +151,10 @@ public class Project {
     public double percendDonate() {
         double percent = getDonate_amount() / needAmount * 100;
         return NumberFormatter.format(percent);
+    }
+
+    public boolean hasRichedDonationPercent() {
+        return percendDonate() <= PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES;
     }
 
     public String dateFormat() {
