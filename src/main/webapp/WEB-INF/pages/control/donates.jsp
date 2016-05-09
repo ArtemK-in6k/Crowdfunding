@@ -36,7 +36,7 @@
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
                     <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation"
-                          e-form="rowform" onbeforesave="ownDonates.saveDonate($data, donate.id)" e-required>
+                          e-form="rowform" onbeforesave="ownDonates.saveDonate($data, donate.id,donate.percendDonateProject)" e-required>
                             {{donate.donate}} &#8372;</span>
                 </td>
                 <td>
