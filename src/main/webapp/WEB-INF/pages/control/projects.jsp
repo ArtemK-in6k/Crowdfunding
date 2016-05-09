@@ -21,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : 'id' ">
+            <tr class="text-center" ng-repeat="project in ownProjects.projects | orderBy : '-id' ">
                 <td>
                     <img ng-src="{{project.image || '/resources/img/no_img.jpg'}}" height="50px" width="50px">
                 </td>
