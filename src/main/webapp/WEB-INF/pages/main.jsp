@@ -12,9 +12,10 @@
     <div class="col-lg-12 col-md-12 col-sm-12 body-padding">
         <div class="col-lg-3 col-md-3 col-sm-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
-                <div style="width: 150px; height: 150px;">
+                <div class="img-div">
                     <a href="/projects/{{project.id}}">
-                        <img ng-src="{{project.image || projectList.defaultProjectImage}}" class="img-responsive"
+                        <img ng-src="{{project.image || projectList.defaultProjectImage}}"
+                             class="img-responsive img-center"
                              alt="placeholder image"/>
                     </a>
                 </div>
