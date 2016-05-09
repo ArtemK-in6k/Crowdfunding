@@ -32,7 +32,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
-                    <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal</span>
+                    <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal
+                        <span class="donate-pledged-sub pull-right"> {{projectDetails.project.percendDonate}}%</span>
+                    </span>
+
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{project.percentApprovedDonate}}"
                              aria-valuemin="0" aria-valuemax="100"
@@ -43,8 +46,7 @@
                              ng-style="{'width':projectDetails.project.donateSubtractApprovePercent+'%'}">
                         </div>
                     </div>
-                    <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
-
+                    <br/>
                     <div class="support-block" ng-if="projectDetails.project.status != 'COMPLETED'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
