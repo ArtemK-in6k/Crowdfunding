@@ -269,6 +269,10 @@ table.donate-list tr:last-child td:last-child {
     background-color: #CCCC00;
 }
 
+.badge-not-approved-and-inprogress {
+    background-color: grey;
+}
+
 a.donate-approve {
     cursor: pointer;
     position: absolute;
