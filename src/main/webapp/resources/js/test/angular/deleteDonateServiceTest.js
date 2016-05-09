@@ -26,7 +26,7 @@ describe('ApproveDonateProject', function () {
             "projectId": 45
         }];
 
-        var donateAfterRemove = {};
+        var donateAfterRemove = [{}];
 
         expect(donateService.isDonateDeleted(donateAfterRemove, donateBeforeRemove)).toBe(true);
     });

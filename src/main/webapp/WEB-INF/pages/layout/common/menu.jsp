@@ -26,7 +26,7 @@
                                       pause="200"
                                       selectedobject="selectedObject"
                                       url="/search?search="
-                                      titlefield="nameProject"
+                                      titlefield="name"
                                       imagefield="image"
                                       minlength="2"
                                       inputclass="form-control form-control-small"/>

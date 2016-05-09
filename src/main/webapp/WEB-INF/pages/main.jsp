@@ -20,8 +20,8 @@
                     </a>
                 </div>
                 <div class="caption text-center">
-                    <a href="/projects/{{project.id}}" class="resize-text" title="{{project.nameProject}}">
-                        <p class="lead long-text">{{project.nameProject}}</p>
+                    <a href="/projects/{{project.id}}" class="resize-text" title="{{project.name}}">
+                        <p class="lead long-text">{{project.name}}</p>
                     </a>
                     <p class="text-center"><b>{{project.donate_amount}} &#8372;</b> pledged of <b>{{project.needAmount}}
                         &#8372;</b> goal</p>

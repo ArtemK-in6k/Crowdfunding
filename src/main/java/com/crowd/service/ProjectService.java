@@ -85,7 +85,7 @@ public class ProjectService {
 
     public int createProject(UserBean user, String projectName, double needAmount, String image, String aboutProject, String url) {
         Project project = new Project();
-        project.setNameProject(projectName);
+        project.setName(projectName);
         project.setNeedAmount(needAmount);
         project.setAboutProject(aboutProject);
         project.setImage(image);

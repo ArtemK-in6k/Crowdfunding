@@ -25,7 +25,7 @@ public class UserDonatesBean {
         this.id = donate.getId();
         this.projectId = donate.getProjectId().getId();
         this.donate = donate.getAmount();
-        this.projectName = donate.getProjectId().getNameProject();
+        this.projectName = donate.getProjectId().getName();
         this.date = donate.getDate();
         this.image = donate.getProject().getImage();
         this.needAmount = donate.getProject().getNeedAmount();
