@@ -32,11 +32,11 @@
                     </div>
                 </td>
                 <td class="table-{{donate.status}}">{{donate.simpleStatus}}</td>
-                <td>{{donate.donateAmount}} &#8372;({{donate.percendDonateProject}}%)</td>
+                <td>{{donate.donateAmount}} &#8372;({{donate.percentDonateProject}}%)</td>
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
                     <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation"
-                          e-form="rowform" onbeforesave="ownDonates.saveDonate($data, donate.id,donate.percendDonateProject)" e-required>
+                          e-form="rowform" onbeforesave="ownDonates.saveDonate($data, donate.id,donate.percentDonateProject)" e-required>
                             {{donate.donate}} &#8372;</span>
                 </td>
                 <td>

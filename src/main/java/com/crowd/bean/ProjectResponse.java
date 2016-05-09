@@ -31,7 +31,7 @@ public class ProjectResponse {
 
     private String name;
 
-    private double percendDonate;
+    private double percentDonate;
 
     private String fullNameUser;
 
@@ -54,7 +54,7 @@ public class ProjectResponse {
         date = project.dateFormat();
         status = project.getStatus();
         name = project.getName();
-        percendDonate = project.percendDonate();
+        percentDonate = project.percentDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
         url = project.getUrl();
@@ -118,12 +118,12 @@ public class ProjectResponse {
         this.date = date;
     }
 
-    public double getPercendDonate() {
-        return percendDonate;
+    public double getPercentDonate() {
+        return percentDonate;
     }
 
-    public void setPercendDonate(double percendDonate) {
-        this.percendDonate = percendDonate;
+    public void setPercentDonate(double percentDonate) {
+        this.percentDonate = percentDonate;
     }
 
     public String getFullNameUser() {

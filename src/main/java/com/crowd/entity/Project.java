@@ -166,16 +166,16 @@ public class Project {
     }
 
     public double donateSubtractApprovePercent() {
-        return percendDonate() - percentApprovedDonate();
+        return percentDonate() - percentApprovedDonate();
     }
 
-    public double percendDonate() {
+    public double percentDonate() {
         double percent = getDonate_amount() / needAmount * 100;
         return NumberFormatter.format(percent);
     }
 
     public boolean hasRichedDonationPercent() {
-        return percendDonate() <= PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES;
+        return percentDonate() <= PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES;
     }
 
     public String dateFormat() {

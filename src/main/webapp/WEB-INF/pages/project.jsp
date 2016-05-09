@@ -33,7 +33,7 @@
                 <div class="panel-body">
                     <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
                     <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal
-                        <span class="donate-pledged-sub pull-right"> {{projectDetails.project.percendDonate}}%</span>
+                        <span class="donate-pledged-sub pull-right"> {{projectDetails.project.percentDonate}}%</span>
                     </span>
 
                     <div class="progress">
