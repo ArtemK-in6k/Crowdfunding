@@ -33,8 +33,8 @@
                     }, 'primary');
                 } else {
                     Notification({
-                        message: 'You can\'t delete' +
-                        name + ',because this project have move than 90% donates',
+                        message: 'You can\'t delete ' +
+                        name + ' ,because this project have move than 90% donates',
                         title: 'Notification'
                     }, 'warning');
                 }
