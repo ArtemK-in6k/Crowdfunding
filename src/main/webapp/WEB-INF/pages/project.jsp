@@ -103,7 +103,10 @@
                                         <a confirmed-click="projectDetails.getProjectData(projectDetails.project.id);projectDetails.approveDonate(donate.id,projectDetails.project.id)"
                                            ng-if="projectDetails.project.editable && !donate.approved"
                                            ng-confirm-click-approve
-                                           class="pull-right donate-approve"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                           class="pull-right donate-approve"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+                                        <a ng-if="projectDetails.project.editable && !donate.approved" class="pull-right">
+                                            <i class="fa fa-close" aria-hidden="true"></i>
+                                        </a>
 
                                         <span id="amount" ng-class="{'badge-not-approved-and-inprogress':!donate.approved && projectDetails.project.status == 'IN_PROGRESS',
                                          'badge-approved':donate.approved,
