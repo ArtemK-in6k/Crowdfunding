@@ -301,8 +301,9 @@ a.donate-approve {
 }
 
 .img-center {
-    width: 190px;
-    margin: 10px auto;
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto;
 }
 
 .img-div {
