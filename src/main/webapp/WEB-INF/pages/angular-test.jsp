@@ -45,9 +45,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine-html.js"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/jasmine/1.3.1/jasmine.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
-<script src="<c:url value="/resources/js/test/angular/create_project_controller_reg_exp_test.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/createProjectControllerRegExpTest.js" />"></script>
 
-<script src="<c:url value="/resources/js/test/angular/approve_donate_method_test.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/approveDonateMethodTest.js" />"></script>
 
 <script src="<c:url value="/resources/angular/project/project.module.js" />"></script>
 
@@ -75,17 +75,17 @@
 
 <script src="<c:url value="/resources/angular/control/settings/settings_service.js" />"></script>
 
-<script src="<c:url value="/resources/js/test/angular/change_password_in_settings_service_test.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/changePasswordInSettingsServiceTest.js" />"></script>
 
 <script src="<c:url value="/resources/angular/project/donatelist/clickApproveDirective.js" />"></script>
 
-<script src="<c:url value="/resources/js/test/angular/delete_project_test.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/deleteProjectTest.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlProjectsService.js" />"></script>
 
 <script src="<c:url value="/resources/angular/control/controlDonatesService.js" />"></script>
 
-<script src="<c:url value="/resources/js/test/angular/delete_donate_service_test.js" />"></script>
+<script src="<c:url value="/resources/js/test/angular/deleteDonateServiceTest.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
 

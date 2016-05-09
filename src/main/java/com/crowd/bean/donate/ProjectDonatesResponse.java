@@ -16,7 +16,7 @@ public class ProjectDonatesResponse {
 
     public ProjectDonatesResponse(Project project) {
         setId(project.getId());
-        setName(project.getNameProject());
+        setName(project.getName());
         if (!Objects.isNull(project.getDonateList())){
             this.donates = project.getDonateList().stream().map(DonateBean::new).collect(Collectors.toList());
         }else {

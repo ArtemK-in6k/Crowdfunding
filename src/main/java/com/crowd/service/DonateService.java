@@ -91,7 +91,7 @@ public class DonateService {
         Donate donate = donateDAO.findById(id);
         Project project = donate.getProject();
 
-        if (project.percendDonate() <= 90) {
+        if (project.hasRichedDonationPercent()) {
             donateDAO.deleteById(id);
         }
     }

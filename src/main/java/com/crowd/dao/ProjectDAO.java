@@ -16,7 +16,7 @@ public interface ProjectDAO {
 
     void update(Project project);
 
-    Project findByProjectName(String nameProject);
+    Project findByProjectName(String name);
 
     List<Project> findByPartOfProjectName(String projectName);
 

@@ -23,23 +23,20 @@
 
         self.deleteDonate = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
-                self.donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
-                self.donateDeleteWarning = !ControlDonatesService.isDonateDeleted(self.donates, result.data);
+                var donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
                 self.donates = result.data;
-                self.donateDelete = name;
 
-                if (self.donateDeleteWarning) {
+                if (donateDeleteSuccess) {
                     Notification({
-                        message: 'You can\'t delete' +
-                        self.donateDelete + ',because this project have more than 90% donates',
-                        title: 'Notification',
-                        delay: 10000
-                    }, 'error');
-                } else if (self.donateDeleteSuccess) {
-                    Notification({
-                        message: 'Donation ' + self.donateDelete + ' delete successful',
+                        message: 'Donation ' + name + ' delete successful',
                         title: 'Notification'
                     }, 'primary');
+                } else {
+                    Notification({
+                        message: 'You can\'t delete ' +
+                        name + ' ,because this project have move than 90% donates',
+                        title: 'Notification'
+                    }, 'warning');
                 }
 
             })

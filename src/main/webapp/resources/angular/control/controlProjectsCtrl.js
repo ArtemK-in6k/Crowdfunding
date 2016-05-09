@@ -15,15 +15,13 @@
             self.projects = result.data;
         });
 
-        self.updateStatus = function (status, id, name) {
-            var project = {
-                "id": id,
-                "status": status
+        self.changeStatusOnComplete = function (id) {
+            var projectId = {
+                "id": id
             };
 
-            ControlProjectsService.updateOwnProject(project).then(function (result) {
+            ControlProjectsService.updateOwnProject(projectId).then(function (result) {
                 self.projects = result.data;
-                self.projectCompleted = name;
                 Notification({message: 'Donation updated successful', title: 'Notification'}, 'success');
             })
         };
