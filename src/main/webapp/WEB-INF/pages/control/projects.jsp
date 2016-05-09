@@ -27,8 +27,8 @@
                 </td>
                 <td>
                     <div class="table-long-text">
-                        <a href="/projects/{{project.id}}" title="{{project.nameProject}}">
-                            {{project.nameProject}} </a>
+                        <a href="/projects/{{project.id}}" title="{{project.name}}">
+                            {{project.name}} </a>
                     </div>
                 </td>
                 <td>{{project.donate_amount}} &#8372;</td>
@@ -45,8 +45,8 @@
                 <td>
                     <div class="pull-right">
                         <button class="btn btn-danger btn-sm"
-                                confirmed-click="ownProjects.deleteProject(project.id,project.nameProject)"
-                                ng-confirm-click="{{project.nameProject}}">Remove
+                                confirmed-click="ownProjects.deleteProject(project.id,project.name)"
+                                ng-confirm-click="{{project.name}}">Remove
                         </button>
                     </div>
                 </td>

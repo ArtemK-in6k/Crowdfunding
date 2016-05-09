@@ -4,7 +4,6 @@ package com.crowd.bean;
 import com.crowd.entity.Project;
 import com.crowd.utils.StringUtils;
 import com.crowd.entity.Status;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Timestamp;
 
@@ -30,7 +29,7 @@ public class ProjectResponse {
 
     private Status status;
 
-    private String nameProject;
+    private String name;
 
     private double percendDonate;
 
@@ -50,7 +49,7 @@ public class ProjectResponse {
         donate_amount = project.getDonate_amount();
         date = project.dateFormat();
         status = project.getStatus();
-        nameProject = project.getNameProject();
+        name = project.getName();
         percendDonate = project.percendDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
@@ -137,12 +136,12 @@ public class ProjectResponse {
         this.status = status;
     }
 
-    public String getNameProject() {
-        return nameProject;
+    public String getName() {
+        return name;
     }
 
-    public void setNameProject(String nameProject) {
-        this.nameProject = nameProject;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Timestamp getCreated() {

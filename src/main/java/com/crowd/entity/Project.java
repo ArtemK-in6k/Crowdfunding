@@ -3,10 +3,8 @@ package com.crowd.entity;
 import com.crowd.utils.NumberFormatter;
 import org.hibernate.annotations.Type;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +34,8 @@ public class Project {
     private Timestamp date;
     @Enumerated
     private Status status;
-    @Column
-    private String nameProject;
+    @Column(name = "nameproject")
+    private String name;
 
     @Column
     private String url;
@@ -48,7 +46,7 @@ public class Project {
     public Project() {
     }
 
-    public Project(User user, double needAmount, String aboutProject, String image, double donate_amount, Timestamp date, Status status, String nameProject, List<Donate> donateList) {
+    public Project(User user, double needAmount, String aboutProject, String image, double donate_amount, Timestamp date, Status status, String name, List<Donate> donateList) {
         this.user = user;
         this.needAmount = needAmount;
         this.aboutProject = aboutProject;
@@ -56,7 +54,7 @@ public class Project {
         this.donate_amount = donate_amount;
         this.date = date;
         this.status = status;
-        this.nameProject = nameProject;
+        this.name = name;
         this.donateList = donateList;
     }
 
@@ -132,12 +130,12 @@ public class Project {
         this.user = user;
     }
 
-    public String getNameProject() {
-        return nameProject;
+    public String getName() {
+        return name;
     }
 
-    public void setNameProject(String nameProject) {
-        this.nameProject = nameProject;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Donate> getDonateList() {
@@ -180,7 +178,7 @@ public class Project {
                 ", donate_amount=" + donate_amount +
                 ", date=" + date +
                 ", status='" + status + '\'' +
-                ", nameProject='" + nameProject + '\'' +
+                ", name='" + name + '\'' +
                 ", donateList=" + donateList +
                 '}';
     }
