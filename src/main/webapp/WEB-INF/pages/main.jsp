@@ -16,8 +16,8 @@
                          style="width: 100%; height: 150px;"/>
                 </a>
                 <div class="caption text-center">
-                    <a href="/projects/{{project.id}}" class="resize-text" title="{{project.nameProject}}">
-                        <p class="lead long-text">{{project.nameProject}}</p>
+                    <a href="/projects/{{project.id}}" class="resize-text" title="{{project.name}}">
+                        <p class="lead long-text">{{project.name}}</p>
                     </a>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
