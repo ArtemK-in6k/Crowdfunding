@@ -105,7 +105,10 @@
                                            ng-confirm-click-approve
                                            class="pull-right donate-approve"><i class="fa fa-check" aria-hidden="true"></i></a>
 
-                                        <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
+                                        <span id="amount" ng-class="{'badge-not-approved-and-inprogress':!donate.approved && projectDetails.project.status == 'IN_PROGRESS',
+                                         'badge-approved':donate.approved,
+                                         'badge-not-approved':!donate.approved}"
+                                              class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                                     </div>
                             </div>
                         </div>
