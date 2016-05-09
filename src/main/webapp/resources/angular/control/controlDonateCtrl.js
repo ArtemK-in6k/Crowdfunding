@@ -30,8 +30,8 @@
 
                 if (self.donateDeleteWarning) {
                     Notification({
-                        message: 'You can\'t delete' +
-                        self.donateDelete + ',because this project have more than 90% donates',
+                        message: 'You can\'t delete ' +
+                        self.donateDelete + ' ,because this project have more than 90% donates',
                         title: 'Notification',
                         delay: 10000
                     }, 'error');
@@ -46,15 +46,21 @@
 
         };
 
-        self.saveDonate = function (donate, id) {
+        self.saveDonate = function (donate, id, percentDonate) {
             var donation = {
                 "id": id,
                 "donate": donate
             };
-            ControlDonatesService.saveOwnDonate(donation).then(function (result) {
-                self.donates = result.data;
-                Notification({message: 'Donation updated successful', title: 'Notification'}, 'success');
-            })
+            if (ControlDonatesService.isDonateHaveProjectWithLess90PercentDonate(percentDonate)){
+                ControlDonatesService.saveOwnDonate(donation).then(function (result) {
+                    self.donates = result.data;
+                    Notification({message: 'Donation updated successful ', title: 'Notification'}, 'success');
+                })
+            }else {
+                Notification({message: 'You can\'t change your donate' +
+                ' ,because this project have more than 90% donates', title: 'Notification', delay: 10000}, 'error');
+            }
+
         };
     }
 })();
