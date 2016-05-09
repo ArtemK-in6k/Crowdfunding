@@ -38,7 +38,7 @@
                     <p ng-if="project.status != 'FUNDED'" class="table-{{project.status}}">
                         {{project.simpleStatus}}</p>
                     <button ng-if="project.status == 'FUNDED'" type="button" class="btn btn-primary btn-sm"
-                            ng-click="ownProjects.updateStatus('COMPLETED', project.id,project.nameProject)">
+                            ng-click="ownProjects.changeStatusOnComplete(project.id)">
                         Complete
                     </button>
                 </td>
