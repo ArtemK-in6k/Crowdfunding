@@ -299,3 +299,12 @@ a.donate-approve {
     margin-right: 30px;
     margin-bottom: 25px;
 }
+
+.img-center {
+    width: 190px;
+    margin: 10px auto;
+}
+
+.img-div {
+    height: 150px;
+}
