@@ -3,9 +3,9 @@
 
     angular.module('crowdfundingApp.control').factory('ControlDonatesService', ControlDonatesService);
 
-    ControlDonatesService.$inject = ['$http'];
+    ControlDonatesService.$inject = ['$http', 'Notification'];
 
-    function ControlDonatesService($http) {
+    function ControlDonatesService($http, Notification) {
 
         function getAllOwnDonates() {
             return $http.get('/control/donates/list');
@@ -19,15 +19,28 @@
             return $http.post("/control/donates", donation);
         }
 
-        function isDonateDeleted(donatesBeforeRemove, donatesAfterRemove) {
-            return !(donatesAfterRemove.length == donatesBeforeRemove.length);
+        function isDonateDeleted(donatesBeforeRemove, donatesAfterRemove, name) {
+            var donateDeleteSuccess = donatesAfterRemove.length != donatesBeforeRemove.length;
+
+            if (donateDeleteSuccess) {
+                Notification({
+                    message: 'Donation ' + name + ' delete successful',
+                    title: 'Notification'
+                }, 'primary');
+            } else {
+                Notification({
+                    message: 'You can\'t delete ' +
+                    name + ' ,because this project have move than 90% donates',
+                    title: 'Notification'
+                }, 'warning');
+            }
         }
 
-        function isDonateHaveProjectWithLess90PercentDonate(percentDonate){
+        function isDonateHaveProjectWithLess90PercentDonate(percentDonate) {
             return percentDonate <= 90;
         }
 
-        function isIncreaseDonation(changeAmount,donateAmount){
+        function isIncreaseDonation(changeAmount, donateAmount) {
             return changeAmount > donateAmount;
         }
 
@@ -36,8 +49,8 @@
             deleteOwnDonate: deleteOwnDonate,
             saveOwnDonate: saveOwnDonate,
             isDonateDeleted: isDonateDeleted,
-            isDonateHaveProjectWithLess90PercentDonate : isDonateHaveProjectWithLess90PercentDonate,
-            isIncreaseDonation : isIncreaseDonation
+            isDonateHaveProjectWithLess90PercentDonate: isDonateHaveProjectWithLess90PercentDonate,
+            isIncreaseDonation: isIncreaseDonation
         };
     }
 })();
