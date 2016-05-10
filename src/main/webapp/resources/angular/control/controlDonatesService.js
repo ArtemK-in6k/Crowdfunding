@@ -29,10 +29,11 @@
                 }, 'primary');
             } else {
                 Notification({
-                    message: 'You can\'t delete ' +
+                    message: 'You can\'t delete donate from ' +
                     name + ' ,because this project have move than 90% donates',
-                    title: 'Notification'
-                }, 'warning');
+                    title: 'Notification',
+                    delay : 10000
+                }, 'error');
             }
         }
 

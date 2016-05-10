@@ -107,13 +107,13 @@
                                        ng-if="projectDetails.project.editable && !donate.approved"
                                        ng-confirm-click-approve
                                        class="pull-right donate-approve">
-                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                        <i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
                                     </a>
                                     <a confirmed-click="projectDetails.deleteDonate(donate.id, projectDetails.project)"
                                        ng-if="!projectDetails.project.editable && !donate.approved && donate.ownDonate"
                                        ng-confirm-click-donate = {{donate.projectName}}
-                                       class="pull-right">
-                                        <i class="fa fa-close" aria-hidden="true"></i>
+                                       class="pull-right donate-approve">
+                                        <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
                                     </a>
 
                                         <span id="amount" ng-class="{'badge-not-approved-and-inprogress':!donate.approved && projectDetails.project.status == 'IN_PROGRESS',

@@ -23,24 +23,9 @@
 
         self.deleteDonate = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
-                var donateDeleteSuccess = ControlDonatesService.isDonateDeleted(self.donates, result.data);
+                ControlDonatesService.isDonateDeleted(self.donates, result.data,name);
                 self.donates = result.data;
-
-                if (donateDeleteSuccess) {
-                    Notification({
-                        message: 'Donation ' + name + ' delete successful',
-                        title: 'Notification'
-                    }, 'primary');
-                } else {
-                    Notification({
-                        message: 'You can\'t delete ' +
-                        name + ' ,because this project have move than 90% donates',
-                        title: 'Notification'
-                    }, 'warning');
-                }
-
             })
-
         };
 
         self.saveDonate = function (changeDonate, donate) {
