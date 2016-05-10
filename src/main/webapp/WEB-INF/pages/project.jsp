@@ -37,11 +37,13 @@
                     </span>
 
                     <div class="progress">
-                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{project.percentApprovedDonate}}"
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                             aria-valuenow="{{project.percentApprovedDonate}}"
                              aria-valuemin="0" aria-valuemax="100"
                              ng-style="{'width':projectDetails.project.percentApprovedDonate + '%'}">
                         </div>
-                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{project.donateSubtractApprovePercent}}"
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                             aria-valuenow="{{project.donateSubtractApprovePercent}}"
                              aria-valuemin="0" aria-valuemax="100"
                              ng-style="{'width':projectDetails.project.donateSubtractApprovePercent+'%'}">
                         </div>
@@ -89,30 +91,36 @@
                 <!-- /.panel-heading -->
                 <div id="project-donates-box" class="panel-body" ng-init="projectDetails.loadDonates(${projectId})"
                      ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
-                    <div class="list-group " ng-class="{'donate-box-approved':donate.approved, 'donate-box-not-approved' :!donate.approved }"
+                    <div class="list-group "
+                         ng-class="{'donate-box-approved':donate.approved, 'donate-box-not-approved' :!donate.approved }"
                          ng-repeat="donate in projectDetails.donateList | startFrom: projectDetails.pagination.page * projectDetails.pagination.perPage | limitTo: projectDetails.pagination.perPage">
                         <div class="media ">
                             <a href="#" class="pull-left">
                                 <img width="35" height="35" ng-src="{{projectDetails.avatarImageUrl}}"
                                      class="media-photo">
                             </a>
-                            <div class="media-body text-center " >
-                                    <div class="donate-box-details">
-                                        <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
+                            <div class="media-body text-center ">
+                                <div class="donate-box-details">
+                                    <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
 
-                                        <a confirmed-click="projectDetails.getProjectData(projectDetails.project.id);projectDetails.approveDonate(donate.id,projectDetails.project.id)"
-                                           ng-if="projectDetails.project.editable && !donate.approved"
-                                           ng-confirm-click-approve
-                                           class="pull-right donate-approve"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
-                                        <a ng-if="projectDetails.project.editable && !donate.approved" class="pull-right">
-                                            <i class="fa fa-close" aria-hidden="true"></i>
-                                        </a>
+                                    <a confirmed-click="projectDetails.getProjectData(projectDetails.project.id);projectDetails.approveDonate(donate.id, projectDetails.project.id)"
+                                       ng-if="projectDetails.project.editable && !donate.approved"
+                                       ng-confirm-click-approve
+                                       class="pull-right donate-approve">
+                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </a>
+                                    <a confirmed-click="projectDetails.deleteDonate(donate.id, projectDetails.project)"
+                                       ng-if="!projectDetails.project.editable && !donate.approved && donate.ownDonate"
+                                       ng-confirm-click-donate = {{donate.projectName}}
+                                       class="pull-right">
+                                        <i class="fa fa-close" aria-hidden="true"></i>
+                                    </a>
 
                                         <span id="amount" ng-class="{'badge-not-approved-and-inprogress':!donate.approved && projectDetails.project.status == 'IN_PROGRESS',
                                          'badge-approved':donate.approved,
                                          'badge-not-approved':!donate.approved}"
                                               class="badge pull-right">{{ donate.amount}}  &#8372;</span>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
