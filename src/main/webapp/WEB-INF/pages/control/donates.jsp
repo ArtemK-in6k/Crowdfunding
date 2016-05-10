@@ -3,8 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 
-<script src="<c:url value="/resources/angular/control/clickDonateDirective.js" />"></script>
-
 <div ng-controller="OwnDonates as ownDonates">
     <div class="">
         <h3 class="text-center">My Donations</h3>
