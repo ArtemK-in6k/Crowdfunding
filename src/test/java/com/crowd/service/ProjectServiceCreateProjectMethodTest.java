@@ -58,7 +58,7 @@ public class ProjectServiceCreateProjectMethodTest {
     public void When_CreateProjectWithoutImage_Except_ProjectImageHasNullValue() {
         int projectId = projectService.createProject(userBean, name, needAmount, "", about, sourceUrl);
         String projectImage = projectService.findById(projectId).getImage();
-        assertThat(projectImage, is(nullValue()));
+        assertThat(projectImage, is(""));
     }
 
     @Test

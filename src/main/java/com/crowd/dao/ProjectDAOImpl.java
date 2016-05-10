@@ -34,7 +34,7 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
     public Project findByProjectName(String name) {
         Query query = sessionFactory.getCurrentSession().createQuery("from projects where name = :name");
-        query.setString("nameProject",name);
+        query.setString("name",name);
         return (Project) query.uniqueResult();
     }
 
@@ -48,7 +48,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
     public List<Project> findByPartOfProjectName(String name) {
         Query query = sessionFactory.getCurrentSession().createQuery("from projects where lower(name) like :name");
-        query.setString("projectName","%"+name+"%");
+        query.setString("name","%"+name+"%");
         return query.list();
     }
 
