@@ -3,11 +3,12 @@
 
     angular
         .module('crowdfundingApp.projects')
-        .controller('ProjectDetailsController', ProjectDetailsController);
+        .controller('ProjectDetailsController', ProjectDetailsController)
+        .requires.push('crowdfundingApp.control');
 
-    ProjectDetailsController.$inject = ['$http','ProjectDonatesService','Pagination'];
+    ProjectDetailsController.$inject = ['$http', 'ProjectDonatesService', 'Pagination', 'ControlDonatesService'];
 
-    function ProjectDetailsController($http,ProjectDonatesService, Pagination) {
+    function ProjectDetailsController($http, ProjectDonatesService, Pagination, ControlDonatesService) {
 
         var self = this;
         
@@ -40,6 +41,17 @@
                 self.loadDonates(projectId);
                 self.getProjectData(projectId);
             });
-        }
+        };
+
+        self.deleteDonate = function (donateId, project) {
+            ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
+                ProjectDonatesService.getAllProjectDonates(project.id)
+                    .then(function (result) {
+                        ControlDonatesService.isDonateDeleted(self.donateList, result.data.donates, project.name);
+                    });
+                self.loadDonates(project.id);
+                self.getProjectData(project.id);
+            })
+        };
     }
 })();
