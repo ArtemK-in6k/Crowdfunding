@@ -13,9 +13,12 @@ public class DonateBean {
     private int projectId;
     private Timestamp date;
     private boolean approved;
-    public DonateBean(){}
+    private boolean isOwnDonate;
 
-    public DonateBean(Donate donate){
+    public DonateBean() {
+    }
+
+    public DonateBean(Donate donate) {
         setId(donate.getId());
         setOwnerId(donate.getUser().getId());
         setOwnerName(donate.getUser().fullName());
@@ -88,5 +91,17 @@ public class DonateBean {
 
     public void setApproved(boolean approved) {
         this.approved = approved;
+    }
+
+    public boolean isOwnDonate() {
+        return isOwnDonate;
+    }
+
+    public void isOwnDonate(int userId) {
+        this.isOwnDonate = userId == ownerId;
+    }
+
+    public void setOwnDoante(boolean ownDonate) {
+        this.isOwnDonate = ownDonate;
     }
 }

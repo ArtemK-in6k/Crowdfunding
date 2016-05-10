@@ -47,4 +47,10 @@ public class ProjectDonatesResponse {
     public void setDonates(List<DonateBean> donates) {
         this.donates = donates;
     }
+
+    public void isOwnDonate(int userId){
+        for (DonateBean donate: donates){
+            donate.isOwnDonate(userId);
+        }
+    }
 }

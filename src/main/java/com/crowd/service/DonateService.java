@@ -40,7 +40,7 @@ public class DonateService {
         donateDAO.insert(donate);
     }
 
-    public ResponseEntity<ProjectDonatesResponse> getProjectDonates(int projectId) {
+    public ResponseEntity<ProjectDonatesResponse> getProjectDonates(int projectId,int userId) {
         Project project = projectDAO.findById(projectId);
 
         if (Objects.isNull(project)) {
@@ -48,6 +48,7 @@ public class DonateService {
         }
 
         ProjectDonatesResponse response = new ProjectDonatesResponse(project);
+        response.isOwnDonate(userId);
         return new ResponseEntity<ProjectDonatesResponse>(response, HttpStatus.OK);
     }
 
