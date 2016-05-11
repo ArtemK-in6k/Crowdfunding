@@ -5,12 +5,12 @@
         .module('crowdfundingApp.projects')
         .controller('ProjectDetailsController', ProjectDetailsController);
 
-    ProjectDetailsController.$inject = ['$http','ProjectDonatesService','Pagination'];
+    ProjectDetailsController.$inject = ['$http', 'ProjectDonatesService', 'Pagination'];
 
-    function ProjectDetailsController($http,ProjectDonatesService, Pagination) {
+    function ProjectDetailsController($http, ProjectDonatesService, Pagination) {
 
         var self = this;
-        
+
         self.defaultProjectImage = '/resources/img/no_img.jpg';
         self.avatarImageUrl = '/resources/img/no_avatar.png';
 
@@ -35,11 +35,11 @@
             ;
         };
 
-        self.approveDonate = function (donateId,projectId) {
+        self.approveDonate = function (donateId, projectId) {
             ProjectDonatesService.approveDonate(donateId).then(function (result) {
                 self.loadDonates(projectId);
                 self.getProjectData(projectId);
             });
-        }
+        };
     }
 })();
