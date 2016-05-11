@@ -32,7 +32,7 @@ public class UserDonatesBean {
         this.donateAmount = donate.getProject().getDonate_amount();
         this.status = donate.getProject().getStatus();
         this.simpleStatus = status.getStatus();
-        this.percendDonateProject = donate.getProject().percendDonate();
+        this.percendDonateProject = donate.getProject().percentDonate();
     }
 
     public int getId() {
