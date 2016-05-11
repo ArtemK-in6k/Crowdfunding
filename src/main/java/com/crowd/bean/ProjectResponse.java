@@ -54,7 +54,7 @@ public class ProjectResponse {
         date = project.dateFormat();
         status = project.getStatus();
         name = project.getName();
-        percendDonate = project.percendDonate();
+        percendDonate = project.percentDonate();
         fullNameUser = project.getUser().fullName();
         created = project.getDate();
         url = project.getUrl();
