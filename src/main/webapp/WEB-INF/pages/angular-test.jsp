@@ -54,7 +54,6 @@
 <script src="<c:url value="/resources/angular/controllers.js" />"></script>
 
 <script src="<c:url value="/resources/angular/simplePagination.js" />"></script>
-<script src="<c:url value="/resources/angular/project/donatelist/project_donate_list_controller.js" />"></script>
 <script src="<c:url value="/resources/angular/project/donatelist/project_donates_service.js" />"></script>
 <script src="<c:url value="/resources/angular/project/project_details_controller.js" />"></script>
 

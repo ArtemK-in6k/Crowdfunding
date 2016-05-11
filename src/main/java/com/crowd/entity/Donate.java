@@ -32,6 +32,14 @@ public class Donate {
     public Donate() {
     }
 
+    public Donate(User user, double amount, Project project, boolean approved, Timestamp date) {
+        this.user = user;
+        this.amount = amount;
+        this.project = project;
+        this.approved = approved;
+        this.date = date;
+    }
+
     public Project getProject() {
         return project;
     }

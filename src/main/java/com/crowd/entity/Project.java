@@ -146,13 +146,36 @@ public class Project {
         this.donateList = donateList;
     }
 
-    public double percendDonate() {
+    public List<Donate> getApproveDonates() {
+        List<Donate> approvedDonates = new ArrayList<>();
+        for (Donate donate : donateList) {
+            if (donate.isApproved()) {
+                approvedDonates.add(donate);
+            }
+        }
+        return approvedDonates;
+    }
+
+    public double getApprovedAmount() {
+        return getApproveDonates().stream().mapToDouble(Donate::getAmount).sum();
+    }
+
+    public double percentApprovedDonate() {
+        double percent = getApprovedAmount() / needAmount * 100;
+        return NumberFormatter.roundNumber(percent);
+    }
+
+    public double donateSubtractApprovePercent() {
+        return percentDonate() - percentApprovedDonate();
+    }
+
+    public double percentDonate() {
         double percent = getDonate_amount() / needAmount * 100;
-        return NumberFormatter.format(percent);
+        return NumberFormatter.roundNumber(percent);
     }
 
     public boolean hasRichedDonationPercent() {
-        return percendDonate() <= PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES;
+        return percentDonate() <= PERCENT_WHEN_USER_CAN_NOT_EDIT_OWN_DONATES;
     }
 
     public String dateFormat() {

@@ -34,9 +34,11 @@
                     <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
                     <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal</span>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="{{project.percendDonate}}"
-                             aria-valuemin="0" aria-valuemax="100"
-                             style="width:{{projectDetails.project.percendDonate}}%">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                             ng-style="{'width':projectDetails.project.percentApprovedDonate +'%'}">
+                        </div>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                             ng-style="{'width':projectDetails.project.donateSubtractApprovePercent +'%'}">
                         </div>
                     </div>
                     <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
@@ -81,11 +83,10 @@
             <div class="panel panel-default">
                 <div class="text-center"><h4 class="title">Donations</h4></div>
                 <!-- /.panel-heading -->
-                <div id="project-donates-box" class="panel-body" ng-init="projectDonates.loadDonates(${projectId})"
-                     ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"
-                     ng-controller="ProjectDonateListController as projectDonates">
+                <div id="project-donates-box" class="panel-body" ng-init="projectDetails.loadDonates(${projectId})"
+                     ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
                     <div class="list-group " ng-class="{'donate-box-approved':donate.approved, 'donate-box-not-approved' :!donate.approved }"
-                         ng-repeat="donate in projectDonates.donateList | startFrom: projectDonates.pagination.page * projectDonates.pagination.perPage | limitTo: projectDonates.pagination.perPage">
+                         ng-repeat="donate in projectDetails.donateList | startFrom: projectDetails.pagination.page * projectDetails.pagination.perPage | limitTo: projectDetails.pagination.perPage">
                         <div class="media ">
                             <a href="#" class="pull-left">
                                 <img width="35" height="35" ng-src="{{projectDetails.avatarImageUrl}}"
@@ -95,7 +96,7 @@
                                     <div class="donate-box-details">
                                         <span class="donate-owner-title pull-left"> {{ donate.ownerName }}</span>
 
-                                        <a confirmed-click="projectDonates.approveDonate(donate.id,projectDetails.project.id)"
+                                        <a confirmed-click="projectDetails.getProjectData(projectDetails.project.id);projectDetails.approveDonate(donate.id,projectDetails.project.id)"
                                            ng-if="projectDetails.project.editable && !donate.approved"
                                            ng-confirm-click-approve
                                            class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
@@ -105,17 +106,17 @@
                             </div>
                         </div>
                     </div>
-                    <h5 align="center" class="error-text" ng-if="projectDonates.donateList.length == 0"> The Project
+                    <h5 align="center" class="error-text" ng-if="projectDetails.donateList.length == 0"> The Project
                         still hasn't donations.</h5>
                     <div class="text-center donate-pagination-box"
-                         ng-if="projectDonates.donateList.length != 0 && projectDonates.pagination.numPages > 1 ">
+                         ng-if="projectDetails.donateList.length != 0 && projectDetails.pagination.numPages > 1 ">
                         <ul class="pagination">
-                            <li><a href="" ng-click="projectDonates.pagination.prevPage()">&laquo;</a></li>
-                            <li ng-repeat="n in [] | range: projectDonates.pagination.numPages"
-                                ng-class="{active: n == projectDonates.pagination.page}">
-                                <a href="" ng-click="projectDonates.pagination.toPageId(n)">{{n + 1}}</a>
+                            <li><a href="" ng-click="projectDetails.pagination.prevPage()">&laquo;</a></li>
+                            <li ng-repeat="n in [] | range: projectDetails.pagination.numPages"
+                                ng-class="{active: n == projectDetails.pagination.page}">
+                                <a href="" ng-click="projectDetails.pagination.toPageId(n)">{{n + 1}}</a>
                             </li>
-                            <li><a href="" ng-click="projectDonates.pagination.nextPage()">&raquo;</a></li>
+                            <li><a href="" ng-click="projectDetails.pagination.nextPage()">&raquo;</a></li>
                         </ul>
                     </div>
                 </div>
