@@ -3,7 +3,6 @@ describe('check save project', function () {
     var scope, ctrl, httpBackend, ControlDonatesService, Notification;
 
     beforeEach(module("crowdfundingApp.control"));
-
     beforeEach(
         inject(
             function ($controller, $rootScope, _ControlDonatesService_, _Notification_,$httpBackend) {
@@ -20,7 +19,7 @@ describe('check save project', function () {
         )
     );
 
-    it('should be true', function () {
+    it('should be return donate amount 2422', function () {
 
         ctrl.donates = [{
             "id": 100,
@@ -35,17 +34,6 @@ describe('check save project', function () {
             "simpleStatus": "Completed",
             "percentDonateProject": 50.0
         }];
-
-        var donation = {
-            "id": ctrl.donates[0].donate.id,
-            "donate": 200.00
-        };
-
-        ctrl.saveDonate(200.00, ctrl.donates[0]);
-
-        httpBackend
-            .whenPOST('/control/donates', donation)
-            .respond(200, ["control/donates"]);
 
         httpBackend
             .whenGET('/control/donates/list')
@@ -62,6 +50,10 @@ describe('check save project', function () {
                 "simpleStatus": "Completed",
                 "percentDonateProject": 50.0
             }]);
+
+        httpBackend.flush();
+
+        ctrl.saveDonate(200.00, ctrl.donates[0]);
 
         expect(ctrl.donates[0].donate).toBe(2422);
     });
