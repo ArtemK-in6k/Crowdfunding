@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('crowdfundingApp.control', ['ngAnimate','xeditable']);
+        .module('crowdfundingApp.control', ['ngAnimate','xeditable','ui-notification']);
 })();

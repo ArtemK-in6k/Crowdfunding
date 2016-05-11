@@ -22,6 +22,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
+<link href="<c:url value="/resources/css/angular-ui-notification.min.css" />" rel="stylesheet" type="text/css">
+
+<script src="<c:url value="/resources/angular/lib/angular-ui-notification.min.js" />"></script>
 
 <link href="<c:url value="/resources/css/textAngular/textAngular.css" />" rel="stylesheet" type="text/css">
 <script src="<c:url value="/resources/angular/lib/textAngular/textAngular-rangy.min.js" />"></script>
@@ -86,6 +89,8 @@
 <script src="<c:url value="/resources/angular/control/controlDonatesService.js" />"></script>
 
 <script src="<c:url value="/resources/js/test/angular/deleteDonateServiceTest.js" />"></script>
+
+<script src="<c:url value="/resources/js/test/angular/saveDonateControllerTest.js" />"></script>
 
 <script src="<c:url value="/resources/js/app.js" />"></script>
 

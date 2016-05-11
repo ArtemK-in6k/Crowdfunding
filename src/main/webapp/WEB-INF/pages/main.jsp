@@ -27,18 +27,14 @@
                         &#8372;</b> goal</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{project.percentApprovedDonate}}" aria-valuemin="0"
-                             aria-valuemax="100"
-                             ng-style="{'width':project.percentApprovedDonate +'%'}">
+                            ng-style="{'width':project.percentApprovedDonate +'%'}">
                         </div>
                         <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{project.donateSubtractApprovePercent}}" aria-valuemin="0"
-                             aria-valuemax="100"
                              ng-style="{'width':project.donateSubtractApprovePercent +'%'}">
                         </div>
                     </div>
                 </div>
-                <p class="text-center">created {{ project.created | date:'dd MMM yyyy'}}</p>
+                <p class="text-center">created on {{ project.created | date:'dd MMM yyyy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <h4 class="text-center">
                     <span class="label label-pill {{projectList.statusForBootstrap(project.status)}}">{{project.simpleStatus}}</span>

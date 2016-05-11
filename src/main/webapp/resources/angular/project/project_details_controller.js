@@ -11,7 +11,7 @@
     function ProjectDetailsController($http, ProjectDonatesService, Pagination, ControlDonatesService) {
 
         var self = this;
-        
+
         self.defaultProjectImage = '/resources/img/no_img.jpg';
         self.avatarImageUrl = '/resources/img/no_avatar.png';
 
@@ -36,7 +36,7 @@
             ;
         };
 
-        self.approveDonate = function (donateId,projectId) {
+        self.approveDonate = function (donateId, projectId) {
             ProjectDonatesService.approveDonate(donateId).then(function (result) {
                 self.loadDonates(projectId);
                 self.getProjectData(projectId);

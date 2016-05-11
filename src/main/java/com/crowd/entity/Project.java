@@ -146,7 +146,7 @@ public class Project {
         this.donateList = donateList;
     }
 
-    public List<Donate> getApproveDonateList() {
+    public List<Donate> getApproveDonates() {
         List<Donate> approvedDonates = new ArrayList<>();
         for (Donate donate : donateList) {
             if (donate.isApproved()) {
@@ -157,12 +157,12 @@ public class Project {
     }
 
     public double getApprovedAmount() {
-        return getApproveDonateList().stream().mapToDouble(Donate::getAmount).sum();
+        return getApproveDonates().stream().mapToDouble(Donate::getAmount).sum();
     }
 
     public double percentApprovedDonate() {
         double percent = getApprovedAmount() / needAmount * 100;
-        return NumberFormatter.format(percent);
+        return NumberFormatter.roundNumber(percent);
     }
 
     public double donateSubtractApprovePercent() {
@@ -171,7 +171,7 @@ public class Project {
 
     public double percentDonate() {
         double percent = getDonate_amount() / needAmount * 100;
-        return NumberFormatter.format(percent);
+        return NumberFormatter.roundNumber(percent);
     }
 
     public boolean hasRichedDonationPercent() {

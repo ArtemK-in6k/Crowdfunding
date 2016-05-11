@@ -38,14 +38,10 @@
 
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{project.percentApprovedDonate}}"
-                             aria-valuemin="0" aria-valuemax="100"
-                             ng-style="{'width':projectDetails.project.percentApprovedDonate + '%'}">
+                             ng-style="{'width':projectDetails.project.percentApprovedDonate +'%'}">
                         </div>
                         <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{project.donateSubtractApprovePercent}}"
-                             aria-valuemin="0" aria-valuemax="100"
-                             ng-style="{'width':projectDetails.project.donateSubtractApprovePercent+'%'}">
+                             ng-style="{'width':projectDetails.project.donateSubtractApprovePercent +'%'}">
                         </div>
                     </div>
                     <br/>
