@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center">created {{ project.created | date:'dd MMM yyyy'}}</p>
+                <p class="text-center">created on {{ project.created | date:'dd MMM yyyy'}}</p>
                 <p class="text-center">by {{project.fullNameUser}}</p>
                 <h4 class="text-center">
                     <span class="label label-pill {{projectList.statusForBootstrap(project.status)}}">{{project.simpleStatus}}</span>
