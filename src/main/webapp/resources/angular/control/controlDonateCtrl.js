@@ -23,7 +23,7 @@
 
         self.deleteDonate = function (donateId, name) {
             ControlDonatesService.deleteOwnDonate(donateId).then(function (result) {
-                ControlDonatesService.isDonateDeleted(self.donates, result.data,name);
+                ControlDonatesService.isDonateDeleted(self.donates, result.data, name);
                 self.donates = result.data;
             })
         };
@@ -37,13 +37,11 @@
                 ControlDonatesService.isIncreaseDonation(changeDonate, donate.donateAmount)) {
                 ControlDonatesService.saveOwnDonate(donation).then(function (result) {
                     self.donates = result.data;
-                    Notification({message: 'Donation updated successful ', title: 'Notification'}, 'success');
+                    ControlDonatesService.donateUpdateSuccessfulNotification();
                 })
             } else {
-                Notification({
-                    message: 'You can\'t change your donate' +
-                    ' ,because this project have more than 90% donates', title: 'Notification', delay: 10000
-                }, 'error');
+                ControlDonatesService.donateUpdateErrorNotification();
+
             }
 
         };

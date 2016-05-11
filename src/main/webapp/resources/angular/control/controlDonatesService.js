@@ -45,13 +45,26 @@
             return changeAmount > donateAmount;
         }
 
+        function donateUpdateSuccessfulNotification(){
+            Notification({message: 'Donation updated successful ', title: 'Notification'}, 'success');
+        }
+
+        function donateUpdateErrorNotification(){
+            Notification({
+                message: 'You can\'t change your donate' +
+                ' ,because this project have more than 90% donates', title: 'Notification', delay: 10000
+            }, 'error');
+        }
+
         return {
             getAllOwnDonates: getAllOwnDonates,
             deleteOwnDonate: deleteOwnDonate,
             saveOwnDonate: saveOwnDonate,
             isDonateDeleted: isDonateDeleted,
             isDonateHaveProjectWithLess90PercentDonate: isDonateHaveProjectWithLess90PercentDonate,
-            isIncreaseDonation: isIncreaseDonation
+            isIncreaseDonation: isIncreaseDonation,
+            donateUpdateSuccessfulNotification: donateUpdateSuccessfulNotification,
+            donateUpdateErrorNotification: donateUpdateErrorNotification
         };
     }
 })();
