@@ -6,7 +6,7 @@ body {
     padding-top: 25px;
 }
 
-.body-padding {
+.project-detail-wrapper {
     margin-top: 10px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
@@ -17,7 +17,7 @@ body {
     padding-left: 0px !important;
 }
 
-.container-padding {
+.leveling-container {
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
@@ -283,11 +283,11 @@ a.donate-approve {
     width: 100% !important;
 }
 
-.remove-left-padding {
+.div-navigation {
     padding-left: 0px !important;
 }
 
-.remove-right-padding {
+.div-body {
     padding-right: 0px !important;
 }
 
