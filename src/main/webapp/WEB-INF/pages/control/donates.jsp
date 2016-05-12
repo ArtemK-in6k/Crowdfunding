@@ -13,7 +13,8 @@
             <tr>
                 <th></th>
                 <th class="text-center">Project name</th>
-                <th class="text-center">Raised</th>
+                <th class="text-center">Project status</th>
+                <th class="text-center">Raised(Percent)</th>
                 <th class="text-center">Goal</th>
                 <th class="text-center">Your contribution</th>
                 <th class="text-center"></th>
@@ -30,7 +31,8 @@
                             {{donate.projectName}} </a>
                     </div>
                 </td>
-                <td>{{donate.donateAmount}} &#8372;</td>
+                <td class="table-{{donate.status}}">{{donate.simpleStatus}}</td>
+                <td>{{donate.donateAmount}} &#8372;({{donate.percendDonateProject}}%)</td>
                 <td>{{donate.needAmount}} &#8372;</td>
                 <td>
                     <span class="form-control-inline" e-min="1" editable-number="donate.donate" e-name="donation"

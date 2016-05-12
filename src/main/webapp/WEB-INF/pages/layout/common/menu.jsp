@@ -36,7 +36,7 @@
                                 data-toggle="dropdown">${userBean.firstName } ${userBean.lastName}
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                            <li><a href="/control">Control</a></li>
+                            <li><a href="/control">Dashboard</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>

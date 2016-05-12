@@ -3,7 +3,23 @@ body {
 }
 
 .body-wrapper {
-    padding: 25px;
+    padding-top: 25px;
+}
+
+.project-detail-wrapper {
+    margin-top: 10px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.select-padding {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.leveling-container {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 .logo-img {
@@ -171,8 +187,7 @@ label.required:after {
 }
 
 .table-NOT_STARTED {
-    color: rgba(204, 41, 0, 0.75);
-    text-shadow: 2px 8px 6px rgba(204, 41, 0, 0.2),
+    text-shadow: 2px 8px 6px rgba(217, 217, 217, 0.2),
     0px -5px 35px rgba(255, 255, 255, 0.3);
 
 }
@@ -214,7 +229,7 @@ label.required:after {
     margin-right: 10px;
 }
 
-a.donate-approve{
+a.donate-approve {
     margin-left: 5px;
 }
 
@@ -227,7 +242,9 @@ table.donate-list tr:last-child td:last-child {
 }
 
 .create-project-modal-btn {
-    margin-right: 15px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
 }
 
 .search-img {
@@ -235,20 +252,20 @@ table.donate-list tr:last-child td:last-child {
     height: 200px;
 }
 
-.donate-box-details{
-    margin-top: 10px!important;
+.donate-box-details {
+    margin-top: 10px !important;
     position: relative;
 }
 
-.donate-box-approved{
+.donate-box-approved {
     background-color: #e6ffe6;
 }
 
-.badge-approved{
+.badge-approved {
     background-color: green;
 }
 
-.badge-not-approved{
+.badge-not-approved {
     background-color: #a94442;
 }
 
@@ -258,6 +275,27 @@ a.donate-approve {
     right: 0px;
 }
 
-.donate-btn{
-    width: 100%!important;
+.donate-btn {
+    width: 100% !important;
+}
+
+.div-navigation {
+    padding-left: 0px !important;
+}
+
+.div-body {
+    padding-right: 0px !important;
+}
+
+.text-center-important {
+    margin: 0px auto !important;
+}
+
+.text-retreat-left {
+    text-indent: 25px;
+}
+
+.modal-marginl-right {
+    margin-right: 30px;
+    margin-bottom: 25px;
 }

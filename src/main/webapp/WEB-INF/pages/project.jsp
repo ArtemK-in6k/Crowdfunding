@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<div class="row " ng-controller="ProjectDetailsController as projectDetails"
+<div class="row" ng-controller="ProjectDetailsController as projectDetails"
      ng-init="projectDetails.getProjectData(${projectId})" ng-cloack>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 15px">
         <span class="text-black h3 m-r ng-binding">{{projectDetails.project.name}}</span>
@@ -13,7 +13,7 @@
                     href="{{projectDetails.project.url}}" target="_blank">See game details</a></span>
         </div>
     </div>
-    <div class="row">
+    <div class="project-detail-wrapper">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="panel panel-default">
                 <img class="img-responsive project-details-img"
@@ -99,7 +99,7 @@
                                         <a confirmed-click="projectDetails.getProjectData(projectDetails.project.id);projectDetails.approveDonate(donate.id,projectDetails.project.id)"
                                            ng-if="projectDetails.project.editable && !donate.approved"
                                            ng-confirm-click-approve
-                                           class="pull-right donate-approve"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                           class="pull-right donate-approve"><i class="fa fa-check" aria-hidden="true"></i></a>
 
                                         <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                                     </div>

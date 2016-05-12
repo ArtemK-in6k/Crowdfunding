@@ -74,7 +74,6 @@ public class DonateService {
         }
 
         donateDAO.saveUpdate(donate);
-        project.getDonateList().add(donate);
         projectService.checkProjectStatus(project);
 
         return true;
@@ -101,6 +100,7 @@ public class DonateService {
         Donate donate = donateDAO.findById(donationContributionBean.getId());
         donate.setAmount(donationContributionBean.getDonate());
         donateDAO.saveUpdate(donate);
+        projectService.checkProjectStatus(donate.getProject());
     }
 
     public ResponseEntity<ApproveDonateResponse> approveDonate(int donateId) {

@@ -10,9 +10,9 @@
             editableOptions.theme = 'bs3';
         });
 
-    OwnDonates.$inject = ['$timeout', 'ControlDonatesService', 'Notification'];
+    OwnDonates.$inject = ['ControlDonatesService', 'Notification'];
 
-    function OwnDonates($timeout, ControlDonatesService, Notification) {
+    function OwnDonates(ControlDonatesService, Notification) {
 
         var self = this;
 
@@ -50,7 +50,7 @@
             };
             ControlDonatesService.saveOwnDonate(donation).then(function (result) {
                 self.donates = result.data;
-                Notification({message: 'Project updated successful', title: 'Notification'}, 'success');
+                Notification({message: 'Donation updated successful', title: 'Notification'}, 'success');
             })
         };
     }
