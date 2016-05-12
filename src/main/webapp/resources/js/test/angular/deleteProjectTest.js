@@ -27,7 +27,7 @@ describe('ApproveDeleteProject', function () {
             "status": "COMPLETED",
             "nameProject": "Riff Raff",
             "categoryId": 0,
-            "percendDonate": 0.0,
+            "percentDonate": 0.0,
             "fullNameUser": "tt tt",
             "simpleStatus": "Completed"
         }];

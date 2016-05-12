@@ -32,7 +32,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <span class="donate-pledged">{{projectDetails.project.donate_amount}} &#8372;</span>
-                    <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal</span>
+                    <span class="donate-pledged-sub">pledged of {{projectDetails.project.needAmount}} &#8372; goal
+                        <span class="donate-pledged-sub pull-right"> {{projectDetails.project.percentDonate}}%</span>
+                    </span>
+
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                              ng-style="{'width':projectDetails.project.percentApprovedDonate +'%'}">
@@ -41,8 +44,7 @@
                              ng-style="{'width':projectDetails.project.donateSubtractApprovePercent +'%'}">
                         </div>
                     </div>
-                    <span class="donate-pledged-sub"> {{projectDetails.project.percendDonate}}%</span>
-
+                    <br/>
                     <div class="support-block" ng-if="projectDetails.project.status != 'COMPLETED'">
                         <span class="text-muted text-md ">Support the project directly:</span>
                         <div class=" text-center support-input-block">
@@ -101,7 +103,10 @@
                                            ng-confirm-click-approve
                                            class="pull-right donate-approve"><i class="fa fa-check" aria-hidden="true"></i></a>
 
-                                        <span id="amount" ng-class="{'badge-approved':donate.approved, 'badge-not-approved':!donate.approved}" class="badge pull-right">{{ donate.amount}}  &#8372;</span>
+                                        <span id="amount" ng-class="{'badge-not-approved-and-inprogress':!donate.approved && projectDetails.project.status == 'IN_PROGRESS',
+                                         'badge-approved':donate.approved,
+                                         'badge-not-approved':!donate.approved}"
+                                              class="badge pull-right">{{ donate.amount}}  &#8372;</span>
                                     </div>
                             </div>
                         </div>

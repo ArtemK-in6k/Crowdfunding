@@ -125,7 +125,9 @@ public class ProjectService {
 
     public ProjectResponse getProjectById(int projectId){
         ProjectResponse projectResponse = new ProjectResponse(projectDAO.findById(projectId));
-        projectResponse.isEditable(authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId())));
+        boolean isSameUser = authService.isSameWithAuthUser(userDAO.findById(projectResponse.getUserId()));
+        boolean isProjectInProgress = projectResponse.isProjectInProgress();
+        projectResponse.isEditable(isSameUser && !isProjectInProgress);
         return projectResponse;
     }
 }

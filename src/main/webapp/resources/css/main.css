@@ -266,7 +266,11 @@ table.donate-list tr:last-child td:last-child {
 }
 
 .badge-not-approved {
-    background-color: #a94442;
+    background-color: #CCCC00;
+}
+
+.badge-not-approved-and-inprogress {
+    background-color: grey;
 }
 
 a.donate-approve {
@@ -298,4 +302,14 @@ a.donate-approve {
 .modal-marginl-right {
     margin-right: 30px;
     margin-bottom: 25px;
+}
+
+.img-center {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto;
+}
+
+.img-div {
+    height: 150px;
 }

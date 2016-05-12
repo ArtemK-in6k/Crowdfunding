@@ -16,7 +16,7 @@ public class UserDonatesBean {
     private double donateAmount;
     private int projectId;
     private String simpleStatus;
-    private double percendDonateProject;
+    private double percentDonateProject;
 
     public UserDonatesBean() {
     }
@@ -32,7 +32,7 @@ public class UserDonatesBean {
         this.donateAmount = donate.getProject().getDonate_amount();
         this.status = donate.getProject().getStatus();
         this.simpleStatus = status.getStatus();
-        this.percendDonateProject = donate.getProject().percentDonate();
+        this.percentDonateProject = donate.getProject().percentDonate();
     }
 
     public int getId() {
@@ -115,11 +115,11 @@ public class UserDonatesBean {
         this.projectId = projectId;
     }
 
-    public double getPercendDonateProject() {
-        return percendDonateProject;
+    public double getPercentDonateProject() {
+        return percentDonateProject;
     }
 
-    public void setPercendDonateProject(double percendDonateProject) {
-        this.percendDonateProject = percendDonateProject;
+    public void setPercentDonateProject(double percentDonateProject) {
+        this.percentDonateProject = percentDonateProject;
     }
 }

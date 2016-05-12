@@ -35,7 +35,7 @@
                             {{project.name}} </a>
                     </div>
                 </td>
-                <td>{{project.donate_amount}} &#8372;({{project.percendDonate}}%)</td>
+                <td>{{project.donate_amount}} &#8372;({{project.percentDonate}}%)</td>
                 <td>{{project.needAmount}} &#8372;</td>
                 <td>
 
