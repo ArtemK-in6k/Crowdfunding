@@ -14,14 +14,14 @@
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="container container-padding">
+<div class="container leveling-container">
     <div id="body">
         <div class="row">
             <tiles:insertAttribute name="menu"/>
-            <div class="col-lg-2 remove-left-padding">
+            <div class="col-lg-2 div-navigation">
                 <tiles:insertAttribute name="navigation"/>
             </div>
-            <div class="col-lg-10 remove-right-padding">
+            <div class="col-lg-10 div-body">
                 <tiles:insertAttribute name="body"/>
             </div>
         </div>

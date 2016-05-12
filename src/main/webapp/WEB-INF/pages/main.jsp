@@ -7,7 +7,7 @@
         </select>
     </div>
 
-    <div class="col-lg-12 col-md-12 col-sm-12 body-padding">
+    <div class="col-lg-12 col-md-12 col-sm-12 project-detail-wrapper">
         <div class="col-lg-3 col-md-3 col-sm-3" ng-repeat="project in projectList.projects | filter:orderProp">
             <div class="thumbnail">
                 <a href="/projects/{{project.id}}">
