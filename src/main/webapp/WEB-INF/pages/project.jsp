@@ -13,7 +13,7 @@
                     href="{{projectDetails.project.url}}" target="_blank">See game details</a></span>
         </div>
     </div>
-    <div class="body-padding">
+    <div class="project-detail-wrapper">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="panel panel-default">
                 <img class="img-responsive project-details-img"
