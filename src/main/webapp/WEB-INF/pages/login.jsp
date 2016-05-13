@@ -1,28 +1,111 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<c:set var="ROOT" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <spring:url value="/resources/css/form.css" var="form"/>
-    <link href="${form}" type="text/css" rel="stylesheet"/>
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>test-oauth2-google</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
 </head>
-<body>
-<div class="login-wrap">
-    <h2>Login</h2>
-    <form name="loginForm" action='/j_spring_security_check' method='post'>
-        <div class="form">
-            <input id="user" type="text" placeholder="Username" name="j_username"/>
-            <input id="pass" type="password" placeholder="Password" name="j_password"/>
-            <button> Sign in</button>
-            <a href="/register"><p> Don't have an account? Register </p></a>
+<body data-spy="scroll" data-target="#home-left-navbar" data-offset="100">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#header-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <span>test-oauth2-google</span>
+            </a>
         </div>
-        <input type="hidden" name="${_csrf.parameterName}"
-               value="${_csrf.token}"/>
-    </form>
+
+        <div id="header-navbar-collapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="${ROOT}">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <br/><br/>
+        <div class="page-header">
+            <h2>You have successfully logged out!</h2>
+        </div>
+
+        <p class="lead">Your Google access token is revoked, session is invalidated and authentication object is
+            cleared.</p>
+    </div>
 </div>
-<spring:url value="resources/js/form.js" var="formJs"/>
-<script src="${formJs}"></script>
+
+<div class="container">
+    <div class="row">
+        <br/><br/>
+        <div class="page-header">
+            <h2>Welcome ${profile.givenName}!</h2>
+        </div>
+
+        <table width="600px">
+            <tr>
+                <th width="20%">ID</th>
+                <td width="80%">${profile.id}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>${profile.email}</td>
+            </tr>
+            <tr>
+                <th>Verified Email</th>
+                <td>${profile.verifiedEmail}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>${profile.name}</td>
+            </tr>
+            <tr>
+                <th>Given Name</th>
+                <td>${profile.givenName}</td>
+            </tr>
+            <tr>
+                <th>Family Name</th>
+                <td>${profile.familyName}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td><a href="${profile.link}">${profile.link}</a></td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td><img src="${profile.picture}"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>${profile.gender}</td>
+            </tr>
+            <tr>
+                <th>Locale</th>
+                <td>${profile.locale}</td>
+            </tr>
+            <tr>
+                <th>Hosted Domain</th>
+                <td>${profile.hd}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
 </body>
 </html>
