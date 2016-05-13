@@ -4,6 +4,7 @@ package com.crowd.config;
 import com.crowd.config.filter.AuthenticationSuccessFilter;
 import com.crowd.service.GoogleTokenServices;
 import com.crowd.service.UserDetailServiceImpl;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +19,15 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
+import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -38,6 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailServiceImpl userDetailService;
 //    @Autowired
+//    private OAuth2ClientAuthenticationProcessingFilter oAuth2ClientAuthenticationProcessingFilter;
+//    @Autowired
+//    private OAuth2ClientContextFilter oAuth2ClientContextFilter;
+//    @Autowired
+//    private LogoutFilter logoutFilter;
+//    @Autowired
 //    private GoogleTokenServices googleTokenServices;
 
     @Override
@@ -50,31 +61,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/**").authenticated()
-                .and();
-
-        http.addFilter();
+                .and()
+//                .addFilterAfter(oAuth2ClientContextFilter, ExceptionTranslationFilter.class)
+//                .addFilterBefore(oAuth2ClientAuthenticationProcessingFilter, FilterSecurityInterceptor.class)
+                ;
 
 //        <security:custom-filter ref="logoutFilter" position="LOGOUT_FILTER"/>
 //        <security:custom-filter ref="oauth2ClientContextFilter" after="EXCEPTION_TRANSLATION_FILTER"/>
 //        <security:custom-filter ref="oAuth2AuthenticationProcessingFilter" before="FILTER_SECURITY_INTERCEPTOR"/>
-//        http.formLogin()
-//                .loginPage("/login")
-//                .loginProcessingUrl("/j_spring_security_check")
-//                .successHandler(getAuthenticationSuccess())
-//                .failureUrl("/login?error=accessDenied")
-//                .usernameParameter("j_username")
-//                .passwordParameter("j_password")
-//                .permitAll()
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/**").authenticated()
-//                .anyRequest().authenticated()
-//                .and()
-//               .logout()
-//                .logoutSuccessUrl("/login")
-//                .logoutUrl("/logout")
-//               .permitAll();
-//       http.headers().xssProtection();
+        http.formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/j_spring_security_check")
+                .successHandler(getAuthenticationSuccess())
+                .failureUrl("/login?error=accessDenied")
+                .usernameParameter("j_username")
+                .passwordParameter("j_password")
+                .permitAll()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/**").authenticated()
+                .anyRequest().authenticated()
+                .and()
+                .logout()
+                .logoutSuccessUrl("/login")
+                .logoutUrl("/logout")
+                .permitAll();
+        http.headers().xssProtection();
     }
 
 
@@ -110,8 +122,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authenticationSuccess;
     }
 
-//        @Bean
-//    public OAuth2ClientAuthenticationProcessingFilter oAuth2AuthenticationProcessingFilter() {
+//    @Bean
+//    public OAuth2ClientAuthenticationProcessingFilter oAuth2AuthenticationProcessingFilter(GoogleTokenServices googleTokenServices) {
 //        OAuth2ClientAuthenticationProcessingFilter oAuth2ClientAuthenticationProcessingFilter
 //                = new OAuth2ClientAuthenticationProcessingFilter("http://localhost:8080/login");
 //        oAuth2ClientAuthenticationProcessingFilter.setRestTemplate(new OAuth2SecurityConfig().oauth2RestTemplate());
@@ -119,32 +131,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        return oAuth2ClientAuthenticationProcessingFilter;
 //    }
 
-//    @Bean
-//    public LoginUrlAuthenticationEntryPoint clientAuthenticationEntryPoint(){
-//        LoginUrlAuthenticationEntryPoint loginUrlAuthenticationEntryPoint = new LoginUrlAuthenticationEntryPoint("http://localhost:8080/login");
-//        return loginUrlAuthenticationEntryPoint;
-//    }
+    @Bean
+    public LoginUrlAuthenticationEntryPoint clientAuthenticationEntryPoint() {
+        LoginUrlAuthenticationEntryPoint loginUrlAuthenticationEntryPoint = new LoginUrlAuthenticationEntryPoint("http://localhost:8080/login");
+        return loginUrlAuthenticationEntryPoint;
+    }
 
-//    @Bean
-//    @Resource(name = "securityContextLogoutHandler")
-//    public LogoutFilter logoutFilter(List<SecurityContextLogoutHandler> list) {
-//        LogoutFilter logoutFilter = new LogoutFilter(,list);
-//        return logoutFilter;
-//    }
+    @Bean
+    public LogoutFilter logoutFilter(LogoutSuccessHandler logoutSuccessHandler, SecurityContextLogoutHandler securityContextLogoutHandler) {
+        LogoutFilter logoutFilter = new LogoutFilter(logoutSuccessHandler, securityContextLogoutHandler);
+        return logoutFilter;
+    }
 
-//    <bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
-//    <constructor-arg name="logoutSuccessUrl" value="/"/>
-//    <constructor-arg name="handlers">
-//    <list>
-//    <bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
-//    </list>
-//    </constructor-arg>
-//    </bean>
+    @Bean
+    public LogoutSuccessHandler logoutSuccessHandler() {
+        return new SimpleUrlLogoutSuccessHandler();
+    }
 
-//    @Bean
-//    public List<SecurityContextLogoutHandler> securityContextLogoutHandler(){
-//        List<SecurityContextLogoutHandler> list = new ArrayList<>();
-//        list.add(new SecurityContextLogoutHandler());
-//        return list;
-//    }
+    @Bean
+    public SecurityContextLogoutHandler securityContextLogoutHandler() {
+        return new SecurityContextLogoutHandler();
+    }
 }
