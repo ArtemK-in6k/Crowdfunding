@@ -2,11 +2,14 @@ package com.crowd.controller;
 
 
 import com.crowd.bean.RegistrationFields;
+import com.crowd.bean.user.GoogleUserBean;
+import com.crowd.bean.user.UserBean;
 import com.crowd.service.UserDetailServiceImpl;
 import com.crowd.service.UserService;
 import com.crowd.utils.Cipher;
 import com.crowd.dao.UserDAO;
 import com.crowd.entity.User;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,6 +57,21 @@ public class LoginController {
         return model;
 
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ModelAndView loginGoogle(@RequestBody GoogleUserBean googleUserBean) {
+
+        ModelAndView model = new ModelAndView();
+        if (googleUserBean!=null){
+
+        }
+
+        model.setViewName("login");
+
+        return model;
+
+    }
+
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request , HttpServletResponse responser) {
 
